@@ -1,0 +1,255 @@
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\ResolveAssemblyReference.cache
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.csproj.ResolveComReference.cache
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Account.FrmAccount.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Account.FrmAccountType.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Account.FrmBankPyt.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Account.FrmBankRec.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Account.FrmCashPyt.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Account.FrmCashRec.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Account.FrmJournalVoucher.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Account.ReportForm.FrmBankBook.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Account.FrmCashBook.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Account.ReportForm.FrmJurnalLadger.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Account.ReportForm.TrialBalance.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Bus.FrmBusDeails.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Bus.FrmDailyBusEntry.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Bus.FrmDisealDetail.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Bus.ReportForm.FrmBusRegistration.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Bus.ReportForm.FrmDailyBusEntry.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Bus.ReportForm.FrmDieselConsumption.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmAssessmentReport.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmCCEClassWiseSkills.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmDBServer.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmEvalutionField.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmExamHead.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmFeeCollectionByHead.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.framfeesetup.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmAddAttendance.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.BirthDayList.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmBankBook.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmBankPayment.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmBankReceipt.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmCashBook.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmCashPayment.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmCashReceipt.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmCBSCMarksheet.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Distic_Setup.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmCCESkills.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmDueFee.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmMarksEntry.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmNewCBSCMarksheet.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmNewCCEMarkSheet.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmBusStopDetail.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmrollnogenerate.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmStudentPromotion.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmUpgradeSessionCode.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Hostal.FrmHostal.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Hostal.FrmHostalFee.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Hostal.FrmRoom.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Hostal.FrmRoomAllotment.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Hostal.FrmVaccent.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Hostal.ReportForm.FrmDayFee.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Hostal.ReportForm.FrmDueHostalFee.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Hostal.ReportForm.FrmHostalVaccent.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Hostal.ReportForm.FrmPayMonthlyHostalFee.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Hostal.ReportForm.FrmRoomAllotment.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Hostal.ReportForm.FrmStudentFee.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Library.FrmBook.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Library.FrmBookIssue.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Library.FrmBookReturn.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Library.FrmBookWaiting.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Library.FrmGetBookBarcode.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Library.FrmGetStudentBarcode.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Library.FrmPublisher.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Library.ReportForm.FrmBarcodeSticker.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Library.ReportForm.FrmBookList.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.MDIParent1.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.MpBoardMarksheet.FrmMPCCMarksheet.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.MpBoardMarksheet.ReportForm.frmMPCCEMarkSheet.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Report.Student.ReportForm.FrmScholarship.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.FeeTransection.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmCCESkillsII.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmCCESkillsIII.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmchangepassword.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmclass.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmclasssetup.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmclasswisestudent.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmdailyfeereport.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmDetail.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmduplicatefeereceipt.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmEmployeeGridWiseList.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmEmployeeListView.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmFeeCollecton.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmJournalLedger.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmNewEmployee.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmNewSalaryPayment.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmYearlyClassFeeHead.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmMonthlySalaryCalculation.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmsankay.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmschool.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmsection.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmSessionRecord.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmStopsDetails.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Frmsubject.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmtehsil.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmCCESkillsI.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.FrmTrialBalance.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmuser.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmuserauth.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Journal.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Loginform.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmFeeByMonthDetail.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Properties.Resources.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Registration.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Reminder.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.samrtcard.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.SearchByName.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.frmTransferCertificate.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.SendMessege.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.ShowAllReports.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Splash.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Subjectwiseclass.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.TempraryResult.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.TerminateStudentList.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.Test.Form1.resources
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.csproj.GenerateResource.Cache
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\bin\x86\Debug\SMS.exe.config
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\bin\x86\Debug\SMS.exe
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\bin\x86\Debug\SMS.pdb
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\bin\x86\Debug\Microsoft.Office.Interop.Excel.dll
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\bin\x86\Debug\Microsoft.Office.Interop.Excel.xml
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.exe
+E:\D Drive Data 18 December\wINpROJECT\SMS\SMS\obj\x86\Debug\SMS.pdb
+D:\wInpRojecT\NewSMS\SMS\SMS\bin\x86\Debug\SMS.exe.config
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.csproj.ResolveComReference.cache
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.exe
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.pdb
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Account.FrmAccount.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Account.FrmAccountType.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Account.FrmBankPyt.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Account.FrmBankRec.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Account.FrmCashPyt.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Account.FrmCashRec.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Account.FrmJournalVoucher.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Account.ReportForm.FrmBankBook.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Account.FrmCashBook.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Account.ReportForm.FrmJurnalLadger.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Account.ReportForm.TrialBalance.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Bus.FrmBusDeails.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Bus.FrmDailyBusEntry.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Bus.FrmDisealDetail.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Bus.ReportForm.FrmBusRegistration.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Bus.ReportForm.FrmDailyBusEntry.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Bus.ReportForm.FrmDieselConsumption.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmAssessmentReport.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmCCEClassWiseSkills.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmDBServer.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmEvalutionField.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmExamHead.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmFeeCollectionByHead.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.framfeesetup.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmAddAttendance.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.BirthDayList.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmBankBook.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmBankPayment.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmBankReceipt.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmCashBook.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmCashPayment.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmCashReceipt.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmCBSCMarksheet.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Distic_Setup.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmCCESkills.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmDueFee.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmMarksEntry.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmNewCBSCMarksheet.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmNewCCEMarkSheet.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmBusStopDetail.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmrollnogenerate.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmScholarshipclassfee.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmstudent.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmStudentAttendance.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmStudentEnquiry.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmStudentPromotion.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmUpgradeSessionCode.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Hostal.FrmHostal.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Hostal.FrmHostalFee.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Hostal.FrmRoom.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Hostal.FrmRoomAllotment.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Hostal.FrmVaccent.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Hostal.ReportForm.FrmDayFee.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Hostal.ReportForm.FrmDueHostalFee.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Hostal.ReportForm.FrmHostalVaccent.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Hostal.ReportForm.FrmPayMonthlyHostalFee.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Hostal.ReportForm.FrmRoomAllotment.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Hostal.ReportForm.FrmStudentFee.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Library.FmTitle.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Library.FrmBook.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Library.FrmBookIssue.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Library.FrmBookReturn.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Library.FrmBookWaiting.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Library.FrmGetBookBarcode.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Library.FrmGetStudentBarcode.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Library.FrmPublisher.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Library.ReportForm.FrmBarcodeSticker.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Library.ReportForm.FrmBookList.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.MDIParent1.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Message.FrmTemplate.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.MpBoardMarksheet.FrmMPCCMarksheet.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.MpBoardMarksheet.FrmMPCCMarksheetM.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.MpBoardMarksheet.FrmMPCCMarksheetMS.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.MpBoardMarksheet.FrmMPCCMarksheetS.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.MpBoardMarksheet.ReportForm.frmMPCCEMarkSheet.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.MpBoardMarksheet.ReportForm.frmMPCCEMarkSheetB.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.MpBoardMarksheet.ReportForm.frmMPCCEMarkSheetM.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.MpBoardMarksheet.ReportForm.frmMPCCEMarkSheetMS.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.MpBoardMarksheet.ReportForm.frmMPCCEMarkSheetS.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Report.Fees.ReportForm.frmDueFee.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Report.Student.ReportForm.FrmAbsentReport.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Report.Student.ReportForm.FrmScholarship.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.FeeTransection.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmCCESkillsII.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmCCESkillsIII.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmchangepassword.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmclass.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmclasssetup.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmclasswisestudent.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmdailyfeereport.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmDetail.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmduplicatefeereceipt.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmEmployeeGridWiseList.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmEmployeeListView.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmFeeCollecton.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmJournalLedger.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmNewEmployee.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmNewSalaryPayment.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmYearlyClassFeeHead.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmMonthlySalaryCalculation.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmsankay.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmschool.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmsection.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmSessionRecord.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmStopsDetails.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Frmsubject.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmtehsil.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmCCESkillsI.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.FrmTrialBalance.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmuser.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmuserauth.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Journal.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Loginform.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmFeeByMonthDetail.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Properties.Resources.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Registration.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Reminder.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.samrtcard.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.SearchByName.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.frmTransferCertificate.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.SendMessege.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.ShowAllReports.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Splash.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Subjectwiseclass.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.TempraryResult.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.TerminateStudentList.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.Test.Form1.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\x86\Debug\SMS.csproj.GenerateResource.Cache

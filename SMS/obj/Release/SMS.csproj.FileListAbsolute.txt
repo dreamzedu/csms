@@ -1,0 +1,840 @@
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\ResolveAssemblyReference.cache
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.csproj.ResolveComReference.cache
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.AddAttendance.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.AttendenceZtick.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.authorwisereport.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.barcodecard.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.BirthDayList.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.BookReports.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.BookStock.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.Booktitle.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.bookwaitingreport.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.bookWating.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.CalculateSalary.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.CardPrint.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.castprtivadan.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.classwisecollection.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.classwisemonthlycollection.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.colender.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.dailyissuebook.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.DamageBook.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.Distic_Setup.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.Duefee.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.DUEMONTH.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.EveryDayFeeReport.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.ExaminationSchedule.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.ExaminationScheduleReport.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.ExaminationSubject.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.feecancellation.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.feecollection.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.Feestruturecs.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.feestruturerecipt.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.FeeSubmitRegular.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.FeeTransection.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.FemClassTimeTableGen.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.Form2.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.FormSale.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.framfeesetup.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmaccounts.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmaccounttype.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmattandance.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmbankbook.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmbankpayment.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmbankreceipt.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmbook.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmbooktitle.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.FrmBudgetPrepare.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmBusDetails.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmBusInfoOfStudent.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmBusRouteStopReport.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmcashbook.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmcashbookformat2.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmcashbookformat3.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmcashpayment.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmcashreceipt.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmCastReport.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmchangepassword.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmclass.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmclasssetup.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmclasstransfer.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmclasswisefeedue.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmclasswisestudent.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmDailyBusEntry.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmdailyfeereport.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmDieselDetails.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmDieselReportOfBusbise.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmDieselReportOfBuses.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmduplicatefeereceipt.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\KGRI.frmemployee.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmEmployeeGridWiseList.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmEmployeeList.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmEmployeeListView.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmExaminationSchedule.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmexamsubject.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmfeetransaction.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmfeetransaction1.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmHostelAllot.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmhostelallotement.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmhostelmaster.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmhostelRegularFees.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmhostelroom.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmhostelvacant.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmHostelVacate.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmitem.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmitemdisposal.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmitemissue.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmitempurchase.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmjournalledger.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmListOfStudentByBus.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmListOfStudentByRoot.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmMarksDetail.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmMarksDetail9th.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmmarksentry.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmNewEmployee.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmParticipate.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmParticipateRecord.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmPrintRollNumber.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmProvideEnrollment.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmpublisher.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmregularfeeheads.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmReporttOfStudentByBus.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmResult.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmresultprocessing.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmResultVItoVIII.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmrollnogenerate.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmRootDetails.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmRptBusRegistrationIfo.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\KGRI.frmrptclasswisestudent.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmRptDailyBusInfo.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmrptdailyfee.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmRptDailyHostelFee.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmrptdayilyhostelfee.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmRptDieselReportOfBus.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmrptenrollment.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmrpthallticket.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmRptHostelfee.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmRptHostelFeeNotSubmitedStudent.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmRptPerMothHostelFee.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmRptStudentsByBus.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmrSportsParticipate.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmSalaryBankPayment.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmsalaryhead.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmsalaryheadentry.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmSalaryPayment.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmsankay.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmschool.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.FrmSearch.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmsection.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmSessionRecord.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmshowallreports.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmSportRecordDateWise.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmSportsEntry.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmSportsEntryDate.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmStopageInfo.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmStopsDetails.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmStopsOfRoot.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmStopsOfRootsOfBus.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmstudent.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmStudentAttendance.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmstudentreport.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.Frmsubject.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmsubledger.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmTeacherAnalysis.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmTeacherAnalysisRecord.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmteachersetup.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmtehsil.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmtrialbalance.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmuser.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmuserauth.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmusersetup.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmWinner.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.frmWinnerRecord.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.GetEmployeeAttendence.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.HallTicket.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.HostelAllotPositionReport.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.HostelVacatPositionReport.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.IssueClasswise.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.IssuedBook.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.Loginform.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.MDIParent1.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.MONTHFEECOMBINATION.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.Monthly_fee_Due_Report.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.monthlyfee.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.monthlyfeecollection.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.Rack.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.NewHallTicket.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.Newstudentlist.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.OtherFeeDetail.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.PerticularStudentFeeReport.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.photogallery.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.Properties.Resources.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.purchase.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.Registration.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.Reminder.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.ReturnBook.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.RptHostelVacat.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.samrtcard.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.ScholorStudent.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.SearchByName.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.SearchByName1.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.sectionwisestudentlist.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.SendMessege.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.SetFeeInstallment.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.ShowAllcs.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.ShowAllReports.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.Showcolender.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.ShowDamageBook.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.Splash.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.stockinfocs.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.studentdue.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.studentfeeinfo.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.StudentsOfDueFeeAtAMonthRepot.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.StudentsOfPayedFeeAtAMonthReport.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.Subjectwiseclass.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.TransctionReports.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.Z_frmGradeEntry.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.Z_frmGradeEntry1To5.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.Z_MasterReport101.resources
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\obj\Release\SMS.csproj.GenerateResource.Cache
+D:\SCHOOL MANAGEMENT PROJECT\SaraswatiNew Single User SMS_06052013\SMS\SMS\bin\Release\SMS.exe.config
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\bin\Release\SMS.exe.config
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.csproj.ResolveComReference.cache
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\bin\Release\SMS.exe
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\bin\Release\SMS.pdb
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\bin\Release\DSBarCode.dll
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\bin\Release\Excel.dll
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\bin\Release\ICSharpCode.SharpZipLib.dll
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\bin\Release\SMSClientLibrary.dll
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\ResolveAssemblyReference.cache
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmAddAttendance.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.BirthDayList.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmBankBook.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmBankPayment.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmBankReceipt.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmCashBook.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmCashPayment.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmCashReceipt.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmCBSCMarksheet.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.Distic_Setup.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmCCESkills.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmNewCBSCMarksheet.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmNewCCEMarkSheet.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmStudentPromotion.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmUpgradeSessionCode.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.FeeTransection.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.framfeesetup.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmCCESkillsII.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmCCESkillsIII.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmchangepassword.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmclass.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmclasssetup.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmDueFee.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmclasswisestudent.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmdailyfeereport.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmDetail.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmduplicatefeereceipt.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmEmployeeGridWiseList.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmEmployeeListView.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmFeeCollecton.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmJournalLedger.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmmarksentry.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmNewEmployee.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmNewSalaryPayment.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmBusStopDetail.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmrollnogenerate.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmMonthlySalaryCalculation.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmsankay.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmschool.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmsection.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmSessionRecord.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmStopsDetails.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmstudent.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.Frmsubject.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmtehsil.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmCCESkillsI.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.FrmTrialBalance.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmuser.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmuserauth.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.Journal.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.Loginform.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.MDIParent1.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmFeeByMonthDetail.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.Properties.Resources.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.Registration.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.Reminder.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.samrtcard.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.SearchByName.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.SendMessege.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.ShowAllReports.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.Splash.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.Subjectwiseclass.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.TerminateStudentList.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.csproj.GenerateResource.Cache
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.exe
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.pdb
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmTransferCertificate.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmAssessmentReport.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmCCEClassWiseSkills.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmEvalutionField.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmExamHead.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmYearlyClassFeeHead.resources
+E:\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.TempraryResult.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\bin\Release\SMS.exe.config
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.csproj.ResolveComReference.cache
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.exe
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.pdb
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\bin\Release\SMS.exe
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\bin\Release\SMS.pdb
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\ResolveAssemblyReference.cache
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmAssessmentReport.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmCCEClassWiseSkills.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmEvalutionField.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmExamHead.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmFeeCollectionByHead.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.framfeesetup.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmAddAttendance.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.BirthDayList.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmBankBook.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmBankPayment.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmBankReceipt.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmCashBook.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmCashPayment.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmCashReceipt.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmCBSCMarksheet.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.Distic_Setup.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmCCESkills.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmDueFee.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmMarksEntry.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmNewCBSCMarksheet.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmNewCCEMarkSheet.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmBusStopDetail.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmrollnogenerate.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmStudentPromotion.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmUpgradeSessionCode.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.FeeTransection.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmCCESkillsII.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmCCESkillsIII.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmchangepassword.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmclass.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmclasssetup.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmclasswisestudent.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmdailyfeereport.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmDetail.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmduplicatefeereceipt.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmEmployeeGridWiseList.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmEmployeeListView.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmFeeCollecton.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmJournalLedger.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmNewEmployee.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmNewSalaryPayment.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmYearlyClassFeeHead.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmMonthlySalaryCalculation.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmsankay.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmschool.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmsection.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmSessionRecord.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmStopsDetails.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmstudent.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.Frmsubject.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmtehsil.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmCCESkillsI.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.FrmTrialBalance.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmuser.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmuserauth.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.Journal.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.Loginform.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.MDIParent1.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmFeeByMonthDetail.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.Properties.Resources.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.Registration.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.Reminder.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.samrtcard.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.SearchByName.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.frmTransferCertificate.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.SendMessege.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.ShowAllReports.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.Splash.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.Subjectwiseclass.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.TempraryResult.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.TerminateStudentList.resources
+D:\School Software\Final SMS 3.6 11-11-2013 By Atul\SMS\SMS\obj\Release\SMS.csproj.GenerateResource.Cache
+D:\wInpRojecT\NewSMS\SMS\SMS\bin\Release\SMS.exe.config
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.csproj.ResolveComReference.cache
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.exe
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.pdb
+D:\wInpRojecT\NewSMS\SMS\SMS\bin\Release\SMS.exe
+D:\wInpRojecT\NewSMS\SMS\SMS\bin\Release\SMS.pdb
+D:\wInpRojecT\NewSMS\SMS\SMS\bin\Release\itextsharp.dll
+D:\wInpRojecT\NewSMS\SMS\SMS\bin\Release\Microsoft.Office.Interop.Excel.dll
+D:\wInpRojecT\NewSMS\SMS\SMS\bin\Release\Microsoft.Office.Interop.Excel.xml
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\ResolveAssemblyReference.cache
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Account.FrmAccount.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Account.FrmAccountType.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Account.FrmBankPyt.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Account.FrmBankRec.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Account.FrmCashPyt.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Account.FrmCashRec.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Account.FrmJournalVoucher.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Account.ReportForm.FrmBankBook.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Account.FrmCashBook.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Account.ReportForm.FrmJurnalLadger.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Account.ReportForm.TrialBalance.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Bus.FrmBusDeails.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Bus.FrmDailyBusEntry.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Bus.FrmDisealDetail.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Bus.ReportForm.FrmBusRegistration.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Bus.ReportForm.FrmDailyBusEntry.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Bus.ReportForm.FrmDieselConsumption.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmAssessmentReport.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmCCEClassWiseSkills.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmDBServer.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmEvalutionField.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmExamHead.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmFeeCollectionByHead.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.framfeesetup.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmAddAttendance.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.BirthDayList.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmBankBook.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmBankPayment.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmBankReceipt.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmCashBook.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmCashPayment.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmCashReceipt.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmCBSCMarksheet.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Distic_Setup.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmCCESkills.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmDueFee.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmMarksEntry.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmNewCBSCMarksheet.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmNewCCEMarkSheet.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmBusStopDetail.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmrollnogenerate.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmScholarshipclassfee.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmScholarshipStatus.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmstudent.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmStudentAttendance.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmStudentEnquiry.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmStudentPromotion.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmUpgradeSessionCode.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Hostal.FrmHostal.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Hostal.FrmHostalFee.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Hostal.FrmRoom.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Hostal.FrmRoomAllotment.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Hostal.FrmVaccent.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Hostal.ReportForm.FrmDayFee.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Hostal.ReportForm.FrmDueHostalFee.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Hostal.ReportForm.FrmHostalVaccent.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Hostal.ReportForm.FrmPayMonthlyHostalFee.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Hostal.ReportForm.FrmRoomAllotment.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Hostal.ReportForm.FrmStudentFee.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Library.FmTitle.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Library.FrmBook.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Library.FrmBookIssue.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Library.FrmBookReturn.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Library.FrmBookWaiting.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Library.FrmGetBookBarcode.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Library.FrmGetStudentBarcode.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Library.FrmPublisher.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Library.ReportForm.FrmBarcodeSticker.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Library.ReportForm.FrmBookList.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.MDIParent1.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Message.FrmTemplate.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.MpBoardMarksheet.FrmMPCCMarksheet.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.MpBoardMarksheet.FrmMPCCMarksheetM.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.MpBoardMarksheet.FrmMPCCMarksheetMS.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.MpBoardMarksheet.FrmMPCCMarksheetS.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.MpBoardMarksheet.FrmMPCCMarksheetSHHSSA.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.MpBoardMarksheet.ReportForm.frmMPCCEMarkSheet.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.MpBoardMarksheet.ReportForm.frmMPCCEMarkSheetB.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.MpBoardMarksheet.ReportForm.frmMPCCEMarkSheetM.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.MpBoardMarksheet.ReportForm.frmMPCCEMarkSheetMS.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.MpBoardMarksheet.ReportForm.frmMPCCEMarkSheetS.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.MpBoardMarksheet.ReportForm.frmMPCCMarksheetSHHSSA.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Report.Fees.ReportForm.frmDueFee.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Report.Student.ReportForm.FrmAbsentReport.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Report.Student.ReportForm.FrmScholarship.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Report.Student.ReportForm.frmScholarshipStatus.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.FeeTransection.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmCCESkillsII.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmCCESkillsIII.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmchangepassword.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmclass.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmclasssetup.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmclasswisestudent.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmdailyfeereport.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmDetail.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmduplicatefeereceipt.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmEmployeeGridWiseList.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmEmployeeListView.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmFeeCollecton.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmJournalLedger.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmNewEmployee.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmNewSalaryPayment.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmYearlyClassFeeHead.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmMonthlySalaryCalculation.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmsankay.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmschool.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmsection.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmSessionRecord.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmStopsDetails.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Frmsubject.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmtehsil.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmCCESkillsI.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.FrmTrialBalance.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmuser.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmuserauth.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Journal.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Loginform.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmFeeByMonthDetail.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Properties.Resources.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Registration.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Reminder.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.samrtcard.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.SearchByName.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.frmTransferCertificate.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.SendMessege.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.ShowAllReports.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Splash.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Subjectwiseclass.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.TempraryResult.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.TerminateStudentList.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.Test.Form1.resources
+D:\wInpRojecT\NewSMS\SMS\SMS\obj\Release\SMS.csproj.GenerateResource.Cache
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\bin\Release\SMS.exe.config
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\bin\Release\SMS.exe
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\bin\Release\SMS.pdb
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\bin\Release\DSBarCode.dll
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\bin\Release\Excel.dll
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\bin\Release\ICSharpCode.SharpZipLib.dll
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\bin\Release\itextsharp.dll
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\bin\Release\Microsoft.Office.Interop.Excel.dll
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\bin\Release\Microsoft.Office.Tools.Excel.v9.0.dll
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\bin\Release\SMSClientLibrary.dll
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\bin\Release\System.Configuration.dll
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\bin\Release\System.Data.DataSetExtensions.dll
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\bin\Release\System.Data.dll
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\bin\Release\System.Deployment.dll
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\bin\Release\System.dll
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\bin\Release\System.Drawing.dll
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\bin\Release\System.Web.dll
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\bin\Release\System.Web.Extensions.dll
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\bin\Release\System.Web.Services.dll
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\bin\Release\System.Windows.Forms.dll
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\bin\Release\System.Xml.dll
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\bin\Release\System.Xml.Linq.dll
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\bin\Release\Microsoft.Vbe.Interop.dll
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.csproj.ResolveComReference.cache
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Account.FrmAccount.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Account.FrmAccountType.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Account.FrmBankPyt.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Account.FrmBankRec.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Account.FrmCashPyt.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Account.FrmCashRec.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Account.FrmJournalVoucher.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Account.ReportForm.FrmBankBook.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Account.FrmCashBook.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Account.ReportForm.FrmJurnalLadger.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Account.ReportForm.TrialBalance.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.AgrodExam.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmProductInfo.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.MpBoardMarksheet.ReportForm.frmMPNewMark.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.FormCCEAgrod.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Bus.FrmBusDeails.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Bus.FrmDailyBusEntry.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Bus.FrmDisealDetail.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Bus.ReportForm.FrmBusRegistration.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Bus.ReportForm.FrmDailyBusEntry.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Bus.ReportForm.FrmDieselConsumption.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmAssessmentReport.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmCCEClassWiseSkills.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmDBServer.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmEvalutionField.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmExamHead.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmFeeCollectionByHead.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.framfeesetup.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmAddAttendance.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.BirthDayList.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmBankBook.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmBankPayment.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmBankReceipt.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmCashBook.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmCashPayment.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmCashReceipt.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmCBSCMarksheet.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Distic_Setup.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmCCESkills.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmDueFee.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmMarksEntry.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmNewCBSCMarksheet.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmNewCCEMarkSheet.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmBusStopDetail.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmrollnogenerate.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmScholarshipclassfee.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmScholarshipStatus.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmstudent.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmStudentAttendance.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmStudentEnquiry.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmStudentPromotion.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmUpgradeSessionCode.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Hostal.FrmHostal.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Hostal.FrmHostalFee.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Hostal.FrmRoom.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Hostal.FrmRoomAllotment.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Hostal.FrmVaccent.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Hostal.ReportForm.FrmDayFee.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Hostal.ReportForm.FrmDueHostalFee.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Hostal.ReportForm.FrmHostalVaccent.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Hostal.ReportForm.FrmPayMonthlyHostalFee.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Hostal.ReportForm.FrmRoomAllotment.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Hostal.ReportForm.FrmStudentFee.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Library.FmTitle.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Library.FrmBook.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Library.FrmBookIssue.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Library.FrmBookReturn.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Library.FrmBookWaiting.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Library.FrmGetBookBarcode.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Library.FrmGetStudentBarcode.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Library.FrmPublisher.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Library.ReportForm.FrmBarcodeSticker.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Library.ReportForm.FrmBookList.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.MDIParent1.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Message.FrmTemplate.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.MpBoardMarksheet.FrmMPCCMarksheet.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.MpBoardMarksheet.FrmMPCCMarksheetM.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.MpBoardMarksheet.FrmMPCCMarksheetMS.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.MpBoardMarksheet.FrmMPCCMarksheetS.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.MpBoardMarksheet.FrmMPCCMarksheetSHHSSA.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.MpBoardMarksheet.ReportForm.frmMPCCEMarkSheet.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.MpBoardMarksheet.ReportForm.frmMPCCEMarkSheetB.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.MpBoardMarksheet.ReportForm.frmMPCCEMarkSheetM.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.MpBoardMarksheet.ReportForm.frmMPCCEMarkSheetMS.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.MpBoardMarksheet.ReportForm.frmMPCCEMarkSheetS.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.MpBoardMarksheet.ReportForm.frmMPCCMarksheetSHHSSA.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Report.Fees.ReportForm.frmDueFee.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Report.Student.ReportForm.FrmAbsentReport.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Report.Student.ReportForm.FrmScholarship.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Report.Student.ReportForm.frmScholarshipStatus.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.FeeTransection.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmCCESkillsII.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmCCESkillsIII.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmchangepassword.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmclass.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmclasssetup.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmclasswisestudent.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmdailyfeereport.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmDetail.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmduplicatefeereceipt.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmEmployeeGridWiseList.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmEmployeeListView.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmFeeCollecton.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmJournalLedger.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmNewEmployee.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmNewSalaryPayment.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmYearlyClassFeeHead.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmMonthlySalaryCalculation.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmsankay.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmschool.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmsection.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmSessionRecord.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmStopsDetails.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Frmsubject.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmtehsil.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmCCESkillsI.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.FrmTrialBalance.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmuser.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmuserauth.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Journal.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Loginform.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmFeeByMonthDetail.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Properties.Resources.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Registration.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Help.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.samrtcard.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.SearchByName.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmTransferCertificate.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.SendMessege.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.ShowAllReports.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Splash.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Subjectwiseclass.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.TempraryResult.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.TerminateStudentList.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Test.Form1.resources
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.csproj.GenerateResource.Cache
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.exe
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.pdb
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.csprojResolveAssemblyReference.cache
+C:\Users\manoj_dwivedi\Downloads\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmSubjectForm.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\bin\Release\SMS.exe.config
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.csproj.ResolveComReference.cache
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.exe
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.pdb
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Account.FrmAccount.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Account.FrmAccountType.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Account.FrmBankPyt.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Account.FrmBankRec.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Account.FrmCashPyt.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Account.FrmCashRec.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Account.FrmJournalVoucher.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Account.ReportForm.FrmBankBook.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Account.FrmCashBook.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Account.ReportForm.FrmJurnalLadger.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Account.ReportForm.TrialBalance.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.AgrodExam.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmProductInfo.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmSubjectForm.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.MpBoardMarksheet.ReportForm.frmMPNewMark.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.FormCCEAgrod.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Bus.FrmBusDeails.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Bus.FrmDailyBusEntry.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Bus.FrmDisealDetail.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Bus.ReportForm.FrmBusRegistration.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Bus.ReportForm.FrmDailyBusEntry.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Bus.ReportForm.FrmDieselConsumption.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmAssessmentReport.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmCCEClassWiseSkills.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmDBServer.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmEvalutionField.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmExamHead.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmFeeCollectionByHead.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.framfeesetup.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmAddAttendance.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.BirthDayList.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmBankBook.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmBankPayment.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmBankReceipt.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmCashBook.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmCashPayment.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmCashReceipt.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmCBSCMarksheet.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Distic_Setup.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmCCESkills.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmDueFee.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmMarksEntry.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmNewCBSCMarksheet.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmNewCCEMarkSheet.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmBusStopDetail.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmrollnogenerate.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmScholarshipclassfee.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmScholarshipStatus.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmstudent.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmStudentAttendance.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmStudentEnquiry.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmStudentPromotion.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmUpgradeSessionCode.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Hostal.FrmHostal.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Hostal.FrmHostalFee.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Hostal.FrmRoom.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Hostal.FrmRoomAllotment.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Hostal.FrmVaccent.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Hostal.ReportForm.FrmDayFee.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Hostal.ReportForm.FrmDueHostalFee.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Hostal.ReportForm.FrmHostalVaccent.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Hostal.ReportForm.FrmPayMonthlyHostalFee.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Hostal.ReportForm.FrmRoomAllotment.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Hostal.ReportForm.FrmStudentFee.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Library.FmTitle.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Library.FrmBook.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Library.FrmBookIssue.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Library.FrmBookReturn.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Library.FrmBookWaiting.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Library.FrmGetBookBarcode.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Library.FrmGetStudentBarcode.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Library.FrmPublisher.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Library.ReportForm.FrmBarcodeSticker.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Library.ReportForm.FrmBookList.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.MDIParent1.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Message.FrmTemplate.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.MpBoardMarksheet.FrmMPCCMarksheet.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.MpBoardMarksheet.FrmMPCCMarksheetM.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.MpBoardMarksheet.FrmMPCCMarksheetMS.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.MpBoardMarksheet.FrmMPCCMarksheetS.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.MpBoardMarksheet.FrmMPCCMarksheetSHHSSA.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.MpBoardMarksheet.ReportForm.frmMPCCEMarkSheet.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.MpBoardMarksheet.ReportForm.frmMPCCEMarkSheetB.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.MpBoardMarksheet.ReportForm.frmMPCCEMarkSheetM.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.MpBoardMarksheet.ReportForm.frmMPCCEMarkSheetMS.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.MpBoardMarksheet.ReportForm.frmMPCCEMarkSheetS.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.MpBoardMarksheet.ReportForm.frmMPCCMarksheetSHHSSA.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Report.Fees.ReportForm.frmDueFee.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Report.Student.ReportForm.FrmAbsentReport.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Report.Student.ReportForm.FrmScholarship.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Report.Student.ReportForm.frmScholarshipStatus.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.FeeTransection.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmCCESkillsII.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmCCESkillsIII.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmchangepassword.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmclass.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmclasssetup.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmclasswisestudent.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmdailyfeereport.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmDetail.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmduplicatefeereceipt.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmEmployeeGridWiseList.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmEmployeeListView.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmFeeCollecton.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmJournalLedger.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmNewEmployee.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmNewSalaryPayment.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmYearlyClassFeeHead.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmMonthlySalaryCalculation.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmsankay.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmschool.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmsection.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmSessionRecord.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmStopsDetails.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Frmsubject.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmtehsil.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmCCESkillsI.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.FrmTrialBalance.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmuser.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmuserauth.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Journal.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Loginform.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmFeeByMonthDetail.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Properties.Resources.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Registration.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Help.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.samrtcard.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.SearchByName.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.frmTransferCertificate.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.SendMessege.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.ShowAllReports.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Splash.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Subjectwiseclass.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.TempraryResult.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.TerminateStudentList.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.Test.Form1.resources
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.csproj.GenerateResource.Cache
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\bin\Release\SMS.exe.manifest
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\bin\Release\SMS.application
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\bin\Release\SMS.exe
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\bin\Release\SMS.pdb
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\bin\Release\DSBarCode.dll
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\bin\Release\Excel.dll
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\bin\Release\ICSharpCode.SharpZipLib.dll
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\bin\Release\itextsharp.dll
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\bin\Release\Microsoft.Office.Interop.Excel.dll
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\bin\Release\Microsoft.Office.Tools.Excel.v9.0.dll
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\bin\Release\SMSClientLibrary.dll
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\bin\Release\System.Configuration.dll
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\bin\Release\System.Data.DataSetExtensions.dll
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\bin\Release\System.Data.dll
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\bin\Release\System.Deployment.dll
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\bin\Release\System.dll
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\bin\Release\System.Drawing.dll
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\bin\Release\System.Web.dll
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\bin\Release\System.Web.Extensions.dll
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\bin\Release\System.Web.Http.dll
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\bin\Release\System.Web.Services.dll
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\bin\Release\System.Windows.Forms.dll
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\bin\Release\System.Xml.dll
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\bin\Release\System.Xml.Linq.dll
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\bin\Release\System.Net.Http.dll
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\bin\Release\System.Net.Http.Formatting.dll
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\bin\Release\System.Web.Http.xml
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\bin\Release\System.Net.Http.xml
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\bin\Release\System.Net.Http.Formatting.xml
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\bin\Release\Microsoft.Vbe.Interop.dll
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.exe.manifest
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.application
+C:\Users\manoj_dwivedi\Desktop\Manoj\NewSMS\NewSMS\SMS\SMS\obj\Release\SMS.csprojResolveAssemblyReference.cache
