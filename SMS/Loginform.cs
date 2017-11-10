@@ -169,6 +169,8 @@ namespace SMS
                 // Initializing it for school class as well because it is still in use many places
                 school.CurrentUser = school1.CurrentUser;
 
+                SetupAppPaths();
+
                 this.Hide();
                
                 MDIParent1 main = new MDIParent1(school1.CurrentUser.UserCode.ToString(), school1.CurrentUser.Name);
@@ -283,112 +285,99 @@ namespace SMS
             txtUserName.Text = U;
             txtPassword.Text = P;
 #endif
-            //DataSet dschk = Connection.GetDataSet("Select * from SMSsystem ");
-            //if (dschk.Tables[0].Rows.Count < 1)
-            //{
-            //    Registration r = new Registration();
-            //    r.Show();
-            //    this.Hide();
-               
-            //}
-            //else
-            //{
-            //    DateTime dt = Convert.ToDateTime(dschk.Tables[0].Rows[0].ItemArray[0].ToString());
-            //    DateTime dtnew = DateTime.Now;
-            //    TimeSpan t = dtnew.Subtract(dt);
-            //    int k = t.Days;
-            //    if (k > 15)
-            //    {
-            //        MessageBox.Show("Your Demo has Expired ? ");
-            //        Reminder r = new Reminder();
-            //        this.Hide();
-            //        r.Show();
-            //    }
-            //} 
-
-            
-            string[] path1 = new string[4];
-            path1[0] = @""+Connection.GetAccessPathId() + "Barcodes";
-            path1[1] = @"" + Connection.GetAccessPathId() + "Images";
-            path1[2] = @"" + Connection.GetAccessPathId() + "PhotoImages";
-            path1[3] = @"" + Connection.GetAccessPathId() + "StudentDocs";
-
-            foreach (string path in path1)
-            {
-                if (Directory.Exists(path))
-                {
-                    // This path is a directory
-                    ProcessDirectory(path);
-                }
-
-                else
-                {
-                    if (path == @"" + Connection.GetAccessPathId() + "Barcodes")
-                    {
-                        string activeDir = @"" + Connection.GetAccessPathId() + "Barcodes";
-
-                        //Create a new subfolder under the current active folder
-                        string newPath = System.IO.Path.Combine(activeDir, "a");
-
-                        // Create the subfolder
-                        System.IO.Directory.CreateDirectory(newPath);
-
-                        string newPathb = System.IO.Path.Combine(activeDir, "b");
-
-                        // Create the subfolder
-                        System.IO.Directory.CreateDirectory(newPathb);
-
-                        string fileLoc = @"" + Connection.GetAccessPathId() + @"Barcodes\a\sample.txt";
-                        FileStream fs = new FileStream(fileLoc, FileMode.Create, FileAccess.ReadWrite);
-                        StreamWriter sw = new StreamWriter(fs);
-                        sw.Write(Connection.GetConnectionString());
-
-                        sw.Close();
-                        fs.Close();
-
-                        string fileLoc1 = @"" + Connection.GetAccessPathId() + @"Barcodes\a\mdst.txt";
-                        FileStream fs1 = new FileStream(fileLoc1, FileMode.Create, FileAccess.ReadWrite);
-                        StreamWriter sw1 = new StreamWriter(fs1);
-                        sw1.Write("0");
-                        sw1.Close();
-                        fs1.Close();
-                    }
-                    if (path == @"" + Connection.GetAccessPathId() + "Images")
-                    {
-                        string activeDir1 = @"" + Connection.GetAccessPathId() + "Images";
-
-                        //Create a new subfolder under the current active folder
-                        string newPath1 = System.IO.Path.Combine(activeDir1, "a");
-
-                        // Create the subfolder
-                        System.IO.Directory.CreateDirectory(newPath1);
-
-                    }
-                    if (path == @"" + Connection.GetAccessPathId() + "PhotoImages")
-                    {
-                        string activeDir2 = @"" + Connection.GetAccessPathId() + "PhotoImages";
-
-                        //Create a new subfolder under the current active folder
-                        string newPath2 = System.IO.Path.Combine(activeDir2, "a");
-
-                        // Create the subfolder
-                        System.IO.Directory.CreateDirectory(newPath2);
-                    }
-                    if (path == @"" + Connection.GetAccessPathId() + "StudentDocs")
-                    {
-                        string activeDir2 = @"" + Connection.GetAccessPathId() + "StudentDocs";
-
-                        // Create the subfolder
-                        System.IO.Directory.CreateDirectory(activeDir2);
-                    }
-                    //MessageBox.Show ("{0} is not a valid file or directory.", path);
-                }
-
-            }
+                   
 
             txtUserName.Focus();
             //WithoutLogin();
         } 
+
+        private void SetupAppPaths()
+        {
+            try
+            {
+                string[] path1 = new string[4];
+                path1[0] = @"" + Connection.GetAccessPathId() + "Barcodes";
+                path1[1] = @"" + Connection.GetAccessPathId() + "Images";
+                path1[2] = @"" + Connection.GetAccessPathId() + "PhotoImages";
+                path1[3] = @"" + Connection.GetAccessPathId() + "StudentDocs";
+
+                foreach (string path in path1)
+                {
+                    if (Directory.Exists(path))
+                    {
+                        // This path is a directory
+                        ProcessDirectory(path);
+                    }
+
+                    else
+                    {
+                        if (path == @"" + Connection.GetAccessPathId() + "Barcodes")
+                        {
+                            string activeDir = @"" + Connection.GetAccessPathId() + "Barcodes";
+
+                            //Create a new subfolder under the current active folder
+                            string newPath = System.IO.Path.Combine(activeDir, "a");
+
+                            // Create the subfolder
+                            System.IO.Directory.CreateDirectory(newPath);
+
+                            string newPathb = System.IO.Path.Combine(activeDir, "b");
+
+                            // Create the subfolder
+                            System.IO.Directory.CreateDirectory(newPathb);
+
+                            string fileLoc = @"" + Connection.GetAccessPathId() + @"Barcodes\a\sample.txt";
+                            FileStream fs = new FileStream(fileLoc, FileMode.Create, FileAccess.ReadWrite);
+                            StreamWriter sw = new StreamWriter(fs);
+                            sw.Write(Connection.GetConnectionString());
+
+                            sw.Close();
+                            fs.Close();
+
+                            string fileLoc1 = @"" + Connection.GetAccessPathId() + @"Barcodes\a\mdst.txt";
+                            FileStream fs1 = new FileStream(fileLoc1, FileMode.Create, FileAccess.ReadWrite);
+                            StreamWriter sw1 = new StreamWriter(fs1);
+                            sw1.Write("0");
+                            sw1.Close();
+                            fs1.Close();
+                        }
+                        if (path == @"" + Connection.GetAccessPathId() + "Images")
+                        {
+                            string activeDir1 = @"" + Connection.GetAccessPathId() + "Images";
+
+                            //Create a new subfolder under the current active folder
+                            string newPath1 = System.IO.Path.Combine(activeDir1, "a");
+
+                            // Create the subfolder
+                            System.IO.Directory.CreateDirectory(newPath1);
+
+                        }
+                        if (path == @"" + Connection.GetAccessPathId() + "PhotoImages")
+                        {
+                            string activeDir2 = @"" + Connection.GetAccessPathId() + "PhotoImages";
+
+                            //Create a new subfolder under the current active folder
+                            string newPath2 = System.IO.Path.Combine(activeDir2, "a");
+
+                            // Create the subfolder
+                            System.IO.Directory.CreateDirectory(newPath2);
+                        }
+                        if (path == @"" + Connection.GetAccessPathId() + "StudentDocs")
+                        {
+                            string activeDir2 = @"" + Connection.GetAccessPathId() + "StudentDocs";
+
+                            // Create the subfolder
+                            System.IO.Directory.CreateDirectory(activeDir2);
+                        }
+                        //MessageBox.Show ("{0} is not a valid file or directory.", path);
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+
+            }
+        }
 
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
         {

@@ -45,7 +45,7 @@ namespace SMS
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(67, 80);
+            this.label1.Location = new System.Drawing.Point(63, 80);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 19);
@@ -58,7 +58,7 @@ namespace SMS
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(67, 126);
+            this.label2.Location = new System.Drawing.Point(63, 126);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(129, 19);
@@ -70,7 +70,7 @@ namespace SMS
             this.btnok.BackColor = System.Drawing.Color.Transparent;
             this.btnok.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnok.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.btnok.Location = new System.Drawing.Point(205, 200);
+            this.btnok.Location = new System.Drawing.Point(201, 200);
             this.btnok.Margin = new System.Windows.Forms.Padding(4);
             this.btnok.Name = "btnok";
             this.btnok.Size = new System.Drawing.Size(96, 37);
@@ -85,7 +85,7 @@ namespace SMS
             this.btncancel.BackColor = System.Drawing.Color.Transparent;
             this.btncancel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
             this.btncancel.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.btncancel.Location = new System.Drawing.Point(316, 200);
+            this.btncancel.Location = new System.Drawing.Point(312, 200);
             this.btncancel.Margin = new System.Windows.Forms.Padding(4);
             this.btncancel.Name = "btncancel";
             this.btncancel.Size = new System.Drawing.Size(96, 37);
@@ -110,7 +110,7 @@ namespace SMS
             // txtUserName
             // 
             this.txtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserName.Location = new System.Drawing.Point(209, 75);
+            this.txtUserName.Location = new System.Drawing.Point(205, 75);
             this.txtUserName.Margin = new System.Windows.Forms.Padding(4);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(201, 26);
@@ -120,7 +120,7 @@ namespace SMS
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(209, 121);
+            this.txtPassword.Location = new System.Drawing.Point(205, 121);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
@@ -134,7 +134,7 @@ namespace SMS
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(67, 167);
+            this.label4.Location = new System.Drawing.Point(63, 167);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(120, 19);
@@ -146,7 +146,7 @@ namespace SMS
             // 
             this.cmbsession.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbsession.FormattingEnabled = true;
-            this.cmbsession.Location = new System.Drawing.Point(209, 167);
+            this.cmbsession.Location = new System.Drawing.Point(205, 167);
             this.cmbsession.Margin = new System.Windows.Forms.Padding(4);
             this.cmbsession.Name = "cmbsession";
             this.cmbsession.Size = new System.Drawing.Size(201, 28);
