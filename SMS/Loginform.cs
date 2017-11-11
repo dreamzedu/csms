@@ -165,16 +165,28 @@ namespace SMS
                 school1.CurrentUser.DbUserId = ds.Tables[0].Rows[0]["dbUserId"].ToString();
                 school1.CurrentUser.RoleId = Convert.ToInt16(ds.Tables[0].Rows[0]["roleId"]);
                 school1.CurrentUser.UserCode = Convert.ToInt32(ds.Tables[0].Rows[0]["UserCode"]);
+                school1.CurrentUser.ActivationValidTill = Convert.ToDateTime(ds.Tables[0].Rows[0]["ActivationValidTill"]);
+                school1.CurrentUser.ActivatedOn = Convert.ToDateTime(ds.Tables[0].Rows[0]["ActivatedOn"]);
+                school1.CurrentUser.IsActive = Convert.ToBoolean(ds.Tables[0].Rows[0]["IsActive"]);
 
                 // Initializing it for school class as well because it is still in use many places
                 school.CurrentUser = school1.CurrentUser;
 
                 SetupAppPaths();
 
+                bool isActive = IsUserActive();
+
                 this.Hide();
-               
-                MDIParent1 main = new MDIParent1(school1.CurrentUser.UserCode.ToString(), school1.CurrentUser.Name);
-                main.Show();
+
+                if (isActive)
+                {
+                    MDIParent1 main = new MDIParent1(school1.CurrentUser.UserCode.ToString(), school1.CurrentUser.Name);
+                    main.Show();
+                }
+                else
+                {
+                    Application.Exit();
+                }
             }
             else
             {
@@ -274,6 +286,35 @@ namespace SMS
             //    }
             //    //}
             //}
+        }
+
+        private bool IsUserActive()
+        {
+            string Pass = CryptorEngine.Encrypt(txtPassword.Text.Trim(), true);
+            SqlConnection con = Connection.GetUserDbConnection();
+            
+            //DataSet ds = Connection.GetDataSet("Select * from MasterUser where UserName='" + txtUserName.Text.Trim() + "' and UserPassword='" + Pass.Trim() + "'; ");
+            SqlDataAdapter adp = new SqlDataAdapter("Select IsActive, ActivationValidTill, ActivatedOn from MasterUser where lower(userId)='" + txtUserName.Text.Trim().ToLower() + "' and pwd='" + Pass + "' and IsActive = 1 and ActivatedOn <= getdate() and ActivationValidTill >= getdate(); ", con);
+            DataSet ds = new DataSet();
+            adp.Fill(ds);
+            if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+            {
+                DateTime date = Convert.ToDateTime(ds.Tables[0].Rows[0]["ActivationValidTill"]);
+                
+                if(DateTime.Now.AddDays(30) > date)
+                {
+                    int dateDiff = DateTime.Now.AddDays(30).Subtract(date).Days;
+                    MessageBox.Show("Your subscription is expiring in next " + dateDiff + " days, please renew your subscription to avoid disruption in your business.");
+                
+                }
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Your subscription has expired, please contact our sales to renew your subscription.");
+
+                return false;
+            }
         }
         private void Loginform_Load(object sender, EventArgs e)
         {

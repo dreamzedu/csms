@@ -30,6 +30,13 @@ namespace SMS
         public string DbName { get; set; }
 
         public short RoleId { get; set; }
+
         public int UserCode { get; internal set; }
+
+        public bool IsActive { get; internal set; }
+
+        public DateTime ActivatedOn { get; internal set; }
+
+        public DateTime ActivationValidTill { get; internal set; }
     }
 }
