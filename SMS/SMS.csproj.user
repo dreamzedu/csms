@@ -2,7 +2,7 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
   <PropertyGroup>
     <ReferencePath>C:\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\;C:\Program Files (x86)\Business Objects\Common\2.8\managed\c:\Program Files\Business Objects\Common\2.8\managed\</ReferencePath>
-    <PublishUrlHistory>http://localhost/winApp1/|http://localhost/winapp1/|http://localhost/SMS/|http://dreamzedu.com/csms/</PublishUrlHistory>
+    <PublishUrlHistory>http://localhost/winApp32/|http://localhost/winApp1/|http://localhost/winapp1/|http://localhost/SMS/|http://dreamzedu.com/csms/</PublishUrlHistory>
     <InstallUrlHistory>
     </InstallUrlHistory>
     <SupportUrlHistory>
