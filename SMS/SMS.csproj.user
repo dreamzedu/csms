@@ -3,13 +3,11 @@
   <PropertyGroup>
     <ReferencePath>C:\Program Files (x86)\SAP BusinessObjects\Crystal Reports for .NET Framework 4.0\Common\SAP BusinessObjects Enterprise XI 4.0\win32_x86\dotnet\;C:\Program Files (x86)\Business Objects\Common\2.8\managed\c:\Program Files\Business Objects\Common\2.8\managed\</ReferencePath>
     <PublishUrlHistory>http://localhost/winApp32/|http://localhost/winApp1/|http://localhost/winapp1/|http://localhost/SMS/|http://dreamzedu.com/csms/</PublishUrlHistory>
-    <InstallUrlHistory>
-    </InstallUrlHistory>
+    <InstallUrlHistory>https://raw.githubusercontent.com/dreamzedu/dreamzedu.github.io/master/x32/</InstallUrlHistory>
     <SupportUrlHistory>
     </SupportUrlHistory>
-    <UpdateUrlHistory>https://raw.githubusercontent.com/dreamzedu/dreamzedu.github.io/master/|https://dreamzedu.github.io/</UpdateUrlHistory>
-    <BootstrapperUrlHistory>
-    </BootstrapperUrlHistory>
+    <UpdateUrlHistory>https://raw.githubusercontent.com/dreamzedu/dreamzedu.github.io/master/x32/|https://raw.githubusercontent.com/dreamzedu/dreamzedu.github.io/master/|https://dreamzedu.github.io/</UpdateUrlHistory>
+    <BootstrapperUrlHistory>http://dreamzedu.github.io/x32/|https://raw.githubusercontent.com/dreamzedu/dreamzedu.github.io/master/x32/|https://raw.githubusercontent.com/dreamzedu/dreamzedu.github.io/master/x32/crystalreports_x86/</BootstrapperUrlHistory>
     <ErrorReportUrlHistory>
     </ErrorReportUrlHistory>
     <FallbackCulture>en-US</FallbackCulture>
