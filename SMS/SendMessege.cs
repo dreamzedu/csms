@@ -181,7 +181,7 @@ namespace SMS
                     }
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)

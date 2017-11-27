@@ -31,7 +31,7 @@ namespace SMS.MpBoardMarksheet
                     " tbl_class ON tbl_classmaster.classcode = tbl_class.classcode INNER JOIN tbl_section ON tbl_class.sectioncode = tbl_section.sectioncode WHERE (tbl_classmaster.classcode = '" + cmbClass.SelectedValue + "')");
 
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void btnShow_Click(object sender, EventArgs e)
@@ -412,6 +412,7 @@ namespace SMS.MpBoardMarksheet
             }
             catch (Exception ex)
             {
+                Logger.LogError(ex); 
                 MessageBox.Show("Exception message:\n    " + ex.Message);
                 trn.Rollback();
             }

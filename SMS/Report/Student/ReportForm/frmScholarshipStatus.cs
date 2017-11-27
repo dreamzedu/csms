@@ -121,7 +121,7 @@ namespace SMS.Report.Student.ReportForm
                 dgvScholarDetails.DefaultCellStyle.BackColor = Color.White;
 
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void chkClassWise_CheckedChanged(object sender, EventArgs e)
@@ -202,7 +202,7 @@ namespace SMS.Report.Student.ReportForm
 
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void chkSanction_CheckedChanged(object sender, EventArgs e)

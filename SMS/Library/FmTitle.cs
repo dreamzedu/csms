@@ -168,7 +168,7 @@ namespace SMS.Library
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    Logger.LogError(ex); MessageBox.Show(ex.Message);
                 }
             }
         }
@@ -209,7 +209,7 @@ namespace SMS.Library
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Logger.LogError(ex); MessageBox.Show(ex.Message);
             }
         }
 
@@ -288,9 +288,9 @@ namespace SMS.Library
                 trn.Commit();
                 MessageBox.Show("Data Saved..", "School");
             }
-            catch (Exception EX)
+            catch (Exception ex)
             {
-                MessageBox.Show(EX.Message);
+                Logger.LogError(ex); MessageBox.Show(ex.Message);
                 trn.Rollback();
             }
         }

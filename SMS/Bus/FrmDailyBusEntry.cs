@@ -72,7 +72,7 @@ namespace SMS.Bus
                 c.GetMdiParent(this).DisableAllEditMenuButtons();
                 DesignForm.fromDesign2(this);
             }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            catch (Exception ex) { Logger.LogError(ex); MessageBox.Show(ex.Message); }
         }
 
         public override void btnedit_Click(object sender, EventArgs e)
@@ -178,7 +178,7 @@ namespace SMS.Bus
                 }
                 else { }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void FrmDailyBusEntry_Load(object sender, EventArgs e)
@@ -200,7 +200,7 @@ namespace SMS.Bus
                 DesignForm.fromDesign1(this);
 
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
 

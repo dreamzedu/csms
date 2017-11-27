@@ -27,7 +27,7 @@ namespace SMS.Library
             }
             catch (Exception ex)
             {
-                throw ex;
+                Logger.LogError(ex); throw ex;
             }
         }
         void chield()
@@ -44,7 +44,7 @@ namespace SMS.Library
                 Connection.BookBcode = GVStudentDetails.CurrentRow.Cells["BarCode"].Value.ToString();
                 this.Close();
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

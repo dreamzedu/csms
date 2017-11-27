@@ -150,7 +150,7 @@ namespace SMS.Hostal
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message);
+                        Logger.LogError(ex); MessageBox.Show(ex.Message);
                         trn.Rollback();
                     }
 
@@ -175,7 +175,7 @@ namespace SMS.Hostal
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message);
+                        Logger.LogError(ex); MessageBox.Show(ex.Message);
                         trn.Rollback();
                     }
                 }
@@ -339,7 +339,7 @@ namespace SMS.Hostal
             }
             catch (Exception ex)
             {
-                throw ex;
+                Logger.LogError(ex); throw ex;
             }
             
         }

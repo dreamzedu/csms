@@ -27,7 +27,7 @@ namespace SMS
             }
             catch (Exception ex)
             {
-
+                Logger.LogError(ex); 
             }
         }
 
@@ -40,7 +40,7 @@ namespace SMS
             }
             catch (Exception ex)
             {
-
+                Logger.LogError(ex); 
             }
         }
 

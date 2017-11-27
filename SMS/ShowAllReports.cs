@@ -22,7 +22,7 @@ namespace SMS
             try
             {
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
     }
 }

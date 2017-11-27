@@ -100,7 +100,7 @@ namespace SMS
                     cmbExamOrder.Text = dt.Rows[0]["ExamOrder"].ToString();
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
 
         }
 

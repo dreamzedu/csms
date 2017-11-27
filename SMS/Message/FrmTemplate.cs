@@ -63,6 +63,7 @@ namespace SMS.Message
             }
             catch (Exception ex)
             {
+                Logger.LogError(ex); 
             }
         }
         public void GetTemplate()
@@ -86,7 +87,7 @@ namespace SMS.Message
                     return;
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
             
         }
         private void Pct_Close_Click(object sender, EventArgs e)
@@ -122,7 +123,7 @@ namespace SMS.Message
                 trn.Commit();
                 MessageBox.Show("Saved..");
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
         
         public override void btnsave_Click(object sender, EventArgs e)

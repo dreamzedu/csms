@@ -66,7 +66,7 @@ namespace SMS
                     DataReader.Close();
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         public override void btnsave_Click(object sender, EventArgs e)
@@ -88,8 +88,9 @@ namespace SMS
                 this.Transaction.Commit();
                 MessageBox.Show("Saved...", "Skills");
             }
-            catch 
+            catch (Exception ex)
             {
+                Logger.LogError(ex); 
                 this.Transaction.Rollback();
             }
         }
@@ -107,7 +108,7 @@ namespace SMS
         //    }
         //    catch (System.Exception ex)
         //    {
-        //        System.Windows.Forms.MessageBox.Show(ex.Message);
+        //        System.Windows.Forms.Logger.LogError(ex); MessageBox.Show(ex.Message);
         //    }
 
         //}

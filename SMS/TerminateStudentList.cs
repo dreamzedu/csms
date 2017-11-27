@@ -38,8 +38,7 @@ namespace SMS
                   "   SELECT schoolname, schooladdress, schoolcity, schoolphone, affiliate_by, principal, registrationno, logoimage   From   tbl_school ");
                   dataGridView1.DataSource = ds.Tables[0];
             }
-            catch 
-            { }
+            catch (Exception ex) { Logger.LogError(ex); }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -66,8 +65,7 @@ namespace SMS
                     MessageBox.Show("Plese Select Session Name Properly..");
                 }
             }
-            catch  
-            { }
+            catch (Exception ex) { Logger.LogError(ex); }
         }
 
         private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)

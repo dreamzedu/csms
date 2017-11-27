@@ -36,7 +36,7 @@ namespace SMS.Account
                 c.cleartext(this);
                 DesignForm.fromDesign2(this);
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         public override void btncancel_Click(object sender, EventArgs e)

@@ -60,7 +60,7 @@ namespace SMS
                     s.Show();
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
         public void GetDuplicateFessH()
         {
@@ -89,7 +89,7 @@ namespace SMS
                     }
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         public void GetDuplicateFessSP()
@@ -136,7 +136,7 @@ namespace SMS
                     s.Show();
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
         public void GetDuplicateFessS()
         {

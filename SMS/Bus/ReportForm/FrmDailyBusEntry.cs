@@ -41,7 +41,7 @@ namespace SMS.Bus.ReportForm
                 cmbBusNo.DataSource = ds.Tables[0];
                 cmbBusNo.DisplayMember = "BusNo";
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void btnExit_Click(object sender, EventArgs e)

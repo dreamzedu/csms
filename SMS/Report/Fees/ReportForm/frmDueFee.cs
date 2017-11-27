@@ -52,7 +52,7 @@ namespace SMS.Report.Fees.ReportForm
                  " '" + cmbSession.SelectedValue + "') GROUP BY tbl_section.sectioncode, tbl_section.sectionname " +
                  " Order by tbl_section.sectioncode");
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
         static bool tsch = false, trte = false; static decimal schamt = 0; 
         public void GetDataStudent(int Studentno)
@@ -305,7 +305,7 @@ namespace SMS.Report.Fees.ReportForm
 
                 dgvMStudent.DataSource = dtTotalFee;
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void cmbSession_Leave(object sender, EventArgs e)
@@ -379,7 +379,7 @@ namespace SMS.Report.Fees.ReportForm
                     dgvMStudent.DataSource = dv;
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void cmbSession_KeyPress(object sender, KeyPressEventArgs e)
@@ -429,7 +429,7 @@ namespace SMS.Report.Fees.ReportForm
                 dgvSStudent.Visible = false;
                 dgvMStudent.Visible = true;
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void dgvMStudent_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -446,7 +446,7 @@ namespace SMS.Report.Fees.ReportForm
                    
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void dtpDate_ValueChanged(object sender, EventArgs e)

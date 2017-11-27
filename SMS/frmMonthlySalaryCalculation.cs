@@ -112,7 +112,7 @@ namespace SMS
                 }
             }
 
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void btnExit_Click(object sender, EventArgs e)

@@ -34,7 +34,7 @@ namespace SMS
 
                 
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
       
         private void btnOk_Click(object sender, EventArgs e)
@@ -112,6 +112,7 @@ namespace SMS
             }     
                 catch(Exception ex)
                 {
+                    Logger.LogError(ex); 
                     MessageBox.Show(ex.Message, "Some Record Missing...", MessageBoxButtons.OK, MessageBoxIcon.Exclamation );
                     getEmployeeList();
                 }
@@ -162,6 +163,7 @@ namespace SMS
 
                     catch (Exception exc)
                     {
+                        Logger.LogError(exc); 
                         MessageBox.Show(exc.Message);
                     }
                 }
@@ -178,7 +180,7 @@ namespace SMS
         private void dgv_DataError_1(object sender, DataGridViewDataErrorEventArgs e)
         {
             try { }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void btnokda_Click(object sender, EventArgs e)
@@ -203,7 +205,7 @@ namespace SMS
                      btnokda.Enabled = false;
                  }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void btnpfamt_Click(object sender, EventArgs e)
@@ -228,7 +230,7 @@ namespace SMS
                      btnpfamt .Enabled = false;
                  }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
 
         }
 
@@ -260,7 +262,7 @@ namespace SMS
                     btnincpay .Enabled = false;
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -295,7 +297,7 @@ namespace SMS
                         btnincESIC.Enabled = false;
                      }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void txtincda_Enter(object sender, EventArgs e)
@@ -341,7 +343,7 @@ namespace SMS
                 }
 
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void frmEmployeeGridWiseList_Paint(object sender, PaintEventArgs e)

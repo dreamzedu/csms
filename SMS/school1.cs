@@ -193,7 +193,7 @@ namespace SMS
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Logger.LogError(ex); MessageBox.Show(ex.Message);
             }
         }
 
@@ -305,7 +305,7 @@ namespace SMS
                                                         row[mtag] = cmb1.Text;
                                                     }
                                                 }
-                                                catch (Exception ex) { }
+                                                catch (Exception ex) { Logger.LogError(ex); }
                                             }
                                             if (inc is CheckBox)
                                             {
@@ -318,6 +318,7 @@ namespace SMS
                                                 }
                                                 catch (Exception ex)
                                                 {
+                                                    Logger.LogError(ex); 
                                                 }
                                             }
                                             if (inc is TextBox)
@@ -328,6 +329,7 @@ namespace SMS
                                                 }
                                                 catch (Exception ex)
                                                 {
+                                                    Logger.LogError(ex); 
                                                 }
                                             }
                                             if (inc is DateTimePicker)
@@ -364,7 +366,7 @@ namespace SMS
                                                 }
                                                 catch (Exception ex)
                                                 {
-                                                    MessageBox.Show(ex.Message);
+                                                    Logger.LogError(ex); MessageBox.Show(ex.Message);
                                                 }
                                             }
                                         }
@@ -428,7 +430,7 @@ namespace SMS
         {
             returnconn(myconn);
             DataSet ds1 = new DataSet();
-            sqlada = new SqlDataAdapter("select * from " + tblname+" where " +fldname+" = "+mvalue, mcon);
+            sqlada = new SqlDataAdapter("select * from " + tblname+" where " +fldname+" = '"+mvalue +"'", mcon);
             sqlada.Fill(ds1);
             if (ds1.Tables[0].Rows.Count == 0) 
             {
@@ -500,6 +502,7 @@ namespace SMS
                     }
                     catch (Exception ex)
                     {
+                        Logger.LogError(ex); 
                     }
                 }
                 if (cnt is DateTimePicker)
@@ -612,7 +615,7 @@ namespace SMS
                                                             cmb1.Text = ds1.Tables[0].Rows[0][mtag].ToString();
                                                         }
                                                     }
-                                                    catch (Exception ex) { }
+                                                    catch (Exception ex) { Logger.LogError(ex); }
                                                 }
                                                 if (inc is CheckBox)
                                                 {
@@ -632,6 +635,7 @@ namespace SMS
                                                     }
                                                     catch (Exception ex)
                                                     {
+                                                        Logger.LogError(ex); 
                                                     }
                                                 }
                                                 if (inc is TextBox)
@@ -642,6 +646,7 @@ namespace SMS
                                                     }
                                                     catch (Exception ex)
                                                     {
+                                                        Logger.LogError(ex); 
                                                     }
                                                 }
                                                 if (inc is DateTimePicker)
@@ -653,6 +658,7 @@ namespace SMS
                                                     }
                                                     catch (Exception ex)
                                                     {
+                                                        Logger.LogError(ex); 
                                                     }
                                                 }
                                             }
@@ -679,6 +685,7 @@ namespace SMS
                                             }
                                             catch (Exception ex)
                                             {
+                                                Logger.LogError(ex); 
                                             }
                                         }
                                         if (cnt is ComboBox)
@@ -713,6 +720,7 @@ namespace SMS
                                             }
                                             catch (Exception ex)
                                             {
+                                                Logger.LogError(ex); 
                                             }
                                         }
                                         if (cnt is CheckBox)
@@ -733,6 +741,7 @@ namespace SMS
                                             }
                                             catch (Exception ex)
                                             {
+                                                Logger.LogError(ex); 
                                             }
                                         }
                                         if (cnt is DateTimePicker)
@@ -744,6 +753,7 @@ namespace SMS
                                             }
                                             catch (Exception ex)
                                             {
+                                                Logger.LogError(ex); 
                                             }
                                         }
                                     }
@@ -792,6 +802,7 @@ namespace SMS
                         }
                         catch (Exception ex)
                         {
+                            Logger.LogError(ex); 
                             //ds1.Tables[0].Rows[0][mtag] = 0;
                         }
                     }
@@ -915,7 +926,7 @@ namespace SMS
                                                         ds1.Tables[0].Rows[0][mtag] = cmb1.Text;
                                                     }
                                                 }
-                                                catch (Exception ex) { }
+                                                catch (Exception ex) { Logger.LogError(ex); }
                                             }
                                             if (inc is CheckBox)
                                             {
@@ -928,6 +939,7 @@ namespace SMS
                                                 }
                                                 catch (Exception ex)
                                                 {
+                                                    Logger.LogError(ex); 
                                                 }
                                             }
                                             if (inc is TextBox)
@@ -938,6 +950,7 @@ namespace SMS
                                                 }
                                                 catch (Exception ex)
                                                 {
+                                                    Logger.LogError(ex); 
                                                 }
                                             }
                                             if (inc is DateTimePicker)
@@ -970,6 +983,7 @@ namespace SMS
                                         }
                                         catch (Exception ex)
                                         {
+                                            Logger.LogError(ex); 
                                             //ds1.Tables[0].Rows[0][mtag] = 0;
                                         }
                                     }
@@ -1066,8 +1080,9 @@ namespace SMS
                 listBoxCust.DataSource = DS.Tables[0];
 
             }
-            catch (SystemException MsgException)
+            catch (Exception MsgException)
             {
+                Logger.LogError(MsgException); 
                 MessageBox.Show(MsgException.Message);
             }
 
@@ -1092,8 +1107,9 @@ namespace SMS
                 listBoxCust.DataSource = DS.Tables[0];
                 
             }
-            catch (SystemException MsgException)
+            catch (Exception MsgException)
             {
+                Logger.LogError(MsgException); 
                 MessageBox.Show(MsgException.Message) ;
             }
 
@@ -1115,11 +1131,13 @@ namespace SMS
                 // fill listbox
                 listBoxCust.DisplayMember = Displayfld;
                 listBoxCust.ValueMember = Valuefld;
+                
                 listBoxCust.DataSource = DS.Tables[0];
 
             }
-            catch (SystemException MsgException)
+            catch (Exception MsgException)
             {
+                Logger.LogError(MsgException); 
                 MessageBox.Show(MsgException.Message);
             }
 
@@ -1143,8 +1161,9 @@ namespace SMS
                 listBoxCust.DataSource = DS.Tables[0];
 
             }
-            catch (SystemException MsgException)
+            catch (Exception MsgException)
             {
+                Logger.LogError(MsgException); 
                 MessageBox.Show(MsgException.Message);
             }
 
@@ -1168,8 +1187,9 @@ namespace SMS
                 listBoxCust.DataSource = DS.Tables[0];
 
             }
-            catch (SystemException MsgException)
+            catch (Exception MsgException)
             {
+                Logger.LogError(MsgException); 
                 MessageBox.Show(MsgException.Message);
             }
 

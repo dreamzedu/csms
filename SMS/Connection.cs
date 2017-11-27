@@ -341,7 +341,7 @@ namespace SMS
             }
             catch (Exception ex)
             {
-                
+                Logger.LogError(ex); 
             }
             return prevClsCode;
         }
@@ -672,6 +672,7 @@ namespace SMS
                 }
                 catch(Exception ex)
                 {
+                    Logger.LogError(ex); 
                     MessageBox.Show("Cannot connect to database. Please check your internet connection or firewall.");
                 }
             }
@@ -727,6 +728,7 @@ namespace SMS
             }
             catch (Exception ex)
             {
+                Logger.LogError(ex); 
                 MessageBox.Show(
                     "There is some issue in your database setup. Please contact your vendor with below information.\n" +
                     ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -746,6 +748,7 @@ namespace SMS
             }
             catch(Exception ex)
             {
+                Logger.LogError(ex); 
                 MessageBox.Show(
                     "There is some issue in your database setup. Please contact your vendor with below information.\n" +
                     ex.Message,"Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -766,6 +769,7 @@ namespace SMS
             }
             catch (Exception ex)
             {
+                Logger.LogError(ex); 
                 MessageBox.Show(
                     "There is some issue in your database setup. Please contact your vendor with below information.\n" +
                     ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -789,10 +793,12 @@ namespace SMS
             }
             catch (Exception ex)
             {
+                Logger.LogError(ex); 
                 MessageBox.Show(
                     "There is some issue in your database setup. Please contact your vendor with below information.\n" +
                     ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Application.Exit();
+                Environment.Exit(0);
                 return null;
             }
         }
@@ -809,6 +815,7 @@ namespace SMS
             }
             catch (Exception ex)
             {
+                Logger.LogError(ex); 
                 MessageBox.Show(
                     "There is some issue in your database setup. Please contact your vendor with below information.\n" +
                     ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -1099,28 +1106,32 @@ namespace SMS
                 }
                 catch (ProtocolViolationException ex)
                 {
+                    Logger.LogError(ex); 
                     MessageBox.Show("Text Message can not be send to the destination.\n\tPlease Check Text Message...");
                 }
 
                 catch (WebException ex)
                 {
+                    Logger.LogError(ex); 
                     MessageBox.Show("There Are Server Problem.\n\tPlease Wait...");
                 }
 
                 catch (System.InvalidOperationException ex)
                 {
+                    Logger.LogError(ex); 
                     MessageBox.Show("Previous Message Sending Under Process.\n\tPlease Wait...");
                 }
 
                 catch (System.NotSupportedException ex)
                 {
+                    Logger.LogError(ex); 
                     MessageBox.Show("Text Message format is not supported by server.\n\tPlease Check...");
                 }
 
             }
             else
             {
-                MessageBox.Show("There Are Not Connection For Internet/Network Connection...\n\tPlease Check Internet Connection. ", "Internet Connection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("There are no Internet/Network connection...\n\tPlease check your Internet Connection. ", "Internet Connection", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

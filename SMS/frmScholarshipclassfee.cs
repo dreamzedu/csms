@@ -48,7 +48,7 @@ namespace SMS
                     DataReader.Close();
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         public frmScholarshipclassfee()

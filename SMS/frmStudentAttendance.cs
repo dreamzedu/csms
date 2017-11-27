@@ -68,7 +68,7 @@ namespace SMS
                     return;
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         public string  SendMessage(int stuno,string name,string cl,System.Data.SqlClient.SqlTransaction trn)
@@ -116,7 +116,7 @@ namespace SMS
                                 rstr = "True";
                             }
                         }
-                        catch { }
+                        catch(Exception ex){Logger.LogError(ex); }
                     }
                 }
                 else

@@ -26,7 +26,7 @@ namespace SMS.Library
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Logger.LogError(ex); MessageBox.Show(ex.Message);
             }
         }
 
@@ -53,7 +53,7 @@ namespace SMS.Library
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Logger.LogError(ex); MessageBox.Show(ex.Message);
             }
         }
 
@@ -68,7 +68,7 @@ namespace SMS.Library
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Logger.LogError(ex); MessageBox.Show(ex.Message);
             }
         }
 
@@ -83,6 +83,7 @@ namespace SMS.Library
             }
             catch (Exception ex)
             {
+                Logger.LogError(ex); 
             }
         }
 
@@ -114,7 +115,7 @@ namespace SMS.Library
             }
             catch (Exception ex)
             {
-
+                Logger.LogError(ex); 
             }
         }
 

@@ -95,7 +95,7 @@ namespace SMS
                  " '" + cmbSession .SelectedValue + "') GROUP BY tbl_section.sectioncode, tbl_section.sectionname " +
                  " Order by tbl_section.sectioncode");
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
         static bool tsch = false; static decimal schamt = 0;
         private void cmbSession_Leave(object sender, EventArgs e)
@@ -181,7 +181,7 @@ namespace SMS
 
                 dataGridView1.DataSource = dtTotalFee;
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
 
         }
 
@@ -256,7 +256,7 @@ namespace SMS
                     dataGridView1.DataSource = dv;
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void cmbSession_KeyPress(object sender, KeyPressEventArgs e)
@@ -310,7 +310,7 @@ namespace SMS
 
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void frmDueFee_Paint(object sender, PaintEventArgs e)

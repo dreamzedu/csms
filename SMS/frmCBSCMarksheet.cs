@@ -47,7 +47,7 @@ namespace SMS
                 }
                 
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
             
         }
 
@@ -285,7 +285,7 @@ namespace SMS
 
 
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         } 
 
         private void btnSaveSocialSkills_Click(object sender, EventArgs e)
@@ -309,7 +309,7 @@ namespace SMS
                     }
                
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void btnEmotionalSkills_Click(object sender, EventArgs e)
@@ -333,7 +333,7 @@ namespace SMS
                     chkEmotionalSkillslist.Items.Add(dr[0].ToString());
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void btnWorkeducation_Click(object sender, EventArgs e)
@@ -354,7 +354,7 @@ namespace SMS
                     chkWorkEduList.Items.Add(dr[0].ToString());
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void btnPerformingArts_Click(object sender, EventArgs e)
@@ -376,7 +376,7 @@ namespace SMS
                 }
 
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
 
         }
 
@@ -401,7 +401,7 @@ namespace SMS
                 }
 
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void btnAttitudeTeacher_Click(object sender, EventArgs e)
@@ -452,7 +452,7 @@ namespace SMS
                     chkAttitudeSchoolmatesList.Items.Add(dr[0].ToString());
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void btnAttitudeSchProgrammes_Click(object sender, EventArgs e)
@@ -476,7 +476,7 @@ namespace SMS
                     chkattitudeschprolist.Items.Add(dr[0].ToString());
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
 
         }
 
@@ -502,7 +502,7 @@ namespace SMS
                     chkValueSkillsList.Items.Add(dr[0].ToString());
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void btnLiterarySkills_Click(object sender, EventArgs e)
@@ -527,7 +527,7 @@ namespace SMS
                     chkLiteraryList.Items.Add(dr[0].ToString());
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void btnScientificSkills_Click(object sender, EventArgs e)
@@ -551,7 +551,7 @@ namespace SMS
                     chkScientificSkillsList.Items.Add(dr[0].ToString());
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void btnOrganizationalSkills_Click(object sender, EventArgs e)
@@ -575,7 +575,7 @@ namespace SMS
                     chkOrganizationSList.Items.Add(dr[0].ToString());
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void btnInfoTechSkills_Click(object sender, EventArgs e)
@@ -598,7 +598,7 @@ namespace SMS
                     chkInformationCommList.Items.Add(dr[0].ToString());
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void btnHealthPhyEdu_Click(object sender, EventArgs e)
@@ -622,7 +622,7 @@ namespace SMS
                 }
                 
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -829,8 +829,9 @@ namespace SMS
                     txtScholarNo.SelectAll();
                 }     
             }
-            catch 
+            catch(Exception ex)
             {
+                Logger.LogError(ex); 
                 trn.Rollback();
                 MessageBox.Show("Record Not Saved!!!\n\tSome Record Missing.....");
             }
@@ -1025,7 +1026,7 @@ namespace SMS
                     }
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
  
         private string GetGrade(decimal ObtainMarks)
@@ -1150,7 +1151,7 @@ namespace SMS
                     }
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         public override void btnnew_Click(object sender, EventArgs e)

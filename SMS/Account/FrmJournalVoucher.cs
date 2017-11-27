@@ -353,7 +353,7 @@ namespace SMS.Account
             }
             catch (Exception ex)
             {
-                throw ex;
+                Logger.LogError(ex); throw ex;
             }
         }
 

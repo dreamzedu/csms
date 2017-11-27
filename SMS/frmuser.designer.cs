@@ -105,7 +105,7 @@
             this.txtuser.Name = "txtuser";
             this.txtuser.Size = new System.Drawing.Size(181, 25);
             this.txtuser.TabIndex = 0;
-            this.txtuser.Tag = "username";
+            this.txtuser.Tag = "userId";
             this.txtuser.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtuser_KeyPress_1);
             // 
             // label2
@@ -132,7 +132,7 @@
             this.txtpassword.PasswordChar = '*';
             this.txtpassword.Size = new System.Drawing.Size(181, 25);
             this.txtpassword.TabIndex = 1;
-            this.txtpassword.Tag = "userpassword";
+            this.txtpassword.Tag = "pwd";
             // 
             // txtusercode
             // 

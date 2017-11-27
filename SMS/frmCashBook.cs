@@ -129,7 +129,7 @@ namespace SMS
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Logger.LogError(ex); MessageBox.Show(ex.Message);
             }
         }
         private void btnExit_Click(object sender, EventArgs e)

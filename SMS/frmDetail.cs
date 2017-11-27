@@ -70,7 +70,7 @@ namespace SMS
                         }
                     }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void txtScholarNo_TextChanged(object sender, EventArgs e)
@@ -133,7 +133,7 @@ namespace SMS
                     }
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void frmDetail_KeyDown(object sender, KeyEventArgs e)
@@ -281,7 +281,7 @@ namespace SMS
                 }
 
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void frmDetail_Paint(object sender, PaintEventArgs e)
@@ -340,7 +340,7 @@ namespace SMS
                         f = Connection.GetDocuments(Convert.ToString(dataGridView1["Scholar No", row].Value), "DOB");
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         

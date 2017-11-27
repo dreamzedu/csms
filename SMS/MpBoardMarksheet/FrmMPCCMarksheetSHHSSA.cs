@@ -54,7 +54,7 @@ namespace SMS.MpBoardMarksheet
                     cmbSankay.SelectedIndex = 0;
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
         public void GetDetailsofI_V()
         {
@@ -1179,6 +1179,7 @@ namespace SMS.MpBoardMarksheet
             }
             catch (Exception ex)
             {
+                Logger.LogError(ex); 
                 MessageBox.Show("Exception message:\n    " + ex.Message);
                 trn.Rollback();
             }
@@ -1503,6 +1504,7 @@ namespace SMS.MpBoardMarksheet
                 }
                 catch (Exception ex)
                 {
+                    Logger.LogError(ex); 
                     MessageBox.Show("Record Not Saved Please Try Again...");
                     trn.Rollback();
                     btnSaveDesInd.Enabled = false;

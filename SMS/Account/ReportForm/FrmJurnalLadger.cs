@@ -170,7 +170,7 @@ namespace SMS.Account.ReportForm
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Logger.LogError(ex); MessageBox.Show(ex.Message);
             }
         }
         public void GetStudentDetails()
@@ -201,6 +201,7 @@ namespace SMS.Account.ReportForm
             }
             catch (Exception ex)
             {
+                Logger.LogError(ex); 
                MessageBox.Show (ex.Message );
             }
         }
@@ -232,7 +233,7 @@ namespace SMS.Account.ReportForm
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Logger.LogError(ex); MessageBox.Show(ex.Message);
             }
         }
         public void GetBankDetails()
@@ -263,7 +264,7 @@ namespace SMS.Account.ReportForm
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Logger.LogError(ex); MessageBox.Show(ex.Message);
             }
         }
         public void GetEmployeeDetails()
@@ -294,7 +295,7 @@ namespace SMS.Account.ReportForm
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Logger.LogError(ex); MessageBox.Show(ex.Message);
             }
         }
         private void btnOk_Click(object sender, EventArgs e)

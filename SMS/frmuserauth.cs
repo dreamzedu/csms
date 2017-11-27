@@ -92,7 +92,7 @@ namespace SMS
             chk();
             c.getconnstr();
             //c.FillcomboBox("select * from tbl_user Where UserCode<>1001 order by username", "username", "usercode", ref cmbUser);
-            c.FillcomboBox("select * from MasterUser order by userId",Connection.GetUserDbConnection(), "userId", "usercode", ref cmbUser);
+            c.FillcomboBox("select * from MasterUser order by userId where parentUserId='"+ school1.CurrentUser.ParentUserId+"'",Connection.GetUserDbConnection(), "userId", "usercode", ref cmbUser);
             c.returnconn(c.myconn);
             SqlCommand command = new SqlCommand("select count(*) from tbl_menu", c.myconn);
             command.CommandTimeout = 120;

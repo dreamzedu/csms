@@ -55,6 +55,7 @@ namespace SMS.Library
             }
             catch (Exception ex)
             {
+                Logger.LogError(ex); 
             }
         }
 
@@ -176,10 +177,11 @@ namespace SMS.Library
             }
             catch (Exception ex)
             {
+                Logger.LogError(ex); 
                 MessageBox.Show("PLease check properly.. ");
                 txtBookBarcodeNo.Text = "";
                 txtBookBarcodeNo.Focus();
-                //MessageBox.Show(ex.Message);
+                //Logger.LogError(ex); MessageBox.Show(ex.Message);
                 //txtBookBarcodeNo .Text = "Your Book Issued Limit is Over";
                 //txtBookBarcodeNo.Enabled = false;
                 //txtBookBarcodeNo.ReadOnly = true;
@@ -210,7 +212,7 @@ namespace SMS.Library
 
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void btnsave_Click(object sender, EventArgs e)
@@ -272,7 +274,7 @@ namespace SMS.Library
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message);
+                Logger.LogError(ex); MessageBox.Show(ex.Message);
             }
         }
 

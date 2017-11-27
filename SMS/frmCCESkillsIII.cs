@@ -71,8 +71,9 @@ namespace SMS
                     txtHealthPhyEdu.Focus();
                 }
             }
-            catch 
+            catch (Exception ex)
             {
+                Logger.LogError(ex); 
                 trn.Rollback();
                 MessageBox.Show("Record Not Saved!!!\n\tSome Record Missing.....");
             }

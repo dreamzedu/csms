@@ -145,7 +145,7 @@ namespace SMS.Hostal
                     }
 
                 }
-                catch { };
+                catch(Exception ex){Logger.LogError(ex); };
 
             } reader.Close();
         }

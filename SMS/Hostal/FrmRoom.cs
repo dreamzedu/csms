@@ -147,7 +147,7 @@ namespace SMS.Hostal
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Logger.LogError(ex); MessageBox.Show(ex.Message);
                 trn.Rollback();
             }
         }
@@ -231,7 +231,7 @@ namespace SMS.Hostal
                     }
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         public override void frm_keydown(object sender, KeyEventArgs e)

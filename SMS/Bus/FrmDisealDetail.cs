@@ -56,7 +56,7 @@ namespace SMS.Bus
                 c.cleartext(this);
                 DesignForm.fromDesign2(this);
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         public override void btnedit_Click(object sender, EventArgs e)

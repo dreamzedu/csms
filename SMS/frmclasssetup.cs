@@ -168,7 +168,7 @@ namespace SMS
             {
                 c.showdata("tbl_classmaster", c.myconn, this, "classcode", listBox1 .SelectedValue.ToString () );
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void frmclasssetup_Paint(object sender, PaintEventArgs e)

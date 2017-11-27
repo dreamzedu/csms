@@ -114,7 +114,7 @@ namespace SMS
                 }
             }
 
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void dataGridView1_CellValidated(object sender, DataGridViewCellEventArgs e)
@@ -148,7 +148,7 @@ namespace SMS
                     }
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void dataGridView1_RowValidated(object sender, DataGridViewCellEventArgs e)
@@ -169,7 +169,7 @@ namespace SMS
                     dataGridView1.Rows[e.RowIndex].Cells["Paid"].Value = false;
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void btnMakePayment_Click(object sender, EventArgs e)

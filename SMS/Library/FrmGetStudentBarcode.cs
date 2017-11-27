@@ -27,7 +27,7 @@ namespace SMS.Library
             }
             catch (Exception ex)
             {
-                throw ex;
+                Logger.LogError(ex); throw ex;
             }
         }
 
@@ -46,7 +46,7 @@ namespace SMS.Library
                 Connection.StudentBcode = GVStudentDetails.CurrentRow.Cells["barcode"].Value.ToString();
                 this.Close();
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
            
         }
 

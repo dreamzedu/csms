@@ -1403,7 +1403,7 @@ namespace SMS.Report.Student.ReportForm
                 tdv.Sort = "Name";
                 dataGridView1.DataSource = (DataTable)tdv.ToTable();
             }
-            catch (Exception ex) { throw ex; }
+            catch (Exception ex) { Logger.LogError(ex); throw ex; }
 
         }
         public override void btnprint_Click(object sender, EventArgs e)
@@ -1432,7 +1432,7 @@ namespace SMS.Report.Student.ReportForm
 
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -1450,7 +1450,7 @@ namespace SMS.Report.Student.ReportForm
                     dataGridView1.DataSource = dtStudentDetail;
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void cmbStudentStatus_SelectedIndexChanged(object sender, EventArgs e)
@@ -1566,7 +1566,7 @@ namespace SMS.Report.Student.ReportForm
                 dataGridView1.Columns[16].Visible = false;
                 dataGridView1.Columns[17].Visible = false;
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)

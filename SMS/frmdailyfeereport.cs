@@ -52,7 +52,7 @@ namespace SMS
                     dataGridView1.DataSource = ds.Tables[0];
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
         public void FillGridForH()
         {
@@ -65,7 +65,7 @@ namespace SMS
                     dataGridView1.DataSource = ds.Tables[0];
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
         public void GetFeeDetailsS()
         {
@@ -82,7 +82,7 @@ namespace SMS
             }
             catch (Exception ex)
             {
-
+                Logger.LogError(ex); 
             }
         }
         public void GetFeeDetailsH()
@@ -100,7 +100,7 @@ namespace SMS
             }
             catch (Exception ex)
             {
-
+                Logger.LogError(ex); 
             }
         }
 

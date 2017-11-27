@@ -135,7 +135,7 @@ namespace SMS
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message);
+                        Logger.LogError(ex); MessageBox.Show(ex.Message);
                     }
                     #endregion
 
@@ -144,7 +144,7 @@ namespace SMS
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Logger.LogError(ex); MessageBox.Show(ex.Message);
             }
             #endregion
         }
@@ -625,7 +625,7 @@ namespace SMS
                 //lblStatus.Text = "Status";
                
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
 
@@ -635,7 +635,7 @@ namespace SMS
             {
                 System.Diagnostics.Process.Start("");
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         } 
 
         private void newCCEMarksDetailToolStripMenuItem_Click(object sender, EventArgs e)
@@ -681,7 +681,7 @@ namespace SMS
                 }
 
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void messageToStudentsParentToolStripMenuItem_Click(object sender, EventArgs e)

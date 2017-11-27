@@ -39,6 +39,7 @@ namespace SMS
             }
             catch (Exception ex)
             {
+                Logger.LogError(ex); 
             }
         }
 
@@ -431,7 +432,7 @@ namespace SMS
                 dataGridView1.Columns["Photo"].Visible = false;
 
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         

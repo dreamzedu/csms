@@ -74,8 +74,8 @@ namespace SMS
                         txtusercode.Text = mstudentno.ToString();
                         txtpassword.Text = CryptorEngine.Encrypt(txtpassword.Text.Trim(), true);
                    //     txtuser.Text = CryptorEngine.Encrypt(txtuser.Text, true);
-                        c.executesql("insert into MasterUser (userId, pwd,  masterUserId, isPrimaryUser, dbUserId, dbUserPwd, dbName, UserLevel, roleId, userCode ) values('" + txtuser.Text.Trim() + "','" + txtpassword.Text + "','" + school1.CurrentUser.UserId + "',false,'" + school1.CurrentUser.DbUserId + "','" + school1.CurrentUser.DbUserPwd + "','" + school1.CurrentUser.DbName + "'," + CmbUserRole.SelectedValue + "," + CmbUserRole.SelectedValue + ",'" + mstudentno.ToString() + "');", Connection.GetUserDbConnection());
-                        c.insertdata("MasterUser", Connection.GetUserDbConnection(), this);
+                        c.executesql("insert into MasterUser (userId, pwd, parentUserId, isPrimaryUser, dbUserId, dbUserPwd, dbName, UserLevel, roleId, userCode ) values('" + txtuser.Text.Trim() + "','" + txtpassword.Text + "','" + school1.CurrentUser.UserId + "',0,'" + (string.IsNullOrEmpty(school1.CurrentUser.ParentUserId) ? school1.CurrentUser.DbUserId : school1.CurrentUser.ParentUserId) + "','" + school1.CurrentUser.DbUserPwd + "','" + school1.CurrentUser.DbName + "'," + CmbUserRole.SelectedIndex + "," + CmbUserRole.SelectedIndex + ",'" + mstudentno.ToString() + "');", Connection.GetUserDbConnection());
+                        //c.insertdata("MasterUser", Connection.GetUserDbConnection(), this);
                         MessageBox.Show("Record Saved...", "");
                         //this.Hide();
                         DataSet ds2 = Connection.GetDataSet("Select Count(*) from tbl_Userauth ");
@@ -86,11 +86,12 @@ namespace SMS
                             mdiForm.ShowUserControl(new frmuserauth(), "Set User Permissions");
                             //Form mainForm = new frmuserauth();
                             //mainForm.Show();
+                            return;
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Duplicate data not allowed");
+                        MessageBox.Show("User Id already exist. Please choose a different user id.");
                     }
 
 
@@ -129,8 +130,8 @@ namespace SMS
             //DesignForm.fromDesign1(this); 
             c.GetMdiParent(this).EnableAllEditMenuButtons();
             c.getconnstr();
-            
-            c.FillListBox("select * from MasterUser  where parentUserId='" + school1.CurrentUser.UserId + "' and UserCode<>1001 order by userId",Connection.GetUserDbConnection(), "userId", "usercode", ref  lstbxUser);  
+
+            c.FillListBox("select * from MasterUser  where parentUserId='" + (string.IsNullOrEmpty(school1.CurrentUser.ParentUserId) ? school1.CurrentUser.UserId : school1.CurrentUser.UserId) + "' and UserCode<>1001 order by userId", Connection.GetUserDbConnection(), "userId", "usercode", ref  lstbxUser);  
            // c.FillListBox("select * from tbl_user", "username", "usercode", ref  listBox1);  
 
         }
@@ -165,15 +166,15 @@ namespace SMS
         {
             Connection.ExecuteNonQuery("delete  from MasterUser where userId='" + txtuser.Text + "' ", Connection.GetUserDbConnection());
             MessageBox.Show("Record Deleted");
-            c.FillListBox("select * from MasterUser  where parentUserId='" + school1.CurrentUser.UserId + "' UserCode<>1001 order by userId",Connection.GetUserDbConnection(), "userId", "usercode", ref  lstbxUser);
+            c.FillListBox("select * from MasterUser  where parentUserId='" + (string.IsNullOrEmpty(school1.CurrentUser.ParentUserId) ? school1.CurrentUser.UserId : school1.CurrentUser.UserId) + "' UserCode<>1001 order by userId", Connection.GetUserDbConnection(), "userId", "usercode", ref  lstbxUser);
             c.cleartext(this);
         }
 
         private void listBox1_Click(object sender, EventArgs e)
         {
-            String lstval = Convert.ToString(lstbxUser.SelectedValue);
+            String lstval = Convert.ToString(lstbxUser.Text);
             //string userlvl = Convert.ToString(listBox1.SelectedIndex);
-            c.showdata("MasterUser", Connection.GetUserDbConnection(), this, "usercode", lstval);
+            c.showdata("MasterUser", Connection.GetUserDbConnection(), this, "userId", lstval);
            // txtuser.Text = CryptorEngine.Decrypt (txtuser.Text, true);
             txtpassword.Text = CryptorEngine.Decrypt(txtpassword.Text, true);
             //DataSet ds34 = Connection.GetDataSet("select UserLevel from tbl_user where usercode='1001'");

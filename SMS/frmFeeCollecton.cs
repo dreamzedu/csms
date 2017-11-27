@@ -290,7 +290,7 @@ namespace SMS
                     decimal.Parse(txtLateFee.Text) -
                      decimal.Parse(txtConsession.Text), 2)).ToString();
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         void TotalPaid()
@@ -309,7 +309,7 @@ namespace SMS
                 }
 
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void txtFeeAmount_TextChanged(object sender, EventArgs e)
@@ -323,7 +323,7 @@ namespace SMS
                     txtFeeAmount.SelectAll();
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
             this.NetPayment();
         }
 
@@ -502,7 +502,7 @@ namespace SMS
                                             dtStudent.Rows[0]["Website"].ToString());                   //Website
                                     }
                                 }
-                                catch { }
+                                catch(Exception ex){Logger.LogError(ex); }
                             }
                             #endregion
                             if (this.MessageService)
@@ -557,7 +557,7 @@ namespace SMS
                                             dtStudent.Rows[0]["Website"].ToString());                   //Website
                                     }
                                 }
-                                catch { }
+                                catch(Exception ex){Logger.LogError(ex); }
                             }
                             #endregion
                             if (this.MessageService)
@@ -585,7 +585,7 @@ namespace SMS
             {
                 trn.Rollback();
                 MessageBox.Show("Fee Transaction Is Not Completed.\n\tPlease Try Again.");
-                MessageBox.Show(ex.Message);
+                Logger.LogError(ex); 
                c.GetMdiParent(this).ToggleSaveButton(false);
                 
             }
@@ -636,7 +636,7 @@ namespace SMS
                     s.Show();
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         public override void frm_keydown(object sender, KeyEventArgs e)
@@ -723,7 +723,7 @@ namespace SMS
                 dataGridView1.Columns["SectionCode"].Visible = false;
                 dataGridView1.Columns["Photo"].Visible = false;
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void txtFeeRcptNo_Validated(object sender, EventArgs e)
@@ -1015,7 +1015,7 @@ namespace SMS
                 txtscholarno.Text = dataGridView1.Rows[e.RowIndex].Cells["Scholar No"].Value as string;
                 txtscholarno.Focus();
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -1026,7 +1026,7 @@ namespace SMS
                 txtscholarno.Text = dataGridView1.Rows[e.RowIndex].Cells["Scholar No"].Value as string;
                 txtscholarno.Focus();
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void frmFeeCollecton_Paint(object sender, PaintEventArgs e)

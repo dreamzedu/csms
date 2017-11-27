@@ -146,7 +146,7 @@ namespace SMS
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message);
+                        Logger.LogError(ex); MessageBox.Show(ex.Message);
                         trn.Rollback();
                     }
                     trn.Dispose();
@@ -191,7 +191,7 @@ namespace SMS
                     }
                     catch(Exception ex)
                     {
-                        MessageBox.Show(ex.Message);
+                        Logger.LogError(ex); MessageBox.Show(ex.Message);
                         trn.Rollback();
                     }
                     trn.Dispose();
@@ -214,7 +214,7 @@ namespace SMS
                     txtvoucherno.Focus();
                
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
         private void txtvoucherno_Validated(object sender, EventArgs e)
         {
@@ -267,7 +267,7 @@ namespace SMS
             //        dtp.Focus();
             //    }
             //}
-            //catch { }
+            //catch(Exception ex){Logger.LogError(ex); }
         }
         private void dtp_Enter(object sender, EventArgs e)
         {

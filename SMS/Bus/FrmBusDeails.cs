@@ -86,7 +86,7 @@ namespace SMS.Bus
                 txtRTONo.Focus();
                
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         public override void btnedit_Click(object sender, EventArgs e)
@@ -219,7 +219,7 @@ namespace SMS.Bus
                 }
                 else { }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void txtSeatsCapacity_KeyPress(object sender, KeyPressEventArgs e)

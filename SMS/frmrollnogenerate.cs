@@ -168,7 +168,7 @@ namespace SMS
                     datagridview1.Columns["OGrade"].Visible = false;
                 }
             }
-            catch (Exception ex) { MessageBox.Show("this is leave exception area." + ex.Message); }
+            catch (Exception ex) { Logger.LogError(ex); MessageBox.Show("this is leave exception area." + ex.Message); }
         }
 
         private void valcmbclass_SelectedIndexChanged(object sender, EventArgs e)
@@ -193,7 +193,7 @@ namespace SMS
                     }
                 }
             }
-            catch { MessageBox.Show("this is index change exception area."); }
+            catch (Exception ex){ Logger.LogError(ex); MessageBox.Show("this is index change exception area."); }
         }
 
         private void txtTotalLecture_Leave(object sender, EventArgs e)
@@ -207,7 +207,7 @@ namespace SMS
                     r.Cells["Per"].Value = 0.00;
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void txtrollno_Leave(object sender, EventArgs e)
@@ -230,7 +230,7 @@ namespace SMS
                     }
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
 
@@ -386,7 +386,7 @@ namespace SMS
                     MessageBox.Show("Record Updated Successfully.", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            catch (Exception ex) { Logger.LogError(ex); MessageBox.Show(ex.Message); }
         }
 
         private void btnStudentReport_Click(object sender, EventArgs e)
@@ -437,10 +437,10 @@ namespace SMS
                             datagridview1.Rows[e.RowIndex].Cells[5].Value = 0;
                         }
                     }
-                    catch { }
+                    catch(Exception ex){Logger.LogError(ex); }
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void frmrollnogenerate_Paint(object sender, PaintEventArgs e)

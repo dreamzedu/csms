@@ -30,14 +30,14 @@ namespace SMS
                     {
                         this.dtgResult.DataSource = Connection.GetDataTable(this.txtCommand.Text.Trim());
                     }
-                    catch { }
+                    catch(Exception ex){Logger.LogError(ex); }
                 else
                 {
                     try
                     {
                         lblResult .Text = Connection.AllPerform(this.txtCommand.Text.Trim()).ToString ();
                     }
-                    catch { }
+                    catch(Exception ex){Logger.LogError(ex); }
                 }
 
             }

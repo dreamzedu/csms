@@ -137,7 +137,7 @@ namespace SMS
                 }
                 
             }
-            catch (Exception ex) { throw ex; }
+            catch (Exception ex) { Logger.LogError(ex); throw ex; }
             DataSet ds = Connection.GetDataSet("SELECT     classname, classcode FROM         tbl_classmaster order by ClassOrder");
             cmbClassName.DataSource = ds.Tables[0];
             cmbClassName.DisplayMember = ds.Tables[0].Columns["classname"].ToString();
@@ -261,7 +261,7 @@ namespace SMS
                 }
             }
             catch (Exception ex)
-            { }
+            { Logger.LogError(ex); }
         }
         private void txtobtained_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -284,7 +284,7 @@ namespace SMS
                 }
             }
             catch (Exception ex)
-            { }
+            { Logger.LogError(ex); }
         }
         private void txtpercantage1_Validated(object sender, EventArgs e)
         {
@@ -298,7 +298,7 @@ namespace SMS
                 }
             }
             catch (Exception ex)
-            { }
+            { Logger.LogError(ex); }
         }
         private void txtpercantage2_Validated(object sender, EventArgs e)
         {
@@ -339,7 +339,7 @@ namespace SMS
                     txtpercantage4.Focus();
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
         byte[] TData = null;
         private void txtscholarno_Validated(object sender, EventArgs e)
@@ -471,7 +471,7 @@ namespace SMS
                             //        member_pic.Image = Image.FromStream(ms);
                             //    }
                             //}
-                            //catch (Exception ex) { MessageBox.Show(ex.Message); }
+                            //catch (Exception ex) { Logger.LogError(ex); MessageBox.Show(ex.Message); }
 
                             //try
                             //{
@@ -495,7 +495,7 @@ namespace SMS
                             //        pictureBox2.Image = Image.FromStream(ms1);
                             //    }
                             //}
-                            //catch { }
+                            //catch(Exception ex){Logger.LogError(ex); }
 
                             //try
                             //{
@@ -522,7 +522,7 @@ namespace SMS
                             //        txtbarnum.Text = dsBarCode.Tables[0].Rows[0]["barcode"].ToString();
                             //    }
                             //}
-                            //catch { }
+                            //catch(Exception ex){Logger.LogError(ex); }
 
                             ////  DataSet ds44 = Connection.GetDataSet("");
 
@@ -543,7 +543,7 @@ namespace SMS
                                 MemoryStream ms = new MemoryStream(reading);
                                 member_pic.Image = Image.FromStream(ms);
                             }
-                            catch { }
+                            catch(Exception ex){Logger.LogError(ex); }
 
                             try
                             {
@@ -552,7 +552,7 @@ namespace SMS
                                 MemoryStream ms1 = new MemoryStream(reading1);
                                 pictureBox2.Image = Image.FromStream(ms1);
                             }
-                            catch { }
+                            catch(Exception ex){Logger.LogError(ex); }
 
                             try
                             {
@@ -563,7 +563,7 @@ namespace SMS
                                 pbxBarCode.Visible = true;
                                 txtbarnum.Text = dsBarCode.Tables[0].Rows[0]["barcode"].ToString();
                             }
-                            catch { }
+                            catch(Exception ex){Logger.LogError(ex); }
 
                             //  DataSet ds44 = Connection.GetDataSet("");
 
@@ -590,7 +590,7 @@ namespace SMS
                     }
                 }
                 catch (Exception ex)
-                { MessageBox.Show(ex.Message); }
+                { Logger.LogError(ex); MessageBox.Show(ex.Message); }
             }
         }
 
@@ -615,7 +615,7 @@ namespace SMS
                 }
             }
             catch (Exception ex)
-            { }
+            { Logger.LogError(ex); }
         }
         private void textBox1_Validated(object sender, EventArgs e)
         {
@@ -780,7 +780,7 @@ namespace SMS
                 }
                 Connection.FillCombo(ref strsection, "SELECT   distinct  tbl_section.sectionname  FROM         tbl_class INNER JOIN                        tbl_classmaster ON tbl_class.classcode = tbl_classmaster.classcode INNER JOIN                       tbl_section ON tbl_class.sectioncode = tbl_section.sectioncode where tbl_Classmaster.classname='" + valcmbclass.Text + "' and  tbl_class.sankaycode=(select top 1 sankaycode from tbl_sankay where sankayname='" + strcmbfaculty.SelectedItem.ToString() + "' ) ");
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
         private void valcmbclass_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -987,7 +987,7 @@ namespace SMS
                 }
             }
             catch (Exception ex)
-            { }
+            { Logger.LogError(ex); }
         }
         private void txtobtained2_TextChanged(object sender, EventArgs e)
         {
@@ -1021,7 +1021,7 @@ namespace SMS
                 }
             }
             catch (Exception ex)
-            { }
+            { Logger.LogError(ex); }
         }
         private void txtobtained1_TextChanged(object sender, EventArgs e)
         {
@@ -1058,7 +1058,7 @@ namespace SMS
                 }
             }
             catch (Exception ex)
-            { }
+            { Logger.LogError(ex); }
         }
         private void valcmbdistrict_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -1128,7 +1128,7 @@ namespace SMS
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Logger.LogError(ex); MessageBox.Show(ex.Message);
             }
 
         }
@@ -1361,7 +1361,7 @@ namespace SMS
                 txtScholarNo.Focus();
                 valcmbsession.Enabled = false;
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
             strstdcategory.Text = "GENERAL";
             strcurrentstatus.Text = "New Student";
         }
@@ -1386,7 +1386,7 @@ namespace SMS
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Logger.LogError(ex); MessageBox.Show(ex.Message);
             }
 
         }
@@ -1464,8 +1464,9 @@ namespace SMS
                 DataSet ds6 = Connection.GetDataSet(" SELECT     COUNT(tbl_classstudent.studentno) AS Expr1  FROM         tbl_classstudent INNER JOIN                        tbl_student ON tbl_classstudent.studentno = tbl_student.studentno  WHERE     (tbl_classstudent.classno = '" + classno2.ToString() + "') AND (tbl_classstudent.sessioncode = '" + school.CurrentSessionCode + "')   ");
                 txtTotalStudent.Text = ds6.Tables[0].Rows[0].ItemArray[0].ToString();
             }
-            catch (Exception ez)
+            catch (Exception ex)
             {
+                Logger.LogError(ex); 
                 //  MessageBox.Show(ez.Message);
             }
 
@@ -1790,7 +1791,7 @@ namespace SMS
                                         dtStudent.Rows[0]["Website"].ToString());                   //Website
                                 }
                             }
-                            catch (Exception ex) { MessageBox.Show(ex.Message); }
+                            catch (Exception ex) { Logger.LogError(ex); MessageBox.Show(ex.Message); }
                         }
                         #endregion
 
@@ -2019,6 +2020,7 @@ namespace SMS
                 }
                 catch (Exception ex)
                 {
+                    Logger.LogError(ex); 
                     MessageBox.Show("Error during File Read " + ex.ToString());
                 }
                 int CCEID = Convert.ToInt32(Connection.GetId("select count(*) total from tbl_StudentDocs where StudentNo='" + StudentNo + "'"));
@@ -2095,6 +2097,7 @@ namespace SMS
                 }
                 catch (Exception ex)
                 {
+                    Logger.LogError(ex); 
                     MessageBox.Show("Error during File Read " + ex.ToString());
                 }
                 int CCEID = Convert.ToInt32(Connection.GetId("select count(*) total from tbl_StudentDocs where StudentNo='" + StudentNo + "'"));
@@ -2171,6 +2174,7 @@ namespace SMS
                 }
                 catch (Exception ex)
                 {
+                    Logger.LogError(ex); 
                     MessageBox.Show("Error during File Read " + ex.ToString());
                 }
                 int CCEID = Convert.ToInt32(Connection.GetId("select count(*) total from tbl_StudentDocs where StudentNo='" + StudentNo + "'"));
@@ -2247,6 +2251,7 @@ namespace SMS
                 }
                 catch (Exception ex)
                 {
+                    Logger.LogError(ex); 
                     MessageBox.Show("Error during File Read " + ex.ToString());
                 }
                 int CCEID = Convert.ToInt32(Connection.GetId("select count(*) total from tbl_StudentDocs where StudentNo='" + StudentNo + "'"));
@@ -2323,6 +2328,7 @@ namespace SMS
                 }
                 catch (Exception ex)
                 {
+                    Logger.LogError(ex); 
                     MessageBox.Show("Error during File Read " + ex.ToString());
                 }
                 int CCEID = Convert.ToInt32(Connection.GetId("select count(*) total from tbl_StudentDocs where StudentNo='" + StudentNo + "'"));
@@ -2399,6 +2405,7 @@ namespace SMS
                 }
                 catch (Exception ex)
                 {
+                    Logger.LogError(ex); 
                     MessageBox.Show("Error during File Read " + ex.ToString());
                 }
                 int CCEID = Convert.ToInt32(Connection.GetId("select count(*) total from tbl_StudentDocs where StudentNo='" + StudentNo + "'"));
@@ -2475,6 +2482,7 @@ namespace SMS
                 }
                 catch (Exception ex)
                 {
+                    Logger.LogError(ex); 
                     MessageBox.Show("Error during File Read " + ex.ToString());
                 }
                 int CCEID = Convert.ToInt32(Connection.GetId("select count(*) total from tbl_StudentDocs where StudentNo='" + StudentNo + "'"));

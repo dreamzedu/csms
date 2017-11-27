@@ -73,7 +73,7 @@ namespace SMS
                  " Order by tbl_section.sectioncode");
 
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void cmbSession_SelectedIndexChanged(object sender, EventArgs e)
@@ -118,7 +118,7 @@ namespace SMS
                     dataGridView1.DataSource = dv; 
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void cmbSection_Leave(object sender, EventArgs e)
@@ -133,7 +133,7 @@ namespace SMS
                     dataGridView1.DataSource = dv; 
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
@@ -161,7 +161,7 @@ namespace SMS
                     dv.Sort = "Name"; 
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void txtSearch_Enter(object sender, EventArgs e)
@@ -178,7 +178,7 @@ namespace SMS
                 dataGridView1.Columns["SectionCode"].Visible = false;
                 dataGridView1.Columns["ClassCode"].Visible = false;
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void btnReport_Click(object sender, EventArgs e)

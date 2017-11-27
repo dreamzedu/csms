@@ -72,7 +72,7 @@ namespace SMS
             }
             catch (Exception ex)
             {
-
+                Logger.LogError(ex); 
             }
             finally
             {
@@ -102,7 +102,7 @@ namespace SMS
             }
             catch (Exception ex)
             {
-
+                Logger.LogError(ex); 
             }
             finally
             {
@@ -242,8 +242,9 @@ namespace SMS
                         catch (Exception ex)
                         {
                             LocalTrn.Rollback();
+                            Logger.LogError(ex); 
                             MessageBox.Show("Some error has occurred. Please Try Again.", "Error");
-                            MessageBox.Show(ex.Message);
+                            Logger.LogError(ex); MessageBox.Show(ex.Message);
                         }
                     }
                     else
@@ -398,6 +399,7 @@ namespace SMS
                 catch (Exception ex)
                 {
                     LocalTrn.Rollback();
+                    Logger.LogError(ex); 
                     MessageBox.Show("Some error has occurred. Please Try Again.", "Error");
                 }
 

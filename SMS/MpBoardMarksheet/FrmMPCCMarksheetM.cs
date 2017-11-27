@@ -538,6 +538,7 @@ namespace SMS.MpBoardMarksheet
             }
             catch (Exception ex)
             {
+                Logger.LogError(ex); 
                 MessageBox.Show("Exception message:\n    " + ex.Message);
                 trn.Rollback();
             }
@@ -757,7 +758,7 @@ namespace SMS.MpBoardMarksheet
                 dtgFinalEntry.Columns["Grade Point"].Visible = true; dtgFinalEntry.Columns["Grade Point"].ReadOnly = false;
                 dtgFinalEntry.Columns["Grade Point"].Width = 80;
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
         public string GetGrade(int studno, string des,int excd)
         {
@@ -1129,6 +1130,7 @@ namespace SMS.MpBoardMarksheet
                 }
                 catch (Exception ex)
                 {
+                    Logger.LogError(ex); 
                     MessageBox.Show("Record Not Saved Please Try Again...");
                     trn.Rollback();
                     btnSaveDesInd.Enabled = false;
@@ -1178,7 +1180,7 @@ namespace SMS.MpBoardMarksheet
             try
             {
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void btnSaveFinalMarks_Click(object sender, EventArgs e)
@@ -1293,7 +1295,7 @@ namespace SMS.MpBoardMarksheet
                     " tbl_class ON tbl_classmaster.classcode = tbl_class.classcode INNER JOIN tbl_section ON tbl_class.sectioncode = tbl_section.sectioncode WHERE (tbl_classmaster.classcode = '" + cmbClass.SelectedValue + "')");
 
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void btnViewAcadmincDetail_Click(object sender, EventArgs e)

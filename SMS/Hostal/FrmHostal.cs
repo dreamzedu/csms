@@ -119,7 +119,7 @@ namespace SMS.Hostal
                 String lstval = Convert.ToString(listBox1.SelectedValue);
                 c.showdata("tbl_hostel", c.myconn, this, "hostelcode", lstval);
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         public override void btndelete_Click(object sender, EventArgs e)

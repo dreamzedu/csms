@@ -66,6 +66,7 @@ public class MailSender
         }
         catch (Exception ex)
         {
+            SMS.Logger.LogError(ex); 
             throw;
         }
     }

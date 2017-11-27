@@ -123,7 +123,7 @@ namespace SMS
                     txtThinkingSkills.Focus();
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void rbdSocialSkills_CheckedChanged(object sender, EventArgs e)
@@ -157,7 +157,7 @@ namespace SMS
                     txtSocialSkills.Focus();
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void btnSaveSocialSkills_Click(object sender, EventArgs e)
@@ -252,7 +252,7 @@ namespace SMS
 
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void btnSaveWorkEdu_Click(object sender, EventArgs e)
@@ -315,7 +315,7 @@ namespace SMS
                     txtWorkEducation.Focus();
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void btnVisualArts_Click(object sender, EventArgs e)
@@ -379,7 +379,7 @@ namespace SMS
 
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void btnPerformingArts_Click(object sender, EventArgs e)
@@ -442,7 +442,7 @@ namespace SMS
 
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void btnNext_Click(object sender, EventArgs e)

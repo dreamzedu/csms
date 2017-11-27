@@ -38,6 +38,7 @@ namespace SMS
 
             catch (Exception ex)
             {
+
                 MessageBox.Show(ex.Message + "\n\t Please Select Class or Section Properly...");
             }
         }
@@ -105,7 +106,7 @@ namespace SMS
                         }
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -116,7 +117,7 @@ namespace SMS
                 dataGridView1.Columns["SectionCode"].Visible = false;
                 dataGridView1.Columns["Photo"].Visible = false;
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
 
         }
  
@@ -162,7 +163,7 @@ namespace SMS
 
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
 
         }
 
@@ -2525,7 +2526,7 @@ namespace SMS
                         break;
                     }
             }
-            catch (Exception ex) { throw ex; }
+            catch (Exception ex) { Logger.LogError(ex); throw ex; }
 
         }
         private void cmbSection_SelectedIndexChanged(object sender, EventArgs e)

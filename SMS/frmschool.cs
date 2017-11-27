@@ -66,6 +66,7 @@ namespace SMS
             }
             catch (Exception ex)
             {
+                Logger.LogError(ex); 
             }
             
         }
@@ -351,7 +352,7 @@ namespace SMS
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Logger.LogError(ex); MessageBox.Show(ex.Message);
             }
         }
 
@@ -383,7 +384,7 @@ namespace SMS
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Logger.LogError(ex); MessageBox.Show(ex.Message);
             }
         }
 
@@ -410,7 +411,7 @@ namespace SMS
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Logger.LogError(ex); MessageBox.Show(ex.Message);
             }
         }  
         

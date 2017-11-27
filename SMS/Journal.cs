@@ -36,7 +36,7 @@ namespace SMS
                 AccountType.DisplayMember = "BHM_DESH";
                 AccountType.ValueMember = "BHM_COD";              
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }      
        
         private void Journal_Load(object sender, EventArgs e)
@@ -48,7 +48,7 @@ namespace SMS
                 //this.GetVoucherNo();
                 SqlConnection con = c.myconn;
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
            
         }
         private void EnableControl()
@@ -72,7 +72,7 @@ namespace SMS
             try { 
             
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
         private void btnexit_Click(object sender, EventArgs e)
         {
@@ -193,7 +193,7 @@ namespace SMS
                 }
 
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }  
         private void GetPaymentReciept()
         {
@@ -267,7 +267,7 @@ namespace SMS
                 }
 
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
 
         }
         public void btnnew_Click(object sender, EventArgs e)
@@ -337,7 +337,7 @@ namespace SMS
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show(ex.Message);
+                            Logger.LogError(ex); MessageBox.Show(ex.Message);
                             trn.Rollback();
 
                         }
@@ -390,7 +390,7 @@ namespace SMS
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show(ex.Message);
+                            Logger.LogError(ex); MessageBox.Show(ex.Message);
                             trn.Rollback();
                         }
                         trn.Dispose();
@@ -404,7 +404,7 @@ namespace SMS
                 }
             }
 
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }      
         private void dtp_KeyDown(object sender, KeyEventArgs e)
         {
@@ -444,7 +444,7 @@ namespace SMS
                     txtvoucherno.Focus();
               
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
         private void txtvoucherno_Validated(object sender, EventArgs e)
         {
@@ -485,7 +485,7 @@ namespace SMS
             //        dtp.Focus();
             //    }
             //}
-            //catch { }
+            //catch(Exception ex){Logger.LogError(ex); }
         }
         private void dtp_Enter(object sender, EventArgs e)
         {

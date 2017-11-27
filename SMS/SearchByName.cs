@@ -31,6 +31,7 @@ namespace SMS
             }
             catch (Exception ex)
             {
+                Logger.LogError(ex); 
             }
         }
         private void GVStudentDetails_DoubleClick(object sender, EventArgs e)
@@ -47,7 +48,7 @@ namespace SMS
                 }
                 this.Close();
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void Pct_Close_Click(object sender, EventArgs e)

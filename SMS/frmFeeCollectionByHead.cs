@@ -38,7 +38,7 @@ namespace SMS
                 txtdueamt.Text = (decimal.Parse(txtTotalFeeAmount.Text) -
                      decimal.Parse(txtPaidAmont.Text)).ToString();
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
         private void txtscholarno_Validated(object sender, EventArgs e)
         {
@@ -413,7 +413,7 @@ namespace SMS
                                         dtStudent.Rows[0]["Website"].ToString());                   //Website
                                 }
                             }
-                            catch { }
+                            catch(Exception ex){Logger.LogError(ex); }
                         }
                         #endregion
                         if (this.MessageService)
@@ -489,7 +489,7 @@ namespace SMS
                                         dtStudent.Rows[0]["Website"].ToString());                   //Website
                                 }
                             }
-                            catch { }
+                            catch(Exception ex){Logger.LogError(ex); }
                         }
                         #endregion
                         if (this.MessageService)
@@ -514,7 +514,7 @@ namespace SMS
             {
                 trn.Rollback();
                 MessageBox.Show("Fee Transaction Is Not Completed.\n\tPlease Try Again.");
-                MessageBox.Show(ex.Message);
+                Logger.LogError(ex); 
                c.GetMdiParent(this).ToggleSaveButton(false);
             }
         }
@@ -574,7 +574,7 @@ namespace SMS
                     s.Show();
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
 
@@ -584,7 +584,7 @@ namespace SMS
             {
                 txtscholarno.Text = dataGridView1.Rows[e.RowIndex].Cells["Scholar No"].Value as string;
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -596,7 +596,7 @@ namespace SMS
                 dataGridView1.Columns["Photo"].Visible = false;
 
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
@@ -613,7 +613,7 @@ namespace SMS
                     txtscholarno.Text = dataGridView1.Rows[e.RowIndex].Cells["Scholar No"].Value as string;
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void txtFeeRcptNo_Leave(object sender, EventArgs e)
@@ -779,7 +779,7 @@ namespace SMS
                       decimal.Parse(txtConsession.Text), 2)).ToString();
 
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
         private void txtLateFee_TextChanged(object sender, EventArgs e)
         {

@@ -76,7 +76,7 @@ namespace SMS
                 dgvScholarDetails.DefaultCellStyle.BackColor = Color.White;
                 
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void chkClassWise_CheckedChanged(object sender, EventArgs e)
@@ -161,7 +161,7 @@ namespace SMS
                     FLAG = 1;
 
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void chkSanction_CheckedChanged(object sender, EventArgs e)

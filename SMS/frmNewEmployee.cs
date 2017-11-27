@@ -56,6 +56,7 @@ namespace SMS
             }
             catch (Exception ex)
             {
+                Logger.LogError(ex); 
             }
         }
        
@@ -131,6 +132,7 @@ namespace SMS
             catch (Exception ex)
             {
                 trn.Rollback();
+                Logger.LogError(ex); 
                 MessageBox.Show("Some Record Missin!!! \n\tPlease Try Again.");
             }
         }
@@ -145,7 +147,7 @@ namespace SMS
                 //    EnpTypeID = Convert.ToInt32(ds.Tables[0].Rows[0][0].ToString());
                 //}
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void btnPhoto_Click(object sender, EventArgs e)
@@ -187,7 +189,7 @@ namespace SMS
             }
             catch(Exception ex) 
             {
-                MessageBox.Show(ex.Message);
+                Logger.LogError(ex); MessageBox.Show(ex.Message);
             }
 
         }
@@ -273,7 +275,7 @@ namespace SMS
                c.GetMdiParent(this).ToggleEditButton(false);
                c.GetMdiParent(this).ToggleSaveButton(false);
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void txtEmployeeNo_Validated(object sender, EventArgs e)
@@ -349,6 +351,7 @@ namespace SMS
                         }
                         catch (Exception ex)
                         {
+                            Logger.LogError(ex); 
                         }
                         lblMID.Visible = txtMachineID.Visible = true;
                         txtsalaryrate.Focus();                   
@@ -365,7 +368,7 @@ namespace SMS
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Logger.LogError(ex); MessageBox.Show(ex.Message);
                // clearAllControl();
             }
         }
@@ -425,7 +428,7 @@ namespace SMS
                 pfamt = ((basic + daamt) * pfper) / 100;
                 txtpfamt.Text = Convert.ToString(pfamt);
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
       
         private void txtAddress_Leave(object sender, EventArgs e)
@@ -511,7 +514,7 @@ namespace SMS
                         txtOldSalaryRate.Text = SalaryRate.ToString();
                     }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void txtcontactno_Validating(object sender, CancelEventArgs e)
@@ -728,7 +731,7 @@ namespace SMS
                                     }
                                 }
                             }
-                            catch { }
+                            catch(Exception ex){Logger.LogError(ex); }
                             MessageBox.Show("Employee Record Updated!!!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             clearAllControl();
                            c.GetMdiParent(this).ToggleEditButton(true);
@@ -744,6 +747,7 @@ namespace SMS
             catch (Exception ex)
             {
                 trn.Rollback();
+                Logger.LogError(ex); 
                 MessageBox.Show("Some Record Missing!!!\n\tPlease Try Again.", "Alert!!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }           
         }

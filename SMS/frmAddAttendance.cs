@@ -121,7 +121,7 @@ namespace SMS
                     return;
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void txtAttandanceDate_Validated(object sender, EventArgs e)
@@ -239,7 +239,7 @@ namespace SMS
         private void dataGridView1_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             try { }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         private void btnMonthAttendance_Click(object sender, EventArgs e)

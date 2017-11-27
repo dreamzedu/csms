@@ -27,7 +27,7 @@ namespace SMS.MpBoardMarksheet.ReportForm
             }
             catch (Exception ex)
             {
-
+                Logger.LogError(ex); 
             }
         }
 
@@ -45,7 +45,7 @@ namespace SMS.MpBoardMarksheet.ReportForm
             }
             catch (Exception ex)
             {
-
+                Logger.LogError(ex); 
             }
         }
 

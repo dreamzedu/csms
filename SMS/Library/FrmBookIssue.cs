@@ -40,7 +40,7 @@ namespace SMS.Library
 
                 }
             }
-            catch { }
+            catch(Exception ex){Logger.LogError(ex); }
         }
 
         public void GetStudentDetails()
@@ -79,6 +79,7 @@ namespace SMS.Library
             }
             catch (Exception ex)
             {
+                Logger.LogError(ex); 
             }
         }
         public void GetBookDetails()
@@ -140,7 +141,7 @@ namespace SMS.Library
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Logger.LogError(ex); MessageBox.Show(ex.Message);
             }
         }
         private void txtEnrollNo_TextChanged(object sender, EventArgs e)
@@ -225,7 +226,7 @@ namespace SMS.Library
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message);
+                Logger.LogError(ex); MessageBox.Show(ex.Message);
             }
 
         }
