@@ -43,7 +43,7 @@ namespace SMS
             {
                 try
                 {
-                    Connection.MyConnection.Close();
+                    Connection.UserDbConnection.Close();
                 }
                 catch
                 { }

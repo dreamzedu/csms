@@ -15,7 +15,7 @@ namespace SMS
     {
         school c = new school();
         public static int CurrentSessionCode;
-        string U = "dess", P="Winserver";
+        string U = "com_1", P = "12345678";//"dess", P="Winserver";
         public Loginform()
         {
             InitializeComponent();
@@ -175,16 +175,17 @@ namespace SMS
                 SetupAppPaths();
 
                 bool isActive = IsUserActive();
-
-                this.Hide();
+                                
 
                 if (isActive)
                 {
                     MDIParent1 main = new MDIParent1(school1.CurrentUser.UserCode.ToString(), school1.CurrentUser.Name);
+                    this.Hide();
                     main.Show();
                 }
                 else
                 {
+                    MessageBox.Show("Your user account is in inactive state, please contact your vendor for further assistance.");
                     Application.Exit();
                 }
             }

@@ -74,7 +74,8 @@ namespace SMS
 
         public static int PUserLevel;
         public int UserLevelCode = PUserLevel;
-        public static int CurrentSessionCode = Loginform.CurrentSessionCode;
+        public static int CurrentSessionCode;//= Loginform.CurrentSessionCode;
+        public static string CurrentSessionName;
         public int PSessionCode = CurrentSessionCode;
         public void SYSLOCK_DATE()
         {
@@ -774,7 +775,7 @@ namespace SMS
         public void updatedata(string tblname, SqlConnection mcon, UserControl frm, string fldname, string mvalue)
         {
             DataSet ds1 = new DataSet();
-            sqlada = new SqlDataAdapter("select * from " + tblname + " where " + fldname + " = " + mvalue, mcon);
+            sqlada = new SqlDataAdapter("select * from " + tblname + " where " + fldname + " = '" + mvalue +"'", mcon);
             sqlada.Fill(ds1);
             SqlCommandBuilder cmb = new SqlCommandBuilder(sqlada);
             DataRow row;
@@ -784,66 +785,134 @@ namespace SMS
                 goto lastline;
             }
             ds1.Tables[0].Rows[0].BeginEdit(); 
-            foreach (Control cnt in frm.Controls)
+            foreach (Control cntrl in frm.Controls)
             {
-                String mtag = "";
-                if (cnt.Tag == null)
+                if (cntrl is Panel)
                 {
-                    goto fline;
-                }
-                if (cnt.Tag.ToString() != "")
-                {
-                    mtag = cnt.Tag.ToString();
-                    if (cnt is TextBox)
+                    foreach (Control cnt in cntrl.Controls)
                     {
-                        try
+                        String mtag = "";
+                        if (cnt.Tag == null)
                         {
-                            ds1.Tables[0].Rows[0][mtag] = cnt.Text;
+                            continue;
                         }
-                        catch (Exception ex)
+                        if (cnt.Tag.ToString() != "")
                         {
-                            Logger.LogError(ex); 
-                            //ds1.Tables[0].Rows[0][mtag] = 0;
+                            mtag = cnt.Tag.ToString();
+                            if (cnt is TextBox)
+                            {
+                                try
+                                {
+                                    ds1.Tables[0].Rows[0][mtag] = cnt.Text;
+                                }
+                                catch (Exception ex)
+                                {
+                                    Logger.LogError(ex);
+                                    //ds1.Tables[0].Rows[0][mtag] = 0;
+                                }
+                            }
+                            if (cnt is ComboBox)
+                            {
+                                ComboBox cmb1 = (ComboBox)cnt;
+                                if (cmb1.Name.Substring(0, 3) == "val")
+                                {
+                                    ds1.Tables[0].Rows[0][mtag] = cmb1.SelectedValue;
+                                }
+                                else
+                                {
+                                    if (cmb1.Name.Substring(0, 3) == "str")
+                                    {
+                                        ds1.Tables[0].Rows[0][mtag] = cmb1.Text;
+                                    }
+                                    else
+                                    {
+                                        ds1.Tables[0].Rows[0][mtag] = cmb1.SelectedIndex;
+                                    }
+                                }
+
+                            }
+                            if (cnt is CheckBox)
+                            {
+                                CheckBox cmb2 = (CheckBox)cnt;
+                                ds1.Tables[0].Rows[0][mtag] = cmb2.CheckState;
+                            }
+                            if (cnt is DateTimePicker)
+                            {
+                                DateTimePicker cmb3 = (DateTimePicker)cnt;
+                                if (cmb3.Name == "cmbdrcr")
+                                {
+                                    ds1.Tables[0].Rows[0][mtag] = cmb3.Text;
+                                }
+                                else
+                                {
+                                    ds1.Tables[0].Rows[0][mtag] = cmb3.Value;
+                                }
+                            }
                         }
                     }
-                    if (cnt is ComboBox)
+                }
+                else
+                {
+                    String mtag = "";
+                    if (cntrl.Tag == null)
                     {
-                        ComboBox cmb1 = (ComboBox)cnt;
-                        if (cmb1.Name.Substring(0, 3)  == "val")
+                        goto fline;
+                    }
+                    if (cntrl.Tag.ToString() != "")
+                    {
+                        mtag = cntrl.Tag.ToString();
+                        if (cntrl is TextBox)
                         {
-                            ds1.Tables[0].Rows[0][mtag] = cmb1.SelectedValue; 
+                            try
+                            {
+                                ds1.Tables[0].Rows[0][mtag] = cntrl.Text;
+                            }
+                            catch (Exception ex)
+                            {
+                                Logger.LogError(ex);
+                                //ds1.Tables[0].Rows[0][mtag] = 0;
+                            }
                         }
-                        else
-                           {
+                        if (cntrl is ComboBox)
+                        {
+                            ComboBox cmb1 = (ComboBox)cntrl;
+                            if (cmb1.Name.Substring(0, 3) == "val")
+                            {
+                                ds1.Tables[0].Rows[0][mtag] = cmb1.SelectedValue;
+                            }
+                            else
+                            {
                                 if (cmb1.Name.Substring(0, 3) == "str")
                                 {
-                                    ds1.Tables[0].Rows[0][mtag] = cmb1.Text; 
+                                    ds1.Tables[0].Rows[0][mtag] = cmb1.Text;
                                 }
                                 else
                                 {
                                     ds1.Tables[0].Rows[0][mtag] = cmb1.SelectedIndex;
                                 }
                             }
-      
-                    }
-                    if (cnt is CheckBox)
-                    {
-                        CheckBox cmb2 = (CheckBox)cnt;
-                         ds1.Tables[0].Rows[0][mtag]=cmb2.CheckState; 
-                    }
-                    if (cnt is DateTimePicker)
-                    {
-                        DateTimePicker cmb3 = (DateTimePicker)cnt;
-                        if (cmb3.Name == "cmbdrcr")
-                        {
-                            ds1.Tables[0].Rows[0][mtag] = cmb3.Text;
+
                         }
-                        else
+                        if (cntrl is CheckBox)
                         {
-                            ds1.Tables[0].Rows[0][mtag] = cmb3.Value;
+                            CheckBox cmb2 = (CheckBox)cntrl;
+                            ds1.Tables[0].Rows[0][mtag] = cmb2.CheckState;
+                        }
+                        if (cntrl is DateTimePicker)
+                        {
+                            DateTimePicker cmb3 = (DateTimePicker)cntrl;
+                            if (cmb3.Name == "cmbdrcr")
+                            {
+                                ds1.Tables[0].Rows[0][mtag] = cmb3.Text;
+                            }
+                            else
+                            {
+                                ds1.Tables[0].Rows[0][mtag] = cmb3.Value;
+                            }
                         }
                     }
                 }
+                
             fline:
                 Console.Write("");
             }

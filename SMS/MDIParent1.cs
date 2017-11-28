@@ -23,15 +23,15 @@ namespace SMS
         public MDIParent1()
         {
             InitializeComponent();
-            school.CurrentSessionCode = Convert.ToInt32(Connection.GetExecuteScalar("Select SessionCode From tbl_Session Where SessionStatus=1"));
+            //school.CurrentSessionCode = Convert.ToInt32(Connection.GetExecuteScalar("Select SessionCode From tbl_Session Where SessionStatus=1"));
             
         }
 
         public MDIParent1(string UserCode, string UserName)
         {
             InitializeComponent();
-            
-            this.Session = Convert.ToString(Connection.GetExecuteScalar("Select SessionName From tbl_Session Where SessionStatus=1"));
+
+            this.Session = school1.CurrentSessionName; //Convert.ToString(Connection.GetExecuteScalar("Select SessionName From tbl_Session Where SessionStatus=1"));
             this.UserName = UserName;
             this.UserCode = UserCode;
             this.ControlBox = true;
@@ -256,18 +256,19 @@ namespace SMS
         }
         private void eXITToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DateTime endDateTime = DateTime.Now;
-            SqlConnection LocalCon = Connection.Conn();
-            if (LocalCon.State != ConnectionState.Open)
-                LocalCon.Open();
+            //DateTime endDateTime = DateTime.Now;
+            //SqlConnection LocalCon = Connection.Conn();
+            //if (LocalCon.State != ConnectionState.Open)
+            //    LocalCon.Open();
 
-            SqlCommand cmd = LocalCon.CreateCommand();
-            cmd.CommandText = "Update SMSsystem set RunTime = RunTime +" +
-                              endDateTime.Subtract(startDateTime).Seconds;
-            cmd.ExecuteNonQuery();
-            LocalCon.Close();
+            //SqlCommand cmd = LocalCon.CreateCommand();
+            //cmd.CommandText = "Update SMSsystem set RunTime = RunTime +" +
+            //                  endDateTime.Subtract(startDateTime).Seconds;
+            //cmd.ExecuteNonQuery();
+            //LocalCon.Close();
 
             Application.Exit();
+            Environment.Exit(0);
             foreach (System.Diagnostics.Process p in System.Diagnostics.Process.GetProcessesByName(Application.ProductName))
                 p.Kill();
         }
@@ -403,18 +404,19 @@ namespace SMS
 
         private void exitToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            DateTime endDateTime = DateTime.Now;
-            SqlConnection LocalCon = Connection.Conn();
-            if (LocalCon.State != ConnectionState.Open)
-                LocalCon.Open();
+            //DateTime endDateTime = DateTime.Now;
+            //SqlConnection LocalCon = Connection.Conn();
+            //if (LocalCon.State != ConnectionState.Open)
+            //    LocalCon.Open();
 
-            SqlCommand cmd = LocalCon.CreateCommand();
-            cmd.CommandText = "Update SMSsystem set RunTime = RunTime +" +
-                              endDateTime.Subtract(startDateTime).Seconds;
-            cmd.ExecuteNonQuery();
-            LocalCon.Close();
+            //SqlCommand cmd = LocalCon.CreateCommand();
+            //cmd.CommandText = "Update SMSsystem set RunTime = RunTime +" +
+            //                  endDateTime.Subtract(startDateTime).Seconds;
+            //cmd.ExecuteNonQuery();
+            //LocalCon.Close();
 
             Application.Exit();
+            Environment.Exit(0);
             foreach (System.Diagnostics.Process p in System.Diagnostics.Process.GetProcessesByName(Application.ProductName))
                 p.Kill();
         }
@@ -991,14 +993,20 @@ namespace SMS
         private void MDIParent1_Load(object sender, EventArgs e)
         {
             this.pnlMain.BackColor = Color.FromArgb(207, 226, 223);
-            SqlConnection LocalCon = Connection.Conn();
-            if (LocalCon.State != ConnectionState.Open)
-                LocalCon.Open();
 
-            SqlCommand cmd = LocalCon.CreateCommand();
-            cmd.CommandText = "Update SMSsystem set RunCount = RunCount +" +1;
-            cmd.ExecuteNonQuery();
-            LocalCon.Close();
+            frmAcademicSession fas = new frmAcademicSession();
+            fas.StartPosition = FormStartPosition.CenterParent;
+            fas.ShowDialog();
+            this.Session = school1.CurrentSessionName;
+            this.Text += school1.CurrentSessionName;
+            //SqlConnection LocalCon = Connection.Conn();
+            //if (LocalCon.State != ConnectionState.Open)
+            //    LocalCon.Open();
+
+            //SqlCommand cmd = LocalCon.CreateCommand();
+            //cmd.CommandText = "Update SMSsystem set RunCount = RunCount +" +1;
+            //cmd.ExecuteNonQuery();
+            //LocalCon.Close();
         }
 
         private void newCCEMarksDetailBToolStripMenuItem1_Click(object sender, EventArgs e)

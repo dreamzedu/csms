@@ -382,3 +382,4 @@ C:\csms-x86\csms\SMS\obj\Debug\SMS.Test.Form1.resources
 C:\csms-x86\csms\SMS\obj\Debug\SMS.csproj.GenerateResource.Cache
 C:\csms-x86\csms\SMS\obj\Debug\SMS.exe.manifest
 C:\csms-x86\csms\SMS\obj\Debug\SMS.application
+C:\csms-x86\csms\SMS\obj\Debug\SMS.frmAcademicSession.resources

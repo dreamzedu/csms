@@ -403,14 +403,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SMS.exe" size="10795520">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SMS.exe" size="10865152">
       <assemblyIdentity name="SMS" version="4.0.2.3" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>my2/nhEdYL6AezGeRMxDD7FNOm8=</dsig:DigestValue>
+        <dsig:DigestValue>jyWqirmertKRh79NQJ6hgZgm4qs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

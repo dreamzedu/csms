@@ -12,7 +12,7 @@ namespace SMS
         {
             try { 
             SqlConnection con  = Connection.GetUserDbConnection();
-                SqlCommand cmd = new SqlCommand("insert into CsmsLogs(logDate, logType, logText, appUser) values('"+DateTime.Now.ToLongDateString()+"','error','"+ ex.Message+":     :"+ ex.StackTrace+"', '"+ school.CurrentUser != null? school.CurrentUser.UserId: string.Empty +"') ", con);
+            SqlCommand cmd = new SqlCommand("insert into CsmsLogs(logDate, logType, logText, appUser) values('" + DateTime.Now.ToString() + "','error','" + ex.Message.Replace("'", "''") + ":     :" + ex.StackTrace.Replace("'", "''") + "', '" + (school.CurrentUser != null ? school.CurrentUser.ParentUserId +"/"+ school.CurrentUser.UserId : string.Empty) + "') ", con);
                 cmd.ExecuteNonQuery();
             }
             catch { }
@@ -24,7 +24,7 @@ namespace SMS
             try
             {
                 SqlConnection con = Connection.GetUserDbConnection();
-                SqlCommand cmd = new SqlCommand("insert into CsmsLogs(logDate, logType, logText, appUser) values('" + DateTime.Now.ToLongDateString() + "','error','" + msg + "', '" + school.CurrentUser != null ? school.CurrentUser.UserId : string.Empty + "') ", con);
+                SqlCommand cmd = new SqlCommand("insert into CsmsLogs(logDate, logType, logText, appUser) values('" + DateTime.Now.ToLongDateString() + "','error','" + msg.Replace("'", "''") + "', '" + school.CurrentUser != null ? school.CurrentUser.UserId : string.Empty + "') ", con);
                 cmd.ExecuteNonQuery();
             }
             catch { }

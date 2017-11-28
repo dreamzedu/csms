@@ -75,7 +75,8 @@ namespace SMS
 
         public static int PUserLevel;
         public int UserLevelCode = PUserLevel;
-        public static int CurrentSessionCode = Loginform.CurrentSessionCode;
+        public static int CurrentSessionCode;//= Loginform.CurrentSessionCode;
+        public static string CurrentSessionName;
         public int PSessionCode = CurrentSessionCode;
         public void SYSLOCK_DATE()
         {
@@ -775,7 +776,7 @@ namespace SMS
         public void updatedata(string tblname, SqlConnection mcon, Form frm, string fldname, string mvalue)
         {
             DataSet ds1 = new DataSet();
-            sqlada = new SqlDataAdapter("select * from " + tblname + " where " + fldname + " = " + mvalue, mcon);
+            sqlada = new SqlDataAdapter("select * from " + tblname + " where " + fldname + " = '" + mvalue +"'", mcon);
             sqlada.Fill(ds1);
             SqlCommandBuilder cmb = new SqlCommandBuilder(sqlada);
             DataRow row;

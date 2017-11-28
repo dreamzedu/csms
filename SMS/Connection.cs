@@ -225,14 +225,14 @@ namespace SMS
             g.FillRectangle(brush, rect);
 
             // Create string to draw.
-            String drawString = "Dreamz Education Software Solutions";
+            //String drawString = "Dreamz Education Software Solutions";
 
             // Create font and brush.
-            Font drawFont = new Font("Arial", 24);
-            SolidBrush drawBrush = new SolidBrush(Color.Blue);
+            //Font drawFont = new Font("Arial", 24);
+            //SolidBrush drawBrush = new SolidBrush(Color.Blue);
 
             // Create point for upper-left corner of drawing.
-            PointF drawPoint = new PointF(10.0F, 4.0F);
+            //PointF drawPoint = new PointF(10.0F, 4.0F);
 
             // Draw string to screen.
             //e.Graphics.DrawString(drawString, drawFont, drawBrush, drawPoint);

@@ -101,11 +101,13 @@ namespace SMS
                 {
                     txtpassword.Text = CryptorEngine.Encrypt(txtpassword.Text, true);
                  //   txtuser.Text = CryptorEngine.Encrypt(txtuser.Text, true);
-                    c.updatedata("MasterUser", Connection.GetUserDbConnection(), this, "usercode", txtusercode.Text);
+                    c.updatedata("MasterUser", Connection.GetUserDbConnection(), this, "userId", lstbxUser.Text);
+                    txtpassword.Text = CryptorEngine.Decrypt(txtpassword.Text, true);
                     MessageBox.Show("Record Saved...", "School");
                 }
                 
                 c.FillListBox("select * from MasterUser where parentUserId='" + school1.CurrentUser.UserId + "'",Connection.GetUserDbConnection(), "userId", "usercode", ref  lstbxUser);
+                lstbxUser.SelectedIndex = 0;
                 c.GetMdiParent(this).EnableAllEditMenuButtons();
                 
                 //DesignForm.fromDesign1(this);
