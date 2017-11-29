@@ -45,7 +45,7 @@
             this.lbSessionname.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSessionname.FormattingEnabled = true;
             this.lbSessionname.ItemHeight = 16;
-            this.lbSessionname.Location = new System.Drawing.Point(380, 47);
+            this.lbSessionname.Location = new System.Drawing.Point(400, 47);
             this.lbSessionname.Margin = new System.Windows.Forms.Padding(4);
             this.lbSessionname.Name = "lbSessionname";
             this.lbSessionname.Size = new System.Drawing.Size(165, 228);
@@ -57,7 +57,7 @@
             this.txtSessionName.Enabled = false;
             this.txtSessionName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSessionName.ForeColor = System.Drawing.Color.Blue;
-            this.txtSessionName.Location = new System.Drawing.Point(137, 13);
+            this.txtSessionName.Location = new System.Drawing.Point(157, 13);
             this.txtSessionName.Margin = new System.Windows.Forms.Padding(4);
             this.txtSessionName.MaxLength = 7;
             this.txtSessionName.Name = "txtSessionName";
@@ -101,7 +101,7 @@
             this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
             this.dateTimePicker1.Enabled = false;
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(137, 49);
+            this.dateTimePicker1.Location = new System.Drawing.Point(157, 49);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(164, 22);
@@ -113,7 +113,7 @@
             this.dateTimePicker2.CustomFormat = "dd/MM/yyyy";
             this.dateTimePicker2.Enabled = false;
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(137, 86);
+            this.dateTimePicker2.Location = new System.Drawing.Point(157, 86);
             this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(164, 22);
@@ -161,7 +161,7 @@
             this.panel2.Controls.Add(this.dateTimePicker2);
             this.panel2.Location = new System.Drawing.Point(52, 47);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(317, 228);
+            this.panel2.Size = new System.Drawing.Size(341, 228);
             this.panel2.TabIndex = 303;
             // 
             // frmSessionRecord
@@ -173,7 +173,7 @@
             this.Controls.Add(this.lbSessionname);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmSessionRecord";
-            this.Size = new System.Drawing.Size(597, 356);
+            this.Size = new System.Drawing.Size(620, 356);
             this.Tag = "1108";
             this.Load += new System.EventHandler(this.frmSessionRecord_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmSessionRecord_Paint);

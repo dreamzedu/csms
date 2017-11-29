@@ -174,7 +174,6 @@
             this.frmDesigneReprotToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sMSTemplateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.activationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vHelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eXITToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -224,6 +223,7 @@
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -1556,7 +1556,6 @@
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.activationToolStripMenuItem,
             this.vHelpToolStripMenuItem,
             this.pInfoToolStripMenuItem});
             this.helpToolStripMenuItem.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold);
@@ -1565,25 +1564,17 @@
             this.helpToolStripMenuItem.Tag = "HELP";
             this.helpToolStripMenuItem.Text = "&HELP";
             // 
-            // activationToolStripMenuItem
-            // 
-            this.activationToolStripMenuItem.Name = "activationToolStripMenuItem";
-            this.activationToolStripMenuItem.Size = new System.Drawing.Size(245, 26);
-            this.activationToolStripMenuItem.Tag = "$$$$$$$$$$";
-            this.activationToolStripMenuItem.Text = "Product Activation";
-            this.activationToolStripMenuItem.Click += new System.EventHandler(this.activationToolStripMenuItem_Click);
-            // 
             // vHelpToolStripMenuItem
             // 
             this.vHelpToolStripMenuItem.Name = "vHelpToolStripMenuItem";
-            this.vHelpToolStripMenuItem.Size = new System.Drawing.Size(245, 26);
+            this.vHelpToolStripMenuItem.Size = new System.Drawing.Size(195, 26);
             this.vHelpToolStripMenuItem.Tag = "$$$$$$$$$$";
             this.vHelpToolStripMenuItem.Text = "View Help";
             // 
             // pInfoToolStripMenuItem
             // 
             this.pInfoToolStripMenuItem.Name = "pInfoToolStripMenuItem";
-            this.pInfoToolStripMenuItem.Size = new System.Drawing.Size(245, 26);
+            this.pInfoToolStripMenuItem.Size = new System.Drawing.Size(195, 26);
             this.pInfoToolStripMenuItem.Tag = "$$$$$$$$$$";
             this.pInfoToolStripMenuItem.Text = "Product Info";
             this.pInfoToolStripMenuItem.Click += new System.EventHandler(this.pInfoToolStripMenuItem_Click);
@@ -2070,6 +2061,7 @@
             this.toolStrip1.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.pnlMainHeading.ResumeLayout(false);
             this.pnlMainHeading.PerformLayout();
@@ -2258,7 +2250,6 @@
         private System.Windows.Forms.ToolStripMenuItem rNCToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem everestAcademyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem activationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vHelpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pInfoToolStripMenuItem;
         private System.Windows.Forms.SplitContainer splitContainer1;

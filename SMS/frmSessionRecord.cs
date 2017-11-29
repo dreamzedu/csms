@@ -107,9 +107,9 @@ namespace SMS
             DataSet ds = Connection.GetDataSet("select distinct sessionname,sessioncode from tbl_session order by sessionname");
             if (ds.Tables[0].Rows.Count >0)
             {
-                lbSessionname.DataSource = ds.Tables[0];
                 lbSessionname.DisplayMember = ds.Tables[0].Columns["sessionname"].ToString();
                 lbSessionname.ValueMember = ds.Tables[0].Columns["sessioncode"].ToString();
+                lbSessionname.DataSource = ds.Tables[0];
             }
         }
         private void lbSessionname_SelectedIndexChanged(object sender, EventArgs e)

@@ -139,9 +139,11 @@ namespace SMS
             }
             catch (Exception ex) { Logger.LogError(ex); throw ex; }
             DataSet ds = Connection.GetDataSet("SELECT     classname, classcode FROM         tbl_classmaster order by ClassOrder");
-            cmbClassName.DataSource = ds.Tables[0];
+            
             cmbClassName.DisplayMember = ds.Tables[0].Columns["classname"].ToString();
             cmbClassName.ValueMember = ds.Tables[0].Columns["classcode"].ToString();
+            cmbClassName.DataSource = ds.Tables[0];
+
             strcmbAPPType.SelectedIndex = 0;
             DesignForm.fromDesign1(this);
             Connection.SetUserLevelAuth(c.GetMdiParent(this));
@@ -694,94 +696,101 @@ namespace SMS
 
 
                 // c.FillcomboBox( "SELECT     tbl_section.sectionname,tbl_section.sectioncode  FROM         tbl_class INNER JOIN                        tbl_classmaster ON tbl_class.classcode = tbl_classmaster.classcode INNER JOIN                       tbl_section ON tbl_class.sectioncode = tbl_section.sectioncode where tbl_Classmaster.classname='" + valcmbclass.Text + "' ","sectionname","sectioncode",ref strsection);
-                DataSet ds = Connection.GetDataSet("Select classcode from tbl_classmaster where classname='" + valcmbclass.Text + "'");
-                classno = ds.Tables[0].Rows[0].ItemArray[0].ToString();
-                int classcode;
-                if (Convert.ToInt32(classno) > 110 && Convert.ToInt32(classno) < 113)
+
+                if (valcmbclass.SelectedIndex > 0)
                 {
-                    strcmbfaculty.Visible = true;
-                    label43.Visible = true;
-
-                    Connection.FillCombo(ref strcmbfaculty, "select sankayname from tbl_sankay where sankayName!='Common' order by sankayname");
-                    strcmbfaculty.SelectedIndex = 0;
-
-                }
-                else
-                {
-
-                    // valcmbfaculty.Visible = true ;
-                    label43.Visible = false;
-
-                    Connection.FillCombo(ref strcmbfaculty, "select sankayname from tbl_sankay where sankayName='Common' order by sankayname");
-                    strcmbfaculty.SelectedIndex = 0;
-                    lstCompalsary.Items.Clear();
-                    c.returnconn(c.myconn);
-                    string mysql = "";
-                    //mysql = "SELECT   tbl_classmaster.classname, tbl_classsubject.subjectno, tbl_sankay.sankayname FROM  tbl_classmaster INNER JOIN     tbl_classsubject ON tbl_classmaster.classcode = tbl_classsubject.classno CROSS JOIN  tbl_sankay where classno=" + valcmbclass.SelectedValue + " ";
-                    // mysql = "SELECT    tbl_classsubject.subjectno, tbl_subject.subjectname, tbl_subject.subjecttype FROM   tbl_classsubject where classno="+classno +") INNER JOIN tbl_subject ON tbl_classsubject.subjectno = tbl_subject.subjectno";
-                    // mysql = "SELECT     tbl_subject.subjectname FROM         tbl_subject INNER JOIN                        tbl_subwiseclass ON tbl_subject.subjectno = tbl_subwiseclass.subjectno where classno ='" + classno + "' and tbl_subwiseclass.subjecttype='Core Subject' and board='" + board + "'  ";
-                    mysql = "SELECT     tbl_subject.subjectname FROM tbl_subject INNER JOIN tbl_subwiseclass ON tbl_subject.subjectno = tbl_subwiseclass.subjectno where classno='" + classno + "' and board='" + board + "' and tbl_subwiseclass.subjecttype='Core Subject' and  sankayname='" + strcmbfaculty.Text + "' ";
-                    SqlCommand com;
-                    com = new SqlCommand(mysql, c.myconn);
-                    SqlDataReader reader;
-                    c.getconnstr();
-                    reader = com.ExecuteReader();
-                    j = 0;
-                    if (reader.HasRows)
+                    DataSet ds = Connection.GetDataSet("Select classcode from tbl_classmaster where classname='" + valcmbclass.Text + "'");
+                    classno = ds.Tables[0].Rows[0].ItemArray[0].ToString();
+                    int classcode;
+                    if (Convert.ToInt32(classno) > 110 && Convert.ToInt32(classno) < 113)
                     {
-                        while (reader.Read())
-                        {
+                        strcmbfaculty.Visible = true;
+                        label43.Visible = true;
 
-
-                            lstCompalsary.Items.Add(reader["subjectname"].ToString());
-
-
-                            j++;
-                        }
-                        reader.Close();
+                        Connection.FillCombo(ref strcmbfaculty, "select sankayname from tbl_sankay where sankayName!='Common' order by sankayname");
+                        strcmbfaculty.SelectedIndex = 0;
 
                     }
                     else
                     {
-                        reader.Close();
-                    }
-                    reader.Close();
-                    checkedListBox1.Items.Clear();
-                    c.returnconn(c.myconn);
-                    string mysql1 = "";
-                    //mysql = "SELECT   tbl_classmaster.classname, tbl_classsubject.subjectno, tbl_sankay.sankayname FROM  tbl_classmaster INNER JOIN     tbl_classsubject ON tbl_classmaster.classcode = tbl_classsubject.classno CROSS JOIN  tbl_sankay where classno=" + valcmbclass.SelectedValue + " ";
-                    // mysql = "SELECT    tbl_classsubject.subjectno, tbl_subject.subjectname, tbl_subject.subjecttype FROM   tbl_classsubject where classno="+classno +") INNER JOIN tbl_subject ON tbl_classsubject.subjectno = tbl_subject.subjectno";
 
-                    mysql1 = "SELECT     tbl_subject.subjectname FROM         tbl_subject INNER JOIN                        tbl_subwiseclass ON tbl_subject.subjectno = tbl_subwiseclass.subjectno where classno='" + classno + "' and tbl_subwiseclass.subjecttype='Elective Subject' and board='" + board + "' and sankayname='" + strcmbfaculty.Text + "' ";
-                    SqlCommand com1;
-                    com1 = new SqlCommand(mysql1, c.myconn);
-                    SqlDataReader reader1;
-                    reader1 = com1.ExecuteReader();
-                    j = 0;
-                    if (reader1.HasRows)
-                    {
-                        while (reader1.Read())
+                        // valcmbfaculty.Visible = true ;
+                        label43.Visible = false;
+
+                        Connection.FillCombo(ref strcmbfaculty, "select sankayname from tbl_sankay where sankayName='Common' order by sankayname");
+                        strcmbfaculty.SelectedIndex = 0;
+                        lstCompalsary.Items.Clear();
+                        c.returnconn(c.myconn);
+                        string mysql = "";
+                        //mysql = "SELECT   tbl_classmaster.classname, tbl_classsubject.subjectno, tbl_sankay.sankayname FROM  tbl_classmaster INNER JOIN     tbl_classsubject ON tbl_classmaster.classcode = tbl_classsubject.classno CROSS JOIN  tbl_sankay where classno=" + valcmbclass.SelectedValue + " ";
+                        // mysql = "SELECT    tbl_classsubject.subjectno, tbl_subject.subjectname, tbl_subject.subjecttype FROM   tbl_classsubject where classno="+classno +") INNER JOIN tbl_subject ON tbl_classsubject.subjectno = tbl_subject.subjectno";
+                        // mysql = "SELECT     tbl_subject.subjectname FROM         tbl_subject INNER JOIN                        tbl_subwiseclass ON tbl_subject.subjectno = tbl_subwiseclass.subjectno where classno ='" + classno + "' and tbl_subwiseclass.subjecttype='Core Subject' and board='" + board + "'  ";
+                        mysql = "SELECT     tbl_subject.subjectname FROM tbl_subject INNER JOIN tbl_subwiseclass ON tbl_subject.subjectno = tbl_subwiseclass.subjectno where classno='" + classno + "' and board='" + board + "' and tbl_subwiseclass.subjecttype='Core Subject' and  sankayname='" + strcmbfaculty.Text + "' ";
+                        SqlCommand com;
+                        com = new SqlCommand(mysql, c.myconn);
+                        SqlDataReader reader;
+                        c.getconnstr();
+                        reader = com.ExecuteReader();
+                        j = 0;
+                        if (reader.HasRows)
                         {
+                            while (reader.Read())
+                            {
 
 
-                            checkedListBox1.Items.Add(reader1["subjectname"].ToString());
+                                lstCompalsary.Items.Add(reader["subjectname"].ToString());
 
 
-                            j++;
+                                j++;
+                            }
+                            reader.Close();
+
                         }
-                        reader1.Close();
+                        else
+                        {
+                            reader.Close();
+                        }
+                        reader.Close();
+                        checkedListBox1.Items.Clear();
+                        c.returnconn(c.myconn);
+                        string mysql1 = "";
+                        //mysql = "SELECT   tbl_classmaster.classname, tbl_classsubject.subjectno, tbl_sankay.sankayname FROM  tbl_classmaster INNER JOIN     tbl_classsubject ON tbl_classmaster.classcode = tbl_classsubject.classno CROSS JOIN  tbl_sankay where classno=" + valcmbclass.SelectedValue + " ";
+                        // mysql = "SELECT    tbl_classsubject.subjectno, tbl_subject.subjectname, tbl_subject.subjecttype FROM   tbl_classsubject where classno="+classno +") INNER JOIN tbl_subject ON tbl_classsubject.subjectno = tbl_subject.subjectno";
+
+                        mysql1 = "SELECT     tbl_subject.subjectname FROM         tbl_subject INNER JOIN                        tbl_subwiseclass ON tbl_subject.subjectno = tbl_subwiseclass.subjectno where classno='" + classno + "' and tbl_subwiseclass.subjecttype='Elective Subject' and board='" + board + "' and sankayname='" + strcmbfaculty.Text + "' ";
+                        SqlCommand com1;
+                        com1 = new SqlCommand(mysql1, c.myconn);
+                        SqlDataReader reader1;
+                        reader1 = com1.ExecuteReader();
+                        j = 0;
+                        if (reader1.HasRows)
+                        {
+                            while (reader1.Read())
+                            {
+
+
+                                checkedListBox1.Items.Add(reader1["subjectname"].ToString());
+
+
+                                j++;
+                            }
+                            reader1.Close();
+
+                        }
+                        else
+                        {
+                            reader1.Close();
+                        }
 
                     }
-                    else
-                    {
-                        reader1.Close();
-                    }
+                    Connection.FillCombo(ref strsection, "SELECT   distinct  tbl_section.sectionname  FROM         tbl_class INNER JOIN                        tbl_classmaster ON tbl_class.classcode = tbl_classmaster.classcode INNER JOIN                       tbl_section ON tbl_class.sectioncode = tbl_section.sectioncode where tbl_Classmaster.classname='" + valcmbclass.Text + "' and  tbl_class.sankaycode=(select top 1 sankaycode from tbl_sankay where sankayname='" + strcmbfaculty.SelectedItem.ToString() + "' ) ");
 
                 }
-                Connection.FillCombo(ref strsection, "SELECT   distinct  tbl_section.sectionname  FROM         tbl_class INNER JOIN                        tbl_classmaster ON tbl_class.classcode = tbl_classmaster.classcode INNER JOIN                       tbl_section ON tbl_class.sectioncode = tbl_section.sectioncode where tbl_Classmaster.classname='" + valcmbclass.Text + "' and  tbl_class.sankaycode=(select top 1 sankaycode from tbl_sankay where sankayname='" + strcmbfaculty.SelectedItem.ToString() + "' ) ");
             }
-            catch(Exception ex){Logger.LogError(ex); }
+            catch (Exception ex) { Logger.LogError(ex); }
         }
+
+
         private void valcmbclass_SelectedIndexChanged(object sender, EventArgs e)
         {
             fillByClass();
