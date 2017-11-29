@@ -32,6 +32,8 @@
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>https://raw.githubusercontent.com/dreamzedu/dreamzedu.github.io/master/x32/</InstallUrl>
     <UpdateUrl>https://raw.githubusercontent.com/dreamzedu/dreamzedu.github.io/master/x32/</UpdateUrl>
+    <ProductName>CSMS</ProductName>
+    <PublisherName>Dreamzedu</PublisherName>
     <MinimumRequiredVersion>4.0.0.0</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
