@@ -295,49 +295,52 @@ namespace SMS
         {
             try
             {
-                int row = 0,f=0;
-                if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].OwningColumn.Name.ToString() == "TC")
+                if (e.ColumnIndex > -1)
                 {
-                    
-                    row = dataGridView1.CurrentCell.RowIndex;
-                    if (dataGridView1["TC", row].Value.Equals("Yes"))
-                        f=Connection.GetDocuments(Convert.ToString(dataGridView1["Scholar No", row].Value), "TC");
-                }
-                if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].OwningColumn.Name.ToString() == "SLC")
-                {
-                    row = dataGridView1.CurrentCell.RowIndex;
-                    if (dataGridView1["SLC", row].Value.Equals("Yes"))
-                        f = Connection.GetDocuments(Convert.ToString(dataGridView1["Scholar No", row].Value), "SLC");
-                }
-                if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].OwningColumn.Name.ToString() == "Marksheet")
-                {
-                    row = dataGridView1.CurrentCell.RowIndex;
-                    if (dataGridView1["Marksheet", row].Value.Equals("Yes"))
-                        f = Connection.GetDocuments(Convert.ToString(dataGridView1["Scholar No", row].Value), "MSC");
-                }
-                if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].OwningColumn.Name.ToString() == "Income Tax")
-                {
-                    row = dataGridView1.CurrentCell.RowIndex;
-                    if (dataGridView1["Income Tax", row].Value.Equals("Yes"))
-                        f = Connection.GetDocuments(Convert.ToString(dataGridView1["Scholar No", row].Value), "ITC");
-                }
-                if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].OwningColumn.Name.ToString() == "Cast Certificate")
-                {
-                    row = dataGridView1.CurrentCell.RowIndex;
-                    if (dataGridView1["Cast Certificate", row].Value.Equals("Yes"))
-                        f = Connection.GetDocuments(Convert.ToString(dataGridView1["Scholar No", row].Value), "CC");
-                }
-                if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].OwningColumn.Name.ToString() == "Sport")
-                {
-                    row = dataGridView1.CurrentCell.RowIndex;
-                    if (dataGridView1["Sport", row].Value.Equals("Yes"))
-                        f = Connection.GetDocuments(Convert.ToString(dataGridView1["Scholar No", row].Value), "SC");
-                }
-                if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].OwningColumn.Name.ToString() == "DOB")
-                {
-                    row = dataGridView1.CurrentCell.RowIndex;
-                    if (dataGridView1["DOB", row].Value.Equals("Yes"))
-                        f = Connection.GetDocuments(Convert.ToString(dataGridView1["Scholar No", row].Value), "DOB");
+                    int row = 0, f = 0;
+                    if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].OwningColumn.Name.ToString() == "TC")
+                    {
+
+                        row = dataGridView1.CurrentCell.RowIndex;
+                        if (dataGridView1["TC", row].Value.Equals("Yes"))
+                            f = Connection.GetDocuments(Convert.ToString(dataGridView1["Scholar No", row].Value), "TC");
+                    }
+                    if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].OwningColumn.Name.ToString() == "SLC")
+                    {
+                        row = dataGridView1.CurrentCell.RowIndex;
+                        if (dataGridView1["SLC", row].Value.Equals("Yes"))
+                            f = Connection.GetDocuments(Convert.ToString(dataGridView1["Scholar No", row].Value), "SLC");
+                    }
+                    if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].OwningColumn.Name.ToString() == "Marksheet")
+                    {
+                        row = dataGridView1.CurrentCell.RowIndex;
+                        if (dataGridView1["Marksheet", row].Value.Equals("Yes"))
+                            f = Connection.GetDocuments(Convert.ToString(dataGridView1["Scholar No", row].Value), "MSC");
+                    }
+                    if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].OwningColumn.Name.ToString() == "Income Tax")
+                    {
+                        row = dataGridView1.CurrentCell.RowIndex;
+                        if (dataGridView1["Income Tax", row].Value.Equals("Yes"))
+                            f = Connection.GetDocuments(Convert.ToString(dataGridView1["Scholar No", row].Value), "ITC");
+                    }
+                    if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].OwningColumn.Name.ToString() == "Cast Certificate")
+                    {
+                        row = dataGridView1.CurrentCell.RowIndex;
+                        if (dataGridView1["Cast Certificate", row].Value.Equals("Yes"))
+                            f = Connection.GetDocuments(Convert.ToString(dataGridView1["Scholar No", row].Value), "CC");
+                    }
+                    if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].OwningColumn.Name.ToString() == "Sport")
+                    {
+                        row = dataGridView1.CurrentCell.RowIndex;
+                        if (dataGridView1["Sport", row].Value.Equals("Yes"))
+                            f = Connection.GetDocuments(Convert.ToString(dataGridView1["Scholar No", row].Value), "SC");
+                    }
+                    if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].OwningColumn.Name.ToString() == "DOB")
+                    {
+                        row = dataGridView1.CurrentCell.RowIndex;
+                        if (dataGridView1["DOB", row].Value.Equals("Yes"))
+                            f = Connection.GetDocuments(Convert.ToString(dataGridView1["Scholar No", row].Value), "DOB");
+                    }
                 }
             }
             catch(Exception ex){Logger.LogError(ex); }

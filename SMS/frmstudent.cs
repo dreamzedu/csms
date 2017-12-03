@@ -381,19 +381,19 @@ namespace SMS
                             if (dt.Rows.Count > 0)
                             {
                                 //Get a stored PDF bytes
-                                if (!string.IsNullOrEmpty(dt.Rows[0]["TCFile"].ToString()))
+                                if (dt.Rows[0]["TCFile"] != System.DBNull.Value)
                                     TFBdtc = (byte[])dt.Rows[0]["TCFile"];
-                                if (!string.IsNullOrEmpty(dt.Rows[0]["SOCFile"].ToString()))
+                                if (dt.Rows[0]["SOCFile"] != System.DBNull.Value)
                                     TFBdsoc = (byte[])dt.Rows[0]["SOCFile"];
-                                if (!string.IsNullOrEmpty(dt.Rows[0]["SLCFile"].ToString()))
+                                if (dt.Rows[0]["SLCFile"] != System.DBNull.Value)
                                     TFBdslc = (byte[])dt.Rows[0]["SLCFile"];
-                                if (!string.IsNullOrEmpty(dt.Rows[0]["DOBFile"].ToString()))
+                                if (dt.Rows[0]["DOBFile"] != System.DBNull.Value)
                                     TFBddob = (byte[])dt.Rows[0]["DOBFile"];
-                                if (!string.IsNullOrEmpty(dt.Rows[0]["MSFile"].ToString()))
+                                if (dt.Rows[0]["MSFile"] != System.DBNull.Value)
                                     TFBdms = (byte[])dt.Rows[0]["MSFile"];
-                                if (!string.IsNullOrEmpty(dt.Rows[0]["ICFile"].ToString()))
+                                if (dt.Rows[0]["ICFile"] != System.DBNull.Value)
                                     TFBdic = (byte[])dt.Rows[0]["ICFile"];
-                                if (!string.IsNullOrEmpty(dt.Rows[0]["CCFile"].ToString()))
+                                if (dt.Rows[0]["CCFile"] != System.DBNull.Value)
                                     TFBdcc = (byte[])dt.Rows[0]["CCFile"];
 
 
@@ -541,18 +541,24 @@ namespace SMS
                             try
                             {
                                 DataSet ds = Connection.GetDataSet("Select studentimage from tbl_Student where studentno ='" + StudentNo + "'");
-                                byte[] reading = (byte[])ds.Tables[0].Rows[0][0];
-                                MemoryStream ms = new MemoryStream(reading);
-                                member_pic.Image = Image.FromStream(ms);
+                                if (ds.Tables[0].Rows[0][0] != System.DBNull.Value)
+                                {
+                                    byte[] reading = (byte[])ds.Tables[0].Rows[0][0];
+                                    MemoryStream ms = new MemoryStream(reading);
+                                    member_pic.Image = Image.FromStream(ms);
+                                }
                             }
                             catch(Exception ex){Logger.LogError(ex); }
 
                             try
                             {
                                 DataSet ds66 = Connection.GetDataSet("Select docimage from tbl_Student where studentno ='" + StudentNo + "'");
-                                byte[] reading1 = (byte[])ds66.Tables[0].Rows[0][0];
-                                MemoryStream ms1 = new MemoryStream(reading1);
-                                pictureBox2.Image = Image.FromStream(ms1);
+                                if (ds66.Tables[0].Rows[0][0] != System.DBNull.Value)
+                                {
+                                    byte[] reading1 = (byte[])ds66.Tables[0].Rows[0][0];
+                                    MemoryStream ms1 = new MemoryStream(reading1);
+                                    pictureBox2.Image = Image.FromStream(ms1);
+                                }
                             }
                             catch(Exception ex){Logger.LogError(ex); }
 
