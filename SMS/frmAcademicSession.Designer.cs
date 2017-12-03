@@ -32,12 +32,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cmbSession = new System.Windows.Forms.ComboBox();
             this.btnDone = new System.Windows.Forms.Button();
+            this.chkSetSession = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(52, 73);
+            this.label1.Location = new System.Drawing.Point(26, 73);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(166, 17);
             this.label1.TabIndex = 0;
@@ -46,14 +47,14 @@
             // cmbSession
             // 
             this.cmbSession.FormattingEnabled = true;
-            this.cmbSession.Location = new System.Drawing.Point(241, 73);
+            this.cmbSession.Location = new System.Drawing.Point(203, 71);
             this.cmbSession.Name = "cmbSession";
-            this.cmbSession.Size = new System.Drawing.Size(156, 24);
+            this.cmbSession.Size = new System.Drawing.Size(224, 24);
             this.cmbSession.TabIndex = 1;
             // 
             // btnDone
             // 
-            this.btnDone.Location = new System.Drawing.Point(190, 151);
+            this.btnDone.Location = new System.Drawing.Point(190, 175);
             this.btnDone.Name = "btnDone";
             this.btnDone.Size = new System.Drawing.Size(75, 29);
             this.btnDone.TabIndex = 3;
@@ -61,12 +62,23 @@
             this.btnDone.UseVisualStyleBackColor = true;
             this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
             // 
+            // chkSetSession
+            // 
+            this.chkSetSession.AutoSize = true;
+            this.chkSetSession.Location = new System.Drawing.Point(203, 112);
+            this.chkSetSession.Name = "chkSetSession";
+            this.chkSetSession.Size = new System.Drawing.Size(235, 21);
+            this.chkSetSession.TabIndex = 4;
+            this.chkSetSession.Text = "Set as current academic session";
+            this.chkSetSession.UseVisualStyleBackColor = true;
+            // 
             // frmAcademicSession
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(457, 251);
             this.ControlBox = false;
+            this.Controls.Add(this.chkSetSession);
             this.Controls.Add(this.btnDone);
             this.Controls.Add(this.cmbSession);
             this.Controls.Add(this.label1);
@@ -85,5 +97,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbSession;
         private System.Windows.Forms.Button btnDone;
+        private System.Windows.Forms.CheckBox chkSetSession;
     }
 }

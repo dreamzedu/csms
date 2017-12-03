@@ -16,6 +16,7 @@ namespace SMS
         school c = new school();
         public static int CurrentSessionCode;
         string U = "com_1", P = "12345678";//"dess", P="Winserver";
+        
         public Loginform()
         {
             InitializeComponent();

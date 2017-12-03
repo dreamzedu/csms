@@ -16,6 +16,8 @@ namespace SMS
         /// <returns></returns>
         public static string Encrypt(string toEncrypt, bool useHashing)
         {
+            if (string.IsNullOrEmpty(toEncrypt)) return string.Empty;
+
             byte[] keyArray;
             byte[] toEncryptArray = UTF8Encoding.UTF8.GetBytes(toEncrypt);
 
@@ -50,6 +52,8 @@ namespace SMS
         /// <returns></returns>
         public static string Decrypt(string cipherString, bool useHashing)
         {
+            if (string.IsNullOrEmpty(cipherString)) return string.Empty;
+
             byte[] keyArray;
             byte[] toEncryptArray = Convert.FromBase64String(cipherString);
 

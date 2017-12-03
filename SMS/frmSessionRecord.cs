@@ -125,7 +125,7 @@ namespace SMS
             }
             catch (Exception ex)
             {
-               // Logger.LogError(ex); MessageBox.Show(ex.Message);
+                Logger.LogError(ex); MessageBox.Show(ex.Message);
             }
         }
         public override void btnedit_Click(object sender, EventArgs e)

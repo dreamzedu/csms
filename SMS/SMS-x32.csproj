@@ -37,7 +37,7 @@
     <MinimumRequiredVersion>4.0.0.0</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationRevision>5</ApplicationRevision>
     <ApplicationVersion>4.0.2.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -2828,6 +2828,8 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="config\appsettings\app.local.config" />
+    <None Include="config\appsettings\app.prod.config" />
     <None Include="Library\Open Notebook.onetoc2" />
     <None Include="Library\ReportDesign\Open Notebook.onetoc2" />
     <None Include="Library\ReportForm\Open Notebook.onetoc2" />

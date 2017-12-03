@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <PublishUrlHistory>http://localhost/winApp32/</PublishUrlHistory>
+    <PublishUrlHistory>http://localhost/winApp64/|http://localhost/winApp32/</PublishUrlHistory>
     <InstallUrlHistory>https://raw.githubusercontent.com/dreamzedu/dreamzedu.github.io/master/x64/|https://raw.githubusercontent.com/dreamzedu/dreamzedu.github.io/master/x32/</InstallUrlHistory>
     <SupportUrlHistory />
     <UpdateUrlHistory>https://raw.githubusercontent.com/dreamzedu/dreamzedu.github.io/master/x32/</UpdateUrlHistory>
@@ -9,5 +9,6 @@
     <ErrorReportUrlHistory />
     <FallbackCulture>en-US</FallbackCulture>
     <VerifyUploadedFiles>false</VerifyUploadedFiles>
+    <ProjectView>ProjectFiles</ProjectView>
   </PropertyGroup>
 </Project>

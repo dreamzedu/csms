@@ -35,11 +35,30 @@ namespace SMS
         {
            
         }
+
+       static Connection()
+       {
+           DbServer = System.Configuration.ConfigurationManager.AppSettings["dbServer"];
+           UserDbName = System.Configuration.ConfigurationManager.AppSettings["userDbName"];
+           UserDbUserName = CryptorEngine.Decrypt(System.Configuration.ConfigurationManager.AppSettings["userDbUserName"], true);
+           UserDbPwd = CryptorEngine.Decrypt(System.Configuration.ConfigurationManager.AppSettings["userDbPwd"], true);
+           UserDbServer = System.Configuration.ConfigurationManager.AppSettings["userDbServer"];
+
+           if (string.IsNullOrEmpty(UserDbPwd))
+           {
+               UserDbConnectionString = string.Concat("server=", UserDbServer, ";database=", UserDbName, ";integrated security=true");
+           }
+           else
+           {
+               UserDbConnectionString = string.Concat("server=", UserDbServer, ";database=", UserDbName, ";uid=", UserDbUserName, ";password=", UserDbPwd);
+           }
+       }
+
         private static string[] arrayOld;
         public static string MResponseId = string.Empty;
         private static string AccessPathId = string.Empty;
         private static string ConnectionString = string.Empty;
-        private static string UserDbConnectionString = "server=103.235.105.60;database=dreamzedu_users;uid=dreamzedu_user_1234567;password=Dreamzedu@1234567";
+        private static string UserDbConnectionString;// = "server=103.235.105.60;database=dreamzedu_users;uid=dreamzedu_user_1234567;password=Dreamzedu@1234567";
         private static string MessageSenderID = string.Empty;
         private static string MessageUserName = string.Empty;
         private static string MessagePassword = string.Empty;
@@ -50,7 +69,11 @@ namespace SMS
         public static Int16 SetValue_0_For_MS_Access_1_For_MS_Excel;
         public static string MSAccessFileInfoFullName;
         public static string MSExcelFileInfoFullName;
-        public static string DbServer = "103.235.105.60";
+        public static string DbServer;// = "103.235.105.60";
+        public static string UserDbServer;
+        public static string UserDbName;
+        public static string UserDbUserName;
+        public static string UserDbPwd;
 
 
         public static string GetGrade(decimal obtm, int maxm)
@@ -95,15 +118,14 @@ namespace SMS
             {
                 if (string.IsNullOrEmpty(Connection.ConnectionString))
                 {
-                    Connection.ConnectionString = "server=" + DbServer + ";database=dreamzedu_" + school1.CurrentUser.UserId + ";uid=" + school1.CurrentUser.DbUserId + ";password=" + school1.CurrentUser.DbUserPwd + ";";
-                    //string ConnectionPath = Application.StartupPath;
-                    //FileStream fs = new FileStream(ConnectionPath + @"\regact.dll", FileMode.Open, FileAccess.Read);
-                    //FileStream fs = new FileStream("C:\\WINDOWS\\inf\\regact.dll", FileMode.Open, FileAccess.Read);
-                    //FileStream fs = new FileStream("C:\\WINXP\\ime\\regact.dll", FileMode.Open, FileAccess.Read);
-                    //StreamReader oRead = new StreamReader(fs);
-                    //Connection.ConnectionString = (string)oRead.ReadToEnd();
-                    //oRead.Close();
-                    //fs.Close();
+                    Connection.ConnectionString = "server=" + DbServer + ";database=" + school1.CurrentUser.DbName + ";uid=" + school1.CurrentUser.DbUserId + ";password=" + school1.CurrentUser.DbUserPwd + ";";
+                    
+                    // This logic is mostely for debug mode only when the database is running locally
+                    if(string.IsNullOrEmpty(school1.CurrentUser.DbUserPwd))
+                    {
+                        Connection.ConnectionString = "server=" + DbServer + ";database=" + school1.CurrentUser.DbName + ";integrated security=true;";
+                 
+                    }
 
                     SqlConnection con = new SqlConnection(ConnectionString);
 
@@ -888,7 +910,10 @@ namespace SMS
         public static int ExecuteNonQuery(string cmdStr, SqlConnection con)
         {
             SqlCommand cmd = new SqlCommand(cmdStr, con);
-            con.Open();
+
+            if(con.State == ConnectionState.Closed)
+                con.Open();
+
             int i = cmd.ExecuteNonQuery();
             con.Close();
             return i;
