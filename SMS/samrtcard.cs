@@ -110,61 +110,11 @@ namespace SMS
         byte[] TData = null;
         private void btnBarcode_Click(object sender, EventArgs e)
         {
-            DataTable dtStudent = Connection.GetDataTableFromDataGridViewDefaultDataType(dataGridView1);
-            DataRow[] r = dtStudent.Select("Select='True'", "Name");
-            if (r.Length > 0)
+            try
             {
-                if (string.IsNullOrEmpty(dtStudent.Rows[0]["logoimage"].ToString()))
-                {
-                    DataSet dsi = new DataSet();
-                    dsi = Connection.JGetDefaultImage();
-
-                    if (dsi.Tables[0].Rows.Count > 0)
-                    {
-                        TData = (byte[])(dsi.Tables[0].Rows[0]["Image"]);
-                        //byte[] ByteImage = (byte[])dtStudent.Rows[0]["logoimage"];
-                        Bitmap bmp = Connection.GetImageFromByteArray(TData);
-                        bmp = Connection.AdjustContrastOfImage(bmp, 80f);
-                        byte[] ByteImage1 = Connection.GetByteArrayFromImage(bmp);
-                        dtStudent = r.CopyToDataTable();
-                        dtStudent.TableName = "Student Details";
-                        dtStudent.Rows[0]["Watermark"] = Connection.GetByteArrayFromImage(bmp);
-                    }
-                }
-                else
-                {
-                    byte[] ByteImage = (byte[])dtStudent.Rows[0]["logoimage"];
-                    Bitmap bmp = Connection.GetImageFromByteArray(ByteImage);
-                    bmp = Connection.AdjustContrastOfImage(bmp, 80f);
-                    byte[] ByteImage1 = Connection.GetByteArrayFromImage(bmp);
-                    dtStudent = r.CopyToDataTable();
-                    dtStudent.TableName = "Student Details";
-                    dtStudent.Rows[0]["Watermark"] = Connection.GetByteArrayFromImage(bmp);
-                }
-
-                dtStudent.WriteXmlSchema(@"" + Connection.GetAccessPathId() + @"Barcodes\a\SmartCard.xsd");
-                rptStudentSmartCardWithBarcode fr = new rptStudentSmartCardWithBarcode();
-                fr.PrintOptions.PaperOrientation = PaperOrientation.Portrait;
-                fr.PrintOptions.PaperSize = CrystalDecisions.Shared.PaperSize.PaperLetter;
-                fr.SetDataSource(dtStudent);
-                ShowAllReports s = new ShowAllReports();
-                s.Text = "Smart/Identity Card";
-                s.crystalReportViewer1.ReportSource = fr;
-                s.Show();
-            }
-            else
-            {
-                MessageBox.Show("Please Select Student...");
-            }
-        }
-
-        private void btnNormarl_Click(object sender, EventArgs e)
-        {
-            DataTable dtStudent = Connection.GetDataTableFromDataGridViewDefaultDataType(dataGridView1);
-            if (dtStudent != null)
-            {
-                DataRow[] r = dtStudent.Copy().Select("Select='True'", "Name");
-                if (r != null && r.Length > 0)
+                DataTable dtStudent = Connection.GetDataTableFromDataGridViewDefaultDataType(dataGridView1);
+                DataRow[] r = dtStudent.Select("Select='True'", "Name");
+                if (r.Length > 0)
                 {
                     if (string.IsNullOrEmpty(dtStudent.Rows[0]["logoimage"].ToString()))
                     {
@@ -173,7 +123,7 @@ namespace SMS
 
                         if (dsi.Tables[0].Rows.Count > 0)
                         {
-                            TData = (byte[]) (dsi.Tables[0].Rows[0]["Image"]);
+                            TData = (byte[])(dsi.Tables[0].Rows[0]["Image"]);
                             //byte[] ByteImage = (byte[])dtStudent.Rows[0]["logoimage"];
                             Bitmap bmp = Connection.GetImageFromByteArray(TData);
                             bmp = Connection.AdjustContrastOfImage(bmp, 80f);
@@ -185,7 +135,7 @@ namespace SMS
                     }
                     else
                     {
-                        byte[] ByteImage = (byte[]) dtStudent.Rows[0]["logoimage"];
+                        byte[] ByteImage = (byte[])dtStudent.Rows[0]["logoimage"];
                         Bitmap bmp = Connection.GetImageFromByteArray(ByteImage);
                         bmp = Connection.AdjustContrastOfImage(bmp, 80f);
                         byte[] ByteImage1 = Connection.GetByteArrayFromImage(bmp);
@@ -193,17 +143,14 @@ namespace SMS
                         dtStudent.TableName = "Student Details";
                         dtStudent.Rows[0]["Watermark"] = Connection.GetByteArrayFromImage(bmp);
                     }
+
                     dtStudent.WriteXmlSchema(@"" + Connection.GetAccessPathId() + @"Barcodes\a\SmartCard.xsd");
-                    rptStudentSmartCardWithoutBarcode fr = new rptStudentSmartCardWithoutBarcode();
+                    rptStudentSmartCardWithBarcode fr = new rptStudentSmartCardWithBarcode();
                     fr.PrintOptions.PaperOrientation = PaperOrientation.Portrait;
                     fr.PrintOptions.PaperSize = CrystalDecisions.Shared.PaperSize.PaperLetter;
                     fr.SetDataSource(dtStudent);
                     ShowAllReports s = new ShowAllReports();
                     s.Text = "Smart/Identity Card";
-
-                    fr.SetParameterValue("Title", "IDENTITY CARD");
-                    fr.SetParameterValue("ICStatus", true);
-                    fr.DataDefinition.FormulaFields["RollNo"].Text = "'0'";
                     s.crystalReportViewer1.ReportSource = fr;
                     s.Show();
                 }
@@ -212,74 +159,151 @@ namespace SMS
                     MessageBox.Show("Please Select Student...");
                 }
             }
-            else
+            catch(Exception ex)
             {
-                MessageBox.Show("Please Select Student...");
+                MessageBox.Show("Some error occurred while performing this operation. Please try again or contact your vendor if error persists.");
+                Logger.LogError(ex);
+            }
+        }
+
+        private void btnNormarl_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataTable dtStudent = Connection.GetDataTableFromDataGridViewDefaultDataType(dataGridView1);
+                if (dtStudent != null)
+                {
+                    DataRow[] r = dtStudent.Copy().Select("Select='True'", "Name");
+                    if (r != null && r.Length > 0)
+                    {
+                        if (string.IsNullOrEmpty(dtStudent.Rows[0]["logoimage"].ToString()))
+                        {
+                            DataSet dsi = new DataSet();
+                            dsi = Connection.JGetDefaultImage();
+
+                            if (dsi.Tables[0].Rows.Count > 0)
+                            {
+                                TData = (byte[])(dsi.Tables[0].Rows[0]["Image"]);
+                                //byte[] ByteImage = (byte[])dtStudent.Rows[0]["logoimage"];
+                                Bitmap bmp = Connection.GetImageFromByteArray(TData);
+                                bmp = Connection.AdjustContrastOfImage(bmp, 80f);
+                                byte[] ByteImage1 = Connection.GetByteArrayFromImage(bmp);
+                                dtStudent = r.CopyToDataTable();
+                                dtStudent.TableName = "Student Details";
+                                dtStudent.Rows[0]["Watermark"] = Connection.GetByteArrayFromImage(bmp);
+                            }
+                        }
+                        else
+                        {
+                            byte[] ByteImage = (byte[])dtStudent.Rows[0]["logoimage"];
+                            Bitmap bmp = Connection.GetImageFromByteArray(ByteImage);
+                            bmp = Connection.AdjustContrastOfImage(bmp, 80f);
+                            byte[] ByteImage1 = Connection.GetByteArrayFromImage(bmp);
+                            dtStudent = r.CopyToDataTable();
+                            dtStudent.TableName = "Student Details";
+                            dtStudent.Rows[0]["Watermark"] = Connection.GetByteArrayFromImage(bmp);
+                        }
+                        dtStudent.WriteXmlSchema(@"" + Connection.GetAccessPathId() + @"Barcodes\a\SmartCard.xsd");
+                        rptStudentSmartCardWithoutBarcode fr = new rptStudentSmartCardWithoutBarcode();
+                        fr.PrintOptions.PaperOrientation = PaperOrientation.Portrait;
+                        fr.PrintOptions.PaperSize = CrystalDecisions.Shared.PaperSize.PaperLetter;
+                        fr.SetDataSource(dtStudent);
+                        ShowAllReports s = new ShowAllReports();
+                        s.Text = "Smart/Identity Card";
+
+                        fr.SetParameterValue("Title", "IDENTITY CARD");
+                        fr.SetParameterValue("ICStatus", true);
+                        fr.DataDefinition.FormulaFields["RollNo"].Text = "'0'";
+                        s.crystalReportViewer1.ReportSource = fr;
+                        s.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please Select Student...");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please Select Student...");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Some error occurred while performing this operation. Please try again or contact your vendor if error persists.");
+                Logger.LogError(ex);
             }
         }
 
         private void btnAdminCard_Click(object sender, EventArgs e)
         {
-            DataTable dtStudent = Connection.GetDataTableFromDataGridViewDefaultDataType(dataGridView1);
-            DataRow[] r = dtStudent.Copy().Select("Select='True'", "Name");
-            if (r.Length > 0)
+            try
             {
-                if (string.IsNullOrEmpty(dtStudent.Rows[0]["logoimage"].ToString()))
+                DataTable dtStudent = Connection.GetDataTableFromDataGridViewDefaultDataType(dataGridView1);
+                DataRow[] r = dtStudent.Copy().Select("Select='True'", "Name");
+                if (r.Length > 0)
                 {
-                    DataSet dsi = new DataSet();
-                    dsi = Connection.JGetDefaultImage();
-
-                    if (dsi.Tables[0].Rows.Count > 0)
+                    if (string.IsNullOrEmpty(dtStudent.Rows[0]["logoimage"].ToString()))
                     {
-                        TData = (byte[])(dsi.Tables[0].Rows[0]["Image"]);
-                        //byte[] ByteImage = (byte[])dtStudent.Rows[0]["logoimage"];
-                        Bitmap bmp = Connection.GetImageFromByteArray(TData);
+                        DataSet dsi = new DataSet();
+                        dsi = Connection.JGetDefaultImage();
+
+                        if (dsi.Tables[0].Rows.Count > 0)
+                        {
+                            TData = (byte[])(dsi.Tables[0].Rows[0]["Image"]);
+                            //byte[] ByteImage = (byte[])dtStudent.Rows[0]["logoimage"];
+                            Bitmap bmp = Connection.GetImageFromByteArray(TData);
+                            bmp = Connection.AdjustContrastOfImage(bmp, 80f);
+                            byte[] ByteImage1 = Connection.GetByteArrayFromImage(bmp);
+                            dtStudent = r.CopyToDataTable();
+                            dtStudent.TableName = "Student Details";
+                            dtStudent.Rows[0]["Watermark"] = Connection.GetByteArrayFromImage(bmp);
+                        }
+                    }
+                    else
+                    {
+                        byte[] ByteImage = (byte[])dtStudent.Rows[0]["logoimage"];
+                        Bitmap bmp = Connection.GetImageFromByteArray(ByteImage);
                         bmp = Connection.AdjustContrastOfImage(bmp, 80f);
                         byte[] ByteImage1 = Connection.GetByteArrayFromImage(bmp);
                         dtStudent = r.CopyToDataTable();
                         dtStudent.TableName = "Student Details";
-                        dtStudent.Rows[0]["Watermark"] = Connection.GetByteArrayFromImage(bmp);
+                        dtStudent.Rows[0]["Watermark"] = null;
                     }
+
+                    dtStudent.Columns.Add("RollNo", typeof(string));
+                    foreach (DataRow Row in dtStudent.Rows)
+                    {
+                        object obj = Connection.GetExecuteScalar("Select RollNo From tbl_StudentAttendance Where " +
+                            " SessionCode='" + school.CurrentSessionCode + "' And ClassNo='" + cmbClass.SelectedValue + "' " +
+                            " And StudentNo='" + Row["StudentNo"] + "'");
+                        Row["RollNo"] = (obj != null) ? obj : "0";
+                    }
+
+                    dtStudent.WriteXmlSchema(@"" + Connection.GetAccessPathId() + @"Barcodes\a\SmartCard.xsd");
+                    rptStudentSmartCardWithoutBarcode fr = new rptStudentSmartCardWithoutBarcode();
+                    fr.PrintOptions.PaperOrientation = PaperOrientation.Portrait;
+                    fr.PrintOptions.PaperSize = CrystalDecisions.Shared.PaperSize.PaperLetter;
+                    fr.SetDataSource(dtStudent);
+                    ShowAllReports s = new ShowAllReports();
+                    s.Text = "Smart/Identity Card";
+                    s.crystalReportViewer1.ReportSource = fr;
+
+                    string ex = string.Empty;
+                    ex = "ADMIT CARD [ " + cmbExam.Text.ToString() + " ]";
+                    fr.SetParameterValue("Title", ex);
+                    fr.SetParameterValue("ICStatus", false);
+                    //dtStudent.Dispose();
+                    s.Show();
                 }
                 else
                 {
-                    byte[] ByteImage = (byte[])dtStudent.Rows[0]["logoimage"];
-                    Bitmap bmp = Connection.GetImageFromByteArray(ByteImage);
-                    bmp = Connection.AdjustContrastOfImage(bmp, 80f);
-                    byte[] ByteImage1 = Connection.GetByteArrayFromImage(bmp);
-                    dtStudent = r.CopyToDataTable();
-                    dtStudent.TableName = "Student Details";
-                    dtStudent.Rows[0]["Watermark"] = null;
+                    MessageBox.Show("Please Select Student...");
                 }
-
-                dtStudent.Columns.Add("RollNo", typeof(string));
-                foreach (DataRow Row in dtStudent.Rows)
-                {
-                    object obj = Connection.GetExecuteScalar("Select RollNo From tbl_StudentAttendance Where " +
-                        " SessionCode='" + school.CurrentSessionCode + "' And ClassNo='" + cmbClass.SelectedValue + "' " +
-                        " And StudentNo='" + Row["StudentNo"] + "'");
-                    Row["RollNo"] = (obj != null) ? obj : "0";
-                }
-
-                dtStudent.WriteXmlSchema(@"" + Connection.GetAccessPathId() + @"Barcodes\a\SmartCard.xsd");
-                rptStudentSmartCardWithoutBarcode fr = new rptStudentSmartCardWithoutBarcode();
-                fr.PrintOptions.PaperOrientation = PaperOrientation.Portrait;
-                fr.PrintOptions.PaperSize = CrystalDecisions.Shared.PaperSize.PaperLetter;
-                fr.SetDataSource(dtStudent);
-                ShowAllReports s = new ShowAllReports();
-                s.Text = "Smart/Identity Card";
-                s.crystalReportViewer1.ReportSource = fr;
-
-                string ex = string.Empty;
-                ex = "ADMIT CARD [ " + cmbExam.Text.ToString() + " ]";
-                fr.SetParameterValue("Title", ex);
-                fr.SetParameterValue("ICStatus", false);
-                //dtStudent.Dispose();
-                s.Show();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Please Select Student...");
+                MessageBox.Show("Some error occurred while performing this operation. Please try again or contact your vendor if error persists.");
+                Logger.LogError(ex);
             }
         }
 
