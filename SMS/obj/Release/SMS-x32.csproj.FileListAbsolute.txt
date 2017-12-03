@@ -1,0 +1,4 @@
+C:\csms-x86\csms\SMS\bin\Release\SMS.exe.config
+C:\csms-x86\csms\SMS\obj\Release\SMS-x32.csproj.ResolveComReference.cache
+C:\csms-x86\csms\SMS\obj\Release\SMS.exe
+C:\csms-x86\csms\SMS\obj\Release\SMS.pdb

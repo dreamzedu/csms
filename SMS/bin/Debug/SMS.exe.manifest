@@ -410,7 +410,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>mJZWUiSzmwv9k8lsrX17aT7YQ8Q=</dsig:DigestValue>
+        <dsig:DigestValue>dNR9ibTf//zw2ZAGeeaH6y8sf44=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1257,13 +1257,13 @@
       <dsig:DigestValue>KPXJC8SG0jEtgo52Tw98h6nVWaQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="SMS.exe.config" size="2648">
+  <file name="SMS.exe.config" size="2715">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>9faHU02t7OAcMaNjGefQST8PAxE=</dsig:DigestValue>
+      <dsig:DigestValue>Ly1eNBFZJwW9WWXk0cifii62R8w=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

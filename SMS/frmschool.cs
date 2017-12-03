@@ -35,7 +35,7 @@ namespace SMS
                 BtnPrincipal.Enabled = false;
                 c.GetMdiParent(this).EnableAllEditMenuButtons();
                 
-                c.getconnstr();
+                //c.getconnstr();
                 c.GetMdiParent(this).ToggleNewButton(false);
                 c.GetMdiParent(this).ToggleDeleteButton(false);
                 //c.showdata("tbl_school", c.myconn, this, "schoolname", "schoolname");
@@ -98,8 +98,8 @@ namespace SMS
             //if (i == 0)
             //{
                 DesignForm.fromDesign2(this);
-                txtinstitute.Enabled = false;
-                txtcity.Enabled = false;
+                //txtinstitute.Enabled = false;
+                //txtcity.Enabled = false;
                 button1.Enabled = true;
                 BtnHOE.Enabled = true;
                 BtnPrincipal.Enabled = true;

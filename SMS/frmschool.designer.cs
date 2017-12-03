@@ -150,7 +150,6 @@
             this.txtcity.Location = new System.Drawing.Point(206, 143);
             this.txtcity.MaxLength = 30;
             this.txtcity.Name = "txtcity";
-            this.txtcity.ReadOnly = true;
             this.txtcity.Size = new System.Drawing.Size(261, 25);
             this.txtcity.TabIndex = 2;
             this.txtcity.Tag = "schoolcity";
@@ -171,7 +170,6 @@
             // 
             // txtinstitute
             // 
-            this.txtinstitute.Enabled = false;
             this.txtinstitute.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtinstitute.Location = new System.Drawing.Point(206, 43);
             this.txtinstitute.MaxLength = 500;
