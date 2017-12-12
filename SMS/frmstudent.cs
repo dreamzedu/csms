@@ -330,19 +330,19 @@ namespace SMS
             catch
             { }
         }
-        private void txtpercantage4_Validated(object sender, EventArgs e)
-        {
-            try
-            {
-                if (Convert.ToInt32(txtpercantage4.Text) > 100)
-                {
-                    txtpercantage4.Text = "";
-                    MessageBox.Show("Invalid Percentage..", "School");
-                    txtpercantage4.Focus();
-                }
-            }
-            catch(Exception ex){Logger.LogError(ex); }
-        }
+        //private void txtpercantage4_Validated(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        if (Convert.ToInt32(txtpercantage4.Text) > 100)
+        //        {
+        //            txtpercantage4.Text = "";
+        //            MessageBox.Show("Invalid Percentage..", "School");
+        //            txtpercantage4.Focus();
+        //        }
+        //    }
+        //    catch(Exception ex){Logger.LogError(ex); }
+        //}
         byte[] TData = null;
         private void txtscholarno_Validated(object sender, EventArgs e)
         {

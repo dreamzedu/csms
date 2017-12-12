@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <configSections>
+  </configSections>
+  <connectionStrings>
+    
+  <!--<add name="SMS.Properties.Settings.LISConnectionString" connectionString="Data Source=USER-PC\SQLEXPRESS;Initial Catalog=LIS;Integrated Security=True" providerName="System.Data.Sqllient"/>-->
+  </connectionStrings>
+  <appSettings>
+    <add key="dbServer" value="103.235.105.60"/>
+    <add key="userDbServer" value="103.235.105.60"/>
+    <add key="userDbName" value="dreamzedu_users"/>
+    <add key="userDbUserName" value="R8KBiMEsXMKa/aQnw8zoa1gijv0ltoSN"/>
+    <add key="userDbPwd" value="RSRqUTAVPJDZtLITLPPA3T/7q8wcPwFg"/>
+    <add key="SecurityKey" value="Syed Moshiur Murshed"/>
+    <add key="SendarId" value="MMVMRW"/>
+    <add key="S1" value="R2J-S1KL-D4PI-80uP-FihP;0Ct5-PfY2-29w-9RXK-WAxy;u37Y-WU1-m6UM-bXcN-r3X;Ny0P-B8W8-2NV-Uma-VGsG;FOHR-g2EK-t45Y-cRlz-G1I"></add>
+    <add key="DayCount" value="15"/>
+    <add key="ClientSettingsProvider.ServiceUri" value=""/>
+  </appSettings>
+  <system.web>
+    <membership defaultProvider="ClientAuthenticationMembershipProvider">
+      <providers>
+        <add name="ClientAuthenticationMembershipProvider" type="System.Web.ClientServices.Providers.ClientFormsAuthenticationMembershipProvider, System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" serviceUri=""/>
+      </providers>
+    </membership>
+    <roleManager defaultProvider="ClientRoleProvider" enabled="true">
+      <providers>
+        <add name="ClientRoleProvider" type="System.Web.ClientServices.Providers.ClientRoleProvider, System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" serviceUri="" cacheTimeout="86400"/>
+      </providers>
+    </roleManager>
+  </system.web>
+	<runtime>
+		<assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+			<dependentAssembly>
+				<assemblyIdentity name="office" publicKeyToken="71E9BCE111E9429C" culture="neutral"/>
+				<bindingRedirect oldVersion="0.0.0.0-12.0.0.0" newVersion="12.0.0.0"/>
+			</dependentAssembly>
+			<dependentAssembly>
+				<assemblyIdentity name="Microsoft.Office.Interop.Excel" publicKeyToken="71E9BCE111E9429C" culture="neutral"/>
+				<bindingRedirect oldVersion="0.0.0.0-12.0.0.0" newVersion="12.0.0.0"/>
+			</dependentAssembly>
+			<dependentAssembly>
+				<assemblyIdentity name="Microsoft.Vbe.Interop" publicKeyToken="71E9BCE111E9429C" culture="neutral"/>
+				<bindingRedirect oldVersion="0.0.0.0-12.0.0.0" newVersion="12.0.0.0"/>
+			</dependentAssembly>
+		</assemblyBinding>
+	</runtime>
+<startup><supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.0"/></startup></configuration>

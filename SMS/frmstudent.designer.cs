@@ -215,20 +215,13 @@ namespace SMS
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label30 = new System.Windows.Forms.Label();
             this.txtmarks1 = new System.Windows.Forms.TextBox();
-            this.txtdivision4 = new System.Windows.Forms.TextBox();
             this.txtpercantage1 = new System.Windows.Forms.TextBox();
-            this.txtresult4 = new System.Windows.Forms.TextBox();
             this.txtobtained1 = new System.Windows.Forms.TextBox();
-            this.txtobtained4 = new System.Windows.Forms.TextBox();
             this.txtresult1 = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
-            this.txtpercantage4 = new System.Windows.Forms.TextBox();
             this.txtdivision1 = new System.Windows.Forms.TextBox();
-            this.txtmarks4 = new System.Windows.Forms.TextBox();
             this.txtrollno2 = new System.Windows.Forms.TextBox();
-            this.txtyear4 = new System.Windows.Forms.TextBox();
             this.txtyear2 = new System.Windows.Forms.TextBox();
-            this.txtrollno4 = new System.Windows.Forms.TextBox();
             this.txtmarks2 = new System.Windows.Forms.TextBox();
             this.txtdivision3 = new System.Windows.Forms.TextBox();
             this.txtpercantage2 = new System.Windows.Forms.TextBox();
@@ -239,8 +232,6 @@ namespace SMS
             this.txtpercantage3 = new System.Windows.Forms.TextBox();
             this.txtdivision2 = new System.Windows.Forms.TextBox();
             this.txtmarks3 = new System.Windows.Forms.TextBox();
-            this.txtrollno3 = new System.Windows.Forms.TextBox();
-            this.txtyear3 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -2226,7 +2217,7 @@ namespace SMS
             // 
             this.txtsubject2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtsubject2.ForeColor = System.Drawing.Color.Blue;
-            this.txtsubject2.Location = new System.Drawing.Point(1093, 179);
+            this.txtsubject2.Location = new System.Drawing.Point(1142, 179);
             this.txtsubject2.MaxLength = 30;
             this.txtsubject2.Name = "txtsubject2";
             this.txtsubject2.Size = new System.Drawing.Size(10, 25);
@@ -2239,7 +2230,7 @@ namespace SMS
             // 
             this.txtsbuject1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtsbuject1.ForeColor = System.Drawing.Color.Blue;
-            this.txtsbuject1.Location = new System.Drawing.Point(1093, 149);
+            this.txtsbuject1.Location = new System.Drawing.Point(1142, 149);
             this.txtsbuject1.MaxLength = 30;
             this.txtsbuject1.Name = "txtsbuject1";
             this.txtsbuject1.Size = new System.Drawing.Size(10, 25);
@@ -2252,7 +2243,7 @@ namespace SMS
             // 
             this.txtsubject3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtsubject3.ForeColor = System.Drawing.Color.Blue;
-            this.txtsubject3.Location = new System.Drawing.Point(1093, 209);
+            this.txtsubject3.Location = new System.Drawing.Point(1142, 209);
             this.txtsubject3.MaxLength = 30;
             this.txtsubject3.Name = "txtsubject3";
             this.txtsubject3.Size = new System.Drawing.Size(10, 25);
@@ -2266,7 +2257,7 @@ namespace SMS
             this.label48.AutoSize = true;
             this.label48.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label48.ForeColor = System.Drawing.Color.White;
-            this.label48.Location = new System.Drawing.Point(1135, 146);
+            this.label48.Location = new System.Drawing.Point(1184, 146);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(101, 19);
             this.label48.TabIndex = 164;
@@ -2278,7 +2269,7 @@ namespace SMS
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(1079, 146);
+            this.label21.Location = new System.Drawing.Point(1128, 146);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(52, 19);
             this.label21.TabIndex = 93;
@@ -2289,7 +2280,7 @@ namespace SMS
             // 
             this.txtsubject4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtsubject4.ForeColor = System.Drawing.Color.Blue;
-            this.txtsubject4.Location = new System.Drawing.Point(1093, 238);
+            this.txtsubject4.Location = new System.Drawing.Point(1142, 238);
             this.txtsubject4.MaxLength = 30;
             this.txtsubject4.Name = "txtsubject4";
             this.txtsubject4.Size = new System.Drawing.Size(10, 25);
@@ -2303,7 +2294,7 @@ namespace SMS
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.White;
-            this.label22.Location = new System.Drawing.Point(1081, 146);
+            this.label22.Location = new System.Drawing.Point(1130, 146);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(71, 19);
             this.label22.TabIndex = 95;
@@ -2315,7 +2306,7 @@ namespace SMS
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.Color.White;
-            this.label23.Location = new System.Drawing.Point(1078, 146);
+            this.label23.Location = new System.Drawing.Point(1127, 146);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(43, 19);
             this.label23.TabIndex = 98;
@@ -2327,7 +2318,7 @@ namespace SMS
             this.txtsubject5.CausesValidation = false;
             this.txtsubject5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtsubject5.ForeColor = System.Drawing.Color.Blue;
-            this.txtsubject5.Location = new System.Drawing.Point(1093, 267);
+            this.txtsubject5.Location = new System.Drawing.Point(1142, 267);
             this.txtsubject5.MaxLength = 30;
             this.txtsubject5.Name = "txtsubject5";
             this.txtsubject5.Size = new System.Drawing.Size(10, 25);
@@ -2341,7 +2332,7 @@ namespace SMS
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.ForeColor = System.Drawing.Color.White;
-            this.label24.Location = new System.Drawing.Point(1139, 259);
+            this.label24.Location = new System.Drawing.Point(1188, 259);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(80, 19);
             this.label24.TabIndex = 100;
@@ -2353,7 +2344,7 @@ namespace SMS
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.ForeColor = System.Drawing.Color.White;
-            this.label25.Location = new System.Drawing.Point(1079, 146);
+            this.label25.Location = new System.Drawing.Point(1128, 146);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(64, 19);
             this.label25.TabIndex = 101;
@@ -2365,7 +2356,7 @@ namespace SMS
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.ForeColor = System.Drawing.Color.White;
-            this.label26.Location = new System.Drawing.Point(1081, 170);
+            this.label26.Location = new System.Drawing.Point(1130, 170);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(59, 19);
             this.label26.TabIndex = 103;
@@ -2377,7 +2368,7 @@ namespace SMS
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.ForeColor = System.Drawing.Color.White;
-            this.label27.Location = new System.Drawing.Point(1122, 217);
+            this.label27.Location = new System.Drawing.Point(1171, 217);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(56, 19);
             this.label27.TabIndex = 105;
@@ -2388,7 +2379,7 @@ namespace SMS
             // 
             this.label20.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(962, 189);
+            this.label20.Location = new System.Drawing.Point(1011, 189);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(36, 16);
             this.label20.TabIndex = 92;
@@ -2400,7 +2391,7 @@ namespace SMS
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label28.ForeColor = System.Drawing.Color.White;
-            this.label28.Location = new System.Drawing.Point(988, 385);
+            this.label28.Location = new System.Drawing.Point(1037, 385);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(71, 19);
             this.label28.TabIndex = 108;
@@ -2411,7 +2402,7 @@ namespace SMS
             // 
             this.txtrollno.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtrollno.ForeColor = System.Drawing.Color.Blue;
-            this.txtrollno.Location = new System.Drawing.Point(1093, 148);
+            this.txtrollno.Location = new System.Drawing.Point(1142, 148);
             this.txtrollno.MaxLength = 30;
             this.txtrollno.Name = "txtrollno";
             this.txtrollno.Size = new System.Drawing.Size(10, 25);
@@ -2425,7 +2416,7 @@ namespace SMS
             this.label65.AutoSize = true;
             this.label65.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label65.ForeColor = System.Drawing.Color.White;
-            this.label65.Location = new System.Drawing.Point(1107, 323);
+            this.label65.Location = new System.Drawing.Point(1156, 323);
             this.label65.Name = "label65";
             this.label65.Size = new System.Drawing.Size(134, 19);
             this.label65.TabIndex = 180;
@@ -2436,7 +2427,7 @@ namespace SMS
             // 
             this.txtyear.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtyear.ForeColor = System.Drawing.Color.Blue;
-            this.txtyear.Location = new System.Drawing.Point(1093, 149);
+            this.txtyear.Location = new System.Drawing.Point(1142, 149);
             this.txtyear.MaxLength = 30;
             this.txtyear.Name = "txtyear";
             this.txtyear.Size = new System.Drawing.Size(10, 25);
@@ -2449,7 +2440,7 @@ namespace SMS
             // 
             this.txtmarks.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtmarks.ForeColor = System.Drawing.Color.Blue;
-            this.txtmarks.Location = new System.Drawing.Point(1093, 149);
+            this.txtmarks.Location = new System.Drawing.Point(1142, 149);
             this.txtmarks.MaxLength = 30;
             this.txtmarks.Name = "txtmarks";
             this.txtmarks.Size = new System.Drawing.Size(10, 25);
@@ -2462,7 +2453,7 @@ namespace SMS
             // 
             this.textBox21.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox21.ForeColor = System.Drawing.Color.Blue;
-            this.textBox21.Location = new System.Drawing.Point(1093, 148);
+            this.textBox21.Location = new System.Drawing.Point(1142, 148);
             this.textBox21.MaxLength = 30;
             this.textBox21.Name = "textBox21";
             this.textBox21.Size = new System.Drawing.Size(10, 25);
@@ -2475,7 +2466,7 @@ namespace SMS
             // 
             this.txtpercantage.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpercantage.ForeColor = System.Drawing.Color.Blue;
-            this.txtpercantage.Location = new System.Drawing.Point(1090, 150);
+            this.txtpercantage.Location = new System.Drawing.Point(1139, 150);
             this.txtpercantage.MaxLength = 5;
             this.txtpercantage.Name = "txtpercantage";
             this.txtpercantage.ReadOnly = true;
@@ -2490,7 +2481,7 @@ namespace SMS
             // 
             this.txtobtained.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtobtained.ForeColor = System.Drawing.Color.Blue;
-            this.txtobtained.Location = new System.Drawing.Point(1090, 150);
+            this.txtobtained.Location = new System.Drawing.Point(1139, 150);
             this.txtobtained.MaxLength = 30;
             this.txtobtained.Name = "txtobtained";
             this.txtobtained.Size = new System.Drawing.Size(10, 25);
@@ -2504,7 +2495,7 @@ namespace SMS
             // 
             this.textBox20.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox20.ForeColor = System.Drawing.Color.Blue;
-            this.textBox20.Location = new System.Drawing.Point(1093, 178);
+            this.textBox20.Location = new System.Drawing.Point(1142, 178);
             this.textBox20.MaxLength = 30;
             this.textBox20.Name = "textBox20";
             this.textBox20.Size = new System.Drawing.Size(10, 25);
@@ -2518,7 +2509,7 @@ namespace SMS
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label34.ForeColor = System.Drawing.Color.White;
-            this.label34.Location = new System.Drawing.Point(955, 134);
+            this.label34.Location = new System.Drawing.Point(1004, 134);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(104, 19);
             this.label34.TabIndex = 134;
@@ -2529,7 +2520,7 @@ namespace SMS
             // 
             this.txtresult.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtresult.ForeColor = System.Drawing.Color.Blue;
-            this.txtresult.Location = new System.Drawing.Point(1093, 149);
+            this.txtresult.Location = new System.Drawing.Point(1142, 149);
             this.txtresult.MaxLength = 30;
             this.txtresult.Name = "txtresult";
             this.txtresult.ReadOnly = true;
@@ -2543,7 +2534,7 @@ namespace SMS
             // 
             this.textBox19.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox19.ForeColor = System.Drawing.Color.Blue;
-            this.textBox19.Location = new System.Drawing.Point(1093, 208);
+            this.textBox19.Location = new System.Drawing.Point(1142, 208);
             this.textBox19.MaxLength = 30;
             this.textBox19.Name = "textBox19";
             this.textBox19.Size = new System.Drawing.Size(10, 25);
@@ -2557,7 +2548,7 @@ namespace SMS
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label33.ForeColor = System.Drawing.Color.White;
-            this.label33.Location = new System.Drawing.Point(1162, 184);
+            this.label33.Location = new System.Drawing.Point(1211, 184);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(101, 19);
             this.label33.TabIndex = 133;
@@ -2568,7 +2559,7 @@ namespace SMS
             // 
             this.txtdivision.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdivision.ForeColor = System.Drawing.Color.Blue;
-            this.txtdivision.Location = new System.Drawing.Point(1093, 148);
+            this.txtdivision.Location = new System.Drawing.Point(1142, 148);
             this.txtdivision.MaxLength = 30;
             this.txtdivision.Name = "txtdivision";
             this.txtdivision.ReadOnly = true;
@@ -2582,7 +2573,7 @@ namespace SMS
             // 
             this.textBox18.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox18.ForeColor = System.Drawing.Color.Blue;
-            this.textBox18.Location = new System.Drawing.Point(1093, 237);
+            this.textBox18.Location = new System.Drawing.Point(1142, 237);
             this.textBox18.MaxLength = 30;
             this.textBox18.Name = "textBox18";
             this.textBox18.Size = new System.Drawing.Size(10, 25);
@@ -2596,7 +2587,7 @@ namespace SMS
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label32.ForeColor = System.Drawing.Color.White;
-            this.label32.Location = new System.Drawing.Point(1139, 108);
+            this.label32.Location = new System.Drawing.Point(1188, 108);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(97, 19);
             this.label32.TabIndex = 132;
@@ -2607,7 +2598,7 @@ namespace SMS
             // 
             this.txtrollno1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtrollno1.ForeColor = System.Drawing.Color.Blue;
-            this.txtrollno1.Location = new System.Drawing.Point(1093, 178);
+            this.txtrollno1.Location = new System.Drawing.Point(1142, 178);
             this.txtrollno1.MaxLength = 30;
             this.txtrollno1.Name = "txtrollno1";
             this.txtrollno1.Size = new System.Drawing.Size(10, 25);
@@ -2621,7 +2612,7 @@ namespace SMS
             this.textBox17.CausesValidation = false;
             this.textBox17.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox17.ForeColor = System.Drawing.Color.Blue;
-            this.textBox17.Location = new System.Drawing.Point(1093, 266);
+            this.textBox17.Location = new System.Drawing.Point(1142, 266);
             this.textBox17.MaxLength = 30;
             this.textBox17.Name = "textBox17";
             this.textBox17.Size = new System.Drawing.Size(10, 25);
@@ -2634,7 +2625,7 @@ namespace SMS
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.ForeColor = System.Drawing.Color.White;
-            this.label31.Location = new System.Drawing.Point(1068, 89);
+            this.label31.Location = new System.Drawing.Point(1117, 89);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(93, 19);
             this.label31.TabIndex = 131;
@@ -2645,7 +2636,7 @@ namespace SMS
             // 
             this.txtyear1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtyear1.ForeColor = System.Drawing.Color.Blue;
-            this.txtyear1.Location = new System.Drawing.Point(1093, 179);
+            this.txtyear1.Location = new System.Drawing.Point(1142, 179);
             this.txtyear1.MaxLength = 30;
             this.txtyear1.Name = "txtyear1";
             this.txtyear1.Size = new System.Drawing.Size(10, 25);
@@ -2682,7 +2673,7 @@ namespace SMS
             // 
             this.groupBox1.Controls.Add(this.radioButton2);
             this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Location = new System.Drawing.Point(1093, 265);
+            this.groupBox1.Location = new System.Drawing.Point(1142, 265);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(10, 52);
             this.groupBox1.TabIndex = 32;
@@ -2695,7 +2686,7 @@ namespace SMS
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label30.ForeColor = System.Drawing.Color.White;
-            this.label30.Location = new System.Drawing.Point(955, 251);
+            this.label30.Location = new System.Drawing.Point(1004, 251);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(43, 19);
             this.label30.TabIndex = 130;
@@ -2706,7 +2697,7 @@ namespace SMS
             // 
             this.txtmarks1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtmarks1.ForeColor = System.Drawing.Color.Blue;
-            this.txtmarks1.Location = new System.Drawing.Point(1093, 179);
+            this.txtmarks1.Location = new System.Drawing.Point(1142, 179);
             this.txtmarks1.MaxLength = 30;
             this.txtmarks1.Name = "txtmarks1";
             this.txtmarks1.Size = new System.Drawing.Size(10, 25);
@@ -2715,24 +2706,11 @@ namespace SMS
             this.txtmarks1.Visible = false;
             this.txtmarks1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox19_KeyPress);
             // 
-            // txtdivision4
-            // 
-            this.txtdivision4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdivision4.ForeColor = System.Drawing.Color.Blue;
-            this.txtdivision4.Location = new System.Drawing.Point(1093, 269);
-            this.txtdivision4.MaxLength = 30;
-            this.txtdivision4.Name = "txtdivision4";
-            this.txtdivision4.Size = new System.Drawing.Size(10, 25);
-            this.txtdivision4.TabIndex = 39;
-            this.txtdivision4.Tag = "madiv";
-            this.txtdivision4.Visible = false;
-            this.txtdivision4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtscholarno_KeyPress);
-            // 
             // txtpercantage1
             // 
             this.txtpercantage1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpercantage1.ForeColor = System.Drawing.Color.Blue;
-            this.txtpercantage1.Location = new System.Drawing.Point(1090, 180);
+            this.txtpercantage1.Location = new System.Drawing.Point(1139, 180);
             this.txtpercantage1.MaxLength = 30;
             this.txtpercantage1.Name = "txtpercantage1";
             this.txtpercantage1.ReadOnly = true;
@@ -2743,24 +2721,11 @@ namespace SMS
             this.txtpercantage1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox19_KeyPress);
             this.txtpercantage1.Validated += new System.EventHandler(this.txtpercantage1_Validated);
             // 
-            // txtresult4
-            // 
-            this.txtresult4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtresult4.ForeColor = System.Drawing.Color.Blue;
-            this.txtresult4.Location = new System.Drawing.Point(1093, 270);
-            this.txtresult4.MaxLength = 30;
-            this.txtresult4.Name = "txtresult4";
-            this.txtresult4.Size = new System.Drawing.Size(10, 25);
-            this.txtresult4.TabIndex = 37;
-            this.txtresult4.Tag = "maresult";
-            this.txtresult4.Visible = false;
-            this.txtresult4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtscholarno_KeyPress);
-            // 
             // txtobtained1
             // 
             this.txtobtained1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtobtained1.ForeColor = System.Drawing.Color.Blue;
-            this.txtobtained1.Location = new System.Drawing.Point(1090, 180);
+            this.txtobtained1.Location = new System.Drawing.Point(1139, 180);
             this.txtobtained1.MaxLength = 30;
             this.txtobtained1.Name = "txtobtained1";
             this.txtobtained1.Size = new System.Drawing.Size(10, 25);
@@ -2770,24 +2735,11 @@ namespace SMS
             this.txtobtained1.TextChanged += new System.EventHandler(this.txtobtained1_TextChanged);
             this.txtobtained1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox19_KeyPress);
             // 
-            // txtobtained4
-            // 
-            this.txtobtained4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtobtained4.ForeColor = System.Drawing.Color.Blue;
-            this.txtobtained4.Location = new System.Drawing.Point(1090, 271);
-            this.txtobtained4.MaxLength = 30;
-            this.txtobtained4.Name = "txtobtained4";
-            this.txtobtained4.Size = new System.Drawing.Size(10, 25);
-            this.txtobtained4.TabIndex = 36;
-            this.txtobtained4.Tag = "maobt";
-            this.txtobtained4.Visible = false;
-            this.txtobtained4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtobtained_KeyPress);
-            // 
             // txtresult1
             // 
             this.txtresult1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtresult1.ForeColor = System.Drawing.Color.Blue;
-            this.txtresult1.Location = new System.Drawing.Point(1093, 179);
+            this.txtresult1.Location = new System.Drawing.Point(1142, 179);
             this.txtresult1.MaxLength = 30;
             this.txtresult1.Name = "txtresult1";
             this.txtresult1.ReadOnly = true;
@@ -2799,7 +2751,7 @@ namespace SMS
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(1093, 194);
+            this.button5.Location = new System.Drawing.Point(1142, 194);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(10, 31);
             this.button5.TabIndex = 15;
@@ -2808,25 +2760,11 @@ namespace SMS
             this.button5.Visible = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // txtpercantage4
-            // 
-            this.txtpercantage4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtpercantage4.ForeColor = System.Drawing.Color.Blue;
-            this.txtpercantage4.Location = new System.Drawing.Point(1090, 271);
-            this.txtpercantage4.MaxLength = 30;
-            this.txtpercantage4.Name = "txtpercantage4";
-            this.txtpercantage4.Size = new System.Drawing.Size(10, 25);
-            this.txtpercantage4.TabIndex = 38;
-            this.txtpercantage4.Tag = "maperc";
-            this.txtpercantage4.Visible = false;
-            this.txtpercantage4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtobtained_KeyPress);
-            this.txtpercantage4.Validated += new System.EventHandler(this.txtpercantage4_Validated);
-            // 
             // txtdivision1
             // 
             this.txtdivision1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdivision1.ForeColor = System.Drawing.Color.Blue;
-            this.txtdivision1.Location = new System.Drawing.Point(1093, 178);
+            this.txtdivision1.Location = new System.Drawing.Point(1142, 178);
             this.txtdivision1.MaxLength = 30;
             this.txtdivision1.Name = "txtdivision1";
             this.txtdivision1.ReadOnly = true;
@@ -2836,24 +2774,11 @@ namespace SMS
             this.txtdivision1.Visible = false;
             this.txtdivision1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox19_KeyPress);
             // 
-            // txtmarks4
-            // 
-            this.txtmarks4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtmarks4.ForeColor = System.Drawing.Color.Blue;
-            this.txtmarks4.Location = new System.Drawing.Point(1093, 270);
-            this.txtmarks4.MaxLength = 30;
-            this.txtmarks4.Name = "txtmarks4";
-            this.txtmarks4.Size = new System.Drawing.Size(10, 25);
-            this.txtmarks4.TabIndex = 35;
-            this.txtmarks4.Tag = "mamax";
-            this.txtmarks4.Visible = false;
-            this.txtmarks4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtobtained_KeyPress);
-            // 
             // txtrollno2
             // 
             this.txtrollno2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtrollno2.ForeColor = System.Drawing.Color.Blue;
-            this.txtrollno2.Location = new System.Drawing.Point(1093, 208);
+            this.txtrollno2.Location = new System.Drawing.Point(1142, 208);
             this.txtrollno2.MaxLength = 30;
             this.txtrollno2.Name = "txtrollno2";
             this.txtrollno2.Size = new System.Drawing.Size(10, 25);
@@ -2862,24 +2787,11 @@ namespace SMS
             this.txtrollno2.Visible = false;
             this.txtrollno2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox19_KeyPress);
             // 
-            // txtyear4
-            // 
-            this.txtyear4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtyear4.ForeColor = System.Drawing.Color.Blue;
-            this.txtyear4.Location = new System.Drawing.Point(1093, 270);
-            this.txtyear4.MaxLength = 30;
-            this.txtyear4.Name = "txtyear4";
-            this.txtyear4.Size = new System.Drawing.Size(10, 25);
-            this.txtyear4.TabIndex = 34;
-            this.txtyear4.Tag = "mayear";
-            this.txtyear4.Visible = false;
-            this.txtyear4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtscholarno_KeyPress);
-            // 
             // txtyear2
             // 
             this.txtyear2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtyear2.ForeColor = System.Drawing.Color.Blue;
-            this.txtyear2.Location = new System.Drawing.Point(1093, 209);
+            this.txtyear2.Location = new System.Drawing.Point(1142, 209);
             this.txtyear2.MaxLength = 30;
             this.txtyear2.Name = "txtyear2";
             this.txtyear2.Size = new System.Drawing.Size(10, 25);
@@ -2888,24 +2800,11 @@ namespace SMS
             this.txtyear2.Visible = false;
             this.txtyear2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox19_KeyPress);
             // 
-            // txtrollno4
-            // 
-            this.txtrollno4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtrollno4.ForeColor = System.Drawing.Color.Blue;
-            this.txtrollno4.Location = new System.Drawing.Point(1093, 269);
-            this.txtrollno4.MaxLength = 30;
-            this.txtrollno4.Name = "txtrollno4";
-            this.txtrollno4.Size = new System.Drawing.Size(10, 25);
-            this.txtrollno4.TabIndex = 33;
-            this.txtrollno4.Tag = "marollno";
-            this.txtrollno4.Visible = false;
-            this.txtrollno4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtscholarno_KeyPress);
-            // 
             // txtmarks2
             // 
             this.txtmarks2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtmarks2.ForeColor = System.Drawing.Color.Blue;
-            this.txtmarks2.Location = new System.Drawing.Point(1093, 209);
+            this.txtmarks2.Location = new System.Drawing.Point(1142, 209);
             this.txtmarks2.MaxLength = 30;
             this.txtmarks2.Name = "txtmarks2";
             this.txtmarks2.Size = new System.Drawing.Size(10, 25);
@@ -2918,7 +2817,7 @@ namespace SMS
             // 
             this.txtdivision3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdivision3.ForeColor = System.Drawing.Color.Blue;
-            this.txtdivision3.Location = new System.Drawing.Point(1093, 238);
+            this.txtdivision3.Location = new System.Drawing.Point(1142, 238);
             this.txtdivision3.MaxLength = 30;
             this.txtdivision3.Name = "txtdivision3";
             this.txtdivision3.Size = new System.Drawing.Size(10, 25);
@@ -2931,7 +2830,7 @@ namespace SMS
             // 
             this.txtpercantage2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpercantage2.ForeColor = System.Drawing.Color.Blue;
-            this.txtpercantage2.Location = new System.Drawing.Point(1090, 210);
+            this.txtpercantage2.Location = new System.Drawing.Point(1139, 210);
             this.txtpercantage2.MaxLength = 30;
             this.txtpercantage2.Name = "txtpercantage2";
             this.txtpercantage2.ReadOnly = true;
@@ -2946,7 +2845,7 @@ namespace SMS
             // 
             this.txtresult3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtresult3.ForeColor = System.Drawing.Color.Blue;
-            this.txtresult3.Location = new System.Drawing.Point(1093, 239);
+            this.txtresult3.Location = new System.Drawing.Point(1142, 239);
             this.txtresult3.MaxLength = 30;
             this.txtresult3.Name = "txtresult3";
             this.txtresult3.Size = new System.Drawing.Size(10, 25);
@@ -2959,7 +2858,7 @@ namespace SMS
             // 
             this.txtobtained2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtobtained2.ForeColor = System.Drawing.Color.Blue;
-            this.txtobtained2.Location = new System.Drawing.Point(1090, 210);
+            this.txtobtained2.Location = new System.Drawing.Point(1139, 210);
             this.txtobtained2.MaxLength = 30;
             this.txtobtained2.Name = "txtobtained2";
             this.txtobtained2.Size = new System.Drawing.Size(10, 25);
@@ -2973,7 +2872,7 @@ namespace SMS
             // 
             this.txtobtained3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtobtained3.ForeColor = System.Drawing.Color.Blue;
-            this.txtobtained3.Location = new System.Drawing.Point(1090, 240);
+            this.txtobtained3.Location = new System.Drawing.Point(1139, 240);
             this.txtobtained3.MaxLength = 30;
             this.txtobtained3.Name = "txtobtained3";
             this.txtobtained3.Size = new System.Drawing.Size(10, 25);
@@ -2987,7 +2886,7 @@ namespace SMS
             // 
             this.txtresult2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtresult2.ForeColor = System.Drawing.Color.Blue;
-            this.txtresult2.Location = new System.Drawing.Point(1093, 209);
+            this.txtresult2.Location = new System.Drawing.Point(1142, 209);
             this.txtresult2.MaxLength = 30;
             this.txtresult2.Name = "txtresult2";
             this.txtresult2.ReadOnly = true;
@@ -3001,7 +2900,7 @@ namespace SMS
             // 
             this.txtpercantage3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpercantage3.ForeColor = System.Drawing.Color.Blue;
-            this.txtpercantage3.Location = new System.Drawing.Point(1090, 240);
+            this.txtpercantage3.Location = new System.Drawing.Point(1139, 240);
             this.txtpercantage3.MaxLength = 30;
             this.txtpercantage3.Name = "txtpercantage3";
             this.txtpercantage3.Size = new System.Drawing.Size(10, 25);
@@ -3015,7 +2914,7 @@ namespace SMS
             // 
             this.txtdivision2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdivision2.ForeColor = System.Drawing.Color.Blue;
-            this.txtdivision2.Location = new System.Drawing.Point(1093, 208);
+            this.txtdivision2.Location = new System.Drawing.Point(1142, 208);
             this.txtdivision2.MaxLength = 30;
             this.txtdivision2.Name = "txtdivision2";
             this.txtdivision2.ReadOnly = true;
@@ -3029,7 +2928,7 @@ namespace SMS
             // 
             this.txtmarks3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtmarks3.ForeColor = System.Drawing.Color.Blue;
-            this.txtmarks3.Location = new System.Drawing.Point(1093, 239);
+            this.txtmarks3.Location = new System.Drawing.Point(1142, 239);
             this.txtmarks3.MaxLength = 30;
             this.txtmarks3.Name = "txtmarks3";
             this.txtmarks3.Size = new System.Drawing.Size(10, 25);
@@ -3038,35 +2937,9 @@ namespace SMS
             this.txtmarks3.Visible = false;
             this.txtmarks3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox19_KeyPress);
             // 
-            // txtrollno3
-            // 
-            this.txtrollno3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtrollno3.ForeColor = System.Drawing.Color.Blue;
-            this.txtrollno3.Location = new System.Drawing.Point(1093, 238);
-            this.txtrollno3.MaxLength = 30;
-            this.txtrollno3.Name = "txtrollno3";
-            this.txtrollno3.Size = new System.Drawing.Size(10, 25);
-            this.txtrollno3.TabIndex = 24;
-            this.txtrollno3.Tag = "lba3rollno";
-            this.txtrollno3.Visible = false;
-            this.txtrollno3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox19_KeyPress);
-            // 
-            // txtyear3
-            // 
-            this.txtyear3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtyear3.ForeColor = System.Drawing.Color.Blue;
-            this.txtyear3.Location = new System.Drawing.Point(1093, 239);
-            this.txtyear3.MaxLength = 30;
-            this.txtyear3.Name = "txtyear3";
-            this.txtyear3.Size = new System.Drawing.Size(10, 25);
-            this.txtyear3.TabIndex = 25;
-            this.txtyear3.Tag = "lba3year";
-            this.txtyear3.Visible = false;
-            this.txtyear3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox19_KeyPress);
-            // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1093, 146);
+            this.button2.Location = new System.Drawing.Point(1142, 146);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(10, 31);
             this.button2.TabIndex = 6;
@@ -3084,8 +2957,6 @@ namespace SMS
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.txtyear3);
-            this.Controls.Add(this.txtrollno3);
             this.Controls.Add(this.txtmarks3);
             this.Controls.Add(this.txtdivision2);
             this.Controls.Add(this.txtpercantage3);
@@ -3096,20 +2967,13 @@ namespace SMS
             this.Controls.Add(this.txtpercantage2);
             this.Controls.Add(this.txtdivision3);
             this.Controls.Add(this.txtmarks2);
-            this.Controls.Add(this.txtrollno4);
             this.Controls.Add(this.txtyear2);
-            this.Controls.Add(this.txtyear4);
             this.Controls.Add(this.txtrollno2);
-            this.Controls.Add(this.txtmarks4);
             this.Controls.Add(this.txtdivision1);
-            this.Controls.Add(this.txtpercantage4);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.txtresult1);
-            this.Controls.Add(this.txtobtained4);
             this.Controls.Add(this.txtobtained1);
-            this.Controls.Add(this.txtresult4);
             this.Controls.Add(this.txtpercantage1);
-            this.Controls.Add(this.txtdivision4);
             this.Controls.Add(this.txtmarks1);
             this.Controls.Add(this.label30);
             this.Controls.Add(this.groupBox1);
@@ -3367,20 +3231,13 @@ namespace SMS
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.TextBox txtmarks1;
-        private System.Windows.Forms.TextBox txtdivision4;
         private System.Windows.Forms.TextBox txtpercantage1;
-        private System.Windows.Forms.TextBox txtresult4;
         private System.Windows.Forms.TextBox txtobtained1;
-        private System.Windows.Forms.TextBox txtobtained4;
         private System.Windows.Forms.TextBox txtresult1;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.TextBox txtpercantage4;
         private System.Windows.Forms.TextBox txtdivision1;
-        private System.Windows.Forms.TextBox txtmarks4;
         private System.Windows.Forms.TextBox txtrollno2;
-        private System.Windows.Forms.TextBox txtyear4;
         private System.Windows.Forms.TextBox txtyear2;
-        private System.Windows.Forms.TextBox txtrollno4;
         private System.Windows.Forms.TextBox txtmarks2;
         private System.Windows.Forms.TextBox txtdivision3;
         private System.Windows.Forms.TextBox txtpercantage2;
@@ -3391,8 +3248,6 @@ namespace SMS
         private System.Windows.Forms.TextBox txtpercantage3;
         private System.Windows.Forms.TextBox txtdivision2;
         private System.Windows.Forms.TextBox txtmarks3;
-        private System.Windows.Forms.TextBox txtrollno3;
-        private System.Windows.Forms.TextBox txtyear3;
         private System.Windows.Forms.Button button2;
     }
 }

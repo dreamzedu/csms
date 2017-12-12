@@ -39,8 +39,8 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(166, 54);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Location = new System.Drawing.Point(195, 54);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(347, 22);
             this.textBox1.TabIndex = 0;
@@ -51,7 +51,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(31, 54);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
@@ -64,7 +64,7 @@
             this.GVStudentDetails.AllowUserToAddRows = false;
             this.GVStudentDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GVStudentDetails.Location = new System.Drawing.Point(31, 84);
-            this.GVStudentDetails.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GVStudentDetails.Margin = new System.Windows.Forms.Padding(4);
             this.GVStudentDetails.Name = "GVStudentDetails";
             this.GVStudentDetails.Size = new System.Drawing.Size(797, 198);
             this.GVStudentDetails.TabIndex = 2;
@@ -79,9 +79,9 @@
             this.label2.Location = new System.Drawing.Point(330, 9);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(154, 24);
+            this.label2.Size = new System.Drawing.Size(246, 24);
             this.label2.TabIndex = 4;
-            this.label2.Text = "SearchByName";
+            this.label2.Text = "Search Student By Name";
             // 
             // Pct_Close
             // 
@@ -90,7 +90,7 @@
             this.Pct_Close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Pct_Close.Image = global::SMS.Properties.Resources.edit_delete;
             this.Pct_Close.Location = new System.Drawing.Point(835, 0);
-            this.Pct_Close.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Pct_Close.Margin = new System.Windows.Forms.Padding(4);
             this.Pct_Close.Name = "Pct_Close";
             this.Pct_Close.Size = new System.Drawing.Size(24, 22);
             this.Pct_Close.TabIndex = 10;
@@ -110,7 +110,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SearchByName";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "1146";

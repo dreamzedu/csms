@@ -4,7 +4,7 @@
     <PublishUrlHistory>http://localhost/winApp64/|http://localhost/winApp32/</PublishUrlHistory>
     <InstallUrlHistory>https://raw.githubusercontent.com/dreamzedu/dreamzedu.github.io/master/x64/|https://raw.githubusercontent.com/dreamzedu/dreamzedu.github.io/master/x32/</InstallUrlHistory>
     <SupportUrlHistory />
-    <UpdateUrlHistory>https://raw.githubusercontent.com/dreamzedu/dreamzedu.github.io/master/x32/</UpdateUrlHistory>
+    <UpdateUrlHistory>https://raw.githubusercontent.com/dreamzedu/dreamzedu.github.io/master/x64/|https://raw.githubusercontent.com/dreamzedu/dreamzedu.github.io/master/x32/</UpdateUrlHistory>
     <BootstrapperUrlHistory>https://raw.githubusercontent.com/dreamzedu/dreamzedu.github.io/master/x64/|http://dreamzedu.github.io/x64/|http://dreamzedu.github.io/x32/</BootstrapperUrlHistory>
     <ErrorReportUrlHistory />
     <FallbackCulture>en-US</FallbackCulture>
