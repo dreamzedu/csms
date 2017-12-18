@@ -312,7 +312,7 @@
             this.btnnew.BackColor = System.Drawing.Color.White;
             this.btnnew.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnnew.ForeColor = System.Drawing.Color.Black;
-            this.btnnew.Image = global::SMS.Properties.Resources.New;
+            this.btnnew.Image = global::SMS.Properties.Resources.Back_Icon;
             this.btnnew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnnew.Location = new System.Drawing.Point(1, 4);
             this.btnnew.Name = "btnnew";
@@ -377,7 +377,7 @@
             this.btndelete.BackColor = System.Drawing.Color.White;
             this.btndelete.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btndelete.ForeColor = System.Drawing.Color.Black;
-            this.btndelete.Image = global::SMS.Properties.Resources.Delete1;
+            this.btndelete.Image = global::SMS.Properties.Resources.edit_delete;
             this.btndelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btndelete.Location = new System.Drawing.Point(131, 4);
             this.btndelete.Name = "btndelete";

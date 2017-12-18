@@ -37,7 +37,7 @@
     <MinimumRequiredVersion>4.0.0.0</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>7</ApplicationRevision>
+    <ApplicationRevision>8</ApplicationRevision>
     <ApplicationVersion>4.0.2.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -3219,15 +3219,12 @@
     <Content Include="school.ico" />
     <None Include="Image\bookimage.jpg" />
     <Content Include="Back Icon.jpg" />
-    <Content Include="Image\115.jpg" />
-    <Content Include="Image\Attendance.png" />
     <Content Include="Image\Back Icon.jpg" />
     <Content Include="Image\camera_test.png" />
     <Content Include="Image\cancel.png" />
     <Content Include="Image\Delete.jpg" />
     <Content Include="Image\edit.png" />
     <Content Include="Image\export.jpg" />
-    <Content Include="Image\Payroll.png" />
     <Content Include="Image\Print.png" />
     <Content Include="Image\sanskarvelly.JPG" />
     <Content Include="Image\SaraswatiImage.JPG" />
@@ -3235,8 +3232,6 @@
     <Content Include="Image\sarswati1.jpg" />
     <Content Include="Image\save.png" />
     <Content Include="Image\SearchDoc.png" />
-    <Content Include="Image\StudentFee.png" />
-    <Content Include="Image\Student_search.png" />
     <Content Include="Image\Upload Icon.jpg" />
     <None Include="Resources\tcdownload.png" />
     <None Include="Resources\edit-delete.png" />
