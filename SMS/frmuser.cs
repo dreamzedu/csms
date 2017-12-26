@@ -74,7 +74,7 @@ namespace SMS
                         txtusercode.Text = mstudentno.ToString();
                         txtpassword.Text = CryptorEngine.Encrypt(txtpassword.Text.Trim(), true);
                    //     txtuser.Text = CryptorEngine.Encrypt(txtuser.Text, true);
-                        c.executesql("insert into MasterUser (userId, pwd, parentUserId, isPrimaryUser, dbUserId, dbUserPwd, dbName, UserLevel, roleId, userCode ) values('" + txtuser.Text.Trim() + "','" + txtpassword.Text + "','" + school1.CurrentUser.UserId + "',0,'" + (string.IsNullOrEmpty(school1.CurrentUser.ParentUserId) ? school1.CurrentUser.DbUserId : school1.CurrentUser.ParentUserId) + "','" + school1.CurrentUser.DbUserPwd + "','" + school1.CurrentUser.DbName + "'," + CmbUserRole.SelectedIndex + "," + CmbUserRole.SelectedIndex + ",'" + mstudentno.ToString() + "');", Connection.GetUserDbConnection());
+                        c.executesql("insert into MasterUser (userId, pwd, parentUserId, isPrimaryUser, dbUserId, dbUserPwd, dbName, dbServer, UserLevel, roleId, userCode ) values('" + txtuser.Text.Trim() + "','" + txtpassword.Text + "','" + school1.CurrentUser.UserId + "',0,'" + (string.IsNullOrEmpty(school1.CurrentUser.ParentUserId) ? school1.CurrentUser.DbUserId : school1.CurrentUser.ParentUserId) + "','" + school1.CurrentUser.DbUserPwd + "','" + school1.CurrentUser.DbName + "','" + school1.CurrentUser.DbServer + "'," + CmbUserRole.SelectedIndex + "," + CmbUserRole.SelectedIndex + ",'" + mstudentno.ToString() + "');", Connection.GetUserDbConnection());
                         //c.insertdata("MasterUser", Connection.GetUserDbConnection(), this);
                         MessageBox.Show("Record Saved...", "");
                         //this.Hide();

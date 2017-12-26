@@ -20,6 +20,9 @@ namespace SMS
         string UserName, UserCode, Session;
         private int childFormNumber = 0;
         private DateTime startDateTime = DateTime.Now;
+        Timer pollingTimer = new Timer();
+        int pollingInterval = 3600000;
+
         public MDIParent1()
         {
             InitializeComponent();
@@ -39,7 +42,11 @@ namespace SMS
             Connection.UserName = UserName;
 
             this.Text = "CSMS " + Application.ProductVersion + "  |  User Login : " + UserName + "  |  Session: " + this.Session;
-            
+
+            // Setting a polling timer for 1 hour which can be used for checking login, subscription or update messages
+            pollingTimer.Interval = pollingInterval;// 3600000;
+            pollingTimer.Tick += pollingTimer_Tick;
+            pollingTimer.Start();
             //User Authorisation
             #region
             try
@@ -149,6 +156,42 @@ namespace SMS
             #endregion
         }
 
+        void pollingTimer_Tick(object sender, EventArgs e)
+        {
+            if(!IsUserActive())
+            {
+                ExitApplication();
+            }
+        }
+
+        private bool IsUserActive()
+        {
+            SqlConnection con = Connection.GetUserDbConnection();
+
+            //DataSet ds = Connection.GetDataSet("Select * from MasterUser where UserName='" + txtUserName.Text.Trim() + "' and UserPassword='" + Pass.Trim() + "'; ");
+            SqlDataAdapter adp = new SqlDataAdapter("Select IsActive, ActivationValidTill, ActivatedOn from MasterUser where lower(userId)='" + school.CurrentUser.UserId.ToLower() + "' and IsActive = 1 and ActivatedOn <= getdate() and ActivationValidTill >= getdate(); ", con);
+            DataSet ds = new DataSet();
+            adp.Fill(ds);
+            if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+            {
+                DateTime date = Convert.ToDateTime(ds.Tables[0].Rows[0]["ActivationValidTill"]);
+
+                if (DateTime.Now > date)
+                {
+                    MessageBox.Show("Your subscription has expired, please contact our sales to renew your subscription.");
+
+                    return false;
+                }
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Your subscription has expired, please contact our sales to renew your subscription.");
+
+                return false;
+            }
+        }
+
         public bool IsNewCommandEnabled {
             get { return btnNew.Enabled; }
         }
@@ -220,10 +263,7 @@ namespace SMS
         }
         private void ExitToolsStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
-            this.Close();
-            foreach (System.Diagnostics.Process p in System.Diagnostics.Process.GetProcessesByName(Application.ProductName))
-                p.Kill();
+            ExitApplication();
         }
 
         private void CascadeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -256,18 +296,19 @@ namespace SMS
         }
         private void eXITToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //DateTime endDateTime = DateTime.Now;
-            //SqlConnection LocalCon = Connection.Conn();
-            //if (LocalCon.State != ConnectionState.Open)
-            //    LocalCon.Open();
+            ExitApplication();
+        }
 
-            //SqlCommand cmd = LocalCon.CreateCommand();
-            //cmd.CommandText = "Update SMSsystem set RunTime = RunTime +" +
-            //                  endDateTime.Subtract(startDateTime).Seconds;
-            //cmd.ExecuteNonQuery();
-            //LocalCon.Close();
-
-            Application.Exit();
+        private void ExitApplication()
+        {
+            if (pollingTimer != null)
+            {
+                try
+                {
+                    pollingTimer.Stop();
+                }
+                catch { }
+            }
             Environment.Exit(0);
             foreach (System.Diagnostics.Process p in System.Diagnostics.Process.GetProcessesByName(Application.ProductName))
                 p.Kill();
@@ -404,21 +445,7 @@ namespace SMS
 
         private void exitToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            //DateTime endDateTime = DateTime.Now;
-            //SqlConnection LocalCon = Connection.Conn();
-            //if (LocalCon.State != ConnectionState.Open)
-            //    LocalCon.Open();
-
-            //SqlCommand cmd = LocalCon.CreateCommand();
-            //cmd.CommandText = "Update SMSsystem set RunTime = RunTime +" +
-            //                  endDateTime.Subtract(startDateTime).Seconds;
-            //cmd.ExecuteNonQuery();
-            //LocalCon.Close();
-
-            Application.Exit();
-            Environment.Exit(0);
-            foreach (System.Diagnostics.Process p in System.Diagnostics.Process.GetProcessesByName(Application.ProductName))
-                p.Kill();
+            ExitApplication();
         }
 
         protected override CreateParams CreateParams
@@ -1256,6 +1283,11 @@ namespace SMS
         internal void TogglePrintButton(bool enable)
         {
             this.btnPrint.Enabled = enable;
+        }
+
+        private void createDatabaseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //System.Diagnostics.Process.Start(@"cmd.exe scripts\createdb.vbs");
         }
 
        

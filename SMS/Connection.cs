@@ -38,7 +38,6 @@ namespace SMS
 
        static Connection()
        {
-           DbServer = System.Configuration.ConfigurationManager.AppSettings["dbServer"];
            UserDbName = System.Configuration.ConfigurationManager.AppSettings["userDbName"];
            UserDbUserName = CryptorEngine.Decrypt(System.Configuration.ConfigurationManager.AppSettings["userDbUserName"], true);
            UserDbPwd = CryptorEngine.Decrypt(System.Configuration.ConfigurationManager.AppSettings["userDbPwd"], true);
@@ -69,7 +68,6 @@ namespace SMS
         public static Int16 SetValue_0_For_MS_Access_1_For_MS_Excel;
         public static string MSAccessFileInfoFullName;
         public static string MSExcelFileInfoFullName;
-        public static string DbServer;// = "103.235.105.60";
         public static string UserDbServer;
         public static string UserDbName;
         public static string UserDbUserName;
@@ -118,12 +116,12 @@ namespace SMS
             {
                 if (string.IsNullOrEmpty(Connection.ConnectionString))
                 {
-                    Connection.ConnectionString = "server=" + DbServer + ";database=" + school1.CurrentUser.DbName + ";uid=" + school1.CurrentUser.DbUserId + ";password=" + school1.CurrentUser.DbUserPwd + ";";
+                    Connection.ConnectionString = "server=" + school1.CurrentUser.DbServer + ";database=" + school1.CurrentUser.DbName + ";uid=" + school1.CurrentUser.DbUserId + ";password=" + school1.CurrentUser.DbUserPwd + ";";
                     
-                    // This logic is mostely for debug mode only when the database is running locally
-                    if(string.IsNullOrEmpty(school1.CurrentUser.DbUserPwd))
+                    // This logic is for debug mode when the database is running locally and for those user who has setup local database
+                    if (string.IsNullOrEmpty(school1.CurrentUser.DbUserPwd) || school1.CurrentUser.DbServer.Contains("sqlexpress"))
                     {
-                        Connection.ConnectionString = "server=" + DbServer + ";database=" + school1.CurrentUser.DbName + ";integrated security=true;";
+                        Connection.ConnectionString = "server=" + school1.CurrentUser.DbServer + ";database=" + school1.CurrentUser.DbName + ";integrated security=true;";
                  
                     }
 

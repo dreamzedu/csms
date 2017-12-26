@@ -29,6 +29,8 @@ namespace SMS
 
         public string DbName { get; set; }
 
+        public string DbServer { get; set; } 
+
         public short RoleId { get; set; }
 
         public int UserCode { get; internal set; }

@@ -9,6 +9,7 @@ using System.IO;
 using System.Configuration;
 using System.Drawing.Drawing2D;
 using System.Data.SqlClient;
+using System.Diagnostics;
 namespace SMS
 {
     partial class Loginform : Form
@@ -162,6 +163,7 @@ namespace SMS
                 school1.CurrentUser.School = ds.Tables[0].Rows[0]["school"].ToString();
                 school1.CurrentUser.IsPrimaryUser = Convert.ToBoolean(ds.Tables[0].Rows[0]["isPrimaryUser"]);
                 school1.CurrentUser.DbName = ds.Tables[0].Rows[0]["dbName"].ToString();
+                school1.CurrentUser.DbServer = ds.Tables[0].Rows[0]["dbServer"].ToString();
                 school1.CurrentUser.DbUserPwd = ds.Tables[0].Rows[0]["dbUserPwd"].ToString();
                 school1.CurrentUser.DbUserId = ds.Tables[0].Rows[0]["dbUserId"].ToString();
                 school1.CurrentUser.RoleId = Convert.ToInt16(ds.Tables[0].Rows[0]["roleId"]);
@@ -172,6 +174,10 @@ namespace SMS
 
                 // Initializing it for school class as well because it is still in use many places
                 school.CurrentUser = school1.CurrentUser;
+                if (school.CurrentUser.DbServer.Contains("sqlexpress") || school.CurrentUser.DbServer.Contains("local"))
+                {
+                    SetupDatabase(school.CurrentUser);
+                }
 
                 SetupAppPaths();
 
@@ -290,13 +296,80 @@ namespace SMS
             //}
         }
 
-        private bool IsUserActive()
+        private void SetupDatabase(CSMSUser cSMSUser)
         {
-            string Pass = CryptorEngine.Encrypt(txtPassword.Text.Trim(), true);
+            SqlConnection con = new SqlConnection("server=.\\sqlexpress;integrated security=true;");
+            try
+            {
+                MessageBox.Show("Database is being initialized for your application for first time use. click OK to start, and wait until your application opens.");            
+                con.Open();
+                object db = Connection.GetExecuteScalar("SELECT * FROM master.dbo.sysdatabases where name = \'dbSMS\'", con);
+
+                if (db== null || db == DBNull.Value)
+                {
+                    //string rootPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+                    //System.Diagnostics.Process.Start(@"cscript //B //Nologo "+rootPath+@"\scripts\createdb.vbs");
+                   
+                    int retryCount = 0, exitCode =1;
+
+                    // making 2 retries if first call is not successful.
+                    while (retryCount <= 2 && exitCode == 1)
+                    {
+                        exitCode = RunDbCreateScript();
+                        retryCount++;
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                Logger.LogError(ex);
+                MessageBox.Show("We encountered an error while seting up local databse, your application may not work as expected. Please contact your vendor for help");
+            }
+            finally
+            {
+                if(con.State == ConnectionState.Open)
+                con.Close();
+            }
+            
+        }
+
+        private int RunDbCreateScript()
+        {
+            int exitCode;
+            ProcessStartInfo processInfo;
+            Process Process;
+
+            processInfo = new ProcessStartInfo("cmd.exe", "/c " + @"scripts\dbcreate.bat");
+            //ProcessInfo.CreateNoWindow = true;
+            processInfo.UseShellExecute = false;
+            //processInfo.RedirectStandardError = true;
+            //processInfo.RedirectStandardOutput = true;
+
+            var process = Process.Start(processInfo);
+
+            //process.OutputDataReceived += (object sender, DataReceivedEventArgs e) =>
+            //    Console.WriteLine("output>>" + e.Data);
+            //process.BeginOutputReadLine();
+
+            //process.ErrorDataReceived += (object sender, DataReceivedEventArgs e) =>
+            //    Console.WriteLine("error>>" + e.Data);
+            //process.BeginErrorReadLine();
+
+            process.WaitForExit();
+            exitCode = process.ExitCode;
+            process.Close();
+            process.Dispose();
+
+            return exitCode;
+
+        }
+
+        private bool IsUserActive()
+        {            
             SqlConnection con = Connection.GetUserDbConnection();
             
             //DataSet ds = Connection.GetDataSet("Select * from MasterUser where UserName='" + txtUserName.Text.Trim() + "' and UserPassword='" + Pass.Trim() + "'; ");
-            SqlDataAdapter adp = new SqlDataAdapter("Select IsActive, ActivationValidTill, ActivatedOn from MasterUser where lower(userId)='" + txtUserName.Text.Trim().ToLower() + "' and pwd='" + Pass + "' and IsActive = 1 and ActivatedOn <= getdate() and ActivationValidTill >= getdate(); ", con);
+            SqlDataAdapter adp = new SqlDataAdapter("Select IsActive, ActivationValidTill, ActivatedOn from MasterUser where lower(userId)='" + txtUserName.Text.Trim().ToLower() + "' and IsActive = 1 and ActivatedOn <= getdate() and ActivationValidTill >= getdate(); ", con);
             DataSet ds = new DataSet();
             adp.Fill(ds);
             if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
