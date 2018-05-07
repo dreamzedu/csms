@@ -18,6 +18,7 @@ namespace SMS
             Connection.FillDropList(ref cmbSession, " SELECT sessionname, sessioncode  FROM tbl_session order by s_from desc ");
             cmbSession.SelectedValue = Convert.ToInt32(Connection.GetExecuteScalar("Select SessionCode From tbl_Session Where SessionStatus=1"));
             seletedCode = Convert.ToInt32(cmbSession.SelectedValue);
+            this.cmbSession.SelectedIndexChanged += new System.EventHandler(this.cmbSession_SelectedIndexChanged);
         }
 
         private void btnDone_Click(object sender, EventArgs e)
@@ -36,6 +37,21 @@ namespace SMS
                 Connection.ExecuteNonQuery("update tbl_Session set SessionStatus=0", Connection.GetMyConnection());
                 Connection.ExecuteNonQuery("update tbl_Session set SessionStatus=1 where SessionCode=" + school.CurrentSessionCode, Connection.GetMyConnection());
                 
+            }
+        }
+
+        private void cmbSession_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbSession.SelectedValue != null)
+            {
+                if (seletedCode == Convert.ToInt32(cmbSession.SelectedValue))
+                {
+                    chkSetSession.Checked = true;
+                }
+                else
+                {
+                    chkSetSession.Checked = false;
+                }
             }
         }
     }

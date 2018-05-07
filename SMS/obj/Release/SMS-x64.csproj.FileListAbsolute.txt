@@ -190,3 +190,4 @@ C:\csms-x86\csms\SMS\obj\Release\SMS.exe.manifest
 C:\csms-x86\csms\SMS\obj\Release\SMS.application
 C:\csms-x86\csms\SMS\obj\Release\SMS.exe
 C:\csms-x86\csms\SMS\obj\Release\SMS.pdb
+C:\csms-x86\csms\SMS\obj\Release\SMS-x64.csprojResolveAssemblyReference.cache

@@ -51,6 +51,7 @@
             this.cmbSession.Name = "cmbSession";
             this.cmbSession.Size = new System.Drawing.Size(224, 24);
             this.cmbSession.TabIndex = 1;
+            
             // 
             // btnDone
             // 
@@ -65,6 +66,8 @@
             // chkSetSession
             // 
             this.chkSetSession.AutoSize = true;
+            this.chkSetSession.Checked = true;
+            this.chkSetSession.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkSetSession.Location = new System.Drawing.Point(203, 112);
             this.chkSetSession.Name = "chkSetSession";
             this.chkSetSession.Size = new System.Drawing.Size(235, 21);

@@ -301,12 +301,13 @@ namespace SMS
             SqlConnection con = new SqlConnection("server=.\\sqlexpress;integrated security=true;");
             try
             {
-                MessageBox.Show("Database is being initialized for your application for first time use. click OK to start, and wait until your application opens.");            
                 con.Open();
                 object db = Connection.GetExecuteScalar("SELECT * FROM master.dbo.sysdatabases where name = \'dbSMS\'", con);
 
                 if (db== null || db == DBNull.Value)
                 {
+                    MessageBox.Show("Database is being initialized for your application for first time use. click OK to start, and wait until your application opens.");            
+
                     //string rootPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
                     //System.Diagnostics.Process.Start(@"cscript //B //Nologo "+rootPath+@"\scripts\createdb.vbs");
                    

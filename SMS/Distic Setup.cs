@@ -159,5 +159,10 @@ namespace SMS
             //public static void fromClear(Form f);
             Connection.ChangeFormBackColor(this, e);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

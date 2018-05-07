@@ -146,8 +146,8 @@ namespace SMS
 
             strcmbAPPType.SelectedIndex = 0;
             DesignForm.fromDesign1(this);
-            Connection.SetUserLevelAuth(c.GetMdiParent(this));
             c.GetMdiParent(this).EnableAllEditMenuButtons();
+            Connection.SetUserLevelAuth(c.GetMdiParent(this));
         }
         private void btnexit_Click(object sender, EventArgs e)
         {
@@ -635,12 +635,19 @@ namespace SMS
             Form clsform = new frmtehsil();
             clsform.StartPosition = FormStartPosition.CenterScreen;
             clsform.ShowDialog();
+
+            Cursor.Current = Cursors.WaitCursor;
+            RefreshTehsil();
+            Cursor.Current = Cursors.Default;
         }
-        private void btntehrefresh_Click(object sender, EventArgs e)
+
+        private void RefreshTehsil()
         {
-            c.FillcomboBox("SELECT     tbl_tehsil.*  FROM         tbl_tehsil INNER JOIN                       tbl_district ON tbl_tehsil.distcode = tbl_district.distcode  where district='" + valcmbdistrict.Text + "' ", "tehsil", "tehcode", ref valcmbtehsil);
+            c.FillcomboBox("SELECT tbl_tehsil.* FROM tbl_tehsil INNER JOIN tbl_district ON tbl_tehsil.distcode = tbl_district.distcode  where district='" + valcmbdistrict.Text + "' ", "tehsil", "tehcode", ref valcmbtehsil);
 
         }
+
+
         private void txtstdname_Validated(object sender, EventArgs e)
         {
             txtStudentName.Text = school.ToTitleCase(txtStudentName.Text);
@@ -1080,10 +1087,16 @@ namespace SMS
             c.getconnstr();
             c.FillcomboBox("SELECT  tbl_tehsil.*  FROM tbl_tehsil INNER JOIN  tbl_district ON tbl_tehsil.distcode = tbl_district.distcode  where tbl_district.district='" + valcmbdistrict.Text + "' ", "tehsil", "tehcode", ref valcmbtehsil);
         }
-        private void button3_Click(object sender, EventArgs e)
+        //private void button3_Click(object sender, EventArgs e)
+        //{
+        //    c.FillcomboBox("select * from tbl_district order by district", "district", "distcode", ref  valcmbdistrict);
+        //}
+
+        private void RefreshDisricts()
         {
             c.FillcomboBox("select * from tbl_district order by district", "district", "distcode", ref  valcmbdistrict);
         }
+
         private void button4_Click(object sender, EventArgs e)
         {
             //Thread backgroundThread = new Thread(threadStart);
@@ -1093,6 +1106,11 @@ namespace SMS
             Form clsform = new Distic_Setup();
             clsform.StartPosition = FormStartPosition.CenterScreen;
             clsform.ShowDialog();
+
+            Cursor.Current = Cursors.WaitCursor;
+            RefreshDisricts();
+            Cursor.Current = Cursors.Default;
+
         }
         private void txtscholarno_KeyPress_1(object sender, KeyPressEventArgs e)
         {
@@ -1294,6 +1312,7 @@ namespace SMS
         {
             try
             {
+                valcmbsession.SelectedValue = school.CurrentSessionCode;
                 DataSet ds545 = Connection.GetDataSet("Select Count(*) from tbl_student");
                 int k = Convert.ToInt32(ds545.Tables[0].Rows[0][0]);
                 if (k > 0)
@@ -1950,6 +1969,8 @@ namespace SMS
                     pbxBarCode.Visible = false;
                     
                     DesignForm.fromDesign1(this);
+
+                    Connection.SetUserLevelAuth(c.GetMdiParent(this));
                     strmtongue.Items.Clear();
                     Connection.FillCombo(ref strmtongue, "select distinct m_tongue from tbl_student");
                 }
@@ -1962,7 +1983,18 @@ namespace SMS
         }
         private void IsScholar_CheckedChanged(object sender, EventArgs e)
         {
-
+            if(IsScholar.Checked)
+            {
+                strBCode.Enabled = true;
+                txtACNo.Enabled = true;
+                txtAmount.Enabled = true;
+            }
+            else
+            {
+                strBCode.Enabled = false;
+                txtACNo.Enabled = false;
+                txtAmount.Enabled = false;
+            }
         }
 
         private void frmstudent_Paint(object sender, PaintEventArgs e)

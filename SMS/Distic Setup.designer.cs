@@ -44,6 +44,7 @@
             this.valcmbdistrict = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -55,7 +56,7 @@
             this.btnnew.ForeColor = System.Drawing.Color.Black;
             this.btnnew.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnnew.Location = new System.Drawing.Point(11, 5);
-            this.btnnew.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnnew.Margin = new System.Windows.Forms.Padding(4);
             this.btnnew.Name = "btnnew";
             this.btnnew.Size = new System.Drawing.Size(80, 28);
             this.btnnew.TabIndex = 0;
@@ -85,7 +86,7 @@
             this.btnprint.ForeColor = System.Drawing.Color.Black;
             this.btnprint.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnprint.Location = new System.Drawing.Point(416, 5);
-            this.btnprint.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnprint.Margin = new System.Windows.Forms.Padding(4);
             this.btnprint.Name = "btnprint";
             this.btnprint.Size = new System.Drawing.Size(80, 28);
             this.btnprint.TabIndex = 5;
@@ -98,7 +99,7 @@
             this.txtsankaycode.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtsankaycode.ForeColor = System.Drawing.Color.Blue;
             this.txtsankaycode.Location = new System.Drawing.Point(324, 19);
-            this.txtsankaycode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtsankaycode.Margin = new System.Windows.Forms.Padding(4);
             this.txtsankaycode.MaxLength = 30;
             this.txtsankaycode.Name = "txtsankaycode";
             this.txtsankaycode.Size = new System.Drawing.Size(81, 25);
@@ -114,7 +115,7 @@
             this.btnexit.ForeColor = System.Drawing.Color.Black;
             this.btnexit.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnexit.Location = new System.Drawing.Point(497, 5);
-            this.btnexit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnexit.Margin = new System.Windows.Forms.Padding(4);
             this.btnexit.Name = "btnexit";
             this.btnexit.Size = new System.Drawing.Size(80, 28);
             this.btnexit.TabIndex = 6;
@@ -127,7 +128,7 @@
             this.txtsankayname.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtsankayname.ForeColor = System.Drawing.Color.Blue;
             this.txtsankayname.Location = new System.Drawing.Point(132, 18);
-            this.txtsankayname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtsankayname.Margin = new System.Windows.Forms.Padding(4);
             this.txtsankayname.Name = "txtsankayname";
             this.txtsankayname.Size = new System.Drawing.Size(184, 25);
             this.txtsankayname.TabIndex = 134;
@@ -147,7 +148,7 @@
             this.panel1.Controls.Add(this.btncancel);
             this.panel1.Controls.Add(this.btnsave);
             this.panel1.Location = new System.Drawing.Point(34, 333);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(589, 46);
             this.panel1.TabIndex = 132;
@@ -160,7 +161,7 @@
             this.btnedit.ForeColor = System.Drawing.Color.Black;
             this.btnedit.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnedit.Location = new System.Drawing.Point(92, 5);
-            this.btnedit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnedit.Margin = new System.Windows.Forms.Padding(4);
             this.btnedit.Name = "btnedit";
             this.btnedit.Size = new System.Drawing.Size(80, 28);
             this.btnedit.TabIndex = 1;
@@ -176,7 +177,7 @@
             this.btndelete.ForeColor = System.Drawing.Color.Black;
             this.btndelete.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btndelete.Location = new System.Drawing.Point(173, 5);
-            this.btndelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btndelete.Margin = new System.Windows.Forms.Padding(4);
             this.btndelete.Name = "btndelete";
             this.btndelete.Size = new System.Drawing.Size(80, 28);
             this.btndelete.TabIndex = 2;
@@ -191,7 +192,7 @@
             this.btncancel.ForeColor = System.Drawing.Color.Black;
             this.btncancel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btncancel.Location = new System.Drawing.Point(335, 5);
-            this.btncancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btncancel.Margin = new System.Windows.Forms.Padding(4);
             this.btncancel.Name = "btncancel";
             this.btncancel.Size = new System.Drawing.Size(80, 28);
             this.btncancel.TabIndex = 4;
@@ -206,7 +207,7 @@
             this.btnsave.ForeColor = System.Drawing.Color.Black;
             this.btnsave.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnsave.Location = new System.Drawing.Point(254, 5);
-            this.btnsave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnsave.Margin = new System.Windows.Forms.Padding(4);
             this.btnsave.Name = "btnsave";
             this.btnsave.Size = new System.Drawing.Size(80, 28);
             this.btnsave.TabIndex = 3;
@@ -235,7 +236,7 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 17;
             this.listBox1.Location = new System.Drawing.Point(383, 63);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(4);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(232, 242);
             this.listBox1.TabIndex = 135;
@@ -281,7 +282,7 @@
             "UTTARANCHAL   ",
             "JHARKHAND"});
             this.valcmbdistrict.Location = new System.Drawing.Point(132, 57);
-            this.valcmbdistrict.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.valcmbdistrict.Margin = new System.Windows.Forms.Padding(4);
             this.valcmbdistrict.Name = "valcmbdistrict";
             this.valcmbdistrict.Size = new System.Drawing.Size(182, 24);
             this.valcmbdistrict.TabIndex = 138;
@@ -312,6 +313,16 @@
             this.panel2.Size = new System.Drawing.Size(334, 241);
             this.panel2.TabIndex = 140;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(624, 7);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(26, 26);
+            this.button1.TabIndex = 141;
+            this.button1.Text = "X";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Distic_Setup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -319,6 +330,7 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(657, 386);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
@@ -326,7 +338,7 @@
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Distic_Setup";
             this.Tag = "1019";
             this.Load += new System.EventHandler(this.Distic_Setup_Load);
@@ -357,6 +369,7 @@
         private System.Windows.Forms.ComboBox valcmbdistrict;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button button1;
 
     }
 }

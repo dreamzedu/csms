@@ -163,7 +163,18 @@ namespace SMS
             }
             return (vchtype + dtp.Date.ToString("ddMMyyyy") + VchNo).ToString();         
         }
-        public void insertdata(string tblname,SqlConnection mcon,UserControl frm)
+
+        public void insertdata(string tblname, SqlConnection mcon, UserControl frm)
+        {
+            insertdata(tblname, mcon, frm.Controls);
+        }
+
+        public void insertdata(string tblname, SqlConnection mcon, Form frm)
+        {
+            insertdata(tblname, mcon, frm.Controls);
+        }
+
+        private void insertdata(string tblname, SqlConnection mcon, Control.ControlCollection controlCollection)
         {
             try
             {
@@ -174,7 +185,7 @@ namespace SMS
                 SqlCommandBuilder cmb = new SqlCommandBuilder(sqlada);
                 DataRow row;
                 row = ds1.Tables[0].NewRow();
-                foreach (Control cnt in frm.Controls)
+                foreach (Control cnt in controlCollection)
                 {
                     if (cnt is Panel)
                     {
@@ -427,7 +438,20 @@ namespace SMS
             sqlada.Update(ds1);
         }
 
-        public void showdata(string tblname, SqlConnection mcon, UserControl frm,string fldname,string mvalue)        
+
+        public void showdata(string tblname, SqlConnection mcon, UserControl frm, string fldname, string mvalue)
+        {
+            showdata(tblname, mcon, frm.Controls, fldname, mvalue);
+        }
+
+
+        public void showdata(string tblname, SqlConnection mcon, Form frm, string fldname, string mvalue)
+        {
+            showdata(tblname, mcon, frm.Controls, fldname, mvalue); 
+        }
+
+
+        public void showdata(string tblname, SqlConnection mcon, Control.ControlCollection controlCollection, string fldname,string mvalue)        
         {
             returnconn(myconn);
             DataSet ds1 = new DataSet();
@@ -438,7 +462,7 @@ namespace SMS
                 ds1.Clear();
                 return;
             }
-            foreach (Control cnt in frm.Controls)
+            foreach (Control cnt in controlCollection)
             {
                 if (cnt is Panel)
                 {
@@ -772,7 +796,19 @@ namespace SMS
             }
 
         }
+
+
         public void updatedata(string tblname, SqlConnection mcon, UserControl frm, string fldname, string mvalue)
+        {
+            updatedata(tblname, mcon, frm.Controls, fldname, mvalue);
+        }
+
+        public void updatedata(string tblname, SqlConnection mcon, Form frm, string fldname, string mvalue)
+        {
+            updatedata(tblname, mcon, frm.Controls, fldname, mvalue);
+        }
+       
+        private void updatedata(string tblname, SqlConnection mcon, Control.ControlCollection controlCollection, string fldname, string mvalue)
         {
             DataSet ds1 = new DataSet();
             sqlada = new SqlDataAdapter("select * from " + tblname + " where " + fldname + " = '" + mvalue +"'", mcon);
@@ -784,8 +820,8 @@ namespace SMS
                 ds1.Clear();
                 goto lastline;
             }
-            ds1.Tables[0].Rows[0].BeginEdit(); 
-            foreach (Control cntrl in frm.Controls)
+            ds1.Tables[0].Rows[0].BeginEdit();
+            foreach (Control cntrl in controlCollection)
             {
                 if (cntrl is Panel)
                 {
@@ -1428,9 +1464,19 @@ namespace SMS
             return rText;
         }  
 
+        public void cleartext(Form frm)
+        {
+            cleartext(frm.Controls);
+        }
+
         public void cleartext(UserControl frm)
         {
-            foreach (Control cnt in frm.Controls)
+            cleartext(frm.Controls);
+        }
+
+        private void cleartext(Control.ControlCollection controlCollection)
+        {
+            foreach (Control cnt in controlCollection)
             {
                 if (cnt is TextBox)
                 {

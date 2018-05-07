@@ -167,11 +167,9 @@ namespace SMS
             this.chkwanthostelfaci = new System.Windows.Forms.CheckBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
-            this.btntehrefresh = new System.Windows.Forms.Button();
             this.chkbusfacility = new System.Windows.Forms.CheckBox();
             this.button4 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
             this.label49 = new System.Windows.Forms.Label();
             this.txtbarnum = new System.Windows.Forms.TextBox();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
@@ -1342,12 +1340,10 @@ namespace SMS
             this.tabPage2.Controls.Add(this.chkwanthostelfaci);
             this.tabPage2.Controls.Add(this.button1);
             this.tabPage2.Controls.Add(this.label19);
-            this.tabPage2.Controls.Add(this.btntehrefresh);
             this.tabPage2.Controls.Add(this.chkbusfacility);
             this.tabPage2.Controls.Add(this.button4);
             this.tabPage2.Controls.Add(this.label8);
             this.tabPage2.Controls.Add(this.chkgapcirti);
-            this.tabPage2.Controls.Add(this.button3);
             this.tabPage2.Controls.Add(this.label49);
             this.tabPage2.Controls.Add(this.txtbarnum);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
@@ -1513,7 +1509,7 @@ namespace SMS
             this.IsScholar.AutoSize = true;
             this.IsScholar.BackColor = System.Drawing.Color.Transparent;
             this.IsScholar.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IsScholar.ForeColor = System.Drawing.Color.White;
+            this.IsScholar.ForeColor = System.Drawing.Color.Black;
             this.IsScholar.Location = new System.Drawing.Point(326, 343);
             this.IsScholar.Name = "IsScholar";
             this.IsScholar.Size = new System.Drawing.Size(205, 23);
@@ -1574,6 +1570,7 @@ namespace SMS
             // txtAmount
             // 
             this.txtAmount.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.txtAmount.Enabled = false;
             this.txtAmount.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAmount.ForeColor = System.Drawing.Color.Blue;
             this.txtAmount.Location = new System.Drawing.Point(108, 81);
@@ -1599,6 +1596,7 @@ namespace SMS
             // txtACNo
             // 
             this.txtACNo.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.txtACNo.Enabled = false;
             this.txtACNo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtACNo.ForeColor = System.Drawing.Color.Blue;
             this.txtACNo.Location = new System.Drawing.Point(108, 50);
@@ -1611,6 +1609,7 @@ namespace SMS
             // 
             // strBCode
             // 
+            this.strBCode.Enabled = false;
             this.strBCode.FormattingEnabled = true;
             this.strBCode.Location = new System.Drawing.Point(108, 20);
             this.strBCode.Name = "strBCode";
@@ -2118,16 +2117,6 @@ namespace SMS
             this.label19.TabIndex = 63;
             this.label19.Text = "Stop Name";
             // 
-            // btntehrefresh
-            // 
-            this.btntehrefresh.Location = new System.Drawing.Point(251, 248);
-            this.btntehrefresh.Name = "btntehrefresh";
-            this.btntehrefresh.Size = new System.Drawing.Size(36, 25);
-            this.btntehrefresh.TabIndex = 71;
-            this.btntehrefresh.Text = "R";
-            this.btntehrefresh.UseVisualStyleBackColor = true;
-            this.btntehrefresh.Click += new System.EventHandler(this.btntehrefresh_Click);
-            // 
             // chkbusfacility
             // 
             this.chkbusfacility.AutoSize = true;
@@ -2164,16 +2153,6 @@ namespace SMS
             this.label8.Size = new System.Drawing.Size(168, 18);
             this.label8.TabIndex = 61;
             this.label8.Text = "Is Taking Bus Facility";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(251, 215);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(36, 25);
-            this.button3.TabIndex = 70;
-            this.button3.Text = "R";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label49
             // 
@@ -3090,9 +3069,7 @@ namespace SMS
         private System.Windows.Forms.ComboBox valcmbtehsil;
         private System.Windows.Forms.TextBox txtMobileNo;
         private System.Windows.Forms.Label label59;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button btntehrefresh;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.Label label18;

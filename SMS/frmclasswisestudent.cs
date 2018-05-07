@@ -30,6 +30,7 @@ namespace SMS
             strCmbReligion.SelectedIndex = 0;
             cmbgender.SelectedIndex = 0;
 
+            this.cmbSession.SelectedIndexChanged += new System.EventHandler(this.cmbSession_SelectedIndexChanged);
         }         
          
         private void btnsectionwise_Click(object sender, EventArgs e)
