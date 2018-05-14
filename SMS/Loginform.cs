@@ -379,7 +379,7 @@ namespace SMS
                 
                 if(DateTime.Now.AddDays(30) > date)
                 {
-                    int dateDiff = DateTime.Now.AddDays(30).Subtract(date).Days;
+                    int dateDiff = date.Subtract(DateTime.Today).Days;
                     MessageBox.Show("Your subscription is expiring in next " + dateDiff + " days, please renew your subscription to avoid disruption in your business.");
                 
                 }
