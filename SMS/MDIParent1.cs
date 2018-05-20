@@ -38,7 +38,7 @@ namespace SMS
             this.UserName = UserName;
             this.UserCode = UserCode;
             this.ControlBox = true;
-            Connection.UserLevel = Convert.ToInt16(Connection.GetExecuteScalar("Select top 1 UserLevel From MasterUser Where UserCode='" + UserCode.Trim() + "'", Connection.GetUserDbConnection()));
+            Connection.UserLevel = Convert.ToInt16(Connection.GetExecuteScalar("Select top 1 UserLevel From MasterUser Where UserId='" + school1.CurrentUser.UserId.Trim() + "'", Connection.GetUserDbConnection()));
             Connection.UserName = UserName;
 
             this.Text = "CSMS " + Application.ProductVersion + "  |  User Login : " + UserName + "  |  Session: " + this.Session;
@@ -1230,7 +1230,19 @@ namespace SMS
 
         public void btnprint_Click(object sender, EventArgs e)
         {
-            ((UserControlBase)this.pnlMain.Controls[0]).btnprint_Click(sender, e);
+            try
+            {
+                ((UserControlBase)this.pnlMain.Controls[0]).btnprint_Click(sender, e);
+            }
+            catch(Exception ex)
+            {
+                if (ex.Message.Contains("Crystal Reports"))
+                {
+                    MessageBox.Show("Print Error: Looks like Crystal Reports not installed properly on your machine. Please download and install 32 or 64 bit Crystal Reports as per your machine architecture from following Url");
+                }
+                else
+                    throw ex;
+            }
         }
 
 

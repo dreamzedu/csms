@@ -62,6 +62,7 @@ namespace SMS
                 
             }
 
+            MessageBox.Show("Some critical error occurred in the application. Closing the application now.");
             Application.Exit();
             Environment.Exit(0);
         }
