@@ -160,16 +160,10 @@ C:\csms-x86\csms\SMS\bin\Debug\System.dll
 C:\csms-x86\csms\SMS\bin\Debug\System.Drawing.dll
 C:\csms-x86\csms\SMS\bin\Debug\System.Web.dll
 C:\csms-x86\csms\SMS\bin\Debug\System.Web.Extensions.dll
-C:\csms-x86\csms\SMS\bin\Debug\System.Web.Http.dll
 C:\csms-x86\csms\SMS\bin\Debug\System.Web.Services.dll
 C:\csms-x86\csms\SMS\bin\Debug\System.Windows.Forms.dll
 C:\csms-x86\csms\SMS\bin\Debug\System.Xml.dll
 C:\csms-x86\csms\SMS\bin\Debug\System.Xml.Linq.dll
-C:\csms-x86\csms\SMS\bin\Debug\System.Net.Http.dll
-C:\csms-x86\csms\SMS\bin\Debug\System.Net.Http.Formatting.dll
-C:\csms-x86\csms\SMS\bin\Debug\System.Web.Http.xml
-C:\csms-x86\csms\SMS\bin\Debug\System.Net.Http.xml
-C:\csms-x86\csms\SMS\bin\Debug\System.Net.Http.Formatting.xml
 C:\csms-x86\csms\SMS\bin\Debug\Microsoft.Vbe.Interop.dll
 C:\csms-x86\csms\SMS\obj\Debug\SMS.application
 C:\csms-x86\csms\SMS\obj\Debug\SMS-x64.csprojResolveAssemblyReference.cache
