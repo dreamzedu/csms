@@ -38,7 +38,7 @@
     <MinimumRequiredVersion>4.0.0.0</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationRevision>7</ApplicationRevision>
     <ApplicationVersion>4.0.3.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -3137,6 +3137,8 @@
       <DependentUpon>VoucherCashReceipt.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Content Include="Image\noImage.png" />
+    <None Include="Resources\noImage.jpg" />
     <Content Include="scripts\dbcreate.bat">
       <SubType>Designer</SubType>
     </Content>
@@ -3293,7 +3295,7 @@
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Sample.EULA">
       <Visible>False</Visible>
-      <ProductName>Crystal Report Viewer x86</ProductName>
+      <ProductName>Crystal Report Viewer %28x86 and x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">

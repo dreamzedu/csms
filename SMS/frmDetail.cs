@@ -9,6 +9,8 @@ using System.Windows.Forms;
 using System.IO;
 using System.Drawing.Drawing2D;
 using System.Web.UI;
+using System.Reflection;
+using SMS.Properties;
 
 
 
@@ -19,6 +21,14 @@ namespace SMS
     {
         school c = new school();
         DataSet dsDetail;
+        DataView dv;
+        DataTable tempTable; // used for binding pages to the grid
+        int pageSize = 5;
+        int totalPages=0;
+        List<int> paginatorSource;
+
+        BindingSource bs = new BindingSource();
+
         public frmDetail()
         {
             InitializeComponent();
@@ -36,104 +46,166 @@ namespace SMS
                 " SELECT ClassName, ClassCode  FROM tbl_ClassMaster Order By ClassCode;");
             foreach (DataRow rw in ds.Tables[0].Rows)
                 cmbSession.Items.Add(rw["sessionname"].ToString());
+
+            cmbSession.SelectedItem = school.CurrentSessionName;
+
             foreach (DataRow rw in ds.Tables[1].Rows)
                 cmbClass.Items.Add(rw["ClassName"].ToString());
 
             dsDetail = Connection.GetDataSet("sp_AllStudent '" + school.CurrentSessionCode + "'");
+
+            toolStripComboBox1.SelectedIndex = 0;
+            
+
             if (dsDetail.Tables[0].Rows.Count > 0)
             {
+                dv = dsDetail.Tables[0].DefaultView;
+                tempTable = dsDetail.Tables[0].Clone();
+                RecalculatePages();
+                bs.PositionChanged += bs_PositionChanged;
+                bs_PositionChanged(bs, EventArgs.Empty);
                 //  btnGenerateExcel.Enabled = true;
-             dataGridView1.DataSource = dsDetail.Tables[0];
+            }
+        }
+
+        void bs_PositionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int recordsAvailable = (dv.Count - (bs.Position) * pageSize);
+                int count = recordsAvailable > pageSize ? pageSize : recordsAvailable;
+
+                tempTable.Clear();
+                dv.ToTable().Select().Skip((bs.Position) * pageSize).Take(count).CopyToDataTable(tempTable, LoadOption.OverwriteChanges);
+
+                dataGridView1.DataSource = tempTable.DefaultView;
+            }
+            catch(Exception ex)
+            {
+                Logger.LogError(ex);
             }
         }
  
- 
-       
+        private void RecalculatePages()
+        {
+            dv.RowFilter = GetFilter();
+
+            if (dv.Count > 0)
+            {
+                if (dv.Count % pageSize == 0)
+                {
+                    totalPages = dv.Count / pageSize;
+                }
+                else
+                {
+                    totalPages = dv.Count / pageSize + 1;
+                }
+            }
+            else
+            {
+                totalPages = 0;
+            }
+
+            paginatorSource = new List<int>();
+            for (int i = 1; i <= totalPages; i++)
+            {
+                paginatorSource.Add(i);
+            }
+            int initPos = bs.Position;
+            bs.DataSource = paginatorSource;
+            bindingNavigator1.BindingSource = bs;
+            if (totalPages > 0)
+            {
+                if (initPos == bs.Position)
+                    bs_PositionChanged(null, null);
+            }
+            else
+            {
+                dataGridView1.DataSource = null;
+            }
+        }
+
+        private string GetFilter()
+        {
+            StringBuilder filter = new  StringBuilder();
+
+            if (!string.IsNullOrEmpty(txtName.Text.Trim()))
+            {
+                filter.Append("[Name] Like '" + txtName.Text.Trim() + "%' ");
+            }
+            if (!string.IsNullOrEmpty(txtScholarNo.Text.Trim()))
+            {
+                if(!string.IsNullOrEmpty(filter.ToString()))
+                {
+                    filter.Append(" and ");
+                }
+                filter.Append("[Scholar No] Like '" + txtScholarNo.Text.Trim() + "%'");
+            }
+            if (!string.IsNullOrEmpty(cmbClass.Text.Trim()))
+            {
+                if(!string.IsNullOrEmpty(filter.ToString()))
+                {
+                    filter.Append(" and ");
+                }
+                filter.Append(dv.RowFilter = "[ClassCode] = '" + Convert.ToInt32(Connection.GetExecuteScalar("Select ClassCode From tbl_ClassMaster Where ClassName='" + cmbClass.SelectedItem.ToString() + "'")) + "'");
+            }
+            return filter.ToString();
+        }
+
         private void txtName_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                if (!string.IsNullOrEmpty(txtName.Text.Trim()))
-                    if (dsDetail.Tables[0].Rows.Count > 0)
-                    {
-                        DataView dv = dsDetail.Tables[0].DefaultView;
-                        dv.RowFilter = "[Name] Like '" + txtName.Text.Trim() + "%'";
-                        if (dv.Table.Rows.Count > 0)
-                        {
-                            dataGridView1.DataSource = dv;
-                            //  btnGenerateExcel.Enabled = true;
-                        }
-                        else
-                        {
-                            dataGridView1.DataSource = dsDetail.Tables[0];
-                            //  btnGenerateExcel.Enabled = true;
-                        }
-                    }
+                RecalculatePages();
             }
-            catch(Exception ex){Logger.LogError(ex); }
+            catch (Exception ex) { Logger.LogError(ex); }
         }
 
         private void txtScholarNo_TextChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtScholarNo.Text.Trim()))
-                if (dsDetail.Tables[0].Rows.Count > 0)
-                {
-                    DataView dv = dsDetail.Tables[0].DefaultView;
-                    dv.RowFilter = "[Scholar No] Like '" + txtScholarNo.Text.Trim() + "%'";
-                    if (dv.Table.Rows.Count > 0)
-                    {
-                        dataGridView1.DataSource = dv;
-                        // btnGenerateExcel.Enabled = true;
-                    }
-                    else
-                    {
-                        dataGridView1.DataSource = dsDetail.Tables[0];
-                        // btnGenerateExcel.Enabled = true;
-                    }
-                }
+            try
+            {
+                RecalculatePages();
+            }
+            catch (Exception ex) { Logger.LogError(ex); }
         }
 
         private void cmbSession_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(cmbSession.Text.Trim()))
+            try
             {
-                dataGridView1.DataSource = null;
-                dsDetail = Connection.GetDataSet("sp_AllStudent '" +
-                    Connection.GetExecuteScalar("Select SessionCode From tbl_Session where SessionName='" + cmbSession.Text.Trim() + "'").ToString() + "'");
-                if (dsDetail.Tables[0].Rows.Count > 0)
+                if (!string.IsNullOrEmpty(cmbSession.Text.Trim()))
                 {
-                    // btnGenerateExcel.Enabled = true;
-                    dataGridView1.DataSource = dsDetail.Tables[0];
+                    dsDetail = Connection.GetDataSet("sp_AllStudent '" +
+                        Connection.GetExecuteScalar("Select SessionCode From tbl_Session where SessionName='" + cmbSession.Text.Trim() + "'").ToString() + "'");
+                    
+                    dataGridView1.DataSource = null;
+                    dv = null;
+                    bs.DataSource = null;
+                    txtName.Text = "";
+                    txtScholarNo.Text = "";
+                    cmbClass.SelectedText = "";
+                    cmbClass.Text = "";
+
+                    if (dsDetail.Tables[0].Rows.Count > 0)
+                    {
+                        dv = dsDetail.Tables[0].DefaultView;
+
+                        RecalculatePages();
+                    }
+
                 }
-                
             }
+            catch (Exception ex) { Logger.LogError(ex); }
         }
 
         private void cmbClass_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
-            {
-                if (!string.IsNullOrEmpty(cmbClass.Text.Trim()))
-                {
-                    if (dsDetail.Tables[0].Rows.Count > 0)
-                    {
-                        DataView dv = dsDetail.Tables[0].DefaultView;
-
-                        dv.RowFilter = "[ClassCode] = '" + Convert.ToInt32(Connection.GetExecuteScalar("Select ClassCode From tbl_ClassMaster Where ClassName='" + cmbClass.SelectedItem.ToString() + "'")) + "'";
-                        if (dv.Table.Rows.Count > 0)
-                        {
-                            dataGridView1.DataSource = dv.ToTable();
-                            //   btnGenerateExcel.Enabled = true;
-                        }
-                        else
-                        {
-                            dataGridView1.DataSource = dsDetail.Tables[0];
-                            //  btnGenerateExcel.Enabled = true;
-                        }
-                    }
-                }
-            }
-            catch(Exception ex){Logger.LogError(ex); }
+            //try
+            //{
+            //    RecalculatePages();
+            //}
+            //catch (Exception ex) { Logger.LogError(ex); }
         }
 
         private void frmDetail_KeyDown(object sender, KeyEventArgs e)
@@ -151,7 +223,7 @@ namespace SMS
                 
             }
             else
-                MessageBox.Show("There Are No Record...");
+                MessageBox.Show("There are no records...");
         }
 
         private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
@@ -171,7 +243,9 @@ namespace SMS
                 dataGridView1.Columns["Scholar No"].Width = 60;
                 dataGridView1.RowTemplate.Height = 80;
                 ((DataGridViewImageColumn)dataGridView1.Columns["Photo"]).ImageLayout = DataGridViewImageCellLayout.Stretch;
-               
+                //dataGridView1.Columns["TC"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+
                 foreach (DataGridViewRow r in dataGridView1.Rows)
                 {
 
@@ -184,6 +258,11 @@ namespace SMS
                     dataGridView1.Rows[r.Index].Cells["Sport"].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                     dataGridView1.Rows[r.Index].Cells["DOB"].Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                     
+                    if(r.Cells["Photo"].Value == DBNull.Value || ((byte[])r.Cells["Photo"].Value).Length ==0)
+                    {
+                        r.Cells["Photo"].Value  = Resources.noImage;
+                    }
+
                     if (r.Cells["RTE"].Value.Equals("Yes"))
                     {
                         r.DefaultCellStyle.ForeColor = Color.BlueViolet;
@@ -286,6 +365,7 @@ namespace SMS
 
         private void frmDetail_Paint(object sender, PaintEventArgs e)
         {
+            
             //public static void fromClear(Form f);
         }
 
@@ -345,6 +425,27 @@ namespace SMS
             }
             catch(Exception ex){Logger.LogError(ex); }
         }
+
+        private void cmbClass_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                RecalculatePages();
+            }
+            catch (Exception ex) { Logger.LogError(ex); }
+        }
+
+        private void toolStripComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                pageSize = Convert.ToInt32(toolStripComboBox1.SelectedItem);
+                RecalculatePages();
+            }
+            catch(Exception ex)
+            { Logger.LogError(ex); }
+        }
+
 
         
     }
