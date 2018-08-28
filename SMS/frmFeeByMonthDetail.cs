@@ -13,7 +13,7 @@ namespace SMS
     public partial class frmFeeByMonthDetail :UserControlBase
     {
         DataSet ds = new DataSet();
-        school c = new school();
+        school1 c = new school1();
         static string tmps = string.Empty;
         public frmFeeByMonthDetail(string s)
         {
@@ -21,9 +21,9 @@ namespace SMS
             Connection.SetUserControlTheme(this);
             tmps = s;
         }
-         
 
-        private void button1_Click(object sender, EventArgs e)
+
+        public override void btnprint_Click(object sender, EventArgs e)
         {
             if (dataGridView1.RowCount  > 0)
             {
@@ -82,7 +82,9 @@ namespace SMS
         {
             Connection.FillComboBox(cmbSession, " select sessioncode,sessionname from tbl_session order by sessioncode ");
             Connection.FillComboBox(cmbclassname, " select classcode,classname from tbl_classmaster order by classcode ");
-            cmbSession.SelectedValue = school.CurrentSessionCode; 
+            cmbSession.SelectedValue = school.CurrentSessionCode;
+
+            c.GetMdiParent(this).TogglePrintButton(true);
         } 
 
         private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)

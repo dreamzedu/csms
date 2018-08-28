@@ -29,6 +29,7 @@ namespace SMS
             Connection.FillComboBox(cmbClass, " select classcode,classname from tbl_classmaster order by classcode ");
             cmbSession.SelectedValue = school.CurrentSessionCode;
             cmbStudentStatus.SelectedIndex = 0;
+            c.GetMdiParent(this).TogglePrintButton(true);
         } 
 
         private void btnExit_Click(object sender, EventArgs e)

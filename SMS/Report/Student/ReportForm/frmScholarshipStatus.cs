@@ -95,6 +95,7 @@ namespace SMS.Report.Student.ReportForm
             itId = FLAG = 0;
             Connection.FillComboBox(cmbSession, " select sessioncode,sessionname from tbl_session order by sessioncode ");
             Connection.FillComboBox(cmbClass, " select classcode,classname from tbl_classmaster order by classcode ");
+            this.cmbSession.SelectedIndexChanged += new System.EventHandler(this.cmbSession_SelectedIndexChanged);
             cmbSession.SelectedValue = school.CurrentSessionCode;
             FillGrid();
         }

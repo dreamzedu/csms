@@ -35,7 +35,6 @@
             this.cmbSession = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbClass = new System.Windows.Forms.ComboBox();
-            this.btnExit = new System.Windows.Forms.Button();
             this.btnShow = new System.Windows.Forms.Button();
             this.dgvScholarDetails = new System.Windows.Forms.DataGridView();
             this.chkReceive = new System.Windows.Forms.CheckBox();
@@ -66,7 +65,7 @@
             this.cmbSection.ForeColor = System.Drawing.Color.Blue;
             this.cmbSection.FormattingEnabled = true;
             this.cmbSection.Location = new System.Drawing.Point(675, 53);
-            this.cmbSection.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbSection.Margin = new System.Windows.Forms.Padding(4);
             this.cmbSection.Name = "cmbSection";
             this.cmbSection.Size = new System.Drawing.Size(92, 28);
             this.cmbSection.TabIndex = 4;
@@ -79,7 +78,7 @@
             this.chkSection.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkSection.ForeColor = System.Drawing.Color.White;
             this.chkSection.Location = new System.Drawing.Point(533, 58);
-            this.chkSection.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkSection.Margin = new System.Windows.Forms.Padding(4);
             this.chkSection.Name = "chkSection";
             this.chkSection.Size = new System.Drawing.Size(134, 23);
             this.chkSection.TabIndex = 3;
@@ -94,7 +93,7 @@
             this.chkClassWise.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkClassWise.ForeColor = System.Drawing.Color.White;
             this.chkClassWise.Location = new System.Drawing.Point(254, 60);
-            this.chkClassWise.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkClassWise.Margin = new System.Windows.Forms.Padding(4);
             this.chkClassWise.Name = "chkClassWise";
             this.chkClassWise.Size = new System.Drawing.Size(118, 23);
             this.chkClassWise.TabIndex = 1;
@@ -108,11 +107,10 @@
             this.cmbSession.ForeColor = System.Drawing.Color.Blue;
             this.cmbSession.FormattingEnabled = true;
             this.cmbSession.Location = new System.Drawing.Point(103, 56);
-            this.cmbSession.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbSession.Margin = new System.Windows.Forms.Padding(4);
             this.cmbSession.Name = "cmbSession";
             this.cmbSession.Size = new System.Drawing.Size(116, 28);
             this.cmbSession.TabIndex = 0;
-            this.cmbSession.SelectedIndexChanged += new System.EventHandler(this.cmbSession_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -134,30 +132,18 @@
             this.cmbClass.ForeColor = System.Drawing.Color.Blue;
             this.cmbClass.FormattingEnabled = true;
             this.cmbClass.Location = new System.Drawing.Point(380, 55);
-            this.cmbClass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbClass.Margin = new System.Windows.Forms.Padding(4);
             this.cmbClass.Name = "cmbClass";
             this.cmbClass.Size = new System.Drawing.Size(101, 28);
             this.cmbClass.TabIndex = 2;
             this.cmbClass.SelectedIndexChanged += new System.EventHandler(this.cmbClass_SelectedIndexChanged);
             this.cmbClass.Leave += new System.EventHandler(this.cmbClass_Leave);
             // 
-            // btnExit
-            // 
-            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(893, 92);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(101, 28);
-            this.btnExit.TabIndex = 9;
-            this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
             // btnShow
             // 
             this.btnShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShow.Location = new System.Drawing.Point(636, 92);
-            this.btnShow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnShow.Location = new System.Drawing.Point(755, 92);
+            this.btnShow.Margin = new System.Windows.Forms.Padding(4);
             this.btnShow.Name = "btnShow";
             this.btnShow.Size = new System.Drawing.Size(101, 28);
             this.btnShow.TabIndex = 7;
@@ -170,7 +156,7 @@
             this.dgvScholarDetails.AllowUserToAddRows = false;
             this.dgvScholarDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvScholarDetails.Location = new System.Drawing.Point(5, 129);
-            this.dgvScholarDetails.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvScholarDetails.Margin = new System.Windows.Forms.Padding(4);
             this.dgvScholarDetails.Name = "dgvScholarDetails";
             this.dgvScholarDetails.ReadOnly = true;
             this.dgvScholarDetails.Size = new System.Drawing.Size(1007, 378);
@@ -184,7 +170,7 @@
             this.chkReceive.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.chkReceive.ForeColor = System.Drawing.Color.White;
             this.chkReceive.Location = new System.Drawing.Point(456, 97);
-            this.chkReceive.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkReceive.Margin = new System.Windows.Forms.Padding(4);
             this.chkReceive.Name = "chkReceive";
             this.chkReceive.Size = new System.Drawing.Size(155, 23);
             this.chkReceive.TabIndex = 6;
@@ -199,7 +185,7 @@
             this.chkSanction.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.chkSanction.ForeColor = System.Drawing.Color.White;
             this.chkSanction.Location = new System.Drawing.Point(87, 97);
-            this.chkSanction.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkSanction.Margin = new System.Windows.Forms.Padding(4);
             this.chkSanction.Name = "chkSanction";
             this.chkSanction.Size = new System.Drawing.Size(156, 23);
             this.chkSanction.TabIndex = 5;
@@ -236,8 +222,8 @@
             // btnAYS
             // 
             this.btnAYS.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAYS.Location = new System.Drawing.Point(739, 92);
-            this.btnAYS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAYS.Location = new System.Drawing.Point(858, 92);
+            this.btnAYS.Margin = new System.Windows.Forms.Padding(4);
             this.btnAYS.Name = "btnAYS";
             this.btnAYS.Size = new System.Drawing.Size(152, 28);
             this.btnAYS.TabIndex = 8;
@@ -249,15 +235,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1017, 512);
-            //this.ControlBox = false;
             this.Controls.Add(this.btnAYS);
             this.Controls.Add(this.chkReceive);
             this.Controls.Add(this.chkSanction);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dgvScholarDetails);
-            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnShow);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.cmbSection);
@@ -266,11 +249,9 @@
             this.Controls.Add(this.cmbSession);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cmbClass);
-            //this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            //this.MaximizeBox = false;
-            //this.MinimizeBox = false;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmScholarshipStatus";
+            this.Size = new System.Drawing.Size(1017, 512);
             this.Load += new System.EventHandler(this.frmScholarshipStatus_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmScholarshipStatus_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.dgvScholarDetails)).EndInit();
@@ -288,7 +269,6 @@
         private System.Windows.Forms.ComboBox cmbSession;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbClass;
-        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnShow;
         private System.Windows.Forms.DataGridView dgvScholarDetails;
         private System.Windows.Forms.CheckBox chkReceive;

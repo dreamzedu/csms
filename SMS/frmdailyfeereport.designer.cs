@@ -28,25 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnPrint = new System.Windows.Forms.Button();
             this.dtpfeedate = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.BackColor = System.Drawing.SystemColors.Control;
-            this.btnPrint.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrint.ForeColor = System.Drawing.Color.Black;
-            this.btnPrint.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnPrint.Location = new System.Drawing.Point(425, 312);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(80, 28);
-            this.btnPrint.TabIndex = 1;
-            this.btnPrint.Text = "OK";
-            this.btnPrint.UseVisualStyleBackColor = true;
             // 
             // dtpfeedate
             // 
@@ -90,11 +76,11 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.dtpfeedate);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.btnPrint);
             this.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmdailyfeereport";
             this.Size = new System.Drawing.Size(552, 359);
             this.Tag = "1057";
+            this.Load += new System.EventHandler(this.frmdailyfeereport_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmdailyfeereport_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -104,7 +90,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnPrint;
         private System.Windows.Forms.DateTimePicker dtpfeedate;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dataGridView1;

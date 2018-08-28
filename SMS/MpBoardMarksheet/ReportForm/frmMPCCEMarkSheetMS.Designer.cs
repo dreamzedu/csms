@@ -34,7 +34,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.cmbScetion = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnExit = new System.Windows.Forms.Button();
             this.btnViewReport = new System.Windows.Forms.Button();
             this.cmbClass = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,18 +45,20 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(194, 4);
+            this.label4.Location = new System.Drawing.Point(259, 5);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(166, 24);
+            this.label4.Size = new System.Drawing.Size(210, 29);
             this.label4.TabIndex = 60;
             this.label4.Text = "CBSE Marksheet";
             // 
             // btnBackView
             // 
             this.btnBackView.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBackView.Location = new System.Drawing.Point(340, 70);
+            this.btnBackView.Location = new System.Drawing.Point(453, 86);
+            this.btnBackView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBackView.Name = "btnBackView";
-            this.btnBackView.Size = new System.Drawing.Size(110, 30);
+            this.btnBackView.Size = new System.Drawing.Size(147, 37);
             this.btnBackView.TabIndex = 55;
             this.btnBackView.Text = "View Back ";
             this.btnBackView.UseVisualStyleBackColor = true;
@@ -66,9 +67,10 @@
             // cmbSession
             // 
             this.cmbSession.FormattingEnabled = true;
-            this.cmbSession.Location = new System.Drawing.Point(90, 40);
+            this.cmbSession.Location = new System.Drawing.Point(120, 49);
+            this.cmbSession.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbSession.Name = "cmbSession";
-            this.cmbSession.Size = new System.Drawing.Size(121, 21);
+            this.cmbSession.Size = new System.Drawing.Size(160, 24);
             this.cmbSession.TabIndex = 51;
             // 
             // label3
@@ -77,19 +79,20 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(10, 42);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(13, 52);
+            this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 16);
+            this.label3.Size = new System.Drawing.Size(76, 20);
             this.label3.TabIndex = 59;
             this.label3.Text = "Session";
             // 
             // cmbScetion
             // 
             this.cmbScetion.FormattingEnabled = true;
-            this.cmbScetion.Location = new System.Drawing.Point(464, 40);
+            this.cmbScetion.Location = new System.Drawing.Point(619, 49);
+            this.cmbScetion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbScetion.Name = "cmbScetion";
-            this.cmbScetion.Size = new System.Drawing.Size(81, 21);
+            this.cmbScetion.Size = new System.Drawing.Size(107, 24);
             this.cmbScetion.TabIndex = 53;
             // 
             // label2
@@ -98,30 +101,20 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(388, 42);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(517, 52);
+            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 16);
+            this.label2.Size = new System.Drawing.Size(72, 20);
             this.label2.TabIndex = 58;
             this.label2.Text = "Section";
-            // 
-            // btnExit
-            // 
-            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(450, 70);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(95, 30);
-            this.btnExit.TabIndex = 56;
-            this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnViewReport
             // 
             this.btnViewReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewReport.Location = new System.Drawing.Point(230, 70);
+            this.btnViewReport.Location = new System.Drawing.Point(307, 86);
+            this.btnViewReport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnViewReport.Name = "btnViewReport";
-            this.btnViewReport.Size = new System.Drawing.Size(110, 30);
+            this.btnViewReport.Size = new System.Drawing.Size(147, 37);
             this.btnViewReport.TabIndex = 54;
             this.btnViewReport.Text = "View Front";
             this.btnViewReport.UseVisualStyleBackColor = true;
@@ -130,11 +123,11 @@
             // cmbClass
             // 
             this.cmbClass.FormattingEnabled = true;
-            this.cmbClass.Location = new System.Drawing.Point(290, 40);
+            this.cmbClass.Location = new System.Drawing.Point(387, 49);
+            this.cmbClass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cmbClass.Name = "cmbClass";
-            this.cmbClass.Size = new System.Drawing.Size(82, 21);
+            this.cmbClass.Size = new System.Drawing.Size(108, 24);
             this.cmbClass.TabIndex = 52;
-            this.cmbClass.SelectedIndexChanged += new System.EventHandler(this.cmbClass_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -142,32 +135,29 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(227, 42);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(303, 52);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 16);
+            this.label1.Size = new System.Drawing.Size(57, 20);
             this.label1.TabIndex = 57;
             this.label1.Text = "Class";
             // 
             // frmMPCCEMarkSheetMS
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(554, 118);
-            //this.ControlBox = false;
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnBackView);
             this.Controls.Add(this.cmbSession);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cmbScetion);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnViewReport);
             this.Controls.Add(this.cmbClass);
             this.Controls.Add(this.label1);
-            //this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmMPCCEMarkSheetMS";
-            //this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Size = new System.Drawing.Size(739, 145);
             this.Tag = "frmMPCCEMarkSheetMS";
             this.Load += new System.EventHandler(this.frmMPCCEMarkSheetMS_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmMPCCEMarkSheetMS_Paint);
@@ -184,7 +174,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cmbScetion;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnViewReport;
         private System.Windows.Forms.ComboBox cmbClass;
         private System.Windows.Forms.Label label1;

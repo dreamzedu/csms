@@ -14,6 +14,7 @@ namespace SMS
     {
         DataSet ds=new DataSet ();
         static string tmps = string.Empty;
+        school1 c = new school1();
 
         public FeeTransection(string s)
         {
@@ -86,6 +87,11 @@ namespace SMS
         private void FeeTransection_Paint(object sender, PaintEventArgs e)
         {
             //public static void fromClear(Form f);
+        }
+
+        private void FeeTransection_Load(object sender, EventArgs e)
+        {
+            c.GetMdiParent(this).TogglePrintButton(true);
         }
          
     }

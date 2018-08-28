@@ -32,8 +32,8 @@ namespace SMS
 
         private void dtpfeedate_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-                btnPrint .Focus();
+        //    if (e.KeyCode == Keys.Enter)
+        //        btnPrint .Focus();
         }
         public void FillGridForS()
         {
@@ -131,6 +131,11 @@ namespace SMS
         private void frmdailyfeereport_Paint(object sender, PaintEventArgs e)
         {
             //public static void fromClear(Form f);
+        }
+
+        private void frmdailyfeereport_Load(object sender, EventArgs e)
+        {
+            c.GetMdiParent(this).TogglePrintButton(true);
         }
     }
 }

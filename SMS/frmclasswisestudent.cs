@@ -29,7 +29,7 @@ namespace SMS
             strstdcategory.SelectedIndex = 0;
             strCmbReligion.SelectedIndex = 0;
             cmbgender.SelectedIndex = 0;
-
+            c.GetMdiParent(this).TogglePrintButton(true);
             this.cmbSession.SelectedIndexChanged += new System.EventHandler(this.cmbSession_SelectedIndexChanged);
         }         
          

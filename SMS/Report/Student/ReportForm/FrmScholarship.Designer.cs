@@ -207,7 +207,6 @@
             this.cmbSession.Name = "cmbSession";
             this.cmbSession.Size = new System.Drawing.Size(116, 28);
             this.cmbSession.TabIndex = 228;
-            this.cmbSession.SelectedIndexChanged += new System.EventHandler(this.cmbSession_SelectedIndexChanged);
             // 
             // label1
             // 

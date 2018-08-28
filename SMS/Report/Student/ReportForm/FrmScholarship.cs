@@ -16,7 +16,7 @@ namespace SMS.Report.Student.ReportForm
         {
             InitializeComponent(); Connection.SetUserControlTheme(this);
         }
-        school c = new school();
+        school1 c = new school1();
         DataTable dtStudentDetail = new DataTable();
         Report.Student.ReportDesign.rptStudentDetail cr = new Report.Student.ReportDesign.rptStudentDetail();
         private void FrmScholarship_Load(object sender, EventArgs e)
@@ -29,6 +29,9 @@ namespace SMS.Report.Student.ReportForm
             strstdcategory.SelectedIndex = 0;
             strCmbReligion.SelectedIndex = 0;
             cmbgender.SelectedIndex = 0;
+            c.GetMdiParent(this).TogglePrintButton(true);
+            this.cmbSession.SelectedIndexChanged += new System.EventHandler(this.cmbSession_SelectedIndexChanged);
+            
         }
         public void GetFilterRecord()
         {

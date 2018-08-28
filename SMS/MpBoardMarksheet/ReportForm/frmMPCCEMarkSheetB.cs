@@ -24,6 +24,7 @@ namespace SMS.MpBoardMarksheet.ReportForm
                 Connection.FillComboBox(cmbSession, "select SessionCode,SessionName from tbl_session Group by SessionCode,SessionName");
                 cmbSession.SelectedValue = school.CurrentSessionCode;
                 Connection.FillComboBox(cmbClass, "select ClassCode,ClassName from tbl_classmaster Order By ClassOrder");
+                this.cmbClass.SelectedIndexChanged += new System.EventHandler(this.cmbClass_SelectedIndexChanged);
             }
             catch (Exception ex)
             {

@@ -14,6 +14,7 @@ namespace SMS
     { 
         string str = "";
         DataSet ds = new DataSet();
+        school1 c = new school1();
         public TerminateStudentList()
         {
             InitializeComponent();
@@ -22,6 +23,7 @@ namespace SMS
         private void TerminateStudentList_Load(object sender, EventArgs e)
         {
             Connection.FillComboBox(cmbSession, " select sessioncode,sessionname from tbl_session order by sessioncode ");
+            c.GetMdiParent(this).TogglePrintButton(true);
         }
  
         private void cmbSession_Leave(object sender, EventArgs e)

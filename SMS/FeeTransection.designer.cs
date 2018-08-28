@@ -124,6 +124,7 @@
             this.Name = "FeeTransection";
             this.Size = new System.Drawing.Size(951, 557);
             this.Tag = "1032";
+            this.Load += new System.EventHandler(this.FeeTransection_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FeeTransection_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

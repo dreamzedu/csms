@@ -69,7 +69,7 @@
             this.dtpLastDate.CustomFormat = "dd/MM/yyyy";
             this.dtpLastDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpLastDate.Location = new System.Drawing.Point(539, 101);
-            this.dtpLastDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpLastDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtpLastDate.Name = "dtpLastDate";
             this.dtpLastDate.Size = new System.Drawing.Size(173, 22);
             this.dtpLastDate.TabIndex = 11;
@@ -79,7 +79,7 @@
             this.dtpStartDate.CustomFormat = "dd/MM/yyyy";
             this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpStartDate.Location = new System.Drawing.Point(200, 101);
-            this.dtpStartDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpStartDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtpStartDate.Name = "dtpStartDate";
             this.dtpStartDate.Size = new System.Drawing.Size(173, 22);
             this.dtpStartDate.TabIndex = 9;
@@ -89,11 +89,11 @@
             this.btnShowReport.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnShowReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShowReport.Location = new System.Drawing.Point(458, 146);
-            this.btnShowReport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnShowReport.Margin = new System.Windows.Forms.Padding(4);
             this.btnShowReport.Name = "btnShowReport";
             this.btnShowReport.Size = new System.Drawing.Size(123, 33);
             this.btnShowReport.TabIndex = 12;
-            this.btnShowReport.Text = "Show Report";
+            this.btnShowReport.Text = "Show";
             this.btnShowReport.UseVisualStyleBackColor = true;
             this.btnShowReport.Click += new System.EventHandler(this.btnShowReport_Click);
             // 
@@ -114,7 +114,7 @@
             // 
             this.cmbBusNo.FormattingEnabled = true;
             this.cmbBusNo.Location = new System.Drawing.Point(200, 57);
-            this.cmbBusNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbBusNo.Margin = new System.Windows.Forms.Padding(4);
             this.cmbBusNo.Name = "cmbBusNo";
             this.cmbBusNo.Size = new System.Drawing.Size(512, 24);
             this.cmbBusNo.TabIndex = 8;
@@ -124,11 +124,11 @@
             this.BtnAll.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.BtnAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAll.Location = new System.Drawing.Point(589, 146);
-            this.BtnAll.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnAll.Margin = new System.Windows.Forms.Padding(4);
             this.BtnAll.Name = "BtnAll";
             this.BtnAll.Size = new System.Drawing.Size(123, 33);
             this.BtnAll.TabIndex = 17;
-            this.BtnAll.Text = "All";
+            this.BtnAll.Text = "Show All";
             this.BtnAll.UseVisualStyleBackColor = true;
             this.BtnAll.Click += new System.EventHandler(this.BtnAll_Click);
             // 
@@ -145,7 +145,7 @@
             this.Controls.Add(this.btnShowReport);
             this.Controls.Add(this.lblBusNo);
             this.Controls.Add(this.cmbBusNo);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmDieselConsumption";
             this.Size = new System.Drawing.Size(719, 183);
             this.Load += new System.EventHandler(this.FrmDieselConsumption_Load);

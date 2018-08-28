@@ -43,14 +43,18 @@ namespace SMS.Report.Student.ReportForm
 
         public override void btnprint_Click(object sender, EventArgs e)
         {
-            DataSet ds = Connection.GetDataSet("SELECT schoolname, schooladdress, schoolcity, schoolphone, affiliate_by, principal, registrationno, logoimage   From   tbl_school");
-            ds.Tables.Add(Connection.GetDataTableFromDataGridView(dataGridView1));
-            ds.WriteXmlSchema(@"" + Connection.GetAccessPathId() + @"Barcodes\a\AbsentReport.xsd");
-            Report.Student.ReportDesign.rptStudentAbsent sa = new Report.Student.ReportDesign.rptStudentAbsent();
-            sa.SetDataSource(ds);
-            ShowAllReports s1 = new ShowAllReports();
-            s1.crystalReportViewer1.ReportSource = sa;
-            s1.Show();
+            DataTable dt = Connection.GetDataTableFromDataGridView(dataGridView1);
+            if (dt != null)
+            {
+                DataSet ds = Connection.GetDataSet("SELECT schoolname, schooladdress, schoolcity, schoolphone, affiliate_by, principal, registrationno, logoimage   From   tbl_school");
+                ds.Tables.Add();
+                ds.WriteXmlSchema(@"" + Connection.GetAccessPathId() + @"Barcodes\a\AbsentReport.xsd");
+                Report.Student.ReportDesign.rptStudentAbsent sa = new Report.Student.ReportDesign.rptStudentAbsent();
+                sa.SetDataSource(ds);
+                ShowAllReports s1 = new ShowAllReports();
+                s1.crystalReportViewer1.ReportSource = sa;
+                s1.Show();
+            }
         }
 
         private void btnShow_Click(object sender, EventArgs e)

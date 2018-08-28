@@ -1185,6 +1185,7 @@
             this.feeHeadWiseToolStripMenuItem.Size = new System.Drawing.Size(211, 26);
             this.feeHeadWiseToolStripMenuItem.Tag = "Fee Head Wise";
             this.feeHeadWiseToolStripMenuItem.Text = "Fee Head Wise";
+            this.feeHeadWiseToolStripMenuItem.Visible = false;
             // 
             // headWiseToolStripMenuItem
             // 
