@@ -710,7 +710,7 @@ namespace SMS
 
                 // c.FillcomboBox( "SELECT     tbl_section.sectionname,tbl_section.sectioncode  FROM         tbl_class INNER JOIN                        tbl_classmaster ON tbl_class.classcode = tbl_classmaster.classcode INNER JOIN                       tbl_section ON tbl_class.sectioncode = tbl_section.sectioncode where tbl_Classmaster.classname='" + valcmbclass.Text + "' ","sectionname","sectioncode",ref strsection);
 
-                if (valcmbclass.SelectedIndex > 0)
+                if (valcmbclass.SelectedIndex >= 0)
                 {
                     DataSet ds = Connection.GetDataSet("Select classcode from tbl_classmaster where classname='" + valcmbclass.Text + "'");
                     classno = ds.Tables[0].Rows[0].ItemArray[0].ToString();
@@ -1667,13 +1667,31 @@ namespace SMS
             lWdob.Text = Connection.GetDateIntoWord(dt.ToString("dd/MM/yyyy"));
             if (strcurrentstatus.SelectedIndex < 0)
             {
-                MessageBox.Show("Please Select Current Status of Student.");
+                MessageBox.Show("Please select Current Status of the student.");
                 strcurrentstatus.Focus();
                 return;
             }
-            if (txtScholarNo.Text == "" && strsection.Text == "")
+            if (strcmbsex.SelectedIndex < 0)
             {
-                MessageBox.Show("Null Value Not Allowed");
+                MessageBox.Show("Please select Gender of the student.");
+                strcmbsex.Focus();
+                return;
+            }
+            if (string.IsNullOrEmpty(txtfather.Text))
+            {
+                MessageBox.Show("Please enter Father's Name of the student.");
+                txtfather.Focus();
+                return;
+            }
+            if (string.IsNullOrEmpty(strsection.Text))
+            {
+                MessageBox.Show("Please select Section of the student.");
+                strsection.Focus();
+                return;
+            }
+            if (string.IsNullOrEmpty(txtScholarNo.Text))
+            {
+                MessageBox.Show("Please enter Scholar Number for the student.");
             }
             else
             {
@@ -2659,10 +2677,6 @@ Keys.End || e.KeyCode == Keys.Decimal || e.KeyCode == Keys.Enter))
         }
 
 
-        private void lblCast_Click(object sender, EventArgs e)
-        {
-
-        }
 
         //private void checkBox1_CheckedChanged_1(object sender, EventArgs e)
         //{

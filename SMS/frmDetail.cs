@@ -75,10 +75,13 @@ namespace SMS
                 int recordsAvailable = (dv.Count - (bs.Position) * pageSize);
                 int count = recordsAvailable > pageSize ? pageSize : recordsAvailable;
 
-                tempTable.Clear();
-                dv.ToTable().Select().Skip((bs.Position) * pageSize).Take(count).CopyToDataTable(tempTable, LoadOption.OverwriteChanges);
+                if (tempTable != null)
+                {
+                    tempTable.Clear();
+                    dv.ToTable().Select().Skip((bs.Position) * pageSize).Take(count).CopyToDataTable(tempTable, LoadOption.OverwriteChanges);
 
-                dataGridView1.DataSource = tempTable.DefaultView;
+                    dataGridView1.DataSource = tempTable.DefaultView;
+                }
             }
             catch(Exception ex)
             {
@@ -88,40 +91,43 @@ namespace SMS
  
         private void RecalculatePages()
         {
-            dv.RowFilter = GetFilter();
-
-            if (dv.Count > 0)
+            if (dv != null)
             {
-                if (dv.Count % pageSize == 0)
+                dv.RowFilter = GetFilter();
+
+                if (dv.Count > 0)
                 {
-                    totalPages = dv.Count / pageSize;
+                    if (dv.Count % pageSize == 0)
+                    {
+                        totalPages = dv.Count / pageSize;
+                    }
+                    else
+                    {
+                        totalPages = dv.Count / pageSize + 1;
+                    }
                 }
                 else
                 {
-                    totalPages = dv.Count / pageSize + 1;
+                    totalPages = 0;
                 }
-            }
-            else
-            {
-                totalPages = 0;
-            }
 
-            paginatorSource = new List<int>();
-            for (int i = 1; i <= totalPages; i++)
-            {
-                paginatorSource.Add(i);
-            }
-            int initPos = bs.Position;
-            bs.DataSource = paginatorSource;
-            bindingNavigator1.BindingSource = bs;
-            if (totalPages > 0)
-            {
-                if (initPos == bs.Position)
-                    bs_PositionChanged(null, null);
-            }
-            else
-            {
-                dataGridView1.DataSource = null;
+                paginatorSource = new List<int>();
+                for (int i = 1; i <= totalPages; i++)
+                {
+                    paginatorSource.Add(i);
+                }
+                int initPos = bs.Position;
+                bs.DataSource = paginatorSource;
+                bindingNavigator1.BindingSource = bs;
+                if (totalPages > 0)
+                {
+                    if (initPos == bs.Position)
+                        bs_PositionChanged(null, null);
+                }
+                else
+                {
+                    dataGridView1.DataSource = null;
+                }
             }
         }
 

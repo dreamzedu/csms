@@ -62,15 +62,19 @@ namespace SMS
                 
             }
 
-            MessageBox.Show("Some critical error occurred in the application. Closing the application now.");
-            Application.Exit();
-            Environment.Exit(0);
+            if (MessageBox.Show("Some critical error occurred in the application, the error will be reported to your vendor. Do you want to close the application?", "Critical Error", MessageBoxButtons.YesNo, MessageBoxIcon.Error) != DialogResult.Yes)
+            {
+                Application.Exit();
+                Environment.Exit(0);
+            }
         }
 
        
 
         private static void HandleException(Exception exception)
         {
+            Logger.LogError(exception);
+
             if (SystemInformation.UserInteractive)
             {
                 using (ThreadExceptionDialog dialog = new ThreadExceptionDialog(exception))

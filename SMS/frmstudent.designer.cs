@@ -67,6 +67,11 @@ namespace SMS
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label69 = new System.Windows.Forms.Label();
+            this.label68 = new System.Windows.Forms.Label();
+            this.label66 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
             this.chkIsPramote = new System.Windows.Forms.CheckBox();
             this.txtCatNo = new System.Windows.Forms.TextBox();
             this.label64 = new System.Windows.Forms.Label();
@@ -108,6 +113,8 @@ namespace SMS
             this.member_pic = new System.Windows.Forms.PictureBox();
             this.lWdob = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label71 = new System.Windows.Forms.Label();
+            this.label70 = new System.Windows.Forms.Label();
             this.gbxAPPDetails = new System.Windows.Forms.GroupBox();
             this.dtpAPPDate = new System.Windows.Forms.DateTimePicker();
             this.label62 = new System.Windows.Forms.Label();
@@ -231,6 +238,7 @@ namespace SMS
             this.txtdivision2 = new System.Windows.Forms.TextBox();
             this.txtmarks3 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.label72 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -421,9 +429,9 @@ namespace SMS
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(10, 55);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 18);
+            this.label1.Size = new System.Drawing.Size(98, 18);
             this.label1.TabIndex = 52;
-            this.label1.Text = "Scholar No. *";
+            this.label1.Text = "Scholar No.";
             // 
             // label12
             // 
@@ -444,9 +452,9 @@ namespace SMS
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(10, 85);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(139, 18);
+            this.label2.Size = new System.Drawing.Size(127, 18);
             this.label2.TabIndex = 51;
-            this.label2.Text = "Student\'s Name *";
+            this.label2.Text = "Student\'s Name";
             // 
             // label9
             // 
@@ -514,9 +522,9 @@ namespace SMS
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(11, 215);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(130, 18);
+            this.label5.Size = new System.Drawing.Size(118, 18);
             this.label5.TabIndex = 47;
-            this.label5.Text = "Father\'s Name *";
+            this.label5.Text = "Father\'s Name";
             // 
             // label6
             // 
@@ -725,6 +733,12 @@ namespace SMS
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Control;
             this.tabPage1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage1.Controls.Add(this.label72);
+            this.tabPage1.Controls.Add(this.label69);
+            this.tabPage1.Controls.Add(this.label68);
+            this.tabPage1.Controls.Add(this.label66);
+            this.tabPage1.Controls.Add(this.label41);
+            this.tabPage1.Controls.Add(this.label42);
             this.tabPage1.Controls.Add(this.chkIsPramote);
             this.tabPage1.Controls.Add(this.txtCatNo);
             this.tabPage1.Controls.Add(this.label64);
@@ -801,6 +815,56 @@ namespace SMS
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Personal Information";
             this.tabPage1.Paint += new System.Windows.Forms.PaintEventHandler(this.tabPage1_Paint);
+            // 
+            // label69
+            // 
+            this.label69.AutoSize = true;
+            this.label69.ForeColor = System.Drawing.Color.Red;
+            this.label69.Location = new System.Drawing.Point(462, 23);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(14, 17);
+            this.label69.TabIndex = 239;
+            this.label69.Text = "*";
+            // 
+            // label68
+            // 
+            this.label68.AutoSize = true;
+            this.label68.ForeColor = System.Drawing.Color.Red;
+            this.label68.Location = new System.Drawing.Point(106, 57);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(14, 17);
+            this.label68.TabIndex = 238;
+            this.label68.Text = "*";
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.ForeColor = System.Drawing.Color.Red;
+            this.label66.Location = new System.Drawing.Point(134, 85);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(14, 17);
+            this.label66.TabIndex = 237;
+            this.label66.Text = "*";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.ForeColor = System.Drawing.Color.Red;
+            this.label41.Location = new System.Drawing.Point(127, 216);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(14, 17);
+            this.label41.TabIndex = 236;
+            this.label41.Text = "*";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.ForeColor = System.Drawing.Color.Red;
+            this.label42.Location = new System.Drawing.Point(409, 341);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(14, 17);
+            this.label42.TabIndex = 235;
+            this.label42.Text = "*";
             // 
             // chkIsPramote
             // 
@@ -982,12 +1046,11 @@ namespace SMS
             this.lblCast.BackColor = System.Drawing.Color.Transparent;
             this.lblCast.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCast.ForeColor = System.Drawing.Color.White;
-            this.lblCast.Location = new System.Drawing.Point(351, 408);
+            this.lblCast.Location = new System.Drawing.Point(347, 408);
             this.lblCast.Name = "lblCast";
             this.lblCast.Size = new System.Drawing.Size(40, 18);
             this.lblCast.TabIndex = 216;
             this.lblCast.Text = "Cast";
-            this.lblCast.Click += new System.EventHandler(this.lblCast_Click);
             // 
             // dataGridView1
             // 
@@ -1287,6 +1350,8 @@ namespace SMS
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.Control;
             this.tabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage2.Controls.Add(this.label71);
+            this.tabPage2.Controls.Add(this.label70);
             this.tabPage2.Controls.Add(this.gbxAPPDetails);
             this.tabPage2.Controls.Add(this.txtBPLNo);
             this.tabPage2.Controls.Add(this.pictc);
@@ -1353,6 +1418,26 @@ namespace SMS
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Other Information";
             this.tabPage2.Paint += new System.Windows.Forms.PaintEventHandler(this.tabPage2_Paint);
+            // 
+            // label71
+            // 
+            this.label71.AutoSize = true;
+            this.label71.ForeColor = System.Drawing.Color.Red;
+            this.label71.Location = new System.Drawing.Point(390, 93);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(13, 16);
+            this.label71.TabIndex = 236;
+            this.label71.Text = "*";
+            // 
+            // label70
+            // 
+            this.label70.AutoSize = true;
+            this.label70.ForeColor = System.Drawing.Color.Red;
+            this.label70.Location = new System.Drawing.Point(456, 66);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(13, 16);
+            this.label70.TabIndex = 235;
+            this.label70.Text = "*";
             // 
             // gbxAPPDetails
             // 
@@ -1755,6 +1840,7 @@ namespace SMS
             // 
             // strcmbfaculty
             // 
+            this.strcmbfaculty.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.strcmbfaculty.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.strcmbfaculty.ForeColor = System.Drawing.Color.Blue;
             this.strcmbfaculty.FormattingEnabled = true;
@@ -1763,7 +1849,6 @@ namespace SMS
             this.strcmbfaculty.Size = new System.Drawing.Size(125, 25);
             this.strcmbfaculty.TabIndex = 1;
             this.strcmbfaculty.Tag = "";
-            this.strcmbfaculty.Text = "-SELECT-";
             this.strcmbfaculty.SelectedIndexChanged += new System.EventHandler(this.valcmbfaculty_SelectedIndexChanged);
             // 
             // chkdob
@@ -1795,6 +1880,7 @@ namespace SMS
             // 
             // valcmbclass
             // 
+            this.valcmbclass.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.valcmbclass.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.valcmbclass.ForeColor = System.Drawing.Color.Blue;
             this.valcmbclass.FormattingEnabled = true;
@@ -1803,7 +1889,6 @@ namespace SMS
             this.valcmbclass.Size = new System.Drawing.Size(125, 25);
             this.valcmbclass.TabIndex = 0;
             this.valcmbclass.Tag = "";
-            this.valcmbclass.Text = "-SELECT-";
             this.valcmbclass.SelectedIndexChanged += new System.EventHandler(this.valcmbclass_SelectedIndexChanged);
             // 
             // label67
@@ -1843,6 +1928,7 @@ namespace SMS
             // 
             // strsection
             // 
+            this.strsection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.strsection.FormattingEnabled = true;
             this.strsection.Location = new System.Drawing.Point(472, 95);
             this.strsection.Name = "strsection";
@@ -2196,7 +2282,7 @@ namespace SMS
             // 
             this.txtsubject2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtsubject2.ForeColor = System.Drawing.Color.Blue;
-            this.txtsubject2.Location = new System.Drawing.Point(1142, 179);
+            this.txtsubject2.Location = new System.Drawing.Point(1244, 389);
             this.txtsubject2.MaxLength = 30;
             this.txtsubject2.Name = "txtsubject2";
             this.txtsubject2.Size = new System.Drawing.Size(10, 25);
@@ -2209,7 +2295,7 @@ namespace SMS
             // 
             this.txtsbuject1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtsbuject1.ForeColor = System.Drawing.Color.Blue;
-            this.txtsbuject1.Location = new System.Drawing.Point(1142, 149);
+            this.txtsbuject1.Location = new System.Drawing.Point(1244, 359);
             this.txtsbuject1.MaxLength = 30;
             this.txtsbuject1.Name = "txtsbuject1";
             this.txtsbuject1.Size = new System.Drawing.Size(10, 25);
@@ -2222,7 +2308,7 @@ namespace SMS
             // 
             this.txtsubject3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtsubject3.ForeColor = System.Drawing.Color.Blue;
-            this.txtsubject3.Location = new System.Drawing.Point(1142, 209);
+            this.txtsubject3.Location = new System.Drawing.Point(1244, 419);
             this.txtsubject3.MaxLength = 30;
             this.txtsubject3.Name = "txtsubject3";
             this.txtsubject3.Size = new System.Drawing.Size(10, 25);
@@ -2248,7 +2334,7 @@ namespace SMS
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(1128, 146);
+            this.label21.Location = new System.Drawing.Point(1230, 356);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(52, 19);
             this.label21.TabIndex = 93;
@@ -2259,7 +2345,7 @@ namespace SMS
             // 
             this.txtsubject4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtsubject4.ForeColor = System.Drawing.Color.Blue;
-            this.txtsubject4.Location = new System.Drawing.Point(1142, 238);
+            this.txtsubject4.Location = new System.Drawing.Point(1244, 448);
             this.txtsubject4.MaxLength = 30;
             this.txtsubject4.Name = "txtsubject4";
             this.txtsubject4.Size = new System.Drawing.Size(10, 25);
@@ -2273,7 +2359,7 @@ namespace SMS
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.ForeColor = System.Drawing.Color.White;
-            this.label22.Location = new System.Drawing.Point(1130, 146);
+            this.label22.Location = new System.Drawing.Point(1232, 356);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(71, 19);
             this.label22.TabIndex = 95;
@@ -2285,7 +2371,7 @@ namespace SMS
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label23.ForeColor = System.Drawing.Color.White;
-            this.label23.Location = new System.Drawing.Point(1127, 146);
+            this.label23.Location = new System.Drawing.Point(1229, 356);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(43, 19);
             this.label23.TabIndex = 98;
@@ -2297,7 +2383,7 @@ namespace SMS
             this.txtsubject5.CausesValidation = false;
             this.txtsubject5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtsubject5.ForeColor = System.Drawing.Color.Blue;
-            this.txtsubject5.Location = new System.Drawing.Point(1142, 267);
+            this.txtsubject5.Location = new System.Drawing.Point(1244, 477);
             this.txtsubject5.MaxLength = 30;
             this.txtsubject5.Name = "txtsubject5";
             this.txtsubject5.Size = new System.Drawing.Size(10, 25);
@@ -2323,7 +2409,7 @@ namespace SMS
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.ForeColor = System.Drawing.Color.White;
-            this.label25.Location = new System.Drawing.Point(1128, 146);
+            this.label25.Location = new System.Drawing.Point(1230, 356);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(64, 19);
             this.label25.TabIndex = 101;
@@ -2335,7 +2421,7 @@ namespace SMS
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.ForeColor = System.Drawing.Color.White;
-            this.label26.Location = new System.Drawing.Point(1130, 170);
+            this.label26.Location = new System.Drawing.Point(1232, 380);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(59, 19);
             this.label26.TabIndex = 103;
@@ -2381,7 +2467,7 @@ namespace SMS
             // 
             this.txtrollno.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtrollno.ForeColor = System.Drawing.Color.Blue;
-            this.txtrollno.Location = new System.Drawing.Point(1142, 148);
+            this.txtrollno.Location = new System.Drawing.Point(1244, 358);
             this.txtrollno.MaxLength = 30;
             this.txtrollno.Name = "txtrollno";
             this.txtrollno.Size = new System.Drawing.Size(10, 25);
@@ -2406,7 +2492,7 @@ namespace SMS
             // 
             this.txtyear.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtyear.ForeColor = System.Drawing.Color.Blue;
-            this.txtyear.Location = new System.Drawing.Point(1142, 149);
+            this.txtyear.Location = new System.Drawing.Point(1244, 359);
             this.txtyear.MaxLength = 30;
             this.txtyear.Name = "txtyear";
             this.txtyear.Size = new System.Drawing.Size(10, 25);
@@ -2419,7 +2505,7 @@ namespace SMS
             // 
             this.txtmarks.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtmarks.ForeColor = System.Drawing.Color.Blue;
-            this.txtmarks.Location = new System.Drawing.Point(1142, 149);
+            this.txtmarks.Location = new System.Drawing.Point(1244, 359);
             this.txtmarks.MaxLength = 30;
             this.txtmarks.Name = "txtmarks";
             this.txtmarks.Size = new System.Drawing.Size(10, 25);
@@ -2432,7 +2518,7 @@ namespace SMS
             // 
             this.textBox21.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox21.ForeColor = System.Drawing.Color.Blue;
-            this.textBox21.Location = new System.Drawing.Point(1142, 148);
+            this.textBox21.Location = new System.Drawing.Point(1244, 358);
             this.textBox21.MaxLength = 30;
             this.textBox21.Name = "textBox21";
             this.textBox21.Size = new System.Drawing.Size(10, 25);
@@ -2445,7 +2531,7 @@ namespace SMS
             // 
             this.txtpercantage.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpercantage.ForeColor = System.Drawing.Color.Blue;
-            this.txtpercantage.Location = new System.Drawing.Point(1139, 150);
+            this.txtpercantage.Location = new System.Drawing.Point(1241, 360);
             this.txtpercantage.MaxLength = 5;
             this.txtpercantage.Name = "txtpercantage";
             this.txtpercantage.ReadOnly = true;
@@ -2460,7 +2546,7 @@ namespace SMS
             // 
             this.txtobtained.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtobtained.ForeColor = System.Drawing.Color.Blue;
-            this.txtobtained.Location = new System.Drawing.Point(1139, 150);
+            this.txtobtained.Location = new System.Drawing.Point(1241, 360);
             this.txtobtained.MaxLength = 30;
             this.txtobtained.Name = "txtobtained";
             this.txtobtained.Size = new System.Drawing.Size(10, 25);
@@ -2474,7 +2560,7 @@ namespace SMS
             // 
             this.textBox20.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox20.ForeColor = System.Drawing.Color.Blue;
-            this.textBox20.Location = new System.Drawing.Point(1142, 178);
+            this.textBox20.Location = new System.Drawing.Point(1244, 388);
             this.textBox20.MaxLength = 30;
             this.textBox20.Name = "textBox20";
             this.textBox20.Size = new System.Drawing.Size(10, 25);
@@ -2499,7 +2585,7 @@ namespace SMS
             // 
             this.txtresult.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtresult.ForeColor = System.Drawing.Color.Blue;
-            this.txtresult.Location = new System.Drawing.Point(1142, 149);
+            this.txtresult.Location = new System.Drawing.Point(1244, 359);
             this.txtresult.MaxLength = 30;
             this.txtresult.Name = "txtresult";
             this.txtresult.ReadOnly = true;
@@ -2513,7 +2599,7 @@ namespace SMS
             // 
             this.textBox19.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox19.ForeColor = System.Drawing.Color.Blue;
-            this.textBox19.Location = new System.Drawing.Point(1142, 208);
+            this.textBox19.Location = new System.Drawing.Point(1244, 418);
             this.textBox19.MaxLength = 30;
             this.textBox19.Name = "textBox19";
             this.textBox19.Size = new System.Drawing.Size(10, 25);
@@ -2538,7 +2624,7 @@ namespace SMS
             // 
             this.txtdivision.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdivision.ForeColor = System.Drawing.Color.Blue;
-            this.txtdivision.Location = new System.Drawing.Point(1142, 148);
+            this.txtdivision.Location = new System.Drawing.Point(1244, 358);
             this.txtdivision.MaxLength = 30;
             this.txtdivision.Name = "txtdivision";
             this.txtdivision.ReadOnly = true;
@@ -2552,7 +2638,7 @@ namespace SMS
             // 
             this.textBox18.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox18.ForeColor = System.Drawing.Color.Blue;
-            this.textBox18.Location = new System.Drawing.Point(1142, 237);
+            this.textBox18.Location = new System.Drawing.Point(1244, 447);
             this.textBox18.MaxLength = 30;
             this.textBox18.Name = "textBox18";
             this.textBox18.Size = new System.Drawing.Size(10, 25);
@@ -2577,7 +2663,7 @@ namespace SMS
             // 
             this.txtrollno1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtrollno1.ForeColor = System.Drawing.Color.Blue;
-            this.txtrollno1.Location = new System.Drawing.Point(1142, 178);
+            this.txtrollno1.Location = new System.Drawing.Point(1244, 388);
             this.txtrollno1.MaxLength = 30;
             this.txtrollno1.Name = "txtrollno1";
             this.txtrollno1.Size = new System.Drawing.Size(10, 25);
@@ -2591,7 +2677,7 @@ namespace SMS
             this.textBox17.CausesValidation = false;
             this.textBox17.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox17.ForeColor = System.Drawing.Color.Blue;
-            this.textBox17.Location = new System.Drawing.Point(1142, 266);
+            this.textBox17.Location = new System.Drawing.Point(1244, 476);
             this.textBox17.MaxLength = 30;
             this.textBox17.Name = "textBox17";
             this.textBox17.Size = new System.Drawing.Size(10, 25);
@@ -2615,7 +2701,7 @@ namespace SMS
             // 
             this.txtyear1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtyear1.ForeColor = System.Drawing.Color.Blue;
-            this.txtyear1.Location = new System.Drawing.Point(1142, 179);
+            this.txtyear1.Location = new System.Drawing.Point(1244, 389);
             this.txtyear1.MaxLength = 30;
             this.txtyear1.Name = "txtyear1";
             this.txtyear1.Size = new System.Drawing.Size(10, 25);
@@ -2652,7 +2738,7 @@ namespace SMS
             // 
             this.groupBox1.Controls.Add(this.radioButton2);
             this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Location = new System.Drawing.Point(1142, 265);
+            this.groupBox1.Location = new System.Drawing.Point(1244, 475);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(10, 52);
             this.groupBox1.TabIndex = 32;
@@ -2676,7 +2762,7 @@ namespace SMS
             // 
             this.txtmarks1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtmarks1.ForeColor = System.Drawing.Color.Blue;
-            this.txtmarks1.Location = new System.Drawing.Point(1142, 179);
+            this.txtmarks1.Location = new System.Drawing.Point(1244, 389);
             this.txtmarks1.MaxLength = 30;
             this.txtmarks1.Name = "txtmarks1";
             this.txtmarks1.Size = new System.Drawing.Size(10, 25);
@@ -2689,7 +2775,7 @@ namespace SMS
             // 
             this.txtpercantage1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpercantage1.ForeColor = System.Drawing.Color.Blue;
-            this.txtpercantage1.Location = new System.Drawing.Point(1139, 180);
+            this.txtpercantage1.Location = new System.Drawing.Point(1241, 390);
             this.txtpercantage1.MaxLength = 30;
             this.txtpercantage1.Name = "txtpercantage1";
             this.txtpercantage1.ReadOnly = true;
@@ -2704,7 +2790,7 @@ namespace SMS
             // 
             this.txtobtained1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtobtained1.ForeColor = System.Drawing.Color.Blue;
-            this.txtobtained1.Location = new System.Drawing.Point(1139, 180);
+            this.txtobtained1.Location = new System.Drawing.Point(1241, 390);
             this.txtobtained1.MaxLength = 30;
             this.txtobtained1.Name = "txtobtained1";
             this.txtobtained1.Size = new System.Drawing.Size(10, 25);
@@ -2718,7 +2804,7 @@ namespace SMS
             // 
             this.txtresult1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtresult1.ForeColor = System.Drawing.Color.Blue;
-            this.txtresult1.Location = new System.Drawing.Point(1142, 179);
+            this.txtresult1.Location = new System.Drawing.Point(1244, 389);
             this.txtresult1.MaxLength = 30;
             this.txtresult1.Name = "txtresult1";
             this.txtresult1.ReadOnly = true;
@@ -2730,7 +2816,7 @@ namespace SMS
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(1142, 194);
+            this.button5.Location = new System.Drawing.Point(1244, 404);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(10, 31);
             this.button5.TabIndex = 15;
@@ -2743,7 +2829,7 @@ namespace SMS
             // 
             this.txtdivision1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdivision1.ForeColor = System.Drawing.Color.Blue;
-            this.txtdivision1.Location = new System.Drawing.Point(1142, 178);
+            this.txtdivision1.Location = new System.Drawing.Point(1244, 388);
             this.txtdivision1.MaxLength = 30;
             this.txtdivision1.Name = "txtdivision1";
             this.txtdivision1.ReadOnly = true;
@@ -2757,7 +2843,7 @@ namespace SMS
             // 
             this.txtrollno2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtrollno2.ForeColor = System.Drawing.Color.Blue;
-            this.txtrollno2.Location = new System.Drawing.Point(1142, 208);
+            this.txtrollno2.Location = new System.Drawing.Point(1244, 418);
             this.txtrollno2.MaxLength = 30;
             this.txtrollno2.Name = "txtrollno2";
             this.txtrollno2.Size = new System.Drawing.Size(10, 25);
@@ -2770,7 +2856,7 @@ namespace SMS
             // 
             this.txtyear2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtyear2.ForeColor = System.Drawing.Color.Blue;
-            this.txtyear2.Location = new System.Drawing.Point(1142, 209);
+            this.txtyear2.Location = new System.Drawing.Point(1244, 419);
             this.txtyear2.MaxLength = 30;
             this.txtyear2.Name = "txtyear2";
             this.txtyear2.Size = new System.Drawing.Size(10, 25);
@@ -2783,7 +2869,7 @@ namespace SMS
             // 
             this.txtmarks2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtmarks2.ForeColor = System.Drawing.Color.Blue;
-            this.txtmarks2.Location = new System.Drawing.Point(1142, 209);
+            this.txtmarks2.Location = new System.Drawing.Point(1244, 419);
             this.txtmarks2.MaxLength = 30;
             this.txtmarks2.Name = "txtmarks2";
             this.txtmarks2.Size = new System.Drawing.Size(10, 25);
@@ -2796,7 +2882,7 @@ namespace SMS
             // 
             this.txtdivision3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdivision3.ForeColor = System.Drawing.Color.Blue;
-            this.txtdivision3.Location = new System.Drawing.Point(1142, 238);
+            this.txtdivision3.Location = new System.Drawing.Point(1244, 448);
             this.txtdivision3.MaxLength = 30;
             this.txtdivision3.Name = "txtdivision3";
             this.txtdivision3.Size = new System.Drawing.Size(10, 25);
@@ -2809,7 +2895,7 @@ namespace SMS
             // 
             this.txtpercantage2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpercantage2.ForeColor = System.Drawing.Color.Blue;
-            this.txtpercantage2.Location = new System.Drawing.Point(1139, 210);
+            this.txtpercantage2.Location = new System.Drawing.Point(1241, 420);
             this.txtpercantage2.MaxLength = 30;
             this.txtpercantage2.Name = "txtpercantage2";
             this.txtpercantage2.ReadOnly = true;
@@ -2824,7 +2910,7 @@ namespace SMS
             // 
             this.txtresult3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtresult3.ForeColor = System.Drawing.Color.Blue;
-            this.txtresult3.Location = new System.Drawing.Point(1142, 239);
+            this.txtresult3.Location = new System.Drawing.Point(1244, 449);
             this.txtresult3.MaxLength = 30;
             this.txtresult3.Name = "txtresult3";
             this.txtresult3.Size = new System.Drawing.Size(10, 25);
@@ -2837,7 +2923,7 @@ namespace SMS
             // 
             this.txtobtained2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtobtained2.ForeColor = System.Drawing.Color.Blue;
-            this.txtobtained2.Location = new System.Drawing.Point(1139, 210);
+            this.txtobtained2.Location = new System.Drawing.Point(1241, 420);
             this.txtobtained2.MaxLength = 30;
             this.txtobtained2.Name = "txtobtained2";
             this.txtobtained2.Size = new System.Drawing.Size(10, 25);
@@ -2851,7 +2937,7 @@ namespace SMS
             // 
             this.txtobtained3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtobtained3.ForeColor = System.Drawing.Color.Blue;
-            this.txtobtained3.Location = new System.Drawing.Point(1139, 240);
+            this.txtobtained3.Location = new System.Drawing.Point(1241, 450);
             this.txtobtained3.MaxLength = 30;
             this.txtobtained3.Name = "txtobtained3";
             this.txtobtained3.Size = new System.Drawing.Size(10, 25);
@@ -2865,7 +2951,7 @@ namespace SMS
             // 
             this.txtresult2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtresult2.ForeColor = System.Drawing.Color.Blue;
-            this.txtresult2.Location = new System.Drawing.Point(1142, 209);
+            this.txtresult2.Location = new System.Drawing.Point(1244, 419);
             this.txtresult2.MaxLength = 30;
             this.txtresult2.Name = "txtresult2";
             this.txtresult2.ReadOnly = true;
@@ -2879,7 +2965,7 @@ namespace SMS
             // 
             this.txtpercantage3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtpercantage3.ForeColor = System.Drawing.Color.Blue;
-            this.txtpercantage3.Location = new System.Drawing.Point(1139, 240);
+            this.txtpercantage3.Location = new System.Drawing.Point(1241, 450);
             this.txtpercantage3.MaxLength = 30;
             this.txtpercantage3.Name = "txtpercantage3";
             this.txtpercantage3.Size = new System.Drawing.Size(10, 25);
@@ -2893,7 +2979,7 @@ namespace SMS
             // 
             this.txtdivision2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtdivision2.ForeColor = System.Drawing.Color.Blue;
-            this.txtdivision2.Location = new System.Drawing.Point(1142, 208);
+            this.txtdivision2.Location = new System.Drawing.Point(1244, 418);
             this.txtdivision2.MaxLength = 30;
             this.txtdivision2.Name = "txtdivision2";
             this.txtdivision2.ReadOnly = true;
@@ -2907,7 +2993,7 @@ namespace SMS
             // 
             this.txtmarks3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtmarks3.ForeColor = System.Drawing.Color.Blue;
-            this.txtmarks3.Location = new System.Drawing.Point(1142, 239);
+            this.txtmarks3.Location = new System.Drawing.Point(1244, 449);
             this.txtmarks3.MaxLength = 30;
             this.txtmarks3.Name = "txtmarks3";
             this.txtmarks3.Size = new System.Drawing.Size(10, 25);
@@ -2918,7 +3004,7 @@ namespace SMS
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1142, 146);
+            this.button2.Location = new System.Drawing.Point(1244, 356);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(10, 31);
             this.button2.TabIndex = 6;
@@ -2926,6 +3012,16 @@ namespace SMS
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label72
+            // 
+            this.label72.AutoSize = true;
+            this.label72.ForeColor = System.Drawing.Color.Red;
+            this.label72.Location = new System.Drawing.Point(457, 375);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(14, 17);
+            this.label72.TabIndex = 240;
+            this.label72.Text = "*";
             // 
             // frmstudent
             // 
@@ -3226,5 +3322,13 @@ namespace SMS
         private System.Windows.Forms.TextBox txtdivision2;
         private System.Windows.Forms.TextBox txtmarks3;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label69;
+        private System.Windows.Forms.Label label68;
+        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label label71;
+        private System.Windows.Forms.Label label70;
+        private System.Windows.Forms.Label label72;
     }
 }
