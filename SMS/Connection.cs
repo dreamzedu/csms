@@ -214,7 +214,19 @@ namespace SMS
             if(ctrl == null)
                 return;
 
-            if (ctrl is Label || ctrl is ComboBox || ctrl is RadioButton || ctrl is CheckBox)
+            if (ctrl is Label)
+            { 
+                if(ctrl.Text=="*")
+                {
+                    ctrl.ForeColor = Color.Red;
+                }
+                else
+                {
+                    ctrl.ForeColor = Color.FromArgb(70, 70, 70);
+                }
+                return;
+            }
+            else if (ctrl is ComboBox || ctrl is RadioButton || ctrl is CheckBox)
             {
                 ctrl.ForeColor = Color.FromArgb(70, 70, 70);
                 return;

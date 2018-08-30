@@ -35,7 +35,7 @@ namespace SMS
 
         public frmstudent()
         {
-            InitializeComponent(); Connection.SetUserControlTheme(this);
+            InitializeComponent(); //Connection.SetUserControlTheme(this);
             Connection.SetUserControlTheme(this);
         }
 
@@ -69,7 +69,7 @@ namespace SMS
                     }
                 }
                 button9.Visible = false;
-                //DesignForm.fromDesign1(this);                
+                DesignForm.fromDesign1(this);                
                 txtbarnum.Visible = false;
                 label19.Visible = false;
                 valCmbBusStop.Visible = false;
@@ -145,7 +145,7 @@ namespace SMS
             cmbClassName.DataSource = ds.Tables[0];
 
             strcmbAPPType.SelectedIndex = 0;
-            DesignForm.fromDesign1(this);
+            //DesignForm.fromDesign1(this);
             c.GetMdiParent(this).EnableAllEditMenuButtons();
             Connection.SetUserLevelAuth(c.GetMdiParent(this));
         }

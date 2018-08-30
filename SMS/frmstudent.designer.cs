@@ -67,6 +67,7 @@ namespace SMS
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label72 = new System.Windows.Forms.Label();
             this.label69 = new System.Windows.Forms.Label();
             this.label68 = new System.Windows.Forms.Label();
             this.label66 = new System.Windows.Forms.Label();
@@ -238,7 +239,7 @@ namespace SMS
             this.txtdivision2 = new System.Windows.Forms.TextBox();
             this.txtmarks3 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.label72 = new System.Windows.Forms.Label();
+            this.label73 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -263,7 +264,7 @@ namespace SMS
             this.chkphychallanged.Location = new System.Drawing.Point(231, 44);
             this.chkphychallanged.Name = "chkphychallanged";
             this.chkphychallanged.Size = new System.Drawing.Size(53, 23);
-            this.chkphychallanged.TabIndex = 23;
+            this.chkphychallanged.TabIndex = 202;
             this.chkphychallanged.Tag = "sp_challange";
             this.chkphychallanged.Text = "No";
             this.chkphychallanged.UseVisualStyleBackColor = false;
@@ -423,7 +424,6 @@ namespace SMS
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
@@ -559,7 +559,7 @@ namespace SMS
             this.txtstudentno.MaxLength = 30;
             this.txtstudentno.Name = "txtstudentno";
             this.txtstudentno.Size = new System.Drawing.Size(67, 25);
-            this.txtstudentno.TabIndex = 27;
+            this.txtstudentno.TabIndex = 210;
             this.txtstudentno.TabStop = false;
             this.txtstudentno.Tag = "studentno";
             this.txtstudentno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtstudentno_KeyPress);
@@ -573,7 +573,7 @@ namespace SMS
             this.chkbelongrular.Location = new System.Drawing.Point(231, 70);
             this.chkbelongrular.Name = "chkbelongrular";
             this.chkbelongrular.Size = new System.Drawing.Size(53, 23);
-            this.chkbelongrular.TabIndex = 24;
+            this.chkbelongrular.TabIndex = 203;
             this.chkbelongrular.Tag = "Isbelongrural";
             this.chkbelongrular.Text = "No";
             this.chkbelongrular.UseVisualStyleBackColor = false;
@@ -652,7 +652,7 @@ namespace SMS
             this.valcmbdistrict.Location = new System.Drawing.Point(103, 216);
             this.valcmbdistrict.Name = "valcmbdistrict";
             this.valcmbdistrict.Size = new System.Drawing.Size(107, 25);
-            this.valcmbdistrict.TabIndex = 29;
+            this.valcmbdistrict.TabIndex = 212;
             this.valcmbdistrict.Tag = "distcode";
             this.valcmbdistrict.SelectedIndexChanged += new System.EventHandler(this.valcmbdistrict_SelectedIndexChanged);
             this.valcmbdistrict.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtstudentno_KeyPress);
@@ -713,7 +713,7 @@ namespace SMS
             this.textBox10.MaxLength = 30;
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(34, 25);
-            this.textBox10.TabIndex = 59;
+            this.textBox10.TabIndex = 201;
             this.textBox10.Tag = "ruralinformation";
             this.textBox10.Visible = false;
             this.textBox10.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtscholarno_KeyPress);
@@ -816,6 +816,16 @@ namespace SMS
             this.tabPage1.Text = "Personal Information";
             this.tabPage1.Paint += new System.Windows.Forms.PaintEventHandler(this.tabPage1_Paint);
             // 
+            // label72
+            // 
+            this.label72.AutoSize = true;
+            this.label72.ForeColor = System.Drawing.Color.Red;
+            this.label72.Location = new System.Drawing.Point(457, 375);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(14, 17);
+            this.label72.TabIndex = 240;
+            this.label72.Text = "*";
+            // 
             // label69
             // 
             this.label69.AutoSize = true;
@@ -885,7 +895,7 @@ namespace SMS
             this.txtCatNo.MaxLength = 30;
             this.txtCatNo.Name = "txtCatNo";
             this.txtCatNo.Size = new System.Drawing.Size(110, 25);
-            this.txtCatNo.TabIndex = 231;
+            this.txtCatNo.TabIndex = 27;
             this.txtCatNo.Tag = "CatNo";
             // 
             // label64
@@ -908,7 +918,7 @@ namespace SMS
             this.txtAdharNo.MaxLength = 30;
             this.txtAdharNo.Name = "txtAdharNo";
             this.txtAdharNo.Size = new System.Drawing.Size(110, 25);
-            this.txtAdharNo.TabIndex = 229;
+            this.txtAdharNo.TabIndex = 28;
             this.txtAdharNo.Tag = "AdharNo";
             // 
             // label63
@@ -1126,7 +1136,7 @@ namespace SMS
             this.button8.Location = new System.Drawing.Point(675, 446);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(111, 48);
-            this.button8.TabIndex = 27;
+            this.button8.TabIndex = 29;
             this.button8.Text = "Next";
             this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button8.UseVisualStyleBackColor = true;
@@ -1465,7 +1475,7 @@ namespace SMS
             this.dtpAPPDate.Location = new System.Drawing.Point(6, 138);
             this.dtpAPPDate.Name = "dtpAPPDate";
             this.dtpAPPDate.Size = new System.Drawing.Size(141, 25);
-            this.dtpAPPDate.TabIndex = 237;
+            this.dtpAPPDate.TabIndex = 252;
             this.dtpAPPDate.Tag = "APPDate";
             // 
             // label62
@@ -1501,7 +1511,7 @@ namespace SMS
             this.txtAPPNo.MaxLength = 50;
             this.txtAPPNo.Name = "txtAPPNo";
             this.txtAPPNo.Size = new System.Drawing.Size(142, 25);
-            this.txtAPPNo.TabIndex = 234;
+            this.txtAPPNo.TabIndex = 250;
             this.txtAPPNo.TabStop = false;
             this.txtAPPNo.Tag = "APPNo";
             // 
@@ -1532,7 +1542,7 @@ namespace SMS
             this.strcmbAPPType.Location = new System.Drawing.Point(5, 34);
             this.strcmbAPPType.Name = "strcmbAPPType";
             this.strcmbAPPType.Size = new System.Drawing.Size(142, 25);
-            this.strcmbAPPType.TabIndex = 232;
+            this.strcmbAPPType.TabIndex = 248;
             this.strcmbAPPType.Tag = "APPType";
             // 
             // txtBPLNo
@@ -1544,7 +1554,7 @@ namespace SMS
             this.txtBPLNo.MaxLength = 50;
             this.txtBPLNo.Name = "txtBPLNo";
             this.txtBPLNo.Size = new System.Drawing.Size(73, 25);
-            this.txtBPLNo.TabIndex = 231;
+            this.txtBPLNo.TabIndex = 246;
             this.txtBPLNo.TabStop = false;
             this.txtBPLNo.Tag = "BPLNo";
             this.txtBPLNo.Visible = false;
@@ -1583,7 +1593,7 @@ namespace SMS
             this.checkBox7.Location = new System.Drawing.Point(231, 147);
             this.checkBox7.Name = "checkBox7";
             this.checkBox7.Size = new System.Drawing.Size(53, 23);
-            this.checkBox7.TabIndex = 226;
+            this.checkBox7.TabIndex = 206;
             this.checkBox7.Tag = "IsRTE";
             this.checkBox7.Text = "No";
             this.checkBox7.UseVisualStyleBackColor = false;
@@ -1598,7 +1608,7 @@ namespace SMS
             this.IsScholar.Location = new System.Drawing.Point(326, 343);
             this.IsScholar.Name = "IsScholar";
             this.IsScholar.Size = new System.Drawing.Size(205, 23);
-            this.IsScholar.TabIndex = 225;
+            this.IsScholar.TabIndex = 236;
             this.IsScholar.Tag = "IsScholarship";
             this.IsScholar.Text = "Is Taking Scholar Ship";
             this.IsScholar.UseVisualStyleBackColor = false;
@@ -1613,7 +1623,7 @@ namespace SMS
             this.chkIsBPL.Location = new System.Drawing.Point(641, 9);
             this.chkIsBPL.Name = "chkIsBPL";
             this.chkIsBPL.Size = new System.Drawing.Size(64, 23);
-            this.chkIsBPL.TabIndex = 226;
+            this.chkIsBPL.TabIndex = 244;
             this.chkIsBPL.Tag = "IsBPL";
             this.chkIsBPL.Text = "BPL";
             this.chkIsBPL.UseVisualStyleBackColor = false;
@@ -1630,15 +1640,15 @@ namespace SMS
             this.GPSDetail.Controls.Add(this.strBCode);
             this.GPSDetail.Controls.Add(this.label52);
             this.GPSDetail.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.GPSDetail.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GPSDetail.ForeColor = System.Drawing.Color.White;
+            this.GPSDetail.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GPSDetail.ForeColor = System.Drawing.Color.DimGray;
             this.GPSDetail.Location = new System.Drawing.Point(323, 368);
             this.GPSDetail.Name = "GPSDetail";
             this.GPSDetail.Size = new System.Drawing.Size(253, 112);
             this.GPSDetail.TabIndex = 224;
             this.GPSDetail.TabStop = false;
             this.GPSDetail.Tag = "";
-            this.GPSDetail.Text = "Scholer Ship Details";
+            this.GPSDetail.Text = "Scholership Bank Details";
             // 
             // label55
             // 
@@ -1662,7 +1672,7 @@ namespace SMS
             this.txtAmount.MaxLength = 30;
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(134, 25);
-            this.txtAmount.TabIndex = 229;
+            this.txtAmount.TabIndex = 242;
             this.txtAmount.TabStop = false;
             this.txtAmount.Tag = "Amount";
             // 
@@ -1688,7 +1698,7 @@ namespace SMS
             this.txtACNo.MaxLength = 30;
             this.txtACNo.Name = "txtACNo";
             this.txtACNo.Size = new System.Drawing.Size(134, 25);
-            this.txtACNo.TabIndex = 226;
+            this.txtACNo.TabIndex = 240;
             this.txtACNo.TabStop = false;
             this.txtACNo.Tag = "ACNo";
             // 
@@ -1699,7 +1709,7 @@ namespace SMS
             this.strBCode.Location = new System.Drawing.Point(108, 20);
             this.strBCode.Name = "strBCode";
             this.strBCode.Size = new System.Drawing.Size(134, 27);
-            this.strBCode.TabIndex = 226;
+            this.strBCode.TabIndex = 238;
             this.strBCode.Tag = "BCode";
             // 
             // label52
@@ -1729,14 +1739,14 @@ namespace SMS
             this.checkedListBox1.Location = new System.Drawing.Point(469, 201);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(130, 112);
-            this.checkedListBox1.TabIndex = 2;
+            this.checkedListBox1.TabIndex = 234;
             // 
             // txtLastClass
             // 
             this.txtLastClass.Location = new System.Drawing.Point(472, 37);
             this.txtLastClass.Name = "txtLastClass";
             this.txtLastClass.Size = new System.Drawing.Size(125, 23);
-            this.txtLastClass.TabIndex = 221;
+            this.txtLastClass.TabIndex = 222;
             this.txtLastClass.Tag = "LastClass";
             // 
             // lblElective
@@ -1760,7 +1770,7 @@ namespace SMS
             this.button14.Location = new System.Drawing.Point(17, 439);
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(100, 46);
-            this.button14.TabIndex = 202;
+            this.button14.TabIndex = 198;
             this.button14.Text = "Back";
             this.button14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button14.UseVisualStyleBackColor = true;
@@ -1776,7 +1786,7 @@ namespace SMS
             this.Mandetory.Name = "Mandetory";
             this.Mandetory.Size = new System.Drawing.Size(87, 18);
             this.Mandetory.TabIndex = 167;
-            this.Mandetory.Text = "Mandetory";
+            this.Mandetory.Text = "Mandatory";
             // 
             // lblLastclass
             // 
@@ -1797,7 +1807,7 @@ namespace SMS
             this.lstCompalsary.Location = new System.Drawing.Point(324, 200);
             this.lstCompalsary.Name = "lstCompalsary";
             this.lstCompalsary.Size = new System.Drawing.Size(134, 116);
-            this.lstCompalsary.TabIndex = 166;
+            this.lstCompalsary.TabIndex = 232;
             this.lstCompalsary.Tag = "";
             // 
             // barcodectrl
@@ -1835,7 +1845,7 @@ namespace SMS
             this.txtLastSchool.Location = new System.Drawing.Point(473, 9);
             this.txtLastSchool.Name = "txtLastSchool";
             this.txtLastSchool.Size = new System.Drawing.Size(124, 23);
-            this.txtLastSchool.TabIndex = 219;
+            this.txtLastSchool.TabIndex = 220;
             this.txtLastSchool.Tag = "LastSchool";
             // 
             // strcmbfaculty
@@ -1847,7 +1857,7 @@ namespace SMS
             this.strcmbfaculty.Location = new System.Drawing.Point(472, 151);
             this.strcmbfaculty.Name = "strcmbfaculty";
             this.strcmbfaculty.Size = new System.Drawing.Size(125, 25);
-            this.strcmbfaculty.TabIndex = 1;
+            this.strcmbfaculty.TabIndex = 230;
             this.strcmbfaculty.Tag = "";
             this.strcmbfaculty.SelectedIndexChanged += new System.EventHandler(this.valcmbfaculty_SelectedIndexChanged);
             // 
@@ -1860,7 +1870,7 @@ namespace SMS
             this.chkdob.Location = new System.Drawing.Point(634, 281);
             this.chkdob.Name = "chkdob";
             this.chkdob.Size = new System.Drawing.Size(128, 22);
-            this.chkdob.TabIndex = 198;
+            this.chkdob.TabIndex = 254;
             this.chkdob.Tag = "dob_attach";
             this.chkdob.Text = "Date Of Birth";
             this.chkdob.UseVisualStyleBackColor = false;
@@ -1887,7 +1897,7 @@ namespace SMS
             this.valcmbclass.Location = new System.Drawing.Point(472, 65);
             this.valcmbclass.Name = "valcmbclass";
             this.valcmbclass.Size = new System.Drawing.Size(125, 25);
-            this.valcmbclass.TabIndex = 0;
+            this.valcmbclass.TabIndex = 224;
             this.valcmbclass.Tag = "";
             this.valcmbclass.SelectedIndexChanged += new System.EventHandler(this.valcmbclass_SelectedIndexChanged);
             // 
@@ -1933,7 +1943,7 @@ namespace SMS
             this.strsection.Location = new System.Drawing.Point(472, 95);
             this.strsection.Name = "strsection";
             this.strsection.Size = new System.Drawing.Size(125, 24);
-            this.strsection.TabIndex = 32;
+            this.strsection.TabIndex = 226;
             this.strsection.Tag = "section";
             this.strsection.SelectedIndexChanged += new System.EventHandler(this.strsection_SelectedIndexChanged);
             this.strsection.Validated += new System.EventHandler(this.strsection_Validated);
@@ -1947,7 +1957,7 @@ namespace SMS
             this.chksoc.Location = new System.Drawing.Point(634, 449);
             this.chksoc.Name = "chksoc";
             this.chksoc.Size = new System.Drawing.Size(154, 22);
-            this.chksoc.TabIndex = 196;
+            this.chksoc.TabIndex = 268;
             this.chksoc.Tag = "sport_attach";
             this.chksoc.Text = "Other Certificate";
             this.chksoc.UseVisualStyleBackColor = false;
@@ -1974,7 +1984,7 @@ namespace SMS
             this.chkcc.Location = new System.Drawing.Point(634, 365);
             this.chkcc.Name = "chkcc";
             this.chkcc.Size = new System.Drawing.Size(147, 22);
-            this.chkcc.TabIndex = 195;
+            this.chkcc.TabIndex = 260;
             this.chkcc.Tag = "cast_attach";
             this.chkcc.Text = "Cast Certificate";
             this.chkcc.UseVisualStyleBackColor = false;
@@ -1990,7 +2000,7 @@ namespace SMS
             this.strMedium.Location = new System.Drawing.Point(473, 123);
             this.strMedium.Name = "strMedium";
             this.strMedium.Size = new System.Drawing.Size(124, 24);
-            this.strMedium.TabIndex = 190;
+            this.strMedium.TabIndex = 228;
             this.strMedium.Tag = "bldgroup";
             // 
             // label50
@@ -2014,7 +2024,7 @@ namespace SMS
             this.chkic.Location = new System.Drawing.Point(634, 309);
             this.chkic.Name = "chkic";
             this.chkic.Size = new System.Drawing.Size(167, 22);
-            this.chkic.TabIndex = 194;
+            this.chkic.TabIndex = 256;
             this.chkic.Tag = "income_attach";
             this.chkic.Text = "Income Certificate";
             this.chkic.UseVisualStyleBackColor = false;
@@ -2029,7 +2039,7 @@ namespace SMS
             this.chkms.Location = new System.Drawing.Point(634, 421);
             this.chkms.Name = "chkms";
             this.chkms.Size = new System.Drawing.Size(111, 22);
-            this.chkms.TabIndex = 193;
+            this.chkms.TabIndex = 264;
             this.chkms.Tag = "marksheet_attach";
             this.chkms.Text = "MarkSheet";
             this.chkms.UseVisualStyleBackColor = false;
@@ -2044,7 +2054,7 @@ namespace SMS
             this.chkslc.Location = new System.Drawing.Point(634, 393);
             this.chkslc.Name = "chkslc";
             this.chkslc.Size = new System.Drawing.Size(77, 22);
-            this.chkslc.TabIndex = 192;
+            this.chkslc.TabIndex = 262;
             this.chkslc.Tag = "slc_attach";
             this.chkslc.Text = "S.L.C.";
             this.chkslc.UseVisualStyleBackColor = false;
@@ -2059,7 +2069,7 @@ namespace SMS
             this.chktc.Location = new System.Drawing.Point(634, 337);
             this.chktc.Name = "chktc";
             this.chktc.Size = new System.Drawing.Size(62, 22);
-            this.chktc.TabIndex = 191;
+            this.chktc.TabIndex = 258;
             this.chktc.Tag = "tc_attach";
             this.chktc.Text = "T.C.";
             this.chktc.UseVisualStyleBackColor = false;
@@ -2084,7 +2094,7 @@ namespace SMS
             this.strbloodgroup.Location = new System.Drawing.Point(153, 13);
             this.strbloodgroup.Name = "strbloodgroup";
             this.strbloodgroup.Size = new System.Drawing.Size(79, 25);
-            this.strbloodgroup.TabIndex = 26;
+            this.strbloodgroup.TabIndex = 200;
             this.strbloodgroup.Tag = "bloodgroup";
             this.strbloodgroup.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtstudentno_KeyPress);
             // 
@@ -2125,7 +2135,7 @@ namespace SMS
             this.valCmbBusStop.Location = new System.Drawing.Point(105, 175);
             this.valCmbBusStop.Name = "valCmbBusStop";
             this.valCmbBusStop.Size = new System.Drawing.Size(107, 24);
-            this.valCmbBusStop.TabIndex = 28;
+            this.valCmbBusStop.TabIndex = 208;
             this.valCmbBusStop.Tag = "BusStopNo";
             this.valCmbBusStop.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtstudentno_KeyPress);
             // 
@@ -2137,7 +2147,7 @@ namespace SMS
             this.valcmbtehsil.Location = new System.Drawing.Point(103, 249);
             this.valcmbtehsil.Name = "valcmbtehsil";
             this.valcmbtehsil.Size = new System.Drawing.Size(109, 25);
-            this.valcmbtehsil.TabIndex = 30;
+            this.valcmbtehsil.TabIndex = 216;
             this.valcmbtehsil.Tag = "tehcode";
             this.valcmbtehsil.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtstudentno_KeyPress);
             // 
@@ -2174,7 +2184,7 @@ namespace SMS
             this.chkwanthostelfaci.Location = new System.Drawing.Point(231, 120);
             this.chkwanthostelfaci.Name = "chkwanthostelfaci";
             this.chkwanthostelfaci.Size = new System.Drawing.Size(53, 23);
-            this.chkwanthostelfaci.TabIndex = 25;
+            this.chkwanthostelfaci.TabIndex = 205;
             this.chkwanthostelfaci.Tag = "hostelfacility";
             this.chkwanthostelfaci.Text = "No";
             this.chkwanthostelfaci.UseVisualStyleBackColor = false;
@@ -2186,7 +2196,7 @@ namespace SMS
             this.button1.Location = new System.Drawing.Point(213, 248);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(36, 25);
-            this.button1.TabIndex = 69;
+            this.button1.TabIndex = 218;
             this.button1.Text = "..";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -2212,7 +2222,7 @@ namespace SMS
             this.chkbusfacility.Location = new System.Drawing.Point(231, 94);
             this.chkbusfacility.Name = "chkbusfacility";
             this.chkbusfacility.Size = new System.Drawing.Size(53, 23);
-            this.chkbusfacility.TabIndex = 26;
+            this.chkbusfacility.TabIndex = 204;
             this.chkbusfacility.Tag = "busfacility";
             this.chkbusfacility.Text = "No";
             this.chkbusfacility.UseVisualStyleBackColor = false;
@@ -2223,7 +2233,7 @@ namespace SMS
             this.button4.Location = new System.Drawing.Point(213, 215);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(36, 25);
-            this.button4.TabIndex = 68;
+            this.button4.TabIndex = 214;
             this.button4.Text = "..";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
@@ -2481,7 +2491,7 @@ namespace SMS
             this.label65.AutoSize = true;
             this.label65.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label65.ForeColor = System.Drawing.Color.White;
-            this.label65.Location = new System.Drawing.Point(1156, 323);
+            this.label65.Location = new System.Drawing.Point(1148, 308);
             this.label65.Name = "label65";
             this.label65.Size = new System.Drawing.Size(134, 19);
             this.label65.TabIndex = 180;
@@ -3013,15 +3023,16 @@ namespace SMS
             this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // label72
+            // label73
             // 
-            this.label72.AutoSize = true;
-            this.label72.ForeColor = System.Drawing.Color.Red;
-            this.label72.Location = new System.Drawing.Point(457, 375);
-            this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(14, 17);
-            this.label72.TabIndex = 240;
-            this.label72.Text = "*";
+            this.label73.AutoSize = true;
+            this.label73.Font = new System.Drawing.Font("Arial", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label73.ForeColor = System.Drawing.Color.Red;
+            this.label73.Location = new System.Drawing.Point(626, 596);
+            this.label73.Name = "label73";
+            this.label73.Size = new System.Drawing.Size(308, 16);
+            this.label73.TabIndex = 182;
+            this.label73.Text = "feilds marked with asterisk (*) are mandatory";
             // 
             // frmstudent
             // 
@@ -3029,6 +3040,7 @@ namespace SMS
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.label73);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.button2);
@@ -3090,7 +3102,7 @@ namespace SMS
             this.Name = "frmstudent";
             this.Padding = new System.Windows.Forms.Padding(0, 0, 138, 0);
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.Size = new System.Drawing.Size(1350, 650);
+            this.Size = new System.Drawing.Size(959, 650);
             this.Tag = "8";
             this.Load += new System.EventHandler(this.frmstudent_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmstudent_Paint);
@@ -3330,5 +3342,6 @@ namespace SMS
         private System.Windows.Forms.Label label71;
         private System.Windows.Forms.Label label70;
         private System.Windows.Forms.Label label72;
+        private System.Windows.Forms.Label label73;
     }
 }
