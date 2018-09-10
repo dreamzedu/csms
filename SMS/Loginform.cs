@@ -143,66 +143,77 @@ namespace SMS
         
         private void btnok_Click(object sender, EventArgs e)
         {
+            SqlConnection con = null;
             //school.CurrentSessionCode = Convert.ToInt32(cmbsession.SelectedValue.ToString());
-
-            string Pass = CryptorEngine.Encrypt(txtPassword.Text.Trim(), true);
-            SqlConnection con = Connection.GetUserDbConnection();
-            
-            //DataSet ds = Connection.GetDataSet("Select * from MasterUser where UserName='" + txtUserName.Text.Trim() + "' and UserPassword='" + Pass.Trim() + "'; ");
-            SqlDataAdapter adp = new SqlDataAdapter("Select * from MasterUser where lower(userId)='" + txtUserName.Text.Trim().ToLower() + "' and pwd='" + Pass + "'; ", con);
-            DataSet ds = new DataSet();
-            adp.Fill(ds);
-            if (ds != null && ds.Tables.Count>0 && ds.Tables[0].Rows.Count >0)
+            try
             {
-                school1.CurrentUser = new CSMSUser();
-                school1.CurrentUser.UserId = ds.Tables[0].Rows[0]["userId"].ToString();
-                school1.CurrentUser.Name = ds.Tables[0].Rows[0]["name"].ToString();
-                school1.CurrentUser.Phone = ds.Tables[0].Rows[0]["phone"].ToString();
-                school1.CurrentUser.Address = ds.Tables[0].Rows[0]["address"].ToString();
-                school1.CurrentUser.Email = ds.Tables[0].Rows[0]["email"].ToString();
-                school1.CurrentUser.School = ds.Tables[0].Rows[0]["school"].ToString();
-                school1.CurrentUser.IsPrimaryUser = Convert.ToBoolean(ds.Tables[0].Rows[0]["isPrimaryUser"]);
-                school1.CurrentUser.DbName = ds.Tables[0].Rows[0]["dbName"].ToString();
-                school1.CurrentUser.DbServer = ds.Tables[0].Rows[0]["dbServer"].ToString();
-                school1.CurrentUser.DbUserPwd = ds.Tables[0].Rows[0]["dbUserPwd"].ToString();
-                school1.CurrentUser.DbUserId = ds.Tables[0].Rows[0]["dbUserId"].ToString();
-                school1.CurrentUser.RoleId = Convert.ToInt16(ds.Tables[0].Rows[0]["roleId"]);
-                school1.CurrentUser.UserCode = Convert.ToInt32(ds.Tables[0].Rows[0]["UserCode"]);
-                school1.CurrentUser.ActivationValidTill = Convert.ToDateTime(ds.Tables[0].Rows[0]["ActivationValidTill"]);
-                school1.CurrentUser.ActivatedOn = Convert.ToDateTime(ds.Tables[0].Rows[0]["ActivatedOn"]);
-                school1.CurrentUser.IsActive = Convert.ToBoolean(ds.Tables[0].Rows[0]["IsActive"]);
+                string Pass = CryptorEngine.Encrypt(txtPassword.Text.Trim(), true);
+                con = Connection.GetUserDbConnection();
 
-                // Initializing it for school class as well because it is still in use many places
-                school.CurrentUser = school1.CurrentUser;
-                if (school.CurrentUser.DbServer.Contains("sqlexpress") || school.CurrentUser.DbServer.Contains("local"))
+                //DataSet ds = Connection.GetDataSet("Select * from MasterUser where UserName='" + txtUserName.Text.Trim() + "' and UserPassword='" + Pass.Trim() + "'; ");
+                SqlDataAdapter adp = new SqlDataAdapter("Select * from MasterUser where lower(userId)='" + txtUserName.Text.Trim().ToLower() + "' and pwd='" + Pass + "'; ", con);
+                DataSet ds = new DataSet();
+                adp.Fill(ds);
+                if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
                 {
-                    SetupDatabase(school.CurrentUser);
-                }
+                    school1.CurrentUser = new CSMSUser();
+                    school1.CurrentUser.UserId = ds.Tables[0].Rows[0]["userId"].ToString();
+                    school1.CurrentUser.Name = ds.Tables[0].Rows[0]["name"].ToString();
+                    school1.CurrentUser.Phone = ds.Tables[0].Rows[0]["phone"].ToString();
+                    school1.CurrentUser.Address = ds.Tables[0].Rows[0]["address"].ToString();
+                    school1.CurrentUser.Email = ds.Tables[0].Rows[0]["email"].ToString();
+                    school1.CurrentUser.School = ds.Tables[0].Rows[0]["school"].ToString();
+                    school1.CurrentUser.IsPrimaryUser = Convert.ToBoolean(ds.Tables[0].Rows[0]["isPrimaryUser"]);
+                    school1.CurrentUser.DbName = ds.Tables[0].Rows[0]["dbName"].ToString();
+                    school1.CurrentUser.DbServer = ds.Tables[0].Rows[0]["dbServer"].ToString();
+                    school1.CurrentUser.DbUserPwd = ds.Tables[0].Rows[0]["dbUserPwd"].ToString();
+                    school1.CurrentUser.DbUserId = ds.Tables[0].Rows[0]["dbUserId"].ToString();
+                    school1.CurrentUser.RoleId = Convert.ToInt16(ds.Tables[0].Rows[0]["roleId"]);
+                    school1.CurrentUser.UserCode = Convert.ToInt32(ds.Tables[0].Rows[0]["UserCode"]);
+                    school1.CurrentUser.ActivationValidTill = Convert.ToDateTime(ds.Tables[0].Rows[0]["ActivationValidTill"]);
+                    school1.CurrentUser.ActivatedOn = Convert.ToDateTime(ds.Tables[0].Rows[0]["ActivatedOn"]);
+                    school1.CurrentUser.IsActive = Convert.ToBoolean(ds.Tables[0].Rows[0]["IsActive"]);
 
-                SetupAppPaths();
+                    // Initializing it for school class as well because it is still in use many places
+                    school.CurrentUser = school1.CurrentUser;
+                    if (school.CurrentUser.DbServer.Contains("sqlexpress") || school.CurrentUser.DbServer.Contains("local"))
+                    {
+                        SetupDatabase(school.CurrentUser);
+                    }
 
-                bool isActive = IsUserActive();
-                                
+                    SetupAppPaths();
 
-                if (isActive)
-                {
-                    MDIParent1 main = new MDIParent1(school1.CurrentUser.UserCode.ToString(), school1.CurrentUser.Name);
-                    this.Hide();
-                    main.Show();
+                    bool isActive = IsUserActive();
+
+
+                    if (isActive)
+                    {
+                        MDIParent1 main = new MDIParent1(school1.CurrentUser.UserCode.ToString(), school1.CurrentUser.Name);
+                        this.Hide();
+                        main.Show();
+                    }
+                    else
+                    {
+                        //MessageBox.Show("Your user account is in inactive state, please contact your vendor for further assistance.");
+                        Application.Exit();
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Your user account is in inactive state, please contact your vendor for further assistance.");
-                    Application.Exit();
+                    MessageBox.Show("Invalid Username/Password");
                 }
             }
-            else
-            {
-                MessageBox.Show("Invalid USER NAME/PASSWORD");
+            catch (Exception ex)
+            {                
+                Logger.LogError(ex);
             }
-
-            con.Close();
-
+            finally
+            {
+                if (con != null && con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
             //DataSet dschk = Connection.GetDataSet("Select * from SMSsystem ");
             //if (dschk.Tables[0].Rows.Count < 1)
             //{
@@ -387,7 +398,7 @@ namespace SMS
             }
             else
             {
-                MessageBox.Show("Your subscription has expired, please contact our sales to renew your subscription.");
+                MessageBox.Show("Either your account is inactive or your subscription has expired, please contact our sales person to renew your subscription.");
 
                 return false;
             }

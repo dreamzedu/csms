@@ -176,14 +176,15 @@ namespace SMS
             {
                 if (string.IsNullOrEmpty(Connection.AccessPathId))
                 {
-                    string ConnectionPath = Application.StartupPath;
-                    FileStream fs = new FileStream(ConnectionPath + @"\pathid.dll", FileMode.Open, FileAccess.Read);
-                    //FileStream fs = new FileStream("C:\\WINDOWS\\inf\\pathid.dll", FileMode.Open, FileAccess.Read);
-                    //FileStream fs = new FileStream("C:\\WINXP\\ime\\pathid.dll", FileMode.Open, FileAccess.Read);
-                    StreamReader oRead = new StreamReader(fs);
-                    Connection.AccessPathId = (string)oRead.ReadToEnd();
-                    oRead.Close();
-                    fs.Close();
+                    Connection.AccessPathId = System.Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + ((char)Path.DirectorySeparatorChar).ToString() + "csms";
+                    //string ConnectionPath = Application.StartupPath;
+                    //FileStream fs = new FileStream(ConnectionPath + @"\pathid.dll", FileMode.Open, FileAccess.Read);
+                    ////FileStream fs = new FileStream("C:\\WINDOWS\\inf\\pathid.dll", FileMode.Open, FileAccess.Read);
+                    ////FileStream fs = new FileStream("C:\\WINXP\\ime\\pathid.dll", FileMode.Open, FileAccess.Read);
+                    //StreamReader oRead = new StreamReader(fs);
+                    //Connection.AccessPathId = (string)oRead.ReadToEnd();
+                    //oRead.Close();
+                    //fs.Close();
                 }
             }
             catch

@@ -66,6 +66,7 @@ namespace SMS
                         DataSet dsty = Connection.GetDataSet("Select ScholarNo,name from tbl_student where studentno='" + dstt.Tables[0].Rows[0][0].ToString() + "'");
                         txtScholarNo.Text = dsty.Tables[0].Rows[0].ItemArray[0].ToString();
                         txtStudentName.Text = dsty.Tables[0].Rows[0].ItemArray[1].ToString();
+                        txtstudentno.Text = dstt.Tables[0].Rows[0][0].ToString();
                     }
                 }
                 button9.Visible = false;
@@ -95,12 +96,12 @@ namespace SMS
                     Connection.FillCombo(ref strmtongue, "select distinct m_tongue from tbl_student where Datalength(m_tongue)>0");
                     //c.FillcomboBox("select a.classno,b.classname as class from tbl_class a,tbl_classmaster b,tbl_section c where b.classcode=a.classcode and c.sectioncode=a.sectioncode", "class", "classno", ref valcmbclass );
                     //c.FillcomboBox("select * from tbl_sankay order by sankayname", "sankayName", "sankaycode", ref valcmbfaculty);
-                    int cl1 = Connection.Login("Select Count(*) from tbl_classmaster ");
-                    if (cl1 == 0)
-                    {
-                    }
-                    else
-                    {
+                    //int cl1 = Connection.Login("Select Count(*) from tbl_classmaster ");
+                    //if (cl1 == 0)
+                    //{
+                    //}
+                    //else
+                    //{
                         //c.FillcomboBox("select * from tbl_session order by sessioncode", "sessionName", "Sessioncode", ref valcmbsession);
                         c.FillcomboBox("select * from tbl_tehsil order by tehsil", "tehsil", "tehcode", ref valcmbtehsil);
                         c.FillcomboBox("select * from tbl_district order by district", "district", "distcode", ref valcmbdistrict);
@@ -133,7 +134,7 @@ namespace SMS
                             label45.Visible = true;
                         }
 
-                    }
+                    //}
                 }
                 
             }
@@ -950,11 +951,11 @@ namespace SMS
             if (Convert.ToInt32(Connection.GetExecuteScalar("select count(*) from tbl_classstudent " +
                 "   where studentno='" + txtstudentno.Text + "'")) > 0)
             {
-                MessageBox.Show("You Can Not Delete Student Record ....");
+                MessageBox.Show("You cannot delete student record.");
             }
             else
             {
-                DialogResult d = MessageBox.Show("Are You Sure You Want To Delete Record.", "", MessageBoxButtons.YesNo);
+                DialogResult d = MessageBox.Show("Are you sure, you want to delete student record.", "Delete Student", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (d.ToString() == "Yes")
                 {
                     SqlTransaction trn = null;
@@ -965,13 +966,15 @@ namespace SMS
                         Connection.SqlTransection("Delete from tbl_Student where scholarno ='" + txtScholarNo.Text + "'",
                             Connection.MyConnection, trn);
                         trn.Commit();
-                        MessageBox.Show("Record Deleted");
+                        MessageBox.Show("Record deleted successfully","Delete Student", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        frmstudent_Load(this, null);
                     }
                     catch
                     {
                         trn.Rollback();
                     }
-                    DesignForm.fromClear(this);
+                    DesignForm.fromClear(this); 
+                    frmstudent_Load(this, null);                    
                 }
             }
             valcmbsession.Enabled = false;
@@ -1467,7 +1470,10 @@ namespace SMS
             //Library.FrmGetStudentBarcode gb = new FrmGetStudentBarcode();
             Connection.Flag = "S";
             gb.ShowDialog();
-            txtScholarNo.Text = Connection.StudentBcode;
+            if (Connection.StudentBcode != "0")
+            {
+                txtScholarNo.Text = Connection.StudentBcode;
+            }
             txtScholarNo.Focus();
 
         }

@@ -17,7 +17,7 @@ using SMS.Properties;
 
 namespace SMS
 {
-    public partial class frmDetail : System.Windows.Forms.UserControl
+    public partial class frmDetail : UserControlBase
     {
         school c = new school();
         DataSet dsDetail;
@@ -72,15 +72,18 @@ namespace SMS
         {
             try
             {
-                int recordsAvailable = (dv.Count - (bs.Position) * pageSize);
-                int count = recordsAvailable > pageSize ? pageSize : recordsAvailable;
-
-                if (tempTable != null)
+                if (dv != null)
                 {
-                    tempTable.Clear();
-                    dv.ToTable().Select().Skip((bs.Position) * pageSize).Take(count).CopyToDataTable(tempTable, LoadOption.OverwriteChanges);
+                    int recordsAvailable = (dv.Count - (bs.Position) * pageSize);
+                    int count = recordsAvailable > pageSize ? pageSize : recordsAvailable;
 
-                    dataGridView1.DataSource = tempTable.DefaultView;
+                    if (tempTable != null)
+                    {
+                        tempTable.Clear();
+                        dv.ToTable().Select().Skip((bs.Position) * pageSize).Take(count).CopyToDataTable(tempTable, LoadOption.OverwriteChanges);
+
+                        dataGridView1.DataSource = tempTable.DefaultView;
+                    }
                 }
             }
             catch(Exception ex)

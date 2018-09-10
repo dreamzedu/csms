@@ -210,7 +210,6 @@
             this.cmbClass.Name = "cmbClass";
             this.cmbClass.Size = new System.Drawing.Size(137, 26);
             this.cmbClass.TabIndex = 10;
-            this.cmbClass.SelectedIndexChanged += new System.EventHandler(this.cmbClass_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -298,9 +297,9 @@
             this.label3.Location = new System.Drawing.Point(970, 646);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 20);
+            this.label3.Size = new System.Drawing.Size(155, 20);
             this.label3.TabIndex = 152;
-            this.label3.Text = "Promot On";
+            this.label3.Text = "Promote to Class";
             // 
             // frmStudentPromotion
             // 
@@ -320,7 +319,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Margin = new System.Windows.Forms.Padding(4);
-            //this.Name = "frmStudentPromotion";
+            this.Name = "frmStudentPromotion";
             this.Size = new System.Drawing.Size(1516, 695);
             this.Load += new System.EventHandler(this.frmStudentPromotion_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmStudentPromotion_Paint);

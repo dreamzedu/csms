@@ -886,6 +886,7 @@ namespace SMS
             this.chkIsPramote.TabIndex = 233;
             this.chkIsPramote.Text = "Promote";
             this.chkIsPramote.UseVisualStyleBackColor = false;
+            this.chkIsPramote.Visible = false;
             // 
             // txtCatNo
             // 
@@ -3032,7 +3033,7 @@ namespace SMS
             this.label73.Name = "label73";
             this.label73.Size = new System.Drawing.Size(308, 16);
             this.label73.TabIndex = 182;
-            this.label73.Text = "feilds marked with asterisk (*) are mandatory";
+            this.label73.Text = "fields marked with asterisk (*) are mandatory";
             // 
             // frmstudent
             // 

@@ -17,6 +17,7 @@ namespace SMS
         string ClassStream = string.Empty;
         SqlTransaction trn = null;
         bool Flage = false;
+        DataView sessionData = null;
         public frmStudentPromotion()
         {
             InitializeComponent();
@@ -33,6 +34,11 @@ namespace SMS
             Connection.FillComboBox(cmbClass, "Select ClassCode ,ClassName From tbl_ClassMaster Group by  ClassCode,ClassName Order By ClassCode");
             Connection.FillComboBox(cmbPromotOn, "Select ClassCode ,ClassName From tbl_ClassMaster Group by  ClassCode,ClassName Order By ClassCode");
             Connection.FillComboBox(cmbSection, "Select SectionCode ,SectionName From tbl_Section");
+            DataSet ds = Connection.GetDataSet("Select * from tbl_session Order By S_from Desc");
+            if (ds != null && ds.Tables.Count > 0)
+                sessionData = ds.Tables[0].DefaultView;
+
+            this.cmbClass.SelectedIndexChanged += new System.EventHandler(this.cmbClass_SelectedIndexChanged);
         }
 
         private void cmbClass_SelectedIndexChanged(object sender, EventArgs e)
@@ -52,10 +58,23 @@ namespace SMS
             {
                 if (!string.IsNullOrEmpty(cmbSection.Text))
                 {
+                    if (sessionData == null) return;
+
                     dataGridView1.Rows.Clear();
-                    PrevSession = Connection.GetExecuteScalar("Select Top 1 SessionCode From tbl_session Where sessioncode<'" + school.CurrentSessionCode + "' And SessionStatus =0 Order By SessionCode Desc").ToString();
-                    lblStatus.Text = "Promotion From " + Connection.GetExecuteScalar("Select SessionName From tbl_session Where sessioncode ='" + PrevSession + "' ").ToString()
-                        +" To "+ Connection.GetExecuteScalar("Select SessionName From tbl_session Where sessioncode ='" + school.CurrentSessionCode + "' ").ToString() + " .";
+                    sessionData.RowFilter = "sessionCode='" + school.CurrentSessionCode + "'";
+                    string sessionStartDate = sessionData.Table.Rows[0]["s_from"].ToString();
+                    string sessionName = sessionData[0]["SessionName"].ToString();
+  
+
+                    sessionData.RowFilter = "s_from<'" + sessionStartDate + "' and SessionStatus=0";
+
+                    if (sessionData.Count <= 0) return;
+
+                    PrevSession = sessionData[0]["SessionCode"].ToString();
+                    var prevSessionName = sessionData[0]["SessionName"].ToString();
+
+                    lblStatus.Text = "Promotion From " + prevSessionName
+                        + " To " + sessionName;
 
                     dataReader = Connection.GetDataReader("SELECT tbl_student.studentno, tbl_student.scholarno, tbl_student.name, tbl_student.father, tbl_student.mother "+
                       " ,convert(varchar,tbl_student.dob,105) ,convert(varchar,tbl_student.RegDate,105),tbl_sankay.sankayname,tbl_classstudent.stdtype,tbl_sankay.sankaycode FROM tbl_classstudent INNER JOIN tbl_student ON tbl_classstudent.studentno = tbl_student.studentno " +
