@@ -73,8 +73,9 @@ namespace SMS
                     PrevSession = sessionData[0]["SessionCode"].ToString();
                     var prevSessionName = sessionData[0]["SessionName"].ToString();
 
-                    lblStatus.Text = "Promotion From " + prevSessionName
-                        + " To " + sessionName;
+                    lblStatus.ForeColor = Color.Blue;
+                    lblStatus.Text = "Promotion from " + prevSessionName
+                        + " to " + sessionName;
 
                     dataReader = Connection.GetDataReader("SELECT tbl_student.studentno, tbl_student.scholarno, tbl_student.name, tbl_student.father, tbl_student.mother "+
                       " ,convert(varchar,tbl_student.dob,105) ,convert(varchar,tbl_student.RegDate,105),tbl_sankay.sankayname,tbl_classstudent.stdtype,tbl_sankay.sankaycode FROM tbl_classstudent INNER JOIN tbl_student ON tbl_classstudent.studentno = tbl_student.studentno " +
@@ -96,19 +97,19 @@ namespace SMS
                     }
                     else
                     {
-                        MessageBox.Show("Record Is Not Available!!!", "");
+                        MessageBox.Show("Record is not available!", "Error");
                         cmbClass.Focus();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Please Select Section First!!!", "Section");
+                    MessageBox.Show("Please select Section first!", "Error");
                     cmbSection.Focus();
                 }
             }
             else
             {
-                MessageBox.Show("Please Select Class First!!!", "Class");
+                MessageBox.Show("Please select Class first!", "Error");
                 cmbClass.Focus();
             }
         }
@@ -130,11 +131,13 @@ namespace SMS
             e.Graphics.DrawString((e.RowIndex + 1).ToString(), dataGridView1.Font, new SolidBrush(Color.Maroon), e.RowBounds.X + 2, e.RowBounds.Y + 3);
         }
 
+        int colorIndex = 1;
         private void tmr1_Tick(object sender, EventArgs e)
         {
-            Random randomGen = new Random();
-            KnownColor[] names = (KnownColor[])Enum.GetValues(typeof(KnownColor));
-            KnownColor randomColorName = names[randomGen.Next(names.Length)];
+            KnownColor[] names = new KnownColor[2]{KnownColor.Blue, KnownColor.BlueViolet};
+            colorIndex = colorIndex % 2;
+            KnownColor randomColorName = names[colorIndex];
+            colorIndex++;
             lblStatus.ForeColor = Color.FromKnownColor(randomColorName); 
         }
 
@@ -142,7 +145,7 @@ namespace SMS
         {
             if (dataGridView1.RowCount > 0)
             {
-                if (DialogResult.Yes.Equals(MessageBox.Show("Are You Sure to Promote Students of Class "+cmbClass .Text +" to Class of "+cmbPromotOn.Text +".", "Student Promotion", MessageBoxButtons.YesNo, MessageBoxIcon.Question)))
+                if (DialogResult.Yes.Equals(MessageBox.Show("Are you sure to promote Students of class "+cmbClass .Text +" to class of "+cmbPromotOn.Text +".", "Student Promotion", MessageBoxButtons.YesNo, MessageBoxIcon.Question)))
                 {
                     string CmdText = string.Empty;
                     trn = Connection.GetMyConnection().BeginTransaction();
@@ -150,7 +153,7 @@ namespace SMS
                     {
                         if (this.Flage)
                         {
-                            if (DialogResult.Yes.Equals(MessageBox.Show("If do you want to delete previous promoted Student of Class " + cmbPromotOn.Text + " \n\t\tthen please choose Yes button of Dialog.", "Student Promotion", MessageBoxButtons.YesNo, MessageBoxIcon.Question)))
+                            if (DialogResult.Yes.Equals(MessageBox.Show("If do you want to delete previous promoted Student of Class " + cmbPromotOn.Text + " \n\t\t,then click YES.", "Student Promotion", MessageBoxButtons.YesNo, MessageBoxIcon.Question)))
                             {
                                 CmdText = "Delete From tbl_ClassStudent Where SessionCode='" + school.CurrentSessionCode + "' And ClassNo='" + cmbPromotOn.SelectedValue + "' And Section='" + cmbSection.SelectedValue + "' And Stream='" + this.ClassStream + "'";
                                 Connection.SqlTransection(CmdText, Connection.MyConnection, trn);
@@ -170,7 +173,7 @@ namespace SMS
                             }
                         }
                         trn.Commit();
-                        MessageBox.Show("Student Promotion Successfull...", "Promotion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Students promoted Successfuly.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         dataGridView1.Rows.Clear();
                     }
                     catch
@@ -189,7 +192,7 @@ namespace SMS
                     " And ClassNo='" + cmbPromotOn.SelectedValue + "' And Section='" + cmbSection.SelectedValue + "'")) > 0) ? true : false;
                 if (flage)
                 {
-                    if (DialogResult.Yes.Equals(MessageBox.Show("These Students are already Promoted New Session...\n\n\tIf You Want Update Press Yes!!!"
+                    if (DialogResult.Yes.Equals(MessageBox.Show("These Students are already promoted to new session.\n\n\tIf you want to update then click YES."
                         , "Promotion", MessageBoxButtons.YesNo, MessageBoxIcon.Question)))
                     {
                         this.Flage = true;
@@ -207,7 +210,7 @@ namespace SMS
             }
             else
             {
-                MessageBox.Show("There are Students Records not shown.\n\tPlease Check records."
+                MessageBox.Show("There are students records not shown.\n\tPlease check records."
                         , "Students Records", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             }
         }

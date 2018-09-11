@@ -319,7 +319,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "frmStudentPromotion";
+            //this.Name = "frmStudentPromotion";
             this.Size = new System.Drawing.Size(1516, 695);
             this.Load += new System.EventHandler(this.frmStudentPromotion_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmStudentPromotion_Paint);
