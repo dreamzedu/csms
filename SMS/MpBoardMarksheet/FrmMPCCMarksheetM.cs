@@ -27,6 +27,7 @@ namespace SMS.MpBoardMarksheet
         private void FrmMPCCMarksheetM_Load(object sender, EventArgs e)
         {
             Connection.FillComboBox(cmbClass, "Select ClassCode ,ClassName From tbl_ClassMaster Order By ClassOrder");
+            this.cmbClass.SelectedIndexChanged += new System.EventHandler(this.cmbClass_SelectedIndexChanged);
             Connection.FillComboBox(cmbSection, "Select SectionCode ,SectionName From tbl_Section");
         }
 

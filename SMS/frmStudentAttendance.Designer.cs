@@ -62,7 +62,7 @@
             this.txtAttandanceDate.CustomFormat = "dd-MM-yyyy";
             this.txtAttandanceDate.Font = new System.Drawing.Font("Arial Narrow", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtAttandanceDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtAttandanceDate.Location = new System.Drawing.Point(223, 67);
+            this.txtAttandanceDate.Location = new System.Drawing.Point(239, 67);
             this.txtAttandanceDate.Margin = new System.Windows.Forms.Padding(4);
             this.txtAttandanceDate.Name = "txtAttandanceDate";
             this.txtAttandanceDate.Size = new System.Drawing.Size(156, 26);
@@ -120,7 +120,7 @@
             this.btnShow.Location = new System.Drawing.Point(960, 63);
             this.btnShow.Margin = new System.Windows.Forms.Padding(4);
             this.btnShow.Name = "btnShow";
-            this.btnShow.Size = new System.Drawing.Size(131, 28);
+            this.btnShow.Size = new System.Drawing.Size(131, 30);
             this.btnShow.TabIndex = 151;
             this.btnShow.Text = "S&how";
             this.btnShow.UseVisualStyleBackColor = true;

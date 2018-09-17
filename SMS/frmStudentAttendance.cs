@@ -64,7 +64,7 @@ namespace SMS
                 }
                 else
                 {
-                    MessageBox.Show("Please Check Date Of Attendance!!!");
+                    MessageBox.Show("No student record for selected date/class/section.");
                     return;
                 }
             }
@@ -172,14 +172,14 @@ namespace SMS
         public override void btnsave_Click(object sender, EventArgs e)
         {
             string msg = string.Empty;
-            if (DialogResult.Yes.Equals(MessageBox.Show("Are You Sure To Save Attendance Date Of \" " + txtAttandanceDate.Text + " \" ?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question)))
+            if (DialogResult.Yes.Equals(MessageBox.Show("Are you sure to save Attendance for date \" " + txtAttandanceDate.Text + " \" ?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question)))
             {
                 string res = string.Empty;
                 res = SaveData();
                 if (this.MessageService==true && res.Equals("True"))
-                    MessageBox.Show("Attendance Transaction Completed...\n\tMessage Sent!!!", "School");
+                    MessageBox.Show("Attendance saved successfully.\n\tMessage Sent!!!", "School");
                 else
-                    MessageBox.Show("Attendance Transaction Completed...");
+                    MessageBox.Show("Attendance saved successfully.");
 
             }
         }
@@ -202,10 +202,6 @@ namespace SMS
         private void btnExit_Click(object sender, EventArgs e)
         {
             //this.Close();
-        }
-
-        
-
-      
+        }      
     }
 }

@@ -53,7 +53,7 @@
             this.cmbSection.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSection.ForeColor = System.Drawing.Color.Blue;
             this.cmbSection.FormattingEnabled = true;
-            this.cmbSection.Location = new System.Drawing.Point(651, 54);
+            this.cmbSection.Location = new System.Drawing.Point(750, 54);
             this.cmbSection.Margin = new System.Windows.Forms.Padding(4);
             this.cmbSection.Name = "cmbSection";
             this.cmbSection.Size = new System.Drawing.Size(92, 28);
@@ -69,9 +69,9 @@
             this.chkSection.Location = new System.Drawing.Point(605, 56);
             this.chkSection.Margin = new System.Windows.Forms.Padding(4);
             this.chkSection.Name = "chkSection";
-            this.chkSection.Size = new System.Drawing.Size(90, 23);
+            this.chkSection.Size = new System.Drawing.Size(134, 23);
             this.chkSection.TabIndex = 4;
-            this.chkSection.Text = "Section";
+            this.chkSection.Text = "Section Wise";
             this.chkSection.UseVisualStyleBackColor = false;
             this.chkSection.CheckedChanged += new System.EventHandler(this.chkSection_CheckedChanged);
             // 
@@ -95,7 +95,7 @@
             this.cmbSession.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSession.ForeColor = System.Drawing.Color.Blue;
             this.cmbSession.FormattingEnabled = true;
-            this.cmbSession.Location = new System.Drawing.Point(136, 57);
+            this.cmbSession.Location = new System.Drawing.Point(136, 53);
             this.cmbSession.Margin = new System.Windows.Forms.Padding(4);
             this.cmbSession.Name = "cmbSession";
             this.cmbSession.Size = new System.Drawing.Size(116, 28);
@@ -108,7 +108,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(52, 61);
+            this.label1.Location = new System.Drawing.Point(52, 57);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 19);
@@ -121,7 +121,7 @@
             this.cmbClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbClass.ForeColor = System.Drawing.Color.Blue;
             this.cmbClass.FormattingEnabled = true;
-            this.cmbClass.Location = new System.Drawing.Point(457, 56);
+            this.cmbClass.Location = new System.Drawing.Point(457, 54);
             this.cmbClass.Margin = new System.Windows.Forms.Padding(4);
             this.cmbClass.Name = "cmbClass";
             this.cmbClass.Size = new System.Drawing.Size(101, 28);
@@ -210,7 +210,7 @@
             this.chkReceive.BackColor = System.Drawing.Color.Transparent;
             this.chkReceive.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.chkReceive.ForeColor = System.Drawing.Color.White;
-            this.chkReceive.Location = new System.Drawing.Point(741, 98);
+            this.chkReceive.Location = new System.Drawing.Point(800, 100);
             this.chkReceive.Margin = new System.Windows.Forms.Padding(4);
             this.chkReceive.Name = "chkReceive";
             this.chkReceive.Size = new System.Drawing.Size(155, 23);
@@ -238,7 +238,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.25F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(767, 54);
+            this.label7.Location = new System.Drawing.Point(866, 59);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(102, 20);
@@ -251,7 +251,7 @@
             this.lblScholar.BackColor = System.Drawing.Color.Transparent;
             this.lblScholar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblScholar.ForeColor = System.Drawing.Color.Maroon;
-            this.lblScholar.Location = new System.Drawing.Point(877, 54);
+            this.lblScholar.Location = new System.Drawing.Point(976, 59);
             this.lblScholar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblScholar.Name = "lblScholar";
             this.lblScholar.Size = new System.Drawing.Size(19, 20);

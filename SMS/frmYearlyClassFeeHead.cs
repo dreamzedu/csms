@@ -31,11 +31,13 @@ namespace SMS
             c.GetMdiParent(this).ToggleSaveButton(true);
             c.GetMdiParent(this).TogglePrintButton(true); //.EnableAllEditMenuButtons();
             c.getconnstr();
-            
+
+            cmbclass.SelectedIndex = -1;
            // c.FillcomboBox("select a.classno,b.classname as class from tbl_class a,tbl_classmaster b,tbl_section c where b.classcode=a.classcode and c.sectioncode=a.sectioncode", "class", "classno", ref cmbclass);
             //MessageBox.Show(c.myconn.ConnectionString);  
             c.FillcomboBox("select classcode,classname from tbl_classmaster  order by classcode", "classname", "classcode", ref cmbclass);
-            cmbclass.SelectedIndex = 0;
+            
+            cmbclass.Text = "--Select--";
         }
 
         private void cmbclass_Validated(object sender, EventArgs e)
@@ -85,7 +87,7 @@ namespace SMS
               }
               while (i < dtgfeeheads.Rows.Count);
               trn.Commit();
-              MessageBox.Show("Data Saved..", "School");
+              MessageBox.Show("Records saved successfully.", "Fee Entry");
               //add_edit = false;
               //c.GetMdiParent(this).EnableAllEditMenuButtons();
           //}
@@ -378,28 +380,31 @@ namespace SMS
 
       private void cmbclass_Leave(object sender, EventArgs e)
       {
-          string classno;
-          DataSet ds = Connection.GetDataSet("Select classcode from tbl_classmaster where classname='" + cmbclass.Text + "'");
-          classno = ds.Tables[0].Rows[0].ItemArray[0].ToString();
-          //-------for stream--------
-          if (Convert.ToInt32(classno) > 110 && Convert.ToInt32(classno) < 113)
+          if (cmbclass.SelectedIndex > -1)
           {
-              strcmbfaculty.Visible = true;
-              label43.Visible = true;
+              string classno;
+              DataSet ds = Connection.GetDataSet("Select classcode from tbl_classmaster where classname='" + cmbclass.Text + "'");
+              classno = ds.Tables[0].Rows[0].ItemArray[0].ToString();
+              //-------for stream--------
+              if (Convert.ToInt32(classno) > 110 && Convert.ToInt32(classno) < 113)
+              {
+                  strcmbfaculty.Visible = true;
+                  label43.Visible = true;
 
-              Connection.FillComboBox(strcmbfaculty, "select sankaycode,sankayname from tbl_sankay where sankayName!='Common' order by sankayname");
-              strcmbfaculty.SelectedIndex = 0;
-          }
-          else
-          {
-              strcmbfaculty.Visible = true;
-              label43.Visible = true;
+                  Connection.FillComboBox(strcmbfaculty, "select sankaycode,sankayname from tbl_sankay where sankayName!='Common' order by sankayname");
+                  strcmbfaculty.SelectedIndex = 0;
+              }
+              else
+              {
+                  strcmbfaculty.Visible = true;
+                  label43.Visible = true;
 
-              Connection.FillComboBox(strcmbfaculty, "select sankaycode,sankayname from tbl_sankay where sankayName='Common' order by sankayname");
-              strcmbfaculty.SelectedIndex = 0;
+                  Connection.FillComboBox(strcmbfaculty, "select sankaycode,sankayname from tbl_sankay where sankayName='Common' order by sankayname");
+                  strcmbfaculty.SelectedIndex = 0;
+              }
+              //------------------------
+              strcmbfaculty.Focus();
           }
-          //------------------------
-          strcmbfaculty.Focus();
       }
 
       private void strcmbfaculty_Leave(object sender, EventArgs e)

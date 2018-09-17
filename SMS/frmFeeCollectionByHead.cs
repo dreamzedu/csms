@@ -171,6 +171,8 @@ namespace SMS
             //30-March By Gtl Message Service Active/Deactive
             this.MessageService = Convert.ToBoolean(Connection.GetExecuteScalar("Select MessageService From tbl_School"));
             Connection.SetUserLevelAuth(c.GetMdiParent(this));
+            gbxFeeDetail.Location = gbxFeeCollection.Location;
+            gbxStudentDetail.Location = gbxFeeCollection.Location;
         }
 
         private void txtSearch_Enter(object sender, EventArgs e)

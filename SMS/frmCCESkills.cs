@@ -95,8 +95,9 @@ namespace SMS
         public override void btnedit_Click(object sender, EventArgs e)
         {
             c1.GetMdiParent(this).ToggleSaveButton(true);
-            dtgSkills.Enabled = true;
-           dtgSkills.Focus();
+            c1.GetMdiParent(this).ToggleCancelButton(true);
+            dtgSkills.ReadOnly = false;
+            dtgSkills.Focus();
         }
 
         public override void btnsave_Click(object sender, EventArgs e)
@@ -128,21 +129,22 @@ namespace SMS
                             }
                     }
                     trn.Commit();
-                    MessageBox.Show("Saved Successfully.");
+                    MessageBox.Show("Records saved successfully.");
                 }
                 catch
                 {
                     trn.Rollback();
-                    MessageBox.Show("Some Record Missing.\n\tPlease Check Records.");
+                    MessageBox.Show("Some records are missing.\n\tPlease check again.");
                 }
 
                 c1.GetMdiParent(this).ToggleSaveButton(false);
-                dtgSkills.Enabled = false; 
+                c1.GetMdiParent(this).ToggleCancelButton(false);
+                dtgSkills.ReadOnly = true; 
                 
             }
             else
             {
-                MessageBox.Show("Please Fill Records Carefully.");
+                MessageBox.Show("Please fill records carefully.");
                 dtgSkills.Focus();
             }
         }
@@ -150,6 +152,13 @@ namespace SMS
         private void frmCCESkills_Paint(object sender, PaintEventArgs e)
         {
             //public static void fromClear(Form f);
+        }
+
+        public override void btncancel_Click(object sender, EventArgs e)
+        {
+            dtgSkills.ReadOnly = true;
+            c1.GetMdiParent(this).ToggleSaveButton(false);
+            c1.GetMdiParent(this).ToggleCancelButton(false);
         }
     }
 }

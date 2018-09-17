@@ -506,9 +506,9 @@ namespace SMS
                             }
                             #endregion
                             if (this.MessageService)
-                                MessageBox.Show("Fee Transaction Completed...\n\tMessage Sent!!!", "School");
+                                MessageBox.Show("Record saved successfully.\n\tMessage Sent!!!", "School");
                             else
-                                MessageBox.Show("Fee Transaction Completed...");
+                                MessageBox.Show("Record saved successfully.");
                         }
                         else
                         {
@@ -890,7 +890,7 @@ namespace SMS
                                 txtPaidAmont.Text = Convert.ToString(Convert.ToDecimal(Totpad)- Convert.ToDecimal(datareader["RcvAmt"]));
                                 if (txtPaidAmont.Text.Equals(txtTotalFeeAmount.Text))
                                 {
-                                    MessageBox.Show("Fee Already Paid...", "Alert!!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                    MessageBox.Show("Fee already paid...", "Fee Paid", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                                 }
                             }
                             DataTable dtFee = Connection.GetDataTable("SELECT rcptno, studentno, rcptdate, rcvdamt, totalpaidfee, dueamount, latefee " +
@@ -1033,6 +1033,7 @@ namespace SMS
         {
             //public static void fromClear(Form f);
         }
+              
 
      }
 }

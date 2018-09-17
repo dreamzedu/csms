@@ -469,35 +469,35 @@
             // feeCallectionToolStripMenuItem
             // 
             this.feeCallectionToolStripMenuItem.Name = "feeCallectionToolStripMenuItem";
-            this.feeCallectionToolStripMenuItem.Size = new System.Drawing.Size(349, 26);
+            this.feeCallectionToolStripMenuItem.Size = new System.Drawing.Size(384, 26);
             this.feeCallectionToolStripMenuItem.Tag = "Fee Collection";
-            this.feeCallectionToolStripMenuItem.Text = "Fee Collection";
+            this.feeCallectionToolStripMenuItem.Text = "Fee Collection (Without fee heads)";
+            this.feeCallectionToolStripMenuItem.Visible = false;
             this.feeCallectionToolStripMenuItem.Click += new System.EventHandler(this.feeCallectionToolStripMenuItem_Click);
             // 
             // duplicateFeeReceiptSlipToolStripMenuItem
             // 
             this.duplicateFeeReceiptSlipToolStripMenuItem.Name = "duplicateFeeReceiptSlipToolStripMenuItem";
-            this.duplicateFeeReceiptSlipToolStripMenuItem.Size = new System.Drawing.Size(349, 26);
+            this.duplicateFeeReceiptSlipToolStripMenuItem.Size = new System.Drawing.Size(384, 26);
             this.duplicateFeeReceiptSlipToolStripMenuItem.Tag = "Duplicate Fee Receipt";
-            this.duplicateFeeReceiptSlipToolStripMenuItem.Text = "Duplicate Fee Receipt";
+            this.duplicateFeeReceiptSlipToolStripMenuItem.Text = "Duplicate Fee Receipt (old)";
+            this.duplicateFeeReceiptSlipToolStripMenuItem.Visible = false;
             this.duplicateFeeReceiptSlipToolStripMenuItem.Click += new System.EventHandler(this.duplicateFeeReceiptSlipToolStripMenuItem_Click);
             // 
             // feeCollectionByHeadToolStripMenuItem
             // 
             this.feeCollectionByHeadToolStripMenuItem.Name = "feeCollectionByHeadToolStripMenuItem";
-            this.feeCollectionByHeadToolStripMenuItem.Size = new System.Drawing.Size(349, 26);
+            this.feeCollectionByHeadToolStripMenuItem.Size = new System.Drawing.Size(384, 26);
             this.feeCollectionByHeadToolStripMenuItem.Tag = "Fee Collection By Head";
-            this.feeCollectionByHeadToolStripMenuItem.Text = "Fee Collection By Head";
-            this.feeCollectionByHeadToolStripMenuItem.Visible = false;
+            this.feeCollectionByHeadToolStripMenuItem.Text = "Fee Collection";
             this.feeCollectionByHeadToolStripMenuItem.Click += new System.EventHandler(this.feeCollectionByHeadToolStripMenuItem_Click);
             // 
             // duplicateFeeReceiptByHeadToolStripMenuItem
             // 
             this.duplicateFeeReceiptByHeadToolStripMenuItem.Name = "duplicateFeeReceiptByHeadToolStripMenuItem";
-            this.duplicateFeeReceiptByHeadToolStripMenuItem.Size = new System.Drawing.Size(349, 26);
+            this.duplicateFeeReceiptByHeadToolStripMenuItem.Size = new System.Drawing.Size(384, 26);
             this.duplicateFeeReceiptByHeadToolStripMenuItem.Tag = "Duplicate Fee Receipt By Head";
-            this.duplicateFeeReceiptByHeadToolStripMenuItem.Text = "Duplicate Fee Receipt By Head";
-            this.duplicateFeeReceiptByHeadToolStripMenuItem.Visible = false;
+            this.duplicateFeeReceiptByHeadToolStripMenuItem.Text = "Duplicate Fee Receipt";
             this.duplicateFeeReceiptByHeadToolStripMenuItem.Click += new System.EventHandler(this.duplicateFeeReceiptByHeadToolStripMenuItem_Click);
             // 
             // eXAMINATIONToolStripMenuItem

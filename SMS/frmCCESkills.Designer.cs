@@ -36,6 +36,7 @@
             // 
             // dtgSkills
             // 
+            this.dtgSkills.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -53,11 +54,12 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Maroon;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dtgSkills.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dtgSkills.Enabled = false;
-            this.dtgSkills.Location = new System.Drawing.Point(60, 58);
+            this.dtgSkills.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dtgSkills.Location = new System.Drawing.Point(0, 0);
             this.dtgSkills.Margin = new System.Windows.Forms.Padding(4);
             this.dtgSkills.Name = "dtgSkills";
-            this.dtgSkills.Size = new System.Drawing.Size(1352, 543);
+            this.dtgSkills.ReadOnly = true;
+            this.dtgSkills.Size = new System.Drawing.Size(1436, 646);
             this.dtgSkills.TabIndex = 0;
             this.dtgSkills.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dtgSkills_RowPostPaint);
             // 

@@ -33,7 +33,12 @@ namespace SMS
         {
             Connection.FillComboBox(cmbClass, "Select ClassCode ,ClassName From tbl_ClassMaster Order By ClassOrder");
             Connection.FillComboBox(cmbSection, "Select SectionCode ,SectionName From tbl_Section");
-            c.GetMdiParent(this).EnableAllEditMenuButtons();
+
+            this.cmbClass.SelectedIndexChanged += new System.EventHandler(this.cmbClass_SelectedIndexChanged);
+            //c.GetMdiParent(this).EnableAllEditMenuButtons();
+            c.GetMdiParent(this).ToggleNewButton(true);
+            c.GetMdiParent(this).ToggleEditButton(true);
+            ToggleAllControls(false);
         }
 
 
@@ -619,11 +624,11 @@ namespace SMS
                             }
                         }
                         
-                        MessageBox.Show("Saved...");
+                        MessageBox.Show("Record saved successfully.");
                         c.GetMdiParent(this).ToggleNewButton(true); 
                        c.GetMdiParent(this).ToggleEditButton(true);
                        c.GetMdiParent(this).ToggleSaveButton(false);
-                        btnShow.Enabled = false;
+                       ToggleAllControls(false);                       
                         
                     }
                 }
@@ -1300,26 +1305,43 @@ namespace SMS
 
         public override void btnnew_Click(object sender, EventArgs e)
         {
-           c.GetMdiParent(this).ToggleEditButton(false);
-           c.GetMdiParent(this).ToggleSaveButton(true);
-            btnShow.Enabled = true;
+            c.GetMdiParent(this).ToggleEditButton(false);
+            c.GetMdiParent(this).ToggleSaveButton(true);
+            c.GetMdiParent(this).ToggleCancelButton(true);
+            c.GetMdiParent(this).ToggleDeleteButton(false);
+            ToggleAllControls(true);
             cmbClass.Focus();
         }
         public override void btnedit_Click(object sender, EventArgs e)
         {
             c.GetMdiParent(this).ToggleNewButton(false);
             c.GetMdiParent(this).ToggleSaveButton(true);
-            btnShow.Enabled = true;
+            c.GetMdiParent(this).ToggleCancelButton(true);
+            ToggleAllControls(true);
             cmbClass.Focus();
         }
 
         public override void btncancel_Click(object sender, EventArgs e)
         {
             c.GetMdiParent(this).ToggleNewButton(true);
-           c.GetMdiParent(this).ToggleEditButton(true);
-           c.GetMdiParent(this).ToggleSaveButton(false);
-            btnShow.Enabled = false;
+            c.GetMdiParent(this).ToggleEditButton(true);
+            c.GetMdiParent(this).ToggleSaveButton(false); 
+            c.GetMdiParent(this).ToggleCancelButton(false);            
+
+            ToggleAllControls(false);
+            tmr1.Stop();
+            dtg.DataSource = null;
+            lblStatus.Text = string.Empty;
             
+        }
+
+        private void ToggleAllControls(bool flag)
+        {
+            cmbClass.Enabled = flag;
+            cmbSection.Enabled = flag;
+            cmbExam.Enabled = flag;
+            btnShow.Enabled = flag;
+           
         }
 
         private void btnClose_Click(object sender, EventArgs e)

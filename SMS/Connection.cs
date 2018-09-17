@@ -828,10 +828,8 @@ namespace SMS
             {
                 Logger.LogError(ex); 
                 MessageBox.Show(
-                    "There is some issue in your database setup. Please contact your vendor with below information.\n" +
+                    "There is some issue in your database setup and your application may not work as expected. Please contact your vendor with below information.\n" +
                     ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Application.Exit();
-                Environment.Exit(0);
                 return null;
             }
         }

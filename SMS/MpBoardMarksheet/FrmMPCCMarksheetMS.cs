@@ -71,6 +71,8 @@ namespace SMS.MpBoardMarksheet
         {
             Connection.FillComboBox(cmbClass, "Select ClassCode ,ClassName From tbl_ClassMaster Order By ClassOrder");
             Connection.FillComboBox(cmbSection, "Select SectionCode ,SectionName From tbl_Section");
+            this.cmbClass.SelectedIndexChanged += new System.EventHandler(this.cmbClass_SelectedIndexChanged);
+
         }
 
         private void btnShow_Click(object sender, EventArgs e)

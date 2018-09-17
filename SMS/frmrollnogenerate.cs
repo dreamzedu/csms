@@ -34,7 +34,9 @@ namespace SMS
             c.getconnstr();
             c.FillcomboBox("select b.classcode,b.classname+' '+c.sectionname as class from tbl_class a,tbl_classmaster b,tbl_section c where b.classcode=a.classcode and c.sectioncode=a.sectioncode", "class", "classcode", ref valcmbclass);
             c.FillcomboBox("select examno,examname from tbl_examtype", "examname", "examno", ref valcmbexam);
-            c.GetMdiParent(this).ToggleSaveButton(true);
+            c.GetMdiParent(this).ToggleSaveButton(true);            
+            valcmbclass.SelectedIndex = -1;
+            valcmbclass.Text = "--Select--";
         }
 
         private void Txtrollno_Validating(object sender, CancelEventArgs e)
@@ -92,81 +94,86 @@ namespace SMS
         {
             try
             {
-                ds = new DataSet();
-                datagridview1.Rows.Clear();
-                string[] sec = valcmbclass.Text.Split(' ');
-                this.SectionCode = Convert.ToInt32(Connection.GetExecuteScalar("Select sectioncode from tbl_section where sectionname='" + sec[1].ToString() + "'"));
-                string mysql = " SELECT tbl_student.studentno, tbl_student.scholarno, tbl_student.name, tbl_StudentAttendance.RollNo, tbl_StudentAttendance.Lectures " +
-     " ,  tbl_StudentAttendance.PresentDays, tbl_StudentAttendance.Per,tbl_student.phone,tbl_student.Height,tbl_student.Width,tbl_student.VisionL,tbl_student.VisionR,tbl_student.Teeth ,tbl_student.OHygiene,tbl_student.bloodgroup,tbl_student.House,tbl_student.CGPA,tbl_student.OGrade FROM tbl_student INNER JOIN tbl_classstudent ON  " +
-     "    tbl_student.studentno = tbl_classstudent.studentno LEFT OUTER JOIN tbl_StudentAttendance ON  " +
-     "    tbl_classstudent.sessioncode = tbl_StudentAttendance.SessionCode AND tbl_student.studentno = tbl_StudentAttendance.StudentNo and   tbl_classstudent.section=tbl_StudentAttendance.sectionno " +
-     "    WHERE (tbl_classstudent.sessioncode = '" + school.CurrentSessionCode + "') AND (tbl_classstudent.classno = '" + valcmbclass.SelectedValue + "') " +
-     "    AND (tbl_classstudent.Section = '" + this.SectionCode + "') AND (tbl_classstudent.stdtype in ('New Student','Studying Student')) GROUP BY tbl_student.studentno, tbl_student.scholarno, tbl_student.name " +
-     " , tbl_StudentAttendance.RollNo, tbl_StudentAttendance.Lectures ,tbl_StudentAttendance.PresentDays, tbl_StudentAttendance.Per,tbl_student.phone,tbl_student.Height,tbl_student.Width,tbl_student.VisionL,tbl_student.VisionR,tbl_student.Teeth ,tbl_student.OHygiene,tbl_student.bloodgroup,tbl_student.House,tbl_student.CGPA,tbl_student.OGrade Order By  tbl_student.name";
-
-                dsStudent = Connection.GetDataSet(mysql);
-                //            SqlDataAdapter da = new SqlDataAdapter("SELECT SessionCode, ExamNo, StudentNo, PresentDays, RollNo, Lectures " +
-                //" , Per, ClassNo, SectionNo, Status FROM tbl_StudentAttendance Where SessionCode='"
-                //+ school.CurrentSessionCode + "' And ClassNo='" + valcmbclass.SelectedValue + "' And SectionNo='" + this.SectionCode + "' ", Connection.Conn());
-
-                cmd.Connection = con;
-                cmd.CommandText = "SELECT SessionCode, ExamNo, StudentNo, PresentDays, RollNo, Lectures " +
-                 " , Per, ClassNo, SectionNo, Status FROM tbl_StudentAttendance Where SessionCode='"
-                 + school.CurrentSessionCode + "' And ClassNo='" + valcmbclass.SelectedValue + "' And SectionNo='" + this.SectionCode + "' ";
-
-                da.SelectCommand = cmd;
-
-                da.Fill(ds);
-                ds.Tables[0].PrimaryKey =
-     new DataColumn[] { ds.Tables[0].Columns[0], ds.Tables[0].Columns[2] };
-
-                SqlCommand com = new SqlCommand(mysql, c.myconn);
-                SqlDataReader reader = com.ExecuteReader();
-                int i = 0;
-
-                if (reader.HasRows)
+                if (valcmbclass.SelectedIndex > -1)
                 {
-                    while (reader.Read())
+                    ds = new DataSet();
+                    datagridview1.Rows.Clear();
+                    string[] sec = valcmbclass.Text.Split(' ');
+                    this.SectionCode = Convert.ToInt32(Connection.GetExecuteScalar("Select sectioncode from tbl_section where sectionname='" + sec[1].ToString() + "'"));
+                    string mysql = " SELECT tbl_student.studentno, tbl_student.scholarno, tbl_student.name, tbl_StudentAttendance.RollNo, tbl_StudentAttendance.Lectures " +
+         " ,  tbl_StudentAttendance.PresentDays, tbl_StudentAttendance.Per,tbl_student.phone,tbl_student.Height,tbl_student.Width,tbl_student.VisionL,tbl_student.VisionR,tbl_student.Teeth ,tbl_student.OHygiene,tbl_student.bloodgroup,tbl_student.House,tbl_student.CGPA,tbl_student.OGrade FROM tbl_student INNER JOIN tbl_classstudent ON  " +
+         "    tbl_student.studentno = tbl_classstudent.studentno LEFT OUTER JOIN tbl_StudentAttendance ON  " +
+         "    tbl_classstudent.sessioncode = tbl_StudentAttendance.SessionCode AND tbl_student.studentno = tbl_StudentAttendance.StudentNo and   tbl_classstudent.section=tbl_StudentAttendance.sectionno " +
+         "    WHERE (tbl_classstudent.sessioncode = '" + school.CurrentSessionCode + "') AND (tbl_classstudent.classno = '" + valcmbclass.SelectedValue + "') " +
+         "    AND (tbl_classstudent.Section = '" + this.SectionCode + "') AND (tbl_classstudent.stdtype in ('New Student','Studying Student')) GROUP BY tbl_student.studentno, tbl_student.scholarno, tbl_student.name " +
+         " , tbl_StudentAttendance.RollNo, tbl_StudentAttendance.Lectures ,tbl_StudentAttendance.PresentDays, tbl_StudentAttendance.Per,tbl_student.phone,tbl_student.Height,tbl_student.Width,tbl_student.VisionL,tbl_student.VisionR,tbl_student.Teeth ,tbl_student.OHygiene,tbl_student.bloodgroup,tbl_student.House,tbl_student.CGPA,tbl_student.OGrade Order By  tbl_student.name";
+
+                    dsStudent = Connection.GetDataSet(mysql);
+                    //            SqlDataAdapter da = new SqlDataAdapter("SELECT SessionCode, ExamNo, StudentNo, PresentDays, RollNo, Lectures " +
+                    //" , Per, ClassNo, SectionNo, Status FROM tbl_StudentAttendance Where SessionCode='"
+                    //+ school.CurrentSessionCode + "' And ClassNo='" + valcmbclass.SelectedValue + "' And SectionNo='" + this.SectionCode + "' ", Connection.Conn());
+
+                    cmd.Connection = con;
+                    cmd.CommandText = "SELECT SessionCode, ExamNo, StudentNo, PresentDays, RollNo, Lectures " +
+                     " , Per, ClassNo, SectionNo, Status FROM tbl_StudentAttendance Where SessionCode='"
+                     + school.CurrentSessionCode + "' And ClassNo='" + valcmbclass.SelectedValue + "' And SectionNo='" + this.SectionCode + "' ";
+
+                    da.SelectCommand = cmd;
+
+                    da.Fill(ds);
+                    ds.Tables[0].PrimaryKey =
+         new DataColumn[] { ds.Tables[0].Columns[0], ds.Tables[0].Columns[2] };
+
+                    SqlCommand com = new SqlCommand(mysql, c.myconn);
+                    SqlDataReader reader = com.ExecuteReader();
+                    int i = 0;
+
+                    if (reader.HasRows)
                     {
-                        datagridview1.Rows.Add();
-                        datagridview1.Rows[i].Cells[0].Value = reader["studentno"];
-                        datagridview1.Rows[i].Cells[1].Value = reader["scholarno"];
-                        datagridview1.Rows[i].Cells[2].Value = reader["rollno"];
-                        datagridview1.Rows[i].Cells[3].Value = reader["name"];
-                        datagridview1.Rows[i].Cells[4].Value = reader["Lectures"];
-                        datagridview1.Rows[i].Cells[5].Value = reader["PresentDays"];
-                        datagridview1.Rows[i].Cells[6].Value = reader["Per"];
-                        datagridview1.Rows[i].Cells[7].Value = reader["phone"];
-                        datagridview1.Rows[i].Cells[8].Value = reader["Height"];
-                        datagridview1.Rows[i].Cells[9].Value = reader["Width"];
-                        datagridview1.Rows[i].Cells[10].Value = reader["VisionL"];
-                        datagridview1.Rows[i].Cells[11].Value = reader["VisionR"];
-                        datagridview1.Rows[i].Cells[12].Value = reader["Teeth"];
-                        datagridview1.Rows[i].Cells[13].Value = reader["OHygiene"];
-                        datagridview1.Rows[i].Cells[14].Value = reader["bloodgroup"];
-                        datagridview1.Rows[i].Cells[15].Value = reader["House"];
-                        datagridview1.Rows[i].Cells[16].Value = reader["CGPA"];
-                        datagridview1.Rows[i].Cells[17].Value = reader["OGrade"];
-                        i++;
+                        while (reader.Read())
+                        {
+                            datagridview1.Rows.Add();
+                            datagridview1.Rows[i].Cells[0].Value = reader["studentno"];
+                            datagridview1.Rows[i].Cells[1].Value = reader["scholarno"];
+                            datagridview1.Rows[i].Cells[2].Value = reader["rollno"];
+                            datagridview1.Rows[i].Cells[3].Value = reader["name"];
+                            datagridview1.Rows[i].Cells[4].Value = reader["Lectures"];
+                            datagridview1.Rows[i].Cells[5].Value = reader["PresentDays"];
+                            datagridview1.Rows[i].Cells[6].Value = reader["Per"];
+                            datagridview1.Rows[i].Cells[7].Value = reader["phone"];
+                            datagridview1.Rows[i].Cells[8].Value = reader["Height"];
+                            datagridview1.Rows[i].Cells[9].Value = reader["Width"];
+                            datagridview1.Rows[i].Cells[10].Value = reader["VisionL"];
+                            datagridview1.Rows[i].Cells[11].Value = reader["VisionR"];
+                            datagridview1.Rows[i].Cells[12].Value = reader["Teeth"];
+                            datagridview1.Rows[i].Cells[13].Value = reader["OHygiene"];
+                            datagridview1.Rows[i].Cells[14].Value = reader["bloodgroup"];
+                            datagridview1.Rows[i].Cells[15].Value = reader["House"];
+                            datagridview1.Rows[i].Cells[16].Value = reader["CGPA"];
+                            datagridview1.Rows[i].Cells[17].Value = reader["OGrade"];
+                            i++;
+                        }
+                        reader.Close();
                     }
-                    reader.Close();
+                    else
+                    {
+                        reader.Close();
+                    }
+                    if (Convert.ToInt32(valcmbclass.SelectedValue.ToString()) >= 101 && Convert.ToInt32(valcmbclass.SelectedValue.ToString()) <= 108)
+                    {
+                        datagridview1.Columns["House"].Visible = true;
+                        datagridview1.Columns["CGPA"].Visible = true;
+                        datagridview1.Columns["OGrade"].Visible = true;
+                    }
+                    else
+                    {
+                        datagridview1.Columns["House"].Visible = false;
+                        datagridview1.Columns["CGPA"].Visible = false;
+                        datagridview1.Columns["OGrade"].Visible = false;
+                    }
                 }
-                else
-                {
-                    reader.Close();
-                }
-                if (Convert.ToInt32(valcmbclass.SelectedValue.ToString()) >= 101 && Convert.ToInt32(valcmbclass.SelectedValue.ToString()) <= 108)
-                {
-                    datagridview1.Columns["House"].Visible = true;
-                    datagridview1.Columns["CGPA"].Visible = true;
-                    datagridview1.Columns["OGrade"].Visible = true;
-                }
-                else
-                {
-                    datagridview1.Columns["House"].Visible = false;
-                    datagridview1.Columns["CGPA"].Visible = false;
-                    datagridview1.Columns["OGrade"].Visible = false;
-                }
+
+                CalculateRollNumbers();
             }
             catch (Exception ex) { Logger.LogError(ex); MessageBox.Show("this is leave exception area." + ex.Message); }
         }
@@ -175,21 +182,24 @@ namespace SMS
           {
             try
             {
-                string[] sec = valcmbclass.Text.Split(' ');
-                this.SectionCode = Convert.ToInt32(Connection.GetExecuteScalar("Select sectioncode from tbl_section where sectionname='" + sec[1].ToString() + "'"));
-                txtrollno.Text = Convert.ToString(Connection.GetExecuteScalar("SELECT isnull(MIN(RollNo),101) AS RollNo FROM tbl_StudentAttendance " +
-                 " WHERE (ClassNo = '" + valcmbclass.SelectedValue + "') AND (SectionNo = '" + this.SectionCode + "') AND (SessionCode = '" + school.CurrentSessionCode + "')"));
-                txtTotalLecture.Text = Convert.ToString(Connection.GetExecuteScalar("SELECT isnull(Lectures,260) FROM tbl_StudentAttendance " +
-                  " WHERE (ClassNo = '" + valcmbclass.SelectedValue + "') AND (SectionNo = '" + this.SectionCode + "') AND (SessionCode = '" + school.CurrentSessionCode + "') " +
-                  " GROUP BY Lectures"));
-
-                foreach (DataGridViewRow r in datagridview1.Rows)
+                if (valcmbclass.SelectedIndex > -1)
                 {
-                    if (r.Cells["TotalLecture"].Value.ToString() == string.Empty)
+                    string[] sec = valcmbclass.Text.Split(' ');
+                    this.SectionCode = Convert.ToInt32(Connection.GetExecuteScalar("Select sectioncode from tbl_section where sectionname='" + sec[1].ToString() + "'"));
+                    txtrollno.Text = Convert.ToString(Connection.GetExecuteScalar("SELECT isnull(MIN(RollNo),101) AS RollNo FROM tbl_StudentAttendance " +
+                     " WHERE (ClassNo = '" + valcmbclass.SelectedValue + "') AND (SectionNo = '" + this.SectionCode + "') AND (SessionCode = '" + school.CurrentSessionCode + "')"));
+                    txtTotalLecture.Text = Convert.ToString(Connection.GetExecuteScalar("SELECT isnull(Lectures,260) FROM tbl_StudentAttendance " +
+                      " WHERE (ClassNo = '" + valcmbclass.SelectedValue + "') AND (SectionNo = '" + this.SectionCode + "') AND (SessionCode = '" + school.CurrentSessionCode + "') " +
+                      " GROUP BY Lectures"));
+
+                    foreach (DataGridViewRow r in datagridview1.Rows)
                     {
-                        r.Cells["TotalLecture"].Value = txtTotalLecture.Text;
-                        r.Cells["Attendance"].Value = 0;
-                        r.Cells["Per"].Value = 0.00;
+                        if (r.Cells["TotalLecture"].Value.ToString() == string.Empty)
+                        {
+                            r.Cells["TotalLecture"].Value = txtTotalLecture.Text;
+                            r.Cells["Attendance"].Value = 0;
+                            r.Cells["Per"].Value = 0.00;
+                        }
                     }
                 }
             }
@@ -197,6 +207,11 @@ namespace SMS
         }
 
         private void txtTotalLecture_Leave(object sender, EventArgs e)
+        {
+            ApplyTotalLectures();
+        }
+
+        private void ApplyTotalLectures()
         {
             try
             {
@@ -207,10 +222,15 @@ namespace SMS
                     r.Cells["Per"].Value = 0.00;
                 }
             }
-            catch(Exception ex){Logger.LogError(ex); }
+            catch (Exception ex) { Logger.LogError(ex); }
         }
 
         private void txtrollno_Leave(object sender, EventArgs e)
+        {
+            CalculateRollNumbers();
+        }
+
+        private void CalculateRollNumbers()
         {
             try
             {
@@ -230,7 +250,7 @@ namespace SMS
                     }
                 }
             }
-            catch(Exception ex){Logger.LogError(ex); }
+            catch (Exception ex) { Logger.LogError(ex); }
         }
 
 
@@ -240,6 +260,32 @@ namespace SMS
             try
             {
                 int i = 0;
+                if(valcmbclass.SelectedIndex<0)
+                {
+                    MessageBox.Show("Please select class first.");
+                    return;
+                }
+                
+                if (string.IsNullOrEmpty(txtrollno.Text))
+                {
+                    MessageBox.Show("Please enter a value for roll number start.");
+                    return;
+                }
+                else
+                {
+                    CalculateRollNumbers();
+                }
+
+                if (string.IsNullOrEmpty(txtTotalLecture.Text))
+                {
+                    MessageBox.Show("Please enter a value for total number of lectures.");
+                    return;
+                }
+                else
+                {
+                    ApplyTotalLectures();
+                }
+
                 if (ds.Tables[0].Rows.Count == 0)
                 {
                     foreach (DataGridViewRow dr in datagridview1.Rows)

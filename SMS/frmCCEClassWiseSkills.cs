@@ -25,7 +25,10 @@ namespace SMS
         private void frmCCEClassWiseSkills_Load(object sender, EventArgs e)
         {
             Connection.FillComboBox(cmbClass, "Select ClassCode ,ClassName From tbl_ClassMaster Order By ClassOrder");
-            c1.GetMdiParent(this).ToggleSaveButton(true);
+            cmbClass.SelectedIndex = -1;
+            cmbClass.Text = "--Select--";
+            this.cmbClass.SelectedIndexChanged += new System.EventHandler(this.cmbClass_SelectedIndexChanged);
+            c1.GetMdiParent(this).ToggleSaveButton(false);
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -65,33 +68,39 @@ namespace SMS
                     }
                     DataReader.Close();
                 }
+
+                if(dataGridView1.Rows.Count >0)
+                { c1.GetMdiParent(this).ToggleSaveButton(true); }
             }
             catch(Exception ex){Logger.LogError(ex); }
         }
 
         public override void btnsave_Click(object sender, EventArgs e)
         {
-            Transaction = Connection.GetMyConnection().BeginTransaction();
-            try
+            if (dataGridView1.Rows.Count > 0)
             {
-                this.CmdText = "Delete From tbl_CCEClassSkill Where ClassCode='"+cmbClass .SelectedValue +"' And SessionCode='"+school .CurrentSessionCode +"'";
-                        Connection.SqlTransection(this.CmdText, Connection.MyConnection, this.Transaction);
-                foreach (DataGridViewRow r in dataGridView1.Rows)
+                Transaction = Connection.GetMyConnection().BeginTransaction();
+                try
                 {
-                    if (Convert.ToBoolean(r.Cells["Select"].Value))
+                    this.CmdText = "Delete From tbl_CCEClassSkill Where ClassCode='" + cmbClass.SelectedValue + "' And SessionCode='" + school.CurrentSessionCode + "'";
+                    Connection.SqlTransection(this.CmdText, Connection.MyConnection, this.Transaction);
+                    foreach (DataGridViewRow r in dataGridView1.Rows)
                     {
-                        this.CmdText = "INSERT INTO [tbl_CCEClassSkill]([SessionCode] ,[ClassCode] ,[SkillId] ,[SkillOrder])" +
-                            " VALUES ('" + school.CurrentSessionCode + "','" + cmbClass.SelectedValue + "','" + r.Cells["SkillId"].Value + "','" + r.Cells["Order"].Value + "')";
-                        Connection.SqlTransection(this.CmdText, Connection.MyConnection, this.Transaction);
+                        if (Convert.ToBoolean(r.Cells["Select"].Value))
+                        {
+                            this.CmdText = "INSERT INTO [tbl_CCEClassSkill]([SessionCode] ,[ClassCode] ,[SkillId] ,[SkillOrder])" +
+                                " VALUES ('" + school.CurrentSessionCode + "','" + cmbClass.SelectedValue + "','" + r.Cells["SkillId"].Value + "','" + r.Cells["Order"].Value + "')";
+                            Connection.SqlTransection(this.CmdText, Connection.MyConnection, this.Transaction);
+                        }
                     }
+                    this.Transaction.Commit();
+                    MessageBox.Show("Record saved successfully", "Skills");
                 }
-                this.Transaction.Commit();
-                MessageBox.Show("Saved...", "Skills");
-            }
-            catch (Exception ex)
-            {
-                Logger.LogError(ex); 
-                this.Transaction.Rollback();
+                catch (Exception ex)
+                {
+                    Logger.LogError(ex);
+                    this.Transaction.Rollback();
+                }
             }
         }
 

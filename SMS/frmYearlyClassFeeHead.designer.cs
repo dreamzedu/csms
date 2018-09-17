@@ -54,9 +54,9 @@
             this.feeamt,
             this.Date,
             this.RTE});
-            this.dtgfeeheads.Location = new System.Drawing.Point(57, 90);
+            this.dtgfeeheads.Location = new System.Drawing.Point(57, 85);
             this.dtgfeeheads.Name = "dtgfeeheads";
-            this.dtgfeeheads.Size = new System.Drawing.Size(673, 676);
+            this.dtgfeeheads.Size = new System.Drawing.Size(673, 457);
             this.dtgfeeheads.TabIndex = 1;
             this.dtgfeeheads.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgfeeheads_CellClick);
             this.dtgfeeheads.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dtgfeeheads_DataError);
@@ -157,7 +157,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(58, 769);
+            this.label1.Location = new System.Drawing.Point(58, 546);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(368, 16);
             this.label1.TabIndex = 163;
@@ -165,7 +165,7 @@
             // 
             // btnCopyFrom
             // 
-            this.btnCopyFrom.Location = new System.Drawing.Point(57, 799);
+            this.btnCopyFrom.Location = new System.Drawing.Point(57, 569);
             this.btnCopyFrom.Name = "btnCopyFrom";
             this.btnCopyFrom.Size = new System.Drawing.Size(235, 28);
             this.btnCopyFrom.TabIndex = 164;
@@ -188,7 +188,7 @@
             this.Controls.Add(this.label2);
             this.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmYearlyClassFeeHead";
-            this.Size = new System.Drawing.Size(795, 830);
+            this.Size = new System.Drawing.Size(989, 781);
             this.Tag = "1087";
             this.Load += new System.EventHandler(this.frmregularfeeheads_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmYearlyClassFeeHead_Paint);

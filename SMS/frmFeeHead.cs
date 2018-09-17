@@ -32,6 +32,12 @@ namespace SMS
 
         public override void btnedit_Click(object sender, EventArgs e)
         {
+            String lstval = Convert.ToString(listBox1.SelectedValue);
+            if (!string.IsNullOrEmpty(lstval))
+            {
+                c.showdata("tbl_feeheads", c.myconn, this, "feecode", lstval);
+            }
+
             DesignForm.fromDesign2(this);
             add_edit = false;
             c.GetMdiParent(this).DisableAllEditMenuButtons();
@@ -67,7 +73,7 @@ namespace SMS
         {
             if (txtfeehead.Text == "")
             {
-                MessageBox.Show("Null Value Not Allowed");
+                MessageBox.Show("Please enter a value for fee head.");
             }
             else
             {

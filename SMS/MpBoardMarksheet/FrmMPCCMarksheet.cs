@@ -11,7 +11,7 @@ using System.Globalization;
 
 namespace SMS.MpBoardMarksheet
 {
-    public partial class FrmMPCCMarksheet : UserControl
+    public partial class FrmMPCCMarksheet : UserControlBase
     {
         public FrmMPCCMarksheet()
         {
@@ -22,7 +22,7 @@ namespace SMS.MpBoardMarksheet
         bool ExamFlage = false;
         bool NonPrimaryFlage = false;
         decimal MaximumMarks;
-
+        school1 c = new school1();
         private void cmbClass_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -69,7 +69,7 @@ namespace SMS.MpBoardMarksheet
                             dataReader.Close();
                         }
                         ///
-                        if (btnNew.Enabled.Equals(true))
+                        if (c.GetMdiParent(this).IsNewCommandEnabled)
                         {
 
                             DataTable n = Connection.GetDataTable("Select Top 1 TERMI ,TERMII ,TERMIII  From tbl_MPCCEStudentMarks " +
@@ -135,7 +135,7 @@ namespace SMS.MpBoardMarksheet
                                 tmr1.Enabled = true;
                             }
                         }
-                        else if (btnEdit.Enabled.Equals(true))
+                        else if (c.GetMdiParent(this).IsEditCommandEnabled)
                         {
                             if (dtStudentList.Columns.Count > 0)
                             {
@@ -161,10 +161,10 @@ namespace SMS.MpBoardMarksheet
                                     //for (int i = 0; i < row.Length; i++)
                                     if (row.Length > 0)
                                     {
-                                        foreach (DataColumn c in dtStudentList.Columns)
+                                        foreach (DataColumn col in dtStudentList.Columns)
                                         {
-                                            if (!c.ColumnName.Contains("Student No") && !c.ColumnName.Contains("Scholar No")
-                                                && !c.ColumnName.Contains("Name"))
+                                            if (!col.ColumnName.Contains("Student No") && !col.ColumnName.Contains("Scholar No")
+                                                && !col.ColumnName.Contains("Name"))
                                             {
                                                 string exm = string.Empty;
                                                 if (cmbExam.Text.Trim() == "TERM I")
@@ -173,7 +173,7 @@ namespace SMS.MpBoardMarksheet
                                                     exm = "TERMII";
                                                 else
                                                     exm = "TERMIII";
-                                                r[c.ColumnName] = row[i][exm];
+                                                r[col.ColumnName] = row[i][exm];
                                                 dtStudentList.EndInit();
                                                 i++;
                                             }
@@ -305,23 +305,23 @@ namespace SMS.MpBoardMarksheet
         {
             e.Graphics.DrawString((e.RowIndex + 1).ToString(), dtg.Font, new SolidBrush(Color.Maroon), e.RowBounds.X + 2, e.RowBounds.Y + 3);
         }
-        private void btnNew_Click(object sender, EventArgs e)
+        public override void btnnew_Click(object sender, EventArgs e)
         {
-            btnEdit.Enabled = false;
-            btnFinalSave.Enabled = true;
+            c.GetMdiParent(this).ToggleEditButton(true);
+            c.GetMdiParent(this).ToggleSaveButton(true);
             btnShow.Enabled = true;
             cmbClass.Focus();
         }
 
-        private void btnEdit_Click(object sender, EventArgs e)
+        public override void btnedit_Click(object sender, EventArgs e)
         {
-            btnNew.Enabled = false;
-            btnFinalSave.Enabled = true;
+            c.GetMdiParent(this).ToggleNewButton(true);
+            c.GetMdiParent(this).ToggleSaveButton(true);
             btnShow.Enabled = true;
             cmbClass.Focus();
         }
 
-        private void btnFinalSave_Click(object sender, EventArgs e)
+        public override void btnsave_Click(object sender, EventArgs e)
         {
             SqlTransaction trn = null;
             try
@@ -332,7 +332,7 @@ namespace SMS.MpBoardMarksheet
                     dtg.EndEdit();
                     if (dtg.RowCount > 0)
                     {
-                        if (cmbExam.Text.Trim().Equals("TERM I") && btnNew.Enabled)
+                        if (cmbExam.Text.Trim().Equals("TERM I") && c.GetMdiParent(this).IsNewCommandEnabled)
                         {
                             trn = Connection.GetMyConnection().BeginTransaction();
                             int CCEID = Convert.ToInt32(Connection.GetId("Select IsNull((Max(CCEID)+1),1001) From tbl_MPCCEStudentMarks"));
@@ -401,12 +401,13 @@ namespace SMS.MpBoardMarksheet
                             }
                         }
 
-                        MessageBox.Show("Saved...");
-                        btnNew.Enabled = true;
-                        btnEdit.Enabled = true;
-                        btnFinalSave.Enabled = false;
+                        MessageBox.Show("Record saved successfully.");
+
+                        c.GetMdiParent(this).ToggleNewButton(true);
+                        c.GetMdiParent(this).ToggleEditButton(true);
+                        c.GetMdiParent(this).ToggleSaveButton(false);
                         btnShow.Enabled = false;
-                        btnNew.Focus();
+                        
                     }
                 }
             }
@@ -418,13 +419,12 @@ namespace SMS.MpBoardMarksheet
             }
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        public override void btncancel_Click(object sender, EventArgs e)
         {
-            btnNew.Enabled = true;
-            btnEdit.Enabled = true;
-            btnFinalSave.Enabled = false;
+            c.GetMdiParent(this).ToggleNewButton(true);
+            c.GetMdiParent(this).ToggleEditButton(true);
+            c.GetMdiParent(this).ToggleSaveButton(false);
             btnShow.Enabled = false;
-            btnNew.Focus();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -441,6 +441,8 @@ namespace SMS.MpBoardMarksheet
         {
             Connection.FillComboBox(cmbClass, "Select ClassCode ,ClassName From tbl_ClassMaster Order By ClassOrder");
             Connection.FillComboBox(cmbSection, "Select SectionCode ,SectionName From tbl_Section");
+
+            this.cmbClass.SelectedIndexChanged += new System.EventHandler(this.cmbClass_SelectedIndexChanged);
         }
 
         private void tmr1_Tick(object sender, EventArgs e)
