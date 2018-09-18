@@ -437,7 +437,7 @@
             // feeHeadsMasterToolStripMenuItem
             // 
             this.feeHeadsMasterToolStripMenuItem.Name = "feeHeadsMasterToolStripMenuItem";
-            this.feeHeadsMasterToolStripMenuItem.Size = new System.Drawing.Size(349, 26);
+            this.feeHeadsMasterToolStripMenuItem.Size = new System.Drawing.Size(384, 26);
             this.feeHeadsMasterToolStripMenuItem.Tag = "Fee Heads Master";
             this.feeHeadsMasterToolStripMenuItem.Text = "Fee Heads Master";
             this.feeHeadsMasterToolStripMenuItem.Click += new System.EventHandler(this.feeHeadsMasterToolStripMenuItem_Click);
@@ -445,7 +445,7 @@
             // yearlyClassFeeHeadsMasterToolStripMenuItem
             // 
             this.yearlyClassFeeHeadsMasterToolStripMenuItem.Name = "yearlyClassFeeHeadsMasterToolStripMenuItem";
-            this.yearlyClassFeeHeadsMasterToolStripMenuItem.Size = new System.Drawing.Size(349, 26);
+            this.yearlyClassFeeHeadsMasterToolStripMenuItem.Size = new System.Drawing.Size(384, 26);
             this.yearlyClassFeeHeadsMasterToolStripMenuItem.Tag = "Yearly  Class Fee Heads Master";
             this.yearlyClassFeeHeadsMasterToolStripMenuItem.Text = "Yearly  Class Fee Heads Master";
             this.yearlyClassFeeHeadsMasterToolStripMenuItem.Click += new System.EventHandler(this.yearlyClassFeeHeadsMasterToolStripMenuItem_Click_1);
@@ -453,7 +453,7 @@
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(349, 26);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(384, 26);
             this.toolStripMenuItem4.Tag = "Yearly  Class Scholar Ship Fee";
             this.toolStripMenuItem4.Text = "Yearly  Class Scholar Ship Fee";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
@@ -461,7 +461,7 @@
             // scholarshipStatusToolStripMenuItem
             // 
             this.scholarshipStatusToolStripMenuItem.Name = "scholarshipStatusToolStripMenuItem";
-            this.scholarshipStatusToolStripMenuItem.Size = new System.Drawing.Size(349, 26);
+            this.scholarshipStatusToolStripMenuItem.Size = new System.Drawing.Size(384, 26);
             this.scholarshipStatusToolStripMenuItem.Tag = "Scholar Ship Status";
             this.scholarshipStatusToolStripMenuItem.Text = "Scholar Ship Status";
             this.scholarshipStatusToolStripMenuItem.Click += new System.EventHandler(this.scholarshipStatusToolStripMenuItem_Click);

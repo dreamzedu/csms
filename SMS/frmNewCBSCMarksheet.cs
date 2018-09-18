@@ -81,19 +81,19 @@ namespace SMS
                             {
                                 if ("FA1".Equals(cmbExam.Text.Trim()))
                                 {
-                                    MessageBox.Show("Already Exist!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    MessageBox.Show("Record already exists!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                     return;
                                 }
                                 else if ("FA2".Equals(cmbExam.Text.Trim()))
                                 {
                                     if (n.Rows[0]["FA1"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Please Fill Record Of FA1!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Please enter value for FA1!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                     else if (!n.Rows[0]["FA2"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Already Exist!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Record already exists!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                 }
@@ -101,17 +101,17 @@ namespace SMS
                                 {
                                     if (n.Rows[0]["FA1"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Please Fill Record Of FA1!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Please enter value for FA1!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                     else if (n.Rows[0]["FA2"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Please Fill Record Of FA2!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Please enter value for FA2!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                     else if (!n.Rows[0]["SA1"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Already Exist!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Record already exists!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                 }
@@ -119,22 +119,22 @@ namespace SMS
                                 {
                                     if (n.Rows[0]["FA1"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Please Fill Record Of FA1!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Please enter value for FA1!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                     else if (n.Rows[0]["FA2"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Please Fill Record Of FA2!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Please enter value for FA2!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                     else if (n.Rows[0]["SA1"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Please Fill Record Of SA1!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Please enter value for SA1!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                     else if (!n.Rows[0]["FA3"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Already Exist!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Record already exists!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                 }
@@ -142,27 +142,27 @@ namespace SMS
                                 {
                                     if (n.Rows[0]["FA1"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Please Fill Record Of FA1!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Please enter value for FA1!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                     else if (n.Rows[0]["FA2"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Please Fill Record Of FA2!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Please enter value for FA2!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                     else if (n.Rows[0]["SA1"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Please Fill Record Of SA1!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Please enter value for SA1!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                     else if (n.Rows[0]["FA3"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Please Fill Record Of FA3!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Please enter value for FA3!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                     else if (!n.Rows[0]["FA4"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Already Exist!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Record already exists!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                 }
@@ -170,32 +170,32 @@ namespace SMS
                                 {
                                     if (n.Rows[0]["FA1"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Please Fill Record Of FA1!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Please enter value for FA1!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                     else if (n.Rows[0]["FA2"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Please Fill Record Of FA2!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Please enter value for FA2!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                     else if (n.Rows[0]["SA1"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Please Fill Record Of SA1!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Please enter value for SA1!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                     else if (n.Rows[0]["FA3"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Please Fill Record Of FA3!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Please enter value for FA3!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                     else if (n.Rows[0]["FA4"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Please Fill Record Of FA4!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Please enter value for FA4!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                     else if (!n.Rows[0]["SA2"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Already Exist!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Record already exists!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                 }
@@ -216,7 +216,7 @@ namespace SMS
                                     dataReader.Close();
                                 }
                                 dtg.DataSource = dtStudentList;
-                                lblStatus.Text = "You Have Select " + cmbExam.Text;
+                                lblStatus.Text = "You have selected " + cmbExam.Text;
                                 chkLock.Checked = true;
                                 tmr1.Enabled = true;
                             }
@@ -261,7 +261,7 @@ namespace SMS
                                     }
                                 }
                                 dtg.DataSource = dtStudentList;
-                                lblStatus.Text = "You Have Select " + cmbExam.Text;
+                                lblStatus.Text = "You have selected " + cmbExam.Text;
                                 chkLock.Checked = true;
                                 tmr1.Enabled = true;
                             }
@@ -269,19 +269,19 @@ namespace SMS
                     }
                     else
                     {
-                        MessageBox.Show("Please Select Exam...", "");
+                        MessageBox.Show("Please select Exam!", "Error");
                         cmbExam.Focus();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Please Select Section First!!!", "Section");
+                    MessageBox.Show("Please select Section first!", "Error");
                     cmbSection.Focus();
                 }
             }
             else
             {
-                MessageBox.Show("Please Select Class First!!!", "Class");
+                MessageBox.Show("Please select Class first!", "Error");
                 cmbClass.Focus();
             }
         }
@@ -385,7 +385,7 @@ namespace SMS
             
                  else
                 {
-                    MessageBox.Show("Please Fill Valide Marks.");
+                    MessageBox.Show("Please enter valid marks.");
                     dtg.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = 0;
                 }
                }
@@ -401,7 +401,7 @@ namespace SMS
                     }
                  else
                   {
-                    MessageBox.Show("Please Fill Valide Marks.");
+                    MessageBox.Show("Please enter valid marks.");
                     dtg.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = 0;
                   }
                
@@ -431,7 +431,7 @@ namespace SMS
                 }
                 else
                 {
-                    MessageBox.Show("Please Fill Valide Marks.");
+                    MessageBox.Show("Please enter valid marks.");
                     dtg.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = 0;
                 }
             }
@@ -447,7 +447,7 @@ namespace SMS
         {
             try
             {
-                MessageBox.Show("Please Fill Valide Marks.");
+                MessageBox.Show("Please enter valid marks.");
             }
             catch
             {
@@ -628,6 +628,7 @@ namespace SMS
                         c.GetMdiParent(this).ToggleNewButton(true); 
                        c.GetMdiParent(this).ToggleEditButton(true);
                        c.GetMdiParent(this).ToggleSaveButton(false);
+                       c.GetMdiParent(this).ToggleCancelButton(false);
                        ToggleAllControls(false);                       
                         
                     }
@@ -780,19 +781,19 @@ namespace SMS
                     }
                     else
                     {
-                        MessageBox.Show("Record Is Not Available!!!", "View Acadmin Performance");
+                        MessageBox.Show("Record not found!", "Error");
                         cmbClass.Focus();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Please Select Section First!!!", "Section");
+                    MessageBox.Show("Please select Section first!", "Error");
                     cmbSection.Focus();
                 }
             }
             else
             {
-                MessageBox.Show("Please Select Class First!!!", "Class");
+                MessageBox.Show("Please select Class first!", "Error");
                 cmbClass.Focus();
             }
 
@@ -922,7 +923,7 @@ namespace SMS
                         {
                             if (!cmbExam.Text.Equals("SA1") && !cmbExam.Text.Equals("SA2"))
                             {
-                                MessageBox.Show("Please Select Exam carefully...");
+                                MessageBox.Show("Please select correct Exam.");
                                 cmbExam.Focus();
                                 return;
                             }
@@ -1090,19 +1091,19 @@ namespace SMS
                     }
                     else
                     {
-                        MessageBox.Show("Please Select Exam...", "");
+                        MessageBox.Show("Please select Exam!", "Error");
                         cmbExam.Focus();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Please Select Section First!!!", "Section");
+                    MessageBox.Show("Please select Section first!", "Error");
                     cmbSection.Focus();
                 }
             }
             else
             {
-                MessageBox.Show("Please Select Class First!!!", "Class");
+                MessageBox.Show("Please select Class first!", "Error");
                 cmbClass.Focus();
             }
         }
@@ -1110,7 +1111,7 @@ namespace SMS
         private void btnSaveDesInd_Click(object sender, EventArgs e)
         {
             if (dtgSkills.RowCount > 0 &&
-                DialogResult.Yes.Equals(MessageBox.Show("Are You Sure To Save Descriptive Indicators For Class \"" + cmbClass.Text + " " + cmbSection.Text + "\"?", "Descriptive Indicators", MessageBoxButtons.YesNo, MessageBoxIcon.Question)))
+                DialogResult.Yes.Equals(MessageBox.Show("Are you sure to save Descriptive Indicators for Class \"" + cmbClass.Text + " " + cmbSection.Text + "\"?", "Descriptive Indicators", MessageBoxButtons.YesNo, MessageBoxIcon.Question)))
             {
                 dtgSkills.EndEdit();
                 SqlTransaction trn = null;
@@ -1170,13 +1171,13 @@ namespace SMS
                         }
                     }
                     trn.Commit();
-                    MessageBox.Show("Descriptive Indicators Saved Successfully Of Class \"" + cmbClass.Text + " " + cmbSection.Text + "\"...", "Descriptive Indicators");
+                    MessageBox.Show("Descriptive Indicators saved successfully for Class \"" + cmbClass.Text + " " + cmbSection.Text + "\"...", "Descriptive Indicators");
                     //  btnSaveDesInd.Enabled = false;
                 }
                 catch (Exception ex)
                 {
                     Logger.LogError(ex); 
-                    MessageBox.Show("Record Not Saved Please Try Again...");
+                    MessageBox.Show("Record not saved. Please try again!");
                     trn.Rollback();
                     btnSaveDesInd.Enabled = false;
                 }
@@ -1195,7 +1196,7 @@ namespace SMS
                 }
                 else
                 {
-                    MessageBox.Show("Invalid Entry...");
+                    MessageBox.Show("Invalid entry!");
                     dtgFinalEntry.Rows[e.RowIndex].Cells["Grade Point"].Value = 0;
                 }
             }
@@ -1214,7 +1215,7 @@ namespace SMS
                 }
                 else
                 {
-                    MessageBox.Show("Invalid Entry...");
+                    MessageBox.Show("Invalid entry!");
                     dtgFinalEntry.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = "E2";
                 }
             }
@@ -1238,32 +1239,32 @@ namespace SMS
             {
                 if (n.Rows[0]["FA1"].Equals(DBNull.Value))
                 {
-                    MessageBox.Show("Please Fill Record Of FA1!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Please enter value for FA1!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 else if (n.Rows[0]["FA2"].Equals(DBNull.Value))
                 {
-                    MessageBox.Show("Please Fill Record Of FA2!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Please enter value for FA2!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 else if (n.Rows[0]["SA1"].Equals(DBNull.Value))
                 {
-                    MessageBox.Show("Please Fill Record Of SA1!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Please enter value for SA1!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 else if (n.Rows[0]["FA3"].Equals(DBNull.Value))
                 {
-                    MessageBox.Show("Please Fill Record Of FA3!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Please enter value for FA3!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 else if (n.Rows[0]["FA4"].Equals(DBNull.Value))
                 {
-                    MessageBox.Show("Please Fill Record Of FA4!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Please enter value for FA4!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 else if (n.Rows[0]["SA2"].Equals(DBNull.Value))
                 {
-                    MessageBox.Show("Please Fill Record Of SA2!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Please enter value for SA2!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
             }
@@ -1292,13 +1293,13 @@ namespace SMS
                     }
                 }
                 trn.Commit();
-                MessageBox.Show("Finale Grade And Point Saved ...");
+                MessageBox.Show("Finale Grade and Points saved successfully.");
                 btnSaveFinalMarks.Enabled = false;
             }
             catch
             {
                 trn.Rollback();
-                MessageBox.Show("Record Not Saved Properly...\n\tSome Record Are Missing...");
+                MessageBox.Show("Record not saved.\n\tSome records are missing.");
                 btnSaveFinalMarks.Enabled = false;
             }
         }
@@ -1457,19 +1458,19 @@ namespace SMS
                     }
                     else
                     {
-                        MessageBox.Show("Record Is Not Available!!!", "View Acadmin Performance");
+                        MessageBox.Show("Record not found!", "Error");
                         cmbClass.Focus();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Please Select Section First!!!", "Section");
+                    MessageBox.Show("Please select Section first!", "Error");
                     cmbSection.Focus();
                 }
             }
             else
             {
-                MessageBox.Show("Please Select Class First!!!", "Class");
+                MessageBox.Show("Please select Class first!", "Error");
                 cmbClass.Focus();
             }
         }

@@ -11,7 +11,7 @@ using System.Globalization;
 
 namespace SMS.MpBoardMarksheet
 {
-    public partial class FrmMPCCMarksheetMS : UserControl
+    public partial class FrmMPCCMarksheetMS : UserControlBase
     {
         DataTable dtStudentList = new DataTable("dtStudentList");
         DataTable dtFinallMarksOfStudentList = new DataTable("dtFinallMarksOfStudentList");
@@ -19,6 +19,7 @@ namespace SMS.MpBoardMarksheet
         bool ExamFlage = false;
         bool NonPrimaryFlage = false;
         decimal MaximumMarks;
+        school1 c = new school1();
 
         private string GetGradeNonPrimary(decimal ObtainMarks)
         {
@@ -72,9 +73,11 @@ namespace SMS.MpBoardMarksheet
             Connection.FillComboBox(cmbClass, "Select ClassCode ,ClassName From tbl_ClassMaster Order By ClassOrder");
             Connection.FillComboBox(cmbSection, "Select SectionCode ,SectionName From tbl_Section");
             this.cmbClass.SelectedIndexChanged += new System.EventHandler(this.cmbClass_SelectedIndexChanged);
-
+            c.GetMdiParent(this).ToggleNewButton(true);
+            c.GetMdiParent(this).ToggleEditButton(true);
+            ToggleAllControls(false);
         }
-
+               
         private void btnShow_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrEmpty(cmbClass.Text))
@@ -168,7 +171,7 @@ namespace SMS.MpBoardMarksheet
                         dataReader.Close();
                     }
                     ///
-                    if (btnNew.Enabled.Equals(true))
+                    if (c.GetMdiParent(this).IsNewCommandEnabled)
                     {
                         int CCECcount = Convert.ToInt32(Connection.GetId("Select ISNULL(COUNT(StudentNo),0)  From tbl_MSCCEStudentMarks " +
                             " Where ClassNo='" + cmbClass.SelectedValue + "' And SectionCode='" + cmbSection.SelectedValue + "' " +
@@ -194,12 +197,12 @@ namespace SMS.MpBoardMarksheet
                                 dataReader.Close();
                             }
                             dtg.DataSource = dtStudentList;
-                            lblStatus.Text = "You Have Select " + cmbExam.Text;
+                            lblStatus.Text = "You have selected " + cmbExam.Text;
                             chkLock.Checked = true;
                             tmr1.Enabled = true;
                         }
                     }
-                    else if (btnEdit.Enabled.Equals(true))
+                    else if (c.GetMdiParent(this).IsEditCommandEnabled)
                     {
                         if (dtStudentList.Columns.Count > 0)
                         {
@@ -225,12 +228,12 @@ namespace SMS.MpBoardMarksheet
                                 //for (int i = 0; i < row.Length; i++)
                                 if (row.Length > 0)
                                 {
-                                    foreach (DataColumn c in dtStudentList.Columns)
+                                    foreach (DataColumn dc in dtStudentList.Columns)
                                     {
-                                        if (!c.ColumnName.Contains("Student No") && !c.ColumnName.Contains("Scholar No")
-                                            && !c.ColumnName.Contains("Name"))
+                                        if (!dc.ColumnName.Contains("Student No") && !dc.ColumnName.Contains("Scholar No")
+                                            && !dc.ColumnName.Contains("Name"))
                                         {
-                                            string[] sec = c.ColumnName.Split('_');
+                                            string[] sec = dc.ColumnName.Split('_');
 
                                             if (i == 0 && j == 0)
                                                 f = sec[0].ToString();
@@ -245,22 +248,22 @@ namespace SMS.MpBoardMarksheet
                                                 i++;
                                                 f = sec[0].ToString();
                                             }
-                                            if (c.DataType.Name.ToString().Equals("Decimal"))
+                                            if (dc.DataType.Name.ToString().Equals("Decimal"))
                                             {
                                                 j = 1;
                                                 if (string.IsNullOrEmpty(row[i][sec[1].ToString()].ToString()))
                                                 {
-                                                    r[c.ColumnName] = 0;
+                                                    r[dc.ColumnName] = 0;
                                                 }
                                                 else
                                                 {
-                                                    r[c.ColumnName] = row[i][sec[1].ToString()];
+                                                    r[dc.ColumnName] = row[i][sec[1].ToString()];
                                                 }
                                             }
                                             else
                                             {
                                                 j = 1;
-                                                r[c.ColumnName] = row[i][sec[1].ToString()];
+                                                r[dc.ColumnName] = row[i][sec[1].ToString()];
                                             }
 
                                             //r["Grade" + c.ColumnName] = row[i][cmbExam.Text.Trim() + " G"];
@@ -273,7 +276,7 @@ namespace SMS.MpBoardMarksheet
                             dtg.DataSource = dtStudentList;
                             dtg.Columns["Scholar No"].Frozen = true;
                             dtg.Columns["Name"].Frozen = true;
-                            lblStatus.Text = "You Have Select " + cmbExam.Text;
+                            lblStatus.Text = "You have selected " + cmbExam.Text;
                             chkLock.Checked = true;
                             tmr1.Enabled = true;
                         }
@@ -287,13 +290,13 @@ namespace SMS.MpBoardMarksheet
                 }
                 else
                 {
-                    MessageBox.Show("Please Select Section First!!!", "Section");
+                    MessageBox.Show("Please select Section first!", "Error");
                     cmbSection.Focus();
                 }
             }
             else
             {
-                MessageBox.Show("Please Select Class First!!!", "Class");
+                MessageBox.Show("Please select Class first!", "Error");
                 cmbClass.Focus();
             }
         }
@@ -336,16 +339,11 @@ namespace SMS.MpBoardMarksheet
             }
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            //this.Close();
-        }
-
         private void dtg_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             try
             {
-                MessageBox.Show("Please Fill Valide Marks.");
+                MessageBox.Show("Please enter valid Marks.");
             }
             catch
             {
@@ -451,7 +449,7 @@ namespace SMS.MpBoardMarksheet
             }
         }
 
-        private void btnFinalSave_Click(object sender, EventArgs e)
+        public override void btnsave_Click(object sender, EventArgs e)
         {
             SqlTransaction trn = null;
             try
@@ -461,7 +459,7 @@ namespace SMS.MpBoardMarksheet
                     dtg.EndEdit();
                     if (dtg.RowCount > 0)
                     {
-                        if (btnNew.Enabled)
+                        if (c.GetMdiParent(this).IsNewCommandEnabled)
                         {
                             string f = string.Empty;
                             trn = Connection.GetMyConnection().BeginTransaction();
@@ -548,12 +546,14 @@ namespace SMS.MpBoardMarksheet
                             }
                         }
 
-                        MessageBox.Show("Saved...");
-                        btnNew.Enabled = true;
-                        btnEdit.Enabled = true;
-                        btnFinalSave.Enabled = false;
-                        btnShow.Enabled = false;
-                        btnNew.Focus();
+                        MessageBox.Show("Record saved successfully.");
+
+                        c.GetMdiParent(this).ToggleNewButton(true);
+                        c.GetMdiParent(this).ToggleEditButton(true);
+                        c.GetMdiParent(this).ToggleSaveButton(false);
+                        c.GetMdiParent(this).ToggleCancelButton(false);
+
+                        ToggleAllControls(false);
                     }
                 }
             }
@@ -698,13 +698,13 @@ namespace SMS.MpBoardMarksheet
                 }
                 else
                 {
-                    MessageBox.Show("Please Select Section First!!!", "Section");
+                    MessageBox.Show("Please select Section first!", "Error");
                     cmbSection.Focus();
                 }
             }
             else
             {
-                MessageBox.Show("Please Select Class First!!!", "Class");
+                MessageBox.Show("Please select Class first!", "Error");
                 cmbClass.Focus();
             }
         }
@@ -712,7 +712,7 @@ namespace SMS.MpBoardMarksheet
         private void btnSaveDesInd_Click(object sender, EventArgs e)
         {
             if (dtgSkills.RowCount > 0 &&
-                DialogResult.Yes.Equals(MessageBox.Show("Are You Sure To Save Descriptive Indicators For Class \"" + cmbClass.Text + " " + cmbSection.Text + "\"?", "Descriptive Indicators", MessageBoxButtons.YesNo, MessageBoxIcon.Question)))
+                DialogResult.Yes.Equals(MessageBox.Show("Are you sure to save Descriptive Indicators for Class \"" + cmbClass.Text + " " + cmbSection.Text + "\"?", "Descriptive Indicators", MessageBoxButtons.YesNo, MessageBoxIcon.Question)))
             {
                 dtgSkills.EndEdit();
                 SqlTransaction trn = null;
@@ -756,44 +756,60 @@ namespace SMS.MpBoardMarksheet
                         }
                     }
                     trn.Commit();
-                    MessageBox.Show("Descriptive Indicators Saved Successfully Of Class \"" + cmbClass.Text + " " + cmbSection.Text + "\"...", "Descriptive Indicators");
+                    MessageBox.Show("Descriptive Indicators saved successfully for Class \"" + cmbClass.Text + " " + cmbSection.Text + "\"...", "Descriptive Indicators");
                     //  btnSaveDesInd.Enabled = false;
                 }
                 catch (Exception ex)
                 {
                     Logger.LogError(ex); 
-                    MessageBox.Show("Record Not Saved Please Try Again...");
+                    MessageBox.Show("Record not saved, please try again...");
                     trn.Rollback();
                     btnSaveDesInd.Enabled = false;
                 }
             }
         }
 
-        private void btnNew_Click(object sender, EventArgs e)
+        public override void btnnew_Click(object sender, EventArgs e)
         {
-            btnEdit.Enabled = false;
-            btnFinalSave.Enabled = true;
-            btnShow.Enabled = true;
+            c.GetMdiParent(this).ToggleEditButton(false);
+            c.GetMdiParent(this).ToggleSaveButton(true);
+            c.GetMdiParent(this).ToggleCancelButton(true);
+            c.GetMdiParent(this).ToggleDeleteButton(false);
+            ToggleAllControls(true);
+            cmbClass.Focus();
+
+        }
+
+        public override void btnedit_Click(object sender, EventArgs e)
+        {
+            c.GetMdiParent(this).ToggleNewButton(false);
+            c.GetMdiParent(this).ToggleSaveButton(true);
+            c.GetMdiParent(this).ToggleCancelButton(true);
+            ToggleAllControls(true);
+
             cmbClass.Focus();
         }
 
-        private void btnEdit_Click(object sender, EventArgs e)
+        public override void btncancel_Click(object sender, EventArgs e)
         {
-            btnNew.Enabled = false;
-            btnFinalSave.Enabled = true;
-            btnShow.Enabled = true;
-            cmbClass.Focus();
+            c.GetMdiParent(this).ToggleNewButton(true);
+            c.GetMdiParent(this).ToggleEditButton(true);
+            c.GetMdiParent(this).ToggleSaveButton(false);
+            c.GetMdiParent(this).ToggleCancelButton(false);
+
+            ToggleAllControls(false);
+            tmr1.Stop();
+            dtg.DataSource = null;
+            lblStatus.Text = string.Empty;
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void ToggleAllControls(bool flag)
         {
-            btnNew.Enabled = true;
-            btnEdit.Enabled = true;
-            btnFinalSave.Enabled = false;
-            btnShow.Enabled = false;
-            btnNew.Focus();
+            cmbClass.Enabled = flag;
+            cmbSection.Enabled = flag;
+            cmbExam.Enabled = flag;
+            btnShow.Enabled = flag;
         }
-
         private void cmbClass_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -843,7 +859,7 @@ namespace SMS.MpBoardMarksheet
                     }
                     else
                     {
-                        MessageBox.Show("Please Fill Valide Marks.");
+                        MessageBox.Show("Please fill valid marks.");
                         dtg.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = 0;
                     }
                 }
@@ -867,7 +883,7 @@ namespace SMS.MpBoardMarksheet
                     }
                     else
                     {
-                        MessageBox.Show("Please Fill Valide Marks.");
+                        MessageBox.Show("Please fill valid marks.");
                         dtg.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = 0;
                     }
                 }
@@ -891,7 +907,7 @@ namespace SMS.MpBoardMarksheet
                     }
                     else
                     {
-                        MessageBox.Show("Please Fill Valide Marks.");
+                        MessageBox.Show("Please fill valid marks.");
                         dtg.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = 0;
                     }
                 }
@@ -915,7 +931,7 @@ namespace SMS.MpBoardMarksheet
                     }
                     else
                     {
-                        MessageBox.Show("Please Fill Valide Marks.");
+                        MessageBox.Show("Please fill valid marks.");
                         dtg.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = 0;
                     }
                 }
@@ -944,7 +960,7 @@ namespace SMS.MpBoardMarksheet
                     }
                     else
                     {
-                        MessageBox.Show("Please Fill Valide Marks.");
+                        MessageBox.Show("Please fill valid marks.");
                         dtgSkills.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = 0;
                     }
                 }

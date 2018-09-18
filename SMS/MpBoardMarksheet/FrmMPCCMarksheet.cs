@@ -79,19 +79,19 @@ namespace SMS.MpBoardMarksheet
                             {
                                 if ("TERM I".Equals(cmbExam.Text.Trim()))
                                 {
-                                    MessageBox.Show("Already Exist!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    MessageBox.Show("Record already exists!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                     return;
                                 }
                                 else if ("TERM II".Equals(cmbExam.Text.Trim()))
                                 {
                                     if (n.Rows[0]["TERMI"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Please Fill Record Of TERM I!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Please enter value for TERM I", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                     else if (!n.Rows[0]["TERMII"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Already Exist!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Record already exists!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                 }
@@ -99,17 +99,17 @@ namespace SMS.MpBoardMarksheet
                                 {
                                     if (n.Rows[0]["TERMI"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Please Fill Record Of TERM II!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Please enter value for TERM II", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                     else if (n.Rows[0]["TERMII"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Please Fill Record Of TERM II!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Please enter value for TERM II", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                     else if (!n.Rows[0]["TERMIII"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Already Exist!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Record already exists!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                 }
@@ -130,7 +130,7 @@ namespace SMS.MpBoardMarksheet
                                     dataReader.Close();
                                 }
                                 dtg.DataSource = dtStudentList;
-                                lblStatus.Text = "You Have Select " + cmbExam.Text;
+                                lblStatus.Text = "You have selected " + cmbExam.Text;
                                 chkLock.Checked = true;
                                 tmr1.Enabled = true;
                             }
@@ -181,7 +181,7 @@ namespace SMS.MpBoardMarksheet
                                     }
                                 }
                                 dtg.DataSource = dtStudentList;
-                                lblStatus.Text = "You Have Select " + cmbExam.Text;
+                                lblStatus.Text = "You have selected " + cmbExam.Text;
                                 chkLock.Checked = true;
                                 tmr1.Enabled = true;
                             }
@@ -189,19 +189,19 @@ namespace SMS.MpBoardMarksheet
                     }
                     else
                     {
-                        MessageBox.Show("Please Select Exam...", "");
+                        MessageBox.Show("Please select Exam!", "Error");
                         cmbExam.Focus();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Please Select Section First!!!", "Section");
+                    MessageBox.Show("Please select Section first!", "Error");
                     cmbSection.Focus();
                 }
             }
             else
             {
-                MessageBox.Show("Please Select Class First!!!", "Class");
+                MessageBox.Show("Please select Class first!", "Error");
                 cmbClass.Focus();
             }
         }
@@ -225,7 +225,7 @@ namespace SMS.MpBoardMarksheet
         {
             try
             {
-                MessageBox.Show("Please Fill Valide Marks.");
+                MessageBox.Show("Please enter valid marks.");
             }
             catch
             {
@@ -256,7 +256,7 @@ namespace SMS.MpBoardMarksheet
                     }
                     else
                     {
-                        MessageBox.Show("Please Fill Valide Marks.");
+                        MessageBox.Show("Please enter valid marks.");
                         dtg.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = 0;
                     }
                 }
@@ -307,17 +307,20 @@ namespace SMS.MpBoardMarksheet
         }
         public override void btnnew_Click(object sender, EventArgs e)
         {
-            c.GetMdiParent(this).ToggleEditButton(true);
+            c.GetMdiParent(this).ToggleEditButton(false);
             c.GetMdiParent(this).ToggleSaveButton(true);
-            btnShow.Enabled = true;
+            c.GetMdiParent(this).ToggleCancelButton(true);
+            c.GetMdiParent(this).ToggleDeleteButton(false);
+            ToggleAllControls(true);
             cmbClass.Focus();
         }
 
         public override void btnedit_Click(object sender, EventArgs e)
         {
-            c.GetMdiParent(this).ToggleNewButton(true);
+            c.GetMdiParent(this).ToggleNewButton(false);
             c.GetMdiParent(this).ToggleSaveButton(true);
-            btnShow.Enabled = true;
+            c.GetMdiParent(this).ToggleCancelButton(true);
+            ToggleAllControls(true);
             cmbClass.Focus();
         }
 
@@ -406,7 +409,9 @@ namespace SMS.MpBoardMarksheet
                         c.GetMdiParent(this).ToggleNewButton(true);
                         c.GetMdiParent(this).ToggleEditButton(true);
                         c.GetMdiParent(this).ToggleSaveButton(false);
-                        btnShow.Enabled = false;
+                        c.GetMdiParent(this).ToggleCancelButton(false);
+                        
+                        ToggleAllControls(false);
                         
                     }
                 }
@@ -424,7 +429,13 @@ namespace SMS.MpBoardMarksheet
             c.GetMdiParent(this).ToggleNewButton(true);
             c.GetMdiParent(this).ToggleEditButton(true);
             c.GetMdiParent(this).ToggleSaveButton(false);
-            btnShow.Enabled = false;
+            c.GetMdiParent(this).ToggleCancelButton(false);
+
+            ToggleAllControls(false);
+            tmr1.Stop();
+            dtg.DataSource = null;
+            lblStatus.Text = string.Empty;
+           
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -443,7 +454,19 @@ namespace SMS.MpBoardMarksheet
             Connection.FillComboBox(cmbSection, "Select SectionCode ,SectionName From tbl_Section");
 
             this.cmbClass.SelectedIndexChanged += new System.EventHandler(this.cmbClass_SelectedIndexChanged);
+            c.GetMdiParent(this).ToggleNewButton(true);
+            c.GetMdiParent(this).ToggleEditButton(true);
+            ToggleAllControls(false);
         }
+
+        private void ToggleAllControls(bool flag)
+        {
+            cmbClass.Enabled = flag;
+            cmbSection.Enabled = flag;
+            cmbExam.Enabled = flag;
+            btnShow.Enabled = flag;
+        }
+
 
         private void tmr1_Tick(object sender, EventArgs e)
         {

@@ -55,7 +55,7 @@
             this.lblStatus.BackColor = System.Drawing.Color.Transparent;
             this.lblStatus.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatus.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblStatus.Location = new System.Drawing.Point(1023, 47);
+            this.lblStatus.Location = new System.Drawing.Point(1069, 46);
             this.lblStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(155, 24);
@@ -66,12 +66,12 @@
             // 
             this.chkLock.AutoSize = true;
             this.chkLock.BackColor = System.Drawing.Color.Transparent;
-            this.chkLock.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkLock.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkLock.ForeColor = System.Drawing.Color.Transparent;
-            this.chkLock.Location = new System.Drawing.Point(920, 41);
-            this.chkLock.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.chkLock.Location = new System.Drawing.Point(956, 41);
+            this.chkLock.Margin = new System.Windows.Forms.Padding(4);
             this.chkLock.Name = "chkLock";
-            this.chkLock.Size = new System.Drawing.Size(86, 33);
+            this.chkLock.Size = new System.Drawing.Size(76, 29);
             this.chkLock.TabIndex = 156;
             this.chkLock.Text = "Lock";
             this.chkLock.UseVisualStyleBackColor = false;
@@ -88,12 +88,12 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(531, 46);
+            this.label3.Location = new System.Drawing.Point(541, 45);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(119, 20);
+            this.label3.Size = new System.Drawing.Size(114, 20);
             this.label3.TabIndex = 159;
-            this.label3.Text = "Select Exam.";
+            this.label3.Text = "Select Exam";
             // 
             // cmbExam
             // 
@@ -103,18 +103,18 @@
             "TERM I",
             "TERM II",
             "TERM III"});
-            this.cmbExam.Location = new System.Drawing.Point(672, 42);
-            this.cmbExam.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbExam.Location = new System.Drawing.Point(670, 42);
+            this.cmbExam.Margin = new System.Windows.Forms.Padding(4);
             this.cmbExam.Name = "cmbExam";
-            this.cmbExam.Size = new System.Drawing.Size(99, 26);
+            this.cmbExam.Size = new System.Drawing.Size(129, 26);
             this.cmbExam.TabIndex = 153;
             // 
             // btnShow
             // 
             this.btnShow.Enabled = false;
             this.btnShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShow.Location = new System.Drawing.Point(795, 39);
-            this.btnShow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnShow.Location = new System.Drawing.Point(821, 40);
+            this.btnShow.Margin = new System.Windows.Forms.Padding(4);
             this.btnShow.Name = "btnShow";
             this.btnShow.Size = new System.Drawing.Size(92, 30);
             this.btnShow.TabIndex = 155;
@@ -128,7 +128,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(287, 46);
+            this.label2.Location = new System.Drawing.Point(287, 45);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 20);
@@ -139,8 +139,8 @@
             // 
             this.cmbSection.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSection.FormattingEnabled = true;
-            this.cmbSection.Location = new System.Drawing.Point(384, 42);
-            this.cmbSection.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbSection.Location = new System.Drawing.Point(372, 42);
+            this.cmbSection.Margin = new System.Windows.Forms.Padding(4);
             this.cmbSection.Name = "cmbSection";
             this.cmbSection.Size = new System.Drawing.Size(129, 26);
             this.cmbSection.TabIndex = 152;
@@ -149,8 +149,8 @@
             // 
             this.cmbClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbClass.FormattingEnabled = true;
-            this.cmbClass.Location = new System.Drawing.Point(131, 42);
-            this.cmbClass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbClass.Location = new System.Drawing.Point(98, 42);
+            this.cmbClass.Margin = new System.Windows.Forms.Padding(4);
             this.cmbClass.Name = "cmbClass";
             this.cmbClass.Size = new System.Drawing.Size(137, 26);
             this.cmbClass.TabIndex = 151;
@@ -161,7 +161,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(29, 46);
+            this.label1.Location = new System.Drawing.Point(29, 45);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 20);
@@ -174,9 +174,9 @@
             this.tabPage1.Controls.Add(this.label210);
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage1.Size = new System.Drawing.Size(1392, 602);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Academic Performance";
@@ -190,7 +190,7 @@
             this.dtg.ColumnHeadersHeight = 20;
             this.dtg.Dock = System.Windows.Forms.DockStyle.Top;
             this.dtg.Location = new System.Drawing.Point(4, 4);
-            this.dtg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtg.Margin = new System.Windows.Forms.Padding(4);
             this.dtg.Name = "dtg";
             this.dtg.Size = new System.Drawing.Size(1384, 544);
             this.dtg.TabIndex = 0;
@@ -229,7 +229,7 @@
             // 
             this.tbAcadminSkills.Controls.Add(this.tabPage1);
             this.tbAcadminSkills.Location = new System.Drawing.Point(16, 82);
-            this.tbAcadminSkills.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbAcadminSkills.Margin = new System.Windows.Forms.Padding(4);
             this.tbAcadminSkills.Name = "tbAcadminSkills";
             this.tbAcadminSkills.SelectedIndex = 0;
             this.tbAcadminSkills.Size = new System.Drawing.Size(1400, 631);
@@ -250,7 +250,7 @@
             this.Controls.Add(this.cmbSection);
             this.Controls.Add(this.cmbClass);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmMPCCMarksheet";
             this.Size = new System.Drawing.Size(1447, 741);
             this.Load += new System.EventHandler(this.FrmMPCCMarksheet_Load);

@@ -36,14 +36,13 @@
             this.btnViewReport = new System.Windows.Forms.Button();
             this.cmbClass = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnBackView
             // 
             this.btnBackView.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBackView.Location = new System.Drawing.Point(464, 86);
-            this.btnBackView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBackView.Location = new System.Drawing.Point(572, 119);
+            this.btnBackView.Margin = new System.Windows.Forms.Padding(4);
             this.btnBackView.Name = "btnBackView";
             this.btnBackView.Size = new System.Drawing.Size(147, 37);
             this.btnBackView.TabIndex = 44;
@@ -54,8 +53,8 @@
             // cmbSession
             // 
             this.cmbSession.FormattingEnabled = true;
-            this.cmbSession.Location = new System.Drawing.Point(131, 49);
-            this.cmbSession.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbSession.Location = new System.Drawing.Point(111, 51);
+            this.cmbSession.Margin = new System.Windows.Forms.Padding(4);
             this.cmbSession.Name = "cmbSession";
             this.cmbSession.Size = new System.Drawing.Size(160, 24);
             this.cmbSession.TabIndex = 40;
@@ -76,8 +75,8 @@
             // cmbScetion
             // 
             this.cmbScetion.FormattingEnabled = true;
-            this.cmbScetion.Location = new System.Drawing.Point(629, 49);
-            this.cmbScetion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbScetion.Location = new System.Drawing.Point(612, 49);
+            this.cmbScetion.Margin = new System.Windows.Forms.Padding(4);
             this.cmbScetion.Name = "cmbScetion";
             this.cmbScetion.Size = new System.Drawing.Size(107, 24);
             this.cmbScetion.TabIndex = 42;
@@ -88,7 +87,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(528, 49);
+            this.label2.Location = new System.Drawing.Point(528, 51);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 20);
@@ -98,8 +97,8 @@
             // btnViewReport
             // 
             this.btnViewReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewReport.Location = new System.Drawing.Point(317, 86);
-            this.btnViewReport.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnViewReport.Location = new System.Drawing.Point(418, 119);
+            this.btnViewReport.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewReport.Name = "btnViewReport";
             this.btnViewReport.Size = new System.Drawing.Size(147, 37);
             this.btnViewReport.TabIndex = 43;
@@ -110,8 +109,8 @@
             // cmbClass
             // 
             this.cmbClass.FormattingEnabled = true;
-            this.cmbClass.Location = new System.Drawing.Point(397, 49);
-            this.cmbClass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbClass.Location = new System.Drawing.Point(379, 51);
+            this.cmbClass.Margin = new System.Windows.Forms.Padding(4);
             this.cmbClass.Name = "cmbClass";
             this.cmbClass.Size = new System.Drawing.Size(108, 24);
             this.cmbClass.TabIndex = 41;
@@ -129,25 +128,11 @@
             this.label1.TabIndex = 46;
             this.label1.Text = "Class";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(285, 5);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(179, 29);
-            this.label4.TabIndex = 49;
-            this.label4.Text = "MP Marksheet";
-            // 
             // frmMPCCEMarkSheet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.btnBackView);
             this.Controls.Add(this.cmbSession);
             this.Controls.Add(this.label3);
@@ -156,9 +141,9 @@
             this.Controls.Add(this.btnViewReport);
             this.Controls.Add(this.cmbClass);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmMPCCEMarkSheet";
-            this.Size = new System.Drawing.Size(760, 148);
+            this.Size = new System.Drawing.Size(760, 183);
             this.Load += new System.EventHandler(this.frmMPCCEMarkSheet_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmMPCCEMarkSheet_Paint);
             this.ResumeLayout(false);
@@ -176,6 +161,5 @@
         private System.Windows.Forms.Button btnViewReport;
         private System.Windows.Forms.ComboBox cmbClass;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label4;
     }
 }

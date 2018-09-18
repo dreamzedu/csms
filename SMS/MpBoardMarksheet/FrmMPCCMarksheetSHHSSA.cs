@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 
 namespace SMS.MpBoardMarksheet
 {
-    public partial class FrmMPCCMarksheetSHHSSA : UserControl
+    public partial class FrmMPCCMarksheetSHHSSA : UserControlBase
     {
         public FrmMPCCMarksheetSHHSSA()
         {
@@ -23,6 +23,7 @@ namespace SMS.MpBoardMarksheet
         bool NonPrimaryFlage = false;
         decimal MaximumMarks;
         static string columnName = string.Empty;
+        school1 c = new school1();
         private void FrmMPCCMarksheetSHHSSA_Paint(object sender, PaintEventArgs e)
         {
             //public static void fromClear(Form f);
@@ -33,7 +34,9 @@ namespace SMS.MpBoardMarksheet
             Connection.FillComboBox(cmbClass, "Select ClassCode ,ClassName From tbl_ClassMaster Order By ClassOrder");
             Connection.FillComboBox(cmbSection, "Select SectionCode ,SectionName From tbl_Section order by SectionName");
             this.cmbClass.SelectedIndexChanged += new System.EventHandler(this.cmbClass_SelectedIndexChanged);
-
+            c.GetMdiParent(this).ToggleNewButton(true);
+            c.GetMdiParent(this).ToggleEditButton(true);
+            ToggleAllControls(false);
         }
 
         private void cmbClass_SelectedIndexChanged(object sender, EventArgs e)
@@ -101,7 +104,7 @@ namespace SMS.MpBoardMarksheet
                             dataReader.Close();
                         }
                         ///
-                        if (btnNew.Enabled.Equals(true))
+                        if (c.GetMdiParent(this).IsNewCommandEnabled)
                         {
 
                             DataTable n = Connection.GetDataTable("Select Top 1 TERMI ,TERMII ,TERMIII,TERMIP ,TERMIIP ,TERMIIIP  From tbl_MPSHHSSAStudentMarks " +
@@ -111,19 +114,19 @@ namespace SMS.MpBoardMarksheet
                             {
                                 if ("TERM I".Equals(cmbExam.Text.Trim()))
                                 {
-                                    MessageBox.Show("Already Exist!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    MessageBox.Show("Record already exists!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                     return;
                                 }
                                 else if ("TERM II".Equals(cmbExam.Text.Trim()))
                                 {
                                     if (n.Rows[0]["TERMI"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Please Fill Record Of TERM I!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Please enter value for TERM I!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                     else if (!n.Rows[0]["TERMII"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Already Exist!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Record already exists!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                 }
@@ -131,17 +134,17 @@ namespace SMS.MpBoardMarksheet
                                 {
                                     if (n.Rows[0]["TERMI"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Please Fill Record Of TERM II!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Please enter value for TERM II!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                     else if (n.Rows[0]["TERMII"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Please Fill Record Of TERM II!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Please enter value for TERM II!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                     else if (!n.Rows[0]["TERMIII"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Already Exist!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Record already exists!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                 }
@@ -149,7 +152,7 @@ namespace SMS.MpBoardMarksheet
                                 {
                                     if (!n.Rows[0]["TERMIP"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Already Exist!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Record already exists!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                 }
@@ -157,7 +160,7 @@ namespace SMS.MpBoardMarksheet
                                 {
                                     if (!n.Rows[0]["TERMIIP"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Already Exist!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Record already exists!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                 }
@@ -165,7 +168,7 @@ namespace SMS.MpBoardMarksheet
                                 {
                                     if (!n.Rows[0]["TERMIIIP"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Already Exist!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Record already exists!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                 }
@@ -173,7 +176,7 @@ namespace SMS.MpBoardMarksheet
                             }
                             else if (!cmbExam.Text.Trim().Equals("TERM I"))
                             {
-                                MessageBox.Show("!!! Warrning : \n\t Please select TERM I");
+                                MessageBox.Show("! Warrning : \n\t Please select TERM I");
                                 return;
                             }
 
@@ -193,12 +196,12 @@ namespace SMS.MpBoardMarksheet
                                     dataReader.Close();
                                 }
                                 dtg.DataSource = dtStudentList;
-                                lblStatus.Text = "You Have Select " + cmbExam.Text;
+                                lblStatus.Text = "You have selected " + cmbExam.Text;
                                 chkLock.Checked = true;
                                 tmr1.Enabled = true;
                             }
                         }
-                        else if (btnEdit.Enabled.Equals(true))
+                        else if (c.GetMdiParent(this).IsEditCommandEnabled)
                         {
                             if (dtStudentList.Columns.Count > 0)
                             {
@@ -224,10 +227,10 @@ namespace SMS.MpBoardMarksheet
                                     //for (int i = 0; i < row.Length; i++)
                                     if (row.Length > 0)
                                     {
-                                        foreach (DataColumn c in dtStudentList.Columns)
+                                        foreach (DataColumn dc in dtStudentList.Columns)
                                         {
-                                            if (!c.ColumnName.Contains("Student No") && !c.ColumnName.Contains("Scholar No")
-                                                && !c.ColumnName.Contains("Name") && !c.ColumnName.Contains("Grade"))
+                                            if (!dc.ColumnName.Contains("Student No") && !dc.ColumnName.Contains("Scholar No")
+                                                && !dc.ColumnName.Contains("Name") && !dc.ColumnName.Contains("Grade"))
                                             {
                                                 string exm = string.Empty;
                                                 if (cmbExam.Text.Trim() == "TERM I")
@@ -242,7 +245,7 @@ namespace SMS.MpBoardMarksheet
                                                     exm = "TERMIIP";
                                                 else if (cmbExam.Text.Trim() == "TERM III P")
                                                     exm = "TERMIIIP";
-                                                r[c.ColumnName] = row[i][exm];
+                                                r[dc.ColumnName] = row[i][exm];
                                                 decimal tval = 0;
                                                 if (row[i][exm].Equals(DBNull.Value))
                                                     tval = 0;
@@ -251,9 +254,9 @@ namespace SMS.MpBoardMarksheet
                                                 if (exm == "TERMI")
                                                 {
                                                     if (Convert.ToInt16(cmbClass.SelectedValue.ToString()) >= 101 && Convert.ToInt16(cmbClass.SelectedValue.ToString()) <= 108 || Convert.ToInt16(cmbClass.SelectedValue.ToString()) == 115)
-                                                        r["Grade" + c.ColumnName] = this.GetGrade(tval, 70);        // 70 number ka
+                                                        r["Grade" + dc.ColumnName] = this.GetGrade(tval, 70);        // 70 number ka
                                                     else if (Convert.ToInt16(cmbClass.SelectedValue.ToString()) == 109 || Convert.ToInt16(cmbClass.SelectedValue.ToString()) == 111)
-                                                        r["Grade" + c.ColumnName] = this.GetGrade(tval, 100);
+                                                        r["Grade" + dc.ColumnName] = this.GetGrade(tval, 100);
 
 
 
@@ -261,14 +264,14 @@ namespace SMS.MpBoardMarksheet
                                                 else if (exm == "TERMII")
                                                 {
                                                     if (Convert.ToInt16(cmbClass.SelectedValue.ToString()) >= 101 && Convert.ToInt16(cmbClass.SelectedValue.ToString()) <= 108 || Convert.ToInt16(cmbClass.SelectedValue.ToString()) == 115)
-                                                        r["Grade" + c.ColumnName] = this.GetGrade(tval, 50);   //50 Number ka
+                                                        r["Grade" + dc.ColumnName] = this.GetGrade(tval, 50);   //50 Number ka
                                                     else if (Convert.ToInt16(cmbClass.SelectedValue.ToString()) == 109 || Convert.ToInt16(cmbClass.SelectedValue.ToString()) == 111)
-                                                        r["Grade" + c.ColumnName] = this.GetGrade(tval, 100);
+                                                        r["Grade" + dc.ColumnName] = this.GetGrade(tval, 100);
                                                 }
                                                 else if (exm == "TERMIII")
                                                 {
                                                     if (Convert.ToInt16(cmbClass.SelectedValue.ToString()) >= 101 && Convert.ToInt16(cmbClass.SelectedValue.ToString()) <= 111 || Convert.ToInt16(cmbClass.SelectedValue.ToString()) == 115)
-                                                        r["Grade" + c.ColumnName] = this.GetGrade(tval, 100);
+                                                        r["Grade" + dc.ColumnName] = this.GetGrade(tval, 100);
                                                 }
                                                 dtStudentList.EndInit();
                                                 i++;
@@ -277,7 +280,7 @@ namespace SMS.MpBoardMarksheet
                                     }
                                 }
                                 dtg.DataSource = dtStudentList;
-                                lblStatus.Text = "You Have Select " + cmbExam.Text;
+                                lblStatus.Text = "You have selected " + cmbExam.Text;
                                 chkLock.Checked = true;
                                 tmr1.Enabled = true;
                             }
@@ -285,19 +288,19 @@ namespace SMS.MpBoardMarksheet
                     }
                     else
                     {
-                        MessageBox.Show("Please Select Exam...", "");
+                        MessageBox.Show("Please select Exam!", "Error");
                         cmbExam.Focus();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Please Select Section First!!!", "Section");
+                    MessageBox.Show("Please select Section first!", "Error");
                     cmbSection.Focus();
                 }
             }
             else
             {
-                MessageBox.Show("Please Select Class First!!!", "Class");
+                MessageBox.Show("Please select Class first!", "Error");
                 cmbClass.Focus();
             }
         }
@@ -345,7 +348,7 @@ namespace SMS.MpBoardMarksheet
                             dataReader.Close();
                         }
                         ///
-                        if (btnNew.Enabled.Equals(true))
+                        if (c.GetMdiParent(this).IsNewCommandEnabled)
                         {
 
                             DataTable n = Connection.GetDataTable("Select Top 1 TERMI ,TERMII ,TERMIII,TERMIP ,TERMIIP ,TERMIIIP  From tbl_MPSHHSSAStudentMarks " +
@@ -355,19 +358,19 @@ namespace SMS.MpBoardMarksheet
                             {
                                 if ("TERM I".Equals(cmbExam.Text.Trim()))
                                 {
-                                    MessageBox.Show("Already Exist!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    MessageBox.Show("Record already exists!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                     return;
                                 }
                                 else if ("TERM II".Equals(cmbExam.Text.Trim()))
                                 {
                                     if (n.Rows[0]["TERMI"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Please Fill Record Of TERM I!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Please enter value for TERM I!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                     else if (!n.Rows[0]["TERMII"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Already Exist!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Record already exists!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                 }
@@ -375,17 +378,17 @@ namespace SMS.MpBoardMarksheet
                                 {
                                     if (n.Rows[0]["TERMI"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Please Fill Record Of TERM II!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Please enter value for TERM II!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                     else if (n.Rows[0]["TERMII"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Please Fill Record Of TERM II!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Please enter value for TERM II!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                     else if (!n.Rows[0]["TERMIII"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Already Exist!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Record already exists!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                 }
@@ -393,7 +396,7 @@ namespace SMS.MpBoardMarksheet
                                 {
                                     if (!n.Rows[0]["TERMIP"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Already Exist!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Record already exists!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                 }
@@ -401,7 +404,7 @@ namespace SMS.MpBoardMarksheet
                                 {
                                     if (!n.Rows[0]["TERMIIP"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Already Exist!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Record already exists!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                 }
@@ -409,7 +412,7 @@ namespace SMS.MpBoardMarksheet
                                 {
                                     if (!n.Rows[0]["TERMIIIP"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Already Exist!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Record already exists!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                 }
@@ -417,7 +420,7 @@ namespace SMS.MpBoardMarksheet
                             }
                             else if (!cmbExam.Text.Trim().Equals("TERM I"))
                             {
-                                MessageBox.Show("!!! Warrning : \n\t Please select TERM I");
+                                MessageBox.Show("! Warrning : \n\t Please select TERM I");
                                 return;
                             }
 
@@ -437,12 +440,12 @@ namespace SMS.MpBoardMarksheet
                                     dataReader.Close();
                                 }
                                 dtg.DataSource = dtStudentList;
-                                lblStatus.Text = "You Have Select " + cmbExam.Text;
+                                lblStatus.Text = "You have selected " + cmbExam.Text;
                                 chkLock.Checked = true;
                                 tmr1.Enabled = true;
                             }
                         }
-                        else if (btnEdit.Enabled.Equals(true))
+                        else if (c.GetMdiParent(this).IsEditCommandEnabled)
                         {
                             if (dtStudentList.Columns.Count > 0)
                             {
@@ -468,10 +471,10 @@ namespace SMS.MpBoardMarksheet
                                     //for (int i = 0; i < row.Length; i++)
                                     if (row.Length > 0)
                                     {
-                                        foreach (DataColumn c in dtStudentList.Columns)
+                                        foreach (DataColumn dc in dtStudentList.Columns)
                                         {
-                                            if (!c.ColumnName.Contains("Student No") && !c.ColumnName.Contains("Scholar No")
-                                                && !c.ColumnName.Contains("Name") && !c.ColumnName.Contains("Grade"))
+                                            if (!dc.ColumnName.Contains("Student No") && !dc.ColumnName.Contains("Scholar No")
+                                                && !dc.ColumnName.Contains("Name") && !dc.ColumnName.Contains("Grade"))
                                             {
                                                 string exm = string.Empty;
                                                 if (cmbExam.Text.Trim() == "TERM I")
@@ -486,7 +489,7 @@ namespace SMS.MpBoardMarksheet
                                                     exm = "TERMIIP";
                                                 else if (cmbExam.Text.Trim() == "TERM III P")
                                                     exm = "TERMIIIP";
-                                                r[c.ColumnName] = row[i][exm];
+                                                r[dc.ColumnName] = row[i][exm];
                                                 decimal tval = 0;
                                                 if (row[i][exm].Equals(DBNull.Value))
                                                     tval = 0;
@@ -495,9 +498,9 @@ namespace SMS.MpBoardMarksheet
                                                 if (exm == "TERMI")
                                                 {
                                                     if (Convert.ToInt16(cmbClass.SelectedValue.ToString()) >= 101 && Convert.ToInt16(cmbClass.SelectedValue.ToString()) <= 108)
-                                                        r["Grade" + c.ColumnName] = this.GetGrade(tval, 70);          // 70---------
+                                                        r["Grade" + dc.ColumnName] = this.GetGrade(tval, 70);          // 70---------
                                                     else if (Convert.ToInt16(cmbClass.SelectedValue.ToString()) == 109 || Convert.ToInt16(cmbClass.SelectedValue.ToString()) == 111)
-                                                        r["Grade" + c.ColumnName] = this.GetGrade(tval, 100);
+                                                        r["Grade" + dc.ColumnName] = this.GetGrade(tval, 100);
 
 
 
@@ -505,14 +508,14 @@ namespace SMS.MpBoardMarksheet
                                                 else if (exm == "TERMII")
                                                 {
                                                     if (Convert.ToInt16(cmbClass.SelectedValue.ToString()) >= 101 && Convert.ToInt16(cmbClass.SelectedValue.ToString()) <= 108)
-                                                        r["Grade" + c.ColumnName] = this.GetGrade(tval, 50);        // 50----------------
+                                                        r["Grade" + dc.ColumnName] = this.GetGrade(tval, 50);        // 50----------------
                                                     else if (Convert.ToInt16(cmbClass.SelectedValue.ToString()) == 109 || Convert.ToInt16(cmbClass.SelectedValue.ToString()) == 111)
-                                                        r["Grade" + c.ColumnName] = this.GetGrade(tval, 100);
+                                                        r["Grade" + dc.ColumnName] = this.GetGrade(tval, 100);
                                                 }
                                                 else if (exm == "TERMIII")
                                                 {
                                                     if (Convert.ToInt16(cmbClass.SelectedValue.ToString()) >= 101 && Convert.ToInt16(cmbClass.SelectedValue.ToString()) <= 111)
-                                                        r["Grade" + c.ColumnName] = this.GetGrade(tval, 100);
+                                                        r["Grade" + dc.ColumnName] = this.GetGrade(tval, 100);
                                                 }
                                                 dtStudentList.EndInit();
                                                 i++;
@@ -521,7 +524,7 @@ namespace SMS.MpBoardMarksheet
                                     }
                                 }
                                 dtg.DataSource = dtStudentList;
-                                lblStatus.Text = "You Have Select " + cmbExam.Text;
+                                lblStatus.Text = "You have selected " + cmbExam.Text;
                                 chkLock.Checked = true;
                                 tmr1.Enabled = true;
                             }
@@ -529,19 +532,19 @@ namespace SMS.MpBoardMarksheet
                     }
                     else
                     {
-                        MessageBox.Show("Please Select Exam...", "");
+                        MessageBox.Show("Please select Exam!", "Error");
                         cmbExam.Focus();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Please Select Section First!!!", "Section");
+                    MessageBox.Show("Please select Section first!", "Section");
                     cmbSection.Focus();
                 }
             }
             else
             {
-                MessageBox.Show("Please Select Class First!!!", "Class");
+                MessageBox.Show("Please select Class first!", "Class");
                 cmbClass.Focus();
             }
         }
@@ -590,7 +593,7 @@ namespace SMS.MpBoardMarksheet
                             dataReader.Close();
                         }
                         ///
-                        if (btnNew.Enabled.Equals(true))
+                        if (c.GetMdiParent(this).IsNewCommandEnabled)
                         {
 
                             DataTable n = Connection.GetDataTable("Select Top 1 TERMI ,TERMII ,TERMIII,TERMIP ,TERMIIP ,TERMIIIP  From tbl_MPSHHSSAStudentMarks " +
@@ -600,19 +603,19 @@ namespace SMS.MpBoardMarksheet
                             {
                                 if ("TERM I".Equals(cmbExam.Text.Trim()))
                                 {
-                                    MessageBox.Show("Already Exist!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    MessageBox.Show("Record already exists!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                     return;
                                 }
                                 else if ("TERM II".Equals(cmbExam.Text.Trim()))
                                 {
                                     if (n.Rows[0]["TERMI"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Please Fill Record Of TERM I!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Please enter value for TERM I!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                     else if (!n.Rows[0]["TERMII"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Already Exist!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Record already exists!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                 }
@@ -620,17 +623,17 @@ namespace SMS.MpBoardMarksheet
                                 {
                                     if (n.Rows[0]["TERMI"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Please Fill Record Of TERM II!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Please enter value for TERM II!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                     else if (n.Rows[0]["TERMII"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Please Fill Record Of TERM II!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Please enter value for TERM II!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                     else if (!n.Rows[0]["TERMIII"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Already Exist!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Record already exists!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                 }
@@ -638,7 +641,7 @@ namespace SMS.MpBoardMarksheet
                                 {
                                     if (!n.Rows[0]["TERMIP"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Already Exist!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Record already exists!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                 }
@@ -646,7 +649,7 @@ namespace SMS.MpBoardMarksheet
                                 {
                                     if (!n.Rows[0]["TERMIIP"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Already Exist!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Record already exists!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                 }
@@ -654,7 +657,7 @@ namespace SMS.MpBoardMarksheet
                                 {
                                     if (!n.Rows[0]["TERMIIIP"].Equals(DBNull.Value))
                                     {
-                                        MessageBox.Show("Already Exist!!!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("Record already exists!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                         return;
                                     }
                                 }
@@ -662,7 +665,7 @@ namespace SMS.MpBoardMarksheet
                             }
                             else if (!cmbExam.Text.Trim().Equals("TERM I"))
                             {
-                                MessageBox.Show("!!! Warrning : \n\t Please select TERM I");
+                                MessageBox.Show("! Warrning : \n\t Please select TERM I");
                                 return;
                             }
 
@@ -682,12 +685,12 @@ namespace SMS.MpBoardMarksheet
                                     dataReader.Close();
                                 }
                                 dtg.DataSource = dtStudentList;
-                                lblStatus.Text = "You Have Select " + cmbExam.Text;
+                                lblStatus.Text = "You have selected " + cmbExam.Text;
                                 chkLock.Checked = true;
                                 tmr1.Enabled = true;
                             }
                         }
-                        else if (btnEdit.Enabled.Equals(true))
+                        else if (c.GetMdiParent(this).IsEditCommandEnabled)
                         {
                             if (dtStudentList.Columns.Count > 0)
                             {
@@ -713,10 +716,10 @@ namespace SMS.MpBoardMarksheet
                                     //for (int i = 0; i < row.Length; i++)
                                     if (row.Length > 0)
                                     {
-                                        foreach (DataColumn c in dtStudentList.Columns)
+                                        foreach (DataColumn dc in dtStudentList.Columns)
                                         {
-                                            if (!c.ColumnName.Contains("Student No") && !c.ColumnName.Contains("Scholar No")
-                                                && !c.ColumnName.Contains("Name") && !c.ColumnName.Contains("Grade"))
+                                            if (!dc.ColumnName.Contains("Student No") && !dc.ColumnName.Contains("Scholar No")
+                                                && !dc.ColumnName.Contains("Name") && !dc.ColumnName.Contains("Grade"))
                                             {
                                                 string exm = string.Empty;
                                                 if (cmbExam.Text.Trim() == "TERM I")
@@ -731,7 +734,7 @@ namespace SMS.MpBoardMarksheet
                                                     exm = "TERMIIP";
                                                 else if (cmbExam.Text.Trim() == "TERM III P")
                                                     exm = "TERMIIIP";
-                                                r[c.ColumnName] = row[i][exm];
+                                                r[dc.ColumnName] = row[i][exm];
                                                 decimal tval = 0;
                                                 if (row[i][exm].Equals(DBNull.Value))
                                                     tval = 0;
@@ -740,9 +743,9 @@ namespace SMS.MpBoardMarksheet
                                                 if (exm == "TERMI")
                                                 {
                                                     if (Convert.ToInt16(cmbClass.SelectedValue.ToString()) >= 101 && Convert.ToInt16(cmbClass.SelectedValue.ToString()) <= 108)
-                                                        r["Grade" + c.ColumnName] = this.GetGrade(tval, 70);        // 70 ka hai------
+                                                        r["Grade" + dc.ColumnName] = this.GetGrade(tval, 70);        // 70 ka hai------
                                                     else if (Convert.ToInt16(cmbClass.SelectedValue.ToString()) == 109 || Convert.ToInt16(cmbClass.SelectedValue.ToString()) == 111)
-                                                        r["Grade" + c.ColumnName] = this.GetGrade(tval, 100);
+                                                        r["Grade" + dc.ColumnName] = this.GetGrade(tval, 100);
 
 
 
@@ -750,14 +753,14 @@ namespace SMS.MpBoardMarksheet
                                                 else if (exm == "TERMII")
                                                 {
                                                     if (Convert.ToInt16(cmbClass.SelectedValue.ToString()) >= 101 && Convert.ToInt16(cmbClass.SelectedValue.ToString()) <= 108)
-                                                        r["Grade" + c.ColumnName] = this.GetGrade(tval, 50);        // 50 ka hai--------------------
+                                                        r["Grade" + dc.ColumnName] = this.GetGrade(tval, 50);        // 50 ka hai--------------------
                                                     else if (Convert.ToInt16(cmbClass.SelectedValue.ToString()) == 109 || Convert.ToInt16(cmbClass.SelectedValue.ToString()) == 111)
-                                                        r["Grade" + c.ColumnName] = this.GetGrade(tval, 100);
+                                                        r["Grade" + dc.ColumnName] = this.GetGrade(tval, 100);
                                                 }
                                                 else if (exm == "TERMIII")
                                                 {
                                                     if (Convert.ToInt16(cmbClass.SelectedValue.ToString()) >= 101 && Convert.ToInt16(cmbClass.SelectedValue.ToString()) <= 111)
-                                                        r["Grade" + c.ColumnName] = this.GetGrade(tval, 100);
+                                                        r["Grade" + dc.ColumnName] = this.GetGrade(tval, 100);
                                                 }
                                                 dtStudentList.EndInit();
                                                 i++;
@@ -766,7 +769,7 @@ namespace SMS.MpBoardMarksheet
                                     }
                                 }
                                 dtg.DataSource = dtStudentList;
-                                lblStatus.Text = "You Have Select " + cmbExam.Text;
+                                lblStatus.Text = "You have selected " + cmbExam.Text;
                                 chkLock.Checked = true;
                                 tmr1.Enabled = true;
                             }
@@ -774,19 +777,19 @@ namespace SMS.MpBoardMarksheet
                     }
                     else
                     {
-                        MessageBox.Show("Please Select Exam...", "");
+                        MessageBox.Show("Please select Exam!", "Error");
                         cmbExam.Focus();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Please Select Section First!!!", "Section");
+                    MessageBox.Show("Please select Section first!", "Section");
                     cmbSection.Focus();
                 }
             }
             else
             {
-                MessageBox.Show("Please Select Class First!!!", "Class");
+                MessageBox.Show("Please select Class first!", "Class");
                 cmbClass.Focus();
             }
         }
@@ -800,28 +803,28 @@ namespace SMS.MpBoardMarksheet
                 if (cmbExam.Text.Trim().ToString().Equals("TERM I") || cmbExam.Text.Trim().ToString().Equals("TERM II") || cmbExam.Text.Trim().ToString().Equals("TERM III"))
                     GetDetailsofI_V();
                 else
-                    MessageBox.Show("!!! Warnning \n\t Please select proper Exam. ");
+                    MessageBox.Show("! Warnning \n\t Please select proper Exam. ");
             }
             else if (Convert.ToInt16(cmbClass.SelectedValue) >= 106 && Convert.ToInt16(cmbClass.SelectedValue) < 109)
             {
                 if (cmbExam.Text.Trim().ToString().Equals("TERM I") || cmbExam.Text.Trim().ToString().Equals("TERM II") || cmbExam.Text.Trim().ToString().Equals("TERM III") || cmbExam.Text.Trim().ToString().Equals("TERM III P"))
                     GetDetailsofI_V();
                 else
-                    MessageBox.Show("!!! Warnning \n\t Please select proper Exam. ");
+                    MessageBox.Show("! Warnning \n\t Please select proper Exam. ");
             }
             else if (Convert.ToInt16(cmbClass.SelectedValue) == 109)
             {
                 if (cmbExam.Text.Trim().ToString().Equals("TERM I") || cmbExam.Text.Trim().ToString().Equals("TERM II") || cmbExam.Text.Trim().ToString().Equals("TERM III"))
                     GetDetailsofI_V();
                 else
-                    MessageBox.Show("!!! Warnning \n\t Please select proper Exam. ");
+                    MessageBox.Show("! Warnning \n\t Please select proper Exam. ");
             }
             else if (Convert.ToInt16(cmbClass.SelectedValue) == 111)
             {
                 if (cmbExam.Text.Trim().ToString().Equals("TERM I") || cmbExam.Text.Trim().ToString().Equals("TERM II") || cmbExam.Text.Trim().ToString().Equals("TERM III") || cmbExam.Text.Trim().ToString().Equals("TERM I P") || cmbExam.Text.Trim().ToString().Equals("TERM II P") || cmbExam.Text.Trim().ToString().Equals("TERM III P"))
                     GetDetailsof_XI();
                 else
-                    MessageBox.Show("!!! Warnning \n\t Please select proper Exam. ");
+                    MessageBox.Show("! Warnning \n\t Please select proper Exam. ");
             }
             else
             {
@@ -829,7 +832,7 @@ namespace SMS.MpBoardMarksheet
                 if (cmbExam.Text.Trim().ToString().Equals("TERM I") || cmbExam.Text.Trim().ToString().Equals("TERM II") || cmbExam.Text.Trim().ToString().Equals("TERM III"))
                     GetDetailsofNursary();
                 else
-                    MessageBox.Show("!!! Warnning \n\t Please select proper Exam. ");
+                    MessageBox.Show("! Warnning \n\t Please select proper Exam. ");
                 
             }
         }
@@ -853,7 +856,7 @@ namespace SMS.MpBoardMarksheet
         {
             try
             {
-                MessageBox.Show("Please Fill Valide Marks.");
+                MessageBox.Show("Please enter valid marks.");
             }
             catch
             {
@@ -909,7 +912,7 @@ namespace SMS.MpBoardMarksheet
                 }
                 else
                 {
-                    MessageBox.Show("Please Fill Valide Marks.");
+                    MessageBox.Show("Please enter valid marks.");
                     dtg.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = 0;
                     dtg.Rows[e.RowIndex].Cells[e.ColumnIndex + 1].Value = this.GetGrade(Convert.ToDecimal(dtg.Rows[e.RowIndex].Cells[e.ColumnIndex].Value), Convert.ToInt16(this.MaximumMarks));
                 }
@@ -936,7 +939,7 @@ namespace SMS.MpBoardMarksheet
                 }
                 else
                 {
-                    MessageBox.Show("Please Fill Valide Marks.");
+                    MessageBox.Show("Please enter valid marks.");
                     dtg.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = 0;
                     dtg.Rows[e.RowIndex].Cells[e.ColumnIndex + 1].Value = this.GetGrade(Convert.ToDecimal(dtg.Rows[e.RowIndex].Cells[e.ColumnIndex].Value), Convert.ToInt16(this.MaximumMarks));
                 }
@@ -965,7 +968,7 @@ namespace SMS.MpBoardMarksheet
                 }
                 else
                 {
-                    MessageBox.Show("Please Fill Valide Marks.");
+                    MessageBox.Show("Please enter valid marks.");
                     dtg.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = 0;
                     dtg.Rows[e.RowIndex].Cells[e.ColumnIndex + 1].Value = this.GetGrade(Convert.ToDecimal(dtg.Rows[e.RowIndex].Cells[e.ColumnIndex].Value), Convert.ToInt16(this.MaximumMarks));
                 }
@@ -979,7 +982,7 @@ namespace SMS.MpBoardMarksheet
                 }
                 else
                 {
-                    MessageBox.Show("Please Fill Valide Marks.");
+                    MessageBox.Show("Please enter valid marks.");
                     dtg.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = 0;
                     dtg.Rows[e.RowIndex].Cells[e.ColumnIndex + 1].Value = this.GetGrade(Convert.ToDecimal(dtg.Rows[e.RowIndex].Cells[e.ColumnIndex].Value), Convert.ToInt16(this.MaximumMarks));
                 }
@@ -993,7 +996,7 @@ namespace SMS.MpBoardMarksheet
                 }
                 else
                 {
-                    MessageBox.Show("Please Fill Valide Marks.");
+                    MessageBox.Show("Please enter valid marks.");
                     dtg.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = 0;
                     dtg.Rows[e.RowIndex].Cells[e.ColumnIndex + 1].Value = this.GetGrade(Convert.ToDecimal(dtg.Rows[e.RowIndex].Cells[e.ColumnIndex].Value), Convert.ToInt16(this.MaximumMarks));
                 }
@@ -1010,7 +1013,7 @@ namespace SMS.MpBoardMarksheet
                 }
                 else
                 {
-                    MessageBox.Show("Please Fill Valide Marks.");
+                    MessageBox.Show("Please enter valid marks.");
                     dtg.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = 0;
                 }
             }
@@ -1058,23 +1061,50 @@ namespace SMS.MpBoardMarksheet
             e.Graphics.DrawString((e.RowIndex + 1).ToString(), dtg.Font, new SolidBrush(Color.Maroon), e.RowBounds.X + 2, e.RowBounds.Y + 3);
         }
 
-        private void btnNew_Click(object sender, EventArgs e)
+        public override void btnnew_Click(object sender, EventArgs e)
         {
-            btnEdit.Enabled = false;
-            btnFinalSave.Enabled = true;
-            btnShow.Enabled = true;
+            c.GetMdiParent(this).ToggleEditButton(false);
+            c.GetMdiParent(this).ToggleSaveButton(true);
+            c.GetMdiParent(this).ToggleCancelButton(true);
+            c.GetMdiParent(this).ToggleDeleteButton(false);
+            ToggleAllControls(true);
+            cmbClass.Focus();
+
+        }
+
+        public override void btnedit_Click(object sender, EventArgs e)
+        {
+            c.GetMdiParent(this).ToggleNewButton(false);
+            c.GetMdiParent(this).ToggleSaveButton(true);
+            c.GetMdiParent(this).ToggleCancelButton(true);
+            ToggleAllControls(true);
+
             cmbClass.Focus();
         }
 
-        private void btnEdit_Click(object sender, EventArgs e)
+        public override void btncancel_Click(object sender, EventArgs e)
         {
-            btnNew.Enabled = false;
-            btnFinalSave.Enabled = true;
-            btnShow.Enabled = true;
-            cmbClass.Focus();
+            c.GetMdiParent(this).ToggleNewButton(true);
+            c.GetMdiParent(this).ToggleEditButton(true);
+            c.GetMdiParent(this).ToggleSaveButton(false);
+            c.GetMdiParent(this).ToggleCancelButton(false);
+
+            ToggleAllControls(false);
+            tmr1.Stop();
+            dtg.DataSource = null;
+            lblStatus.Text = string.Empty;
         }
 
-        private void btnFinalSave_Click(object sender, EventArgs e)
+        private void ToggleAllControls(bool flag)
+        {
+            cmbClass.Enabled = flag;
+            cmbSection.Enabled = flag;
+            cmbExam.Enabled = flag;
+            btnShow.Enabled = flag;
+            cmbSankay.Enabled = flag;
+        }
+
+        public override void btnsave_Click(object sender, EventArgs e)
         {
             SqlTransaction trn = null;
             try
@@ -1085,7 +1115,7 @@ namespace SMS.MpBoardMarksheet
                     dtg.EndEdit();
                     if (dtg.RowCount > 0)
                     {
-                        if (cmbExam.Text.Trim().Equals("TERM I") && btnNew.Enabled)
+                        if (cmbExam.Text.Trim().Equals("TERM I") && c.GetMdiParent(this).IsNewCommandEnabled)
                         {
                             trn = Connection.GetMyConnection().BeginTransaction();
                             int CCEID = Convert.ToInt32(Connection.GetId("Select IsNull((Max(CCEID)+1),1001) From tbl_MPSHHSSAStudentMarks"));
@@ -1169,13 +1199,14 @@ namespace SMS.MpBoardMarksheet
                                 }
                             }
                         }
+                        
+                        MessageBox.Show("Record saved successfully.");
+                        c.GetMdiParent(this).ToggleNewButton(true);
+                        c.GetMdiParent(this).ToggleEditButton(true);
+                        c.GetMdiParent(this).ToggleSaveButton(false);
+                        c.GetMdiParent(this).ToggleCancelButton(false);
 
-                        MessageBox.Show("Saved...");
-                        btnNew.Enabled = true;
-                        btnEdit.Enabled = true;
-                        btnFinalSave.Enabled = false;
-                        btnShow.Enabled = false;
-                        btnNew.Focus();
+                        ToggleAllControls(false);
                     }
                 }
             }
@@ -1185,20 +1216,6 @@ namespace SMS.MpBoardMarksheet
                 MessageBox.Show("Exception message:\n    " + ex.Message);
                 trn.Rollback();
             }
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            btnNew.Enabled = true;
-            btnEdit.Enabled = true;
-            btnFinalSave.Enabled = false;
-            btnShow.Enabled = false;
-            btnNew.Focus();
-        }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            //this.Close();
         }
 
         private void tmr1_Tick(object sender, EventArgs e)
@@ -1408,13 +1425,13 @@ namespace SMS.MpBoardMarksheet
                 }
                 else
                 {
-                    MessageBox.Show("Please Select Section First!!!", "Section");
+                    MessageBox.Show("Please select Section first!", "Section");
                     cmbSection.Focus();
                 }
             }
             else
             {
-                MessageBox.Show("Please Select Class First!!!", "Class");
+                MessageBox.Show("Please select Class first!", "Class");
                 cmbClass.Focus();
             }
         }
