@@ -342,3 +342,44 @@ GO
 ALTER TABLE [dbo].[EMarksStudent] CHECK CONSTRAINT [FK_EMarksStudent_EMarksMaster]
 GO
 
+
+
+alter table tbl_MCCEStudentMarks alter column FA1 numeric(5,2) null
+GO
+alter table tbl_MCCEStudentMarks alter column FA2 numeric(5,2) null
+GO
+alter table tbl_MCCEStudentMarks alter column FA3 numeric(5,2) null
+GO
+alter table tbl_MCCEStudentMarks alter column FA4 numeric(5,2) null
+GO
+alter table tbl_MCCEStudentMarks alter column SA1 numeric(5,2) null
+GO
+alter table tbl_MCCEStudentMarks alter column SA2 numeric(5,2) null
+GO
+alter table tbl_MCCEStudentMarks alter column FA3 numeric(5,2) null
+GO
+
+
+
+alter table tbl_MPCCEStudentMarks alter column TERMI float null
+GO
+alter table tbl_MPCCEStudentMarks alter column TERMII float null
+GO
+alter table tbl_MPCCEStudentMarks alter column TERMIII float null
+GO
+
+
+alter table tbl_MPSHHSSAStudentMarks alter column TERMI numeric(5,2) null
+GO
+alter table tbl_MPSHHSSAStudentMarks alter column TERMII numeric(5,2) null
+GO
+alter table tbl_MPSHHSSAStudentMarks alter column TERMIII numeric(5,2) null
+GO
+alter table tbl_MPSHHSSAStudentMarks alter column TERMIP numeric(5,2) null
+GO
+alter table tbl_MPSHHSSAStudentMarks alter column TERMIIP numeric(5,2) null
+GO
+alter table tbl_MPSHHSSAStudentMarks alter column TERMIIIP numeric(5,2) null
+GO
+
+

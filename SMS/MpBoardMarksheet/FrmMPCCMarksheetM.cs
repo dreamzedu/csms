@@ -1358,7 +1358,7 @@ namespace SMS.MpBoardMarksheet
                     listView1.Columns.Add("Grade Point", 80, HorizontalAlignment.Right);
 
                     int GroupIndex = 0;
-                    DataTable dtStudentMarksDetail = Connection.GetDataTable("[dbo].[GetViewCCEMarksDetail] " + cmbClass.SelectedValue + "," + cmbSection.SelectedValue + "," + school.CurrentSessionCode + "");
+                    DataTable dtStudentMarksDetail = Connection.GetDataTable("[dbo].[GetViewMCCEMarksDetail] " + cmbClass.SelectedValue + "," + cmbSection.SelectedValue + "," + school.CurrentSessionCode + "");
 
                     if (dtStudentMarksDetail.Rows.Count > 0)
                     {
