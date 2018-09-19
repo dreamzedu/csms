@@ -67,6 +67,7 @@ namespace SMS
                 Application.Exit();
                 Environment.Exit(0);
             }
+            return;
         }
 
        
