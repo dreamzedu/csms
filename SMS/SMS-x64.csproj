@@ -37,7 +37,7 @@
     <MinimumRequiredVersion>4.0.0.0</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>6</ApplicationRevision>
+    <ApplicationRevision>7</ApplicationRevision>
     <ApplicationVersion>4.0.4.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -107,10 +107,10 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>B608037F09B4652BC3BC0B15B3DD3811CC9292AE</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>164BA93CCBE72D33F7B2DF0DBB473C7DB34FB0A2</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>SMS_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>SMS-x64_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -3135,6 +3135,7 @@
     <None Include="scripts\dbcreate.bat">
       <SubType>Designer</SubType>
     </None>
+    <None Include="SMS-x64_TemporaryKey.pfx" />
     <None Include="SMS_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>

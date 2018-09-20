@@ -603,7 +603,7 @@ namespace SMS
 
         private void btnFee_Click(object sender, EventArgs e)
         {
-            ShowUserControl(new frmFeeCollecton(),sender);
+            ShowUserControl(new frmFeeCollectionByHead(), sender);
         }
 
         void DatabaseBackup()

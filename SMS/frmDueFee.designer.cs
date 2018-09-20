@@ -47,7 +47,7 @@
             this.cmbClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbClass.ForeColor = System.Drawing.Color.Blue;
             this.cmbClass.FormattingEnabled = true;
-            this.cmbClass.Location = new System.Drawing.Point(560, 59);
+            this.cmbClass.Location = new System.Drawing.Point(569, 58);
             this.cmbClass.Name = "cmbClass";
             this.cmbClass.Size = new System.Drawing.Size(106, 28);
             this.cmbClass.TabIndex = 2;
@@ -57,10 +57,11 @@
             // 
             // cmbSession
             // 
+            this.cmbSession.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSession.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSession.ForeColor = System.Drawing.Color.Blue;
             this.cmbSession.FormattingEnabled = true;
-            this.cmbSession.Location = new System.Drawing.Point(136, 59);
+            this.cmbSession.Location = new System.Drawing.Point(147, 59);
             this.cmbSession.Name = "cmbSession";
             this.cmbSession.Size = new System.Drawing.Size(88, 28);
             this.cmbSession.TabIndex = 0;
@@ -85,7 +86,7 @@
             this.cmbSection.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSection.ForeColor = System.Drawing.Color.Blue;
             this.cmbSection.FormattingEnabled = true;
-            this.cmbSection.Location = new System.Drawing.Point(825, 59);
+            this.cmbSection.Location = new System.Drawing.Point(863, 58);
             this.cmbSection.Name = "cmbSection";
             this.cmbSection.Size = new System.Drawing.Size(106, 28);
             this.cmbSection.TabIndex = 4;
@@ -98,7 +99,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(67, 91);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(864, 387);
+            this.dataGridView1.Size = new System.Drawing.Size(1118, 387);
             this.dataGridView1.TabIndex = 58;
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             this.dataGridView1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView1_RowPostPaint);
@@ -122,9 +123,10 @@
             // 
             this.chkSection.AutoSize = true;
             this.chkSection.BackColor = System.Drawing.Color.Transparent;
+            this.chkSection.Enabled = false;
             this.chkSection.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkSection.ForeColor = System.Drawing.Color.White;
-            this.chkSection.Location = new System.Drawing.Point(693, 62);
+            this.chkSection.Location = new System.Drawing.Point(717, 61);
             this.chkSection.Name = "chkSection";
             this.chkSection.Size = new System.Drawing.Size(134, 23);
             this.chkSection.TabIndex = 3;
@@ -135,12 +137,11 @@
             // 
             // cmbStudentStatus
             // 
-            this.cmbStudentStatus.FormattingEnabled = true;
             this.cmbStudentStatus.Items.AddRange(new object[] {
             "All Student",
             "Studying Student",
             "New Student"});
-            this.cmbStudentStatus.Location = new System.Drawing.Point(233, 61);
+            this.cmbStudentStatus.Location = new System.Drawing.Point(249, 61);
             this.cmbStudentStatus.Name = "cmbStudentStatus";
             this.cmbStudentStatus.Size = new System.Drawing.Size(156, 24);
             this.cmbStudentStatus.TabIndex = 5;
@@ -177,7 +178,7 @@
             this.Controls.Add(this.cmbClass);
             this.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmDueFee";
-            this.Size = new System.Drawing.Size(987, 556);
+            this.Size = new System.Drawing.Size(1266, 556);
             this.Tag = "1054";
             this.Load += new System.EventHandler(this.frmclasswisefeedue_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmDueFee_Paint);

@@ -29,7 +29,10 @@ namespace SMS
             Connection.FillComboBox(cmbClass, " select classcode,classname from tbl_classmaster order by classcode ");
             cmbSession.SelectedValue = school.CurrentSessionCode;
             cmbStudentStatus.SelectedIndex = 0;
+
+            this.cmbSession.SelectedIndexChanged += new System.EventHandler(this.cmbSession_SelectedIndexChanged);
             c.GetMdiParent(this).TogglePrintButton(true);
+            LoadStudentFeeDetail();
         } 
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -101,6 +104,10 @@ namespace SMS
         static bool tsch = false; static decimal schamt = 0;
         private void cmbSession_Leave(object sender, EventArgs e)
         {
+        }
+
+        private void LoadStudentFeeDetail()
+        {
             try
             {
                 dtTotalFee = Connection.GetDataTable(" SELECT tbl_classstudent.sessioncode as 'SessionCode',tbl_student.IsScholarship, tbl_student.studentno AS 'Student No.', tbl_student.scholarno AS 'Scholar No.', tbl_student.name AS 'Name', tbl_student.father AS 'Fathers Name' " +
@@ -155,12 +162,12 @@ namespace SMS
                     //--end scholar ship amount
                     if (dtTotalFee.Rows[i]["Status"].ToString().Equals("Studying Student"))
                     {
-                        if(tisrte)
+                        if (tisrte)
                             Obj = dtAllFeeType.Compute("Sum([Total Fee])", "[FeeType]='1' and RTE='True' And SessionCode='" + cmbSession.SelectedValue + "' And ClassNo='" + dtTotalFee.Rows[i]["ClassNo"] + "' And  stream='" + dtTotalFee.Rows[i]["stream"] + "'");
                         else
                             Obj = dtAllFeeType.Compute("Sum([Total Fee])", "[FeeType]='1' And SessionCode='" + cmbSession.SelectedValue + "' And ClassNo='" + dtTotalFee.Rows[i]["ClassNo"] + "' And  stream='" + dtTotalFee.Rows[i]["stream"] + "'");
 
-                        dtTotalFee.Rows[i]["Fee Amount"] = (Obj != DBNull.Value) ? Obj :Convert.ToDecimal(0.00);
+                        dtTotalFee.Rows[i]["Fee Amount"] = (Obj != DBNull.Value) ? Obj : Convert.ToDecimal(0.00);
                         dtTotalFee.Rows[i]["Total Fee"] = Math.Round((Convert.ToDecimal(dtTotalFee.Rows[i]["Fee Amount"]) + Convert.ToDecimal(dtTotalFee.Rows[i]["Bus Fee"])), 2);
                         dtTotalFee.Rows[i]["Due Fee"] = Math.Round(((Convert.ToDecimal(dtTotalFee.Rows[i]["Total Fee"]) - schamt) - (Convert.ToDecimal(dtTotalFee.Rows[i]["Paid Fee"]) + tdc)), 2);
                         dtTotalFee.Rows[i]["Consession Fee"] = Math.Round(tdc, 2);
@@ -168,7 +175,7 @@ namespace SMS
                     }
                     else if (dtTotalFee.Rows[i]["Status"].ToString().Equals("New Student"))
                     {
-                        if(tisrte)
+                        if (tisrte)
                             Obj = dtAllFeeType.Compute("Sum([Total Fee])", " RTE='True' and SessionCode='" + cmbSession.SelectedValue + "' And ClassNo='" + dtTotalFee.Rows[i]["ClassNo"] + "' And  stream='" + dtTotalFee.Rows[i]["stream"] + "'");
                         else
                             Obj = dtAllFeeType.Compute("Sum([Total Fee])", "SessionCode='" + cmbSession.SelectedValue + "' And ClassNo='" + dtTotalFee.Rows[i]["ClassNo"] + "' And  stream='" + dtTotalFee.Rows[i]["stream"] + "'");
@@ -182,10 +189,9 @@ namespace SMS
 
                 dataGridView1.DataSource = dtTotalFee;
             }
-            catch(Exception ex){Logger.LogError(ex); }
+            catch (Exception ex) { Logger.LogError(ex); }
 
         }
-
         private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
             Connection.SetDataGridViewRowPostPaint(dataGridView1, e);
@@ -196,11 +202,21 @@ namespace SMS
             if (chkClassWise.Checked)
             {
                 cmbClass.Enabled = true;
+                chkSection.Enabled = true;
                 cmbClass.Focus();
             }
             else
             {
                 cmbClass.Enabled = false;
+                cmbSection.Enabled = false;
+                chkSection.Checked = false;
+                chkSection.Enabled = false;
+                if (dtTotalFee != null)
+                {
+                    DataView dv = dtTotalFee.DefaultView;
+                    dv.RowFilter = GetFilter();
+                    dataGridView1.DataSource = dv;
+                }
             }
         }
 
@@ -214,6 +230,13 @@ namespace SMS
             else
             {
                 cmbSection.Enabled = false;
+                if (dtTotalFee != null)
+                {
+                    DataView dv = dtTotalFee.DefaultView;
+                    dv.RowFilter = GetFilter();
+                    dv.Sort = "Name";
+                    dataGridView1.DataSource = dv;
+                }
             }
         }
 
@@ -221,10 +244,14 @@ namespace SMS
         {
             if (chkClassWise.Checked)
             {
-                DataView dv = dtTotalFee.DefaultView;
-                dv.RowFilter = "ClassNo='" + cmbClass.SelectedValue + "' And SessionCode='" + cmbSession.SelectedValue + "'";
-                dv.Sort = "Name";
-                dataGridView1.DataSource = dv; 
+                if (dtTotalFee != null)
+                {
+                    DataView dv = dtTotalFee.DefaultView;
+
+                    dv.RowFilter = GetFilter();
+                    dv.Sort = "Name";
+                    dataGridView1.DataSource = dv;
+                }
             } 
         }
 
@@ -232,27 +259,40 @@ namespace SMS
         {
             if (chkClassWise.Checked == chkSection.Checked==true)
             {
-                DataView dv = dtTotalFee.DefaultView;
-                dv.RowFilter = "ClassNo='" + cmbClass.SelectedValue + "' And SessionCode='" + cmbSession.SelectedValue + "' And SectionNo='" + cmbSection.SelectedValue + "'";
-                dv.Sort = "Name";
-                dataGridView1.DataSource = dv;
+                if (dtTotalFee != null)
+                {
+                    DataView dv = dtTotalFee.DefaultView;
+                    
+                    dv.RowFilter = GetFilter();
+                    dv.Sort = "Name";
+                    dataGridView1.DataSource = dv;
+                }
             }
         }
 
+        private string GetFilter()
+        {
+            string filter = "SessionCode='" + cmbSession.SelectedValue + "'";
+            if (chkSection.Checked)
+                filter += " And SectionNo='" + cmbSection.SelectedValue + "'";
+
+            if (chkClassWise.Checked)
+                filter += " And ClassNo='" + cmbClass.SelectedValue + "'";
+
+            if (cmbStudentStatus.SelectedIndex > 0)
+                filter += " And Status='" + cmbStudentStatus.Text.Trim() + "'";
+                   
+
+            return filter;
+        }
         private void cmbStudentStatus_Leave(object sender, EventArgs e)
         {
             try
             {
-                if (cmbStudentStatus.SelectedIndex > 0)
+                if (dtTotalFee != null)
                 {
                     DataView dv = dtTotalFee.DefaultView;
-                    dv.RowFilter = "Status='" + cmbStudentStatus.Text.Trim() + "'";
-                    dv.Sort = "Name";
-                    dataGridView1.DataSource = dv;
-                }
-                else
-                {
-                    DataView dv = dtTotalFee.DefaultView;
+                    dv.RowFilter = GetFilter();
                     dv.Sort = "Name";
                     dataGridView1.DataSource = dv;
                 }
@@ -317,6 +357,11 @@ namespace SMS
         private void frmDueFee_Paint(object sender, PaintEventArgs e)
         {
             //public static void fromClear(Form f);
+        }
+
+        private void cmbSession_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadStudentFeeDetail();
         }
 
        
