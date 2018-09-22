@@ -11,45 +11,59 @@ namespace SMS
 {
     public partial class frmEmployeeGridWiseList :UserControlBase
     {
+        DataSet dsEmpType;
         //decimal da,daamt,pf,pfamt,bs;
         public frmEmployeeGridWiseList()
         {
             InitializeComponent();
             Connection.SetUserControlTheme(this);
         }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            //this.Close();
-        }
-
         private void frmEmployeeGridWiseList_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'kGRIDataSet1.tbl_teacher' table. You can move, or remove it, as needed.
            
             try
             {
+                dsEmpType = Connection.GetDataSet("SELECT EmpTypeId, Detail, allowleaves FROM  tbl_EmployeeType");
+                FillDropDwonList(dsEmpType);
                 getEmployeeList();
                // this.dgv .EditingControlShowing +=new DataGridViewEditingControlShowingEventHandler(dataGridView1_EditingControlShowing);
 
-                
+                this.cmbEmpType.SelectedIndexChanged += new System.EventHandler(this.cmbEmpType_SelectedIndexChanged);
             }
             catch(Exception ex){Logger.LogError(ex); }
+        }
+
+        private void FillDropDwonList(DataSet dsEmpType)
+        {
+            DataTable tbl = dsEmpType.Tables[0].Copy();
+                
+            tbl.Rows.InsertAt(tbl.NewRow(), 0);
+            tbl.Rows[0]["Detail"] = "All";
+            tbl.Rows[0]["EmpTypeId"] = "-1";
+
+            if (dsEmpType != null)
+            {
+                cmbEmpType.DataSource = tbl;
+                cmbEmpType.DisplayMember = "Detail";
+                cmbEmpType.ValueMember = "EmpTypeId";
+            }
+
         }
       
         private void btnOk_Click(object sender, EventArgs e)
         {
             try
                 {
-                    DialogResult result = MessageBox.Show("Are You Sure To Update Information?", "Conformation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult result = MessageBox.Show("Are you sure to update employee data?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                             if (result == DialogResult.Yes)
                         {
                             int a = 0;
                             for (int i = 0; i < dgv.Rows.Count; i++)
                             {
                                 string emptype = dgv.Rows[i].Cells[2].Value.ToString().Trim();
-                                DataSet ds = Connection.GetDataSet("select emptypeid from tbl_EmployeeType where detail=N'" + emptype + "'");
-                                int id = Convert.ToInt32(ds.Tables[0].Rows[0][0].ToString());
+                                //DataSet ds = Connection.GetDataSet("select emptypeid from tbl_EmployeeType where detail=N'" + emptype + "'");
+                                int id = Convert.ToInt32(emptype);
                                 string isactive = dgv.Rows[i].Cells["isactive"].Value.ToString().Trim();
                                 if (isactive == "Yes")
                                     a = 1;
@@ -98,12 +112,12 @@ namespace SMS
 
                                 string str2 = "update tbl_employeesalaryinfo set enddate='" + DateTime.Now + "',status='" + 2 + "' where empno='" + empno + "' and status=1";
                                 Connection.AllPerform(str2);
-                                string str3 = "INSERT INTO tbl_employeesalaryinfo(empno,startdate,status,salaryrate,pf,lic,loan,rsa,aleave,pfnumber,el,splinctv,EnCLLeave ,DA,HRA,Empname,isactive,esic,esicamt)" +
-                                      "values('" + empno + "','" + DateTime.Now + "','" + 1 + "','" + srate + "','" + pf + "','" + lic + "','" + loan + "','" + rsa + "','" + aleave + "','" + pfno + "','" + el + "','" + splinctv + "','" + enclleave + "','" + da + "','" + hra + "',N'" + name + "','" + a + "','" + ESICPer + "','" + ESICAmt + "')";
+                                string str3 = "INSERT INTO tbl_employeesalaryinfo(empno,startdate,status,salaryrate,pf,lic,loan,rsa,aleave,pfnumber,el,splinctv,EnCLLeave ,DA,HRA,isactive,esic,esicamt)" +
+                                      "values('" + empno + "','" + DateTime.Now + "','" + 1 + "','" + srate + "','" + pf + "','" + lic + "','" + loan + "','" + rsa + "','" + aleave + "','" + pfno + "','" + el + "','" + splinctv + "','" + enclleave + "','" + da + "','" + hra + "','" + a + "','" + ESICPer + "','" + ESICAmt + "')";
                                 Connection.AllPerform(str3);
                                 //  Connection.AllPerform("update tbl_EmployeeSalaryInfo set isactive='" + a + "',salaryrate='" + srate + "',pf='" + pf + "',lic='" + lic + "',loan='" + loan + "',rsa='" + rsa + "',aleave='" + aleave + "',balleave='" + balleave + "',el='" + el + "',elbal='" + elbal + "',splinctv='" + splinctv + "',enclleave='" + enclleave + "',EmpTypeId='" + id + "',da='" + da + "',hra='" + hra + "',pfamt='" + pfamt + "',daamt='" + daamt + "' where empno='" + empno + "'");
                             }
-                        MessageBox.Show("Inormation Successfully Updated.","Information",MessageBoxButtons .OK ,MessageBoxIcon.Information);
+                        MessageBox.Show("Employee data updated successfully.","Information",MessageBoxButtons .OK ,MessageBoxIcon.Information);
                         btnincESIC.Enabled = true;
                         btnincpay.Enabled = true;
                         btnokda.Enabled = true;
@@ -113,7 +127,7 @@ namespace SMS
                 catch(Exception ex)
                 {
                     Logger.LogError(ex); 
-                    MessageBox.Show(ex.Message, "Some Record Missing...", MessageBoxButtons.OK, MessageBoxIcon.Exclamation );
+                    MessageBox.Show("Something went wrong. Please try again.","Error", MessageBoxButtons.OK, MessageBoxIcon.Error );
                     getEmployeeList();
                 }
         }
@@ -129,7 +143,6 @@ namespace SMS
         private void getEmployeeList()
         {
             dgv.Rows.Clear();
-            DataSet dsEmpType = Connection.GetDataSet("SELECT EmpTypeId, Detail, allowleaves FROM  tbl_EmployeeType");
             DataGridViewComboBoxColumn dcmb = new DataGridViewComboBoxColumn();
             dcmb.HeaderText = "Employee Type";
             if (dsEmpType != null)
@@ -138,8 +151,31 @@ namespace SMS
                 dcmb.DisplayMember = "Detail";
                 dcmb.ValueMember = "EmpTypeId";
             }
-            DataSet ds = Connection.GetDataSet("SELECT EmpNo, EmpName,tbl_EmployeeType .Detail, salaryrate, pf,pfamt, lic, loan, rsa, splinctv, aleave, balleave,el, elbal, EnCLLeave, DA,daamt, HRA,ESIC,ESICAmt,IsActive  FROM tbl_EmployeeInfo,tbl_EmployeeType  where tbl_EmployeeInfo .EmpTypeId =tbl_EmployeeType .EmpTypeId And IsActive=1 order by empno");
-            if (ds.Tables[0].Rows.Count > 0)
+            DataSet ds = new DataSet();
+            if (chkOnlyActive.Checked)
+            {
+                if (cmbEmpType.SelectedIndex == 0)
+                {
+                    ds = Connection.GetDataSet("SELECT EmpNo, EmpName,tbl_EmployeeType .Detail, salaryrate, pf,pfamt, lic, loan, rsa, splinctv, aleave, balleave,el, elbal, EnCLLeave, DA,daamt, HRA,ESIC,ESICAmt,IsActive  FROM tbl_EmployeeInfo inner join tbl_EmployeeType  on tbl_EmployeeInfo .EmpTypeId =tbl_EmployeeType .EmpTypeId  where IsActive=1 order by empno");
+                }
+                else
+                {
+                    ds = Connection.GetDataSet("SELECT EmpNo, EmpName,tbl_EmployeeType .Detail, salaryrate, pf,pfamt, lic, loan, rsa, splinctv, aleave, balleave,el, elbal, EnCLLeave, DA,daamt, HRA,ESIC,ESICAmt,IsActive  FROM tbl_EmployeeInfo inner join tbl_EmployeeType  on tbl_EmployeeInfo .EmpTypeId =tbl_EmployeeType .EmpTypeId  where IsActive=1 and tbl_EmployeeInfo .EmpTypeId=" + cmbEmpType.SelectedValue + " order by empno");
+                }
+            }
+            else
+            {
+                if (cmbEmpType.SelectedIndex == 0)
+                {
+                    ds = Connection.GetDataSet("SELECT EmpNo, EmpName,tbl_EmployeeType .Detail, salaryrate, pf,pfamt, lic, loan, rsa, splinctv, aleave, balleave,el, elbal, EnCLLeave, DA,daamt, HRA,ESIC,ESICAmt,IsActive  FROM tbl_EmployeeInfo,tbl_EmployeeType  where tbl_EmployeeInfo .EmpTypeId =tbl_EmployeeType .EmpTypeId order by empno");
+                }
+                else
+                {
+                    ds = Connection.GetDataSet("SELECT EmpNo, EmpName,tbl_EmployeeType .Detail, salaryrate, pf,pfamt, lic, loan, rsa, splinctv, aleave, balleave,el, elbal, EnCLLeave, DA,daamt, HRA,ESIC,ESICAmt,IsActive  FROM tbl_EmployeeInfo,tbl_EmployeeType  where tbl_EmployeeInfo .EmpTypeId =tbl_EmployeeType .EmpTypeId and tbl_EmployeeInfo .EmpTypeId=" + cmbEmpType.SelectedValue + " order by empno");
+                }
+            }
+            
+            if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
             {
                 dgv.Columns.RemoveAt(2);
                 dgv.Columns.Insert(2, dcmb);
@@ -171,7 +207,7 @@ namespace SMS
             }
             else
             {
-                MessageBox.Show("There Are Not Employee Data.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("There is no employee data available.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
 
@@ -189,13 +225,13 @@ namespace SMS
             {
 
                 decimal daper, daamt, bs,Curr_DAPer;
-                 DialogResult result = MessageBox.Show("Are You Sure To Update Information?", "Conformation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                 DialogResult result = MessageBox.Show("Are you sure to update DA amount for all employees?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                  if (result == DialogResult.Yes)
                  {
                      for (int i = 0; dgv.Rows.Count > i; i++)
                      {
                          Curr_DAPer = Convert.ToDecimal(dgv.Rows[i].Cells["da"].Value.ToString());
-                         daper = Convert.ToDecimal(txtincda.Text) + Curr_DAPer;
+                         daper = Convert.ToDecimal(txtincda.Text.Trim()) + Curr_DAPer;
                          bs = Convert.ToDecimal(dgv.Rows[i].Cells["Salary"].Value.ToString());
                          daamt = ((bs * daper) / 100);
                          dgv.Rows[i].Cells["da"].Value = daper;
@@ -214,7 +250,7 @@ namespace SMS
             {
 
                 decimal pfper, pfamt, bs,Curr_PFPer;
-                 DialogResult result = MessageBox.Show("Are You Sure To Update Information?", "Conformation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show("Are you sure to update PF amount for all employees?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                  if (result == DialogResult.Yes)
                  {
                      for (int i = 0; dgv.Rows.Count > i; i++)
@@ -239,7 +275,7 @@ namespace SMS
             try
             {
                 decimal daper, daamt, pfper, pfamt, bsper, bsamt, bs,esicper,esicamt;
-                DialogResult result = MessageBox.Show("Are You Sure To Update Information?", "Conformation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show("Are you sure to update Basic Salary amount for all employees?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
                     for (int i = 0; dgv.Rows.Count > i; i++)
@@ -281,7 +317,7 @@ namespace SMS
             {
 
                 decimal ESICPer, ESICAmt, bs, Curr_ESICPer;
-              DialogResult result = MessageBox.Show("Are You Sure To Update Information?", "Conformation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show("Are you sure to update ESIC amount for all employees?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (result == DialogResult.Yes)
                     {
                         for (int i = 0; dgv.Rows.Count > i; i++)
@@ -324,7 +360,7 @@ namespace SMS
         {
             try
             {
-                if (MessageBox.Show("Are You Sure To Reset All Available Record?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Are you sure to reset all the records to original values?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     getEmployeeList();
                     //this.dgv .EditingControlShowing +=new DataGridViewEditingControlShowingEventHandler(dataGridView1_EditingControlShowing);
@@ -349,6 +385,17 @@ namespace SMS
         private void frmEmployeeGridWiseList_Paint(object sender, PaintEventArgs e)
         {
             //public static void fromClear(Form f);
+        }
+
+
+        private void chkOnlyActive_CheckedChanged(object sender, EventArgs e)
+        {
+            getEmployeeList();
+        }
+
+        private void cmbEmpType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            getEmployeeList();
         }
 
     }

@@ -1760,6 +1760,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="SystemSetting.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <EmbeddedResource Include="accledger.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>accledger.cs</LastGenOutput>
@@ -3137,6 +3140,10 @@
       <DependentUpon>VoucherCashReceipt.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Content Include="AppPaths.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Image\noImage.png" />
     <None Include="Resources\noImage.jpg" />
     <Content Include="scripts\dbcreate.bat">

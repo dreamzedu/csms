@@ -1274,12 +1274,32 @@ namespace SMS
 
         internal void ToggleEditButton(bool enable)
         {
-            this.btnEdit.Enabled = enable;
+            if (enable)
+            {
+                if (Connection.UserLevel == 1 || Connection.UserName.ToUpper().Equals("CSMS"))
+                {
+                    this.btnEdit.Enabled = enable;
+                }
+            }
+            else
+            {
+                this.btnEdit.Enabled = enable;
+            }
         }
 
         internal void ToggleDeleteButton(bool enable)
-        {
-            this.btnDelete.Enabled = enable;
+        {            
+            if(enable)
+            {
+                if (Connection.UserLevel == 1 || Connection.UserName.ToUpper().Equals("CSMS"))
+                {
+                    this.btnDelete.Enabled = enable;
+                }
+            }
+            else
+            {
+                this.btnDelete.Enabled = enable;
+            }
         }
 
         internal void ToggleCancelButton(bool enable)
@@ -1296,10 +1316,58 @@ namespace SMS
         {
             this.btnPrint.Enabled = enable;
         }
+        
+        // These logic can be moved inside the button event call itself but that will need more effort to complete as it will impact all pages.
+        internal void AfterNewClick()
+        {
+            btnCancel.Enabled = true;
+            btnNew.Enabled = false;
+            btnEdit.Enabled = false;
+            btnDelete.Enabled = false;
+            btnSave.Enabled = true;
+        }
+
+        internal void AfterEditClick()
+        {
+            btnCancel.Enabled = true;
+            btnNew.Enabled = false;
+            btnEdit.Enabled = false;            
+            btnSave.Enabled = true;
+        }
+
+        internal void AfterSaveClick()
+        {
+            btnCancel.Enabled = false;
+            btnNew.Enabled = true;
+            if (Connection.UserLevel == 1 || Connection.UserName.ToUpper().Equals("CSMS"))
+            {
+                btnEdit.Enabled = true;
+            }
+            btnDelete.Enabled = false;
+            btnSave.Enabled = false;
+        }
+
+        internal void AfterCancelClick()
+        {
+            btnCancel.Enabled = false;
+            btnNew.Enabled = true;
+            if (Connection.UserLevel == 1 || Connection.UserName.ToUpper().Equals("CSMS"))
+            {
+                btnEdit.Enabled = true;
+            }
+            btnDelete.Enabled = false;
+            btnSave.Enabled = false;
+        }
 
         private void createDatabaseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //System.Diagnostics.Process.Start(@"cmd.exe scripts\createdb.vbs");
+        }
+
+        private void databaseToolToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDBServer d = new frmDBServer();
+            d.Show();
         }
 
        

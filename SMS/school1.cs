@@ -1792,5 +1792,7 @@ namespace SMS
 
       
         private string alfa = "ABCDEFGHIJKLMNOPQRSTUVWXYZABC";
+
     }
+
 }

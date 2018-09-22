@@ -18,7 +18,7 @@ namespace SMS
     public partial class frmNewEmployee :UserControlBase
     {
         int count = 0;
-        school c = new school();
+        school1 c = new school1();
         byte[] EmpImage;
         private string PicturePath = string.Empty;
         Image img, imgClear;
@@ -28,7 +28,7 @@ namespace SMS
         int isactive,ispermanent;        
         ErrorProvider errorProvider1 = new ErrorProvider();
         TextInfo myTextInfo = System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo;
-
+        string operation = "";
 
         public frmNewEmployee()
         {
@@ -67,8 +67,12 @@ namespace SMS
             
             try
             {
-                //if( EmpImage!=null)
-               
+                if (operation == "edit")
+                { UpdateEmployeeRecord(); }
+                else
+                {
+                    //if( EmpImage!=null)
+
                     if (txtEmployeeNo.Text != "")
                     {
                         int a = checkMandatary();
@@ -88,6 +92,16 @@ namespace SMS
                             ispermanent = 1;
                         else
                             ispermanent = 0;
+
+                        
+                        int count = Convert.ToInt16(Connection.GetExecuteScalar("select count(*) from tbl_employeeinfo where EmpName='" + txtEmpName.Text.Trim() + "'"));
+                        if(count > 0)
+                        {
+                            MessageBox.Show("Employee with this name already exists.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            txtEmpName.Focus();
+                            return;
+                        }
+
                         trn = Connection.GetMyConnection().BeginTransaction();
                         Connection.SqlTransection("insert into tbl_employeeinfo (EmpNo,EmpTypeId, EmpName,Qualification,Experience, DOJ, DOB, Gender, FathersName, Address, IsActive, salaryrate, pf, lic, loan, designation, photo, rsa, aleave,pfnumber, el, splinctv, EnCLLeave, DA, HRA, contactno, DAAmt, PFAmt, NetSalary,ESIC,ESICAmt,AccountNo,BankName,ML,IsPermanent) values('" + txtEmployeeNo.Text + "','" + cmbEmpType.SelectedValue + "','" + myTextInfo.ToTitleCase(txtEmpName.Text) + "', '" + txtQualification.Text + "','" + txtExperience.Text + "','" + dtpDOJ.Value + "','" + dtpDOB.Value + "','" + gender + "','" + myTextInfo.ToTitleCase(txtFatherName.Text) + "','" + txtAddress.Text + "','" + isactive + "','" + txtsalaryrate.Text + "','" + txtpfPer.Text + "','" + txtLICdeduction.Text + "','" + txtLoanDeduction.Text + "','" + txtDesignation.Text + "','" + EmpImage + "','" + txtSpcAllowence.Text + "','" + txtAllowedCL.Text + "','" + txtPFno.Text + "','" + txtAllowedEL.Text + "','" + txtSpcIncentive.Text + "','" + txtAllowedCL.Text + "','" + txtda.Text + "','" + txthra.Text + "','" + txtcontactno.Text + "','" + txtdaamt.Text + "','" + txtpfamt.Text + "','" + txtsalaryrate.Text + "','" + txtESICPer.Text + "','" + txtESICAmt.Text + "','" + txtAccountNo.Text + "','" + txtBankName.Text + "','" + txtML.Text + "','" + ispermanent + "')", Connection.MyConnection, trn);
                         Connection.SqlTransection("insert into tbl_employeesalaryinfo (empno, startdate, status, salaryrate, pf, lic, loan, rsa, aleave, pfnumber, el, splinctv, EnCLLeave, DA, HRA, IsActive, DAAmt, PFAmt, NetSalary,ESIC,ESICAmt,ML) values('" + txtEmployeeNo.Text + "','" + dtpDOJ.Value + "',1,'" + txtsalaryrate.Text + "','" + txtpfPer.Text + "','" + txtLICdeduction.Text + "','" + txtLoanDeduction.Text + "','" + txtSpcAllowence.Text + "','" + txtAllowedCL.Text + "','" + txtPFno.Text + "','" + txtAllowedEL.Text + "','" + txtSpcIncentive.Text + "','" + txtAllowedCL.Text + "','" + txtda.Text + "','" + txthra.Text + "','" + isactive + "','" + txtdaamt.Text + "','" + txtpfamt.Text + "','" + txtsalaryrate.Text + "','" + txtESICPer.Text + "','" + txtESICAmt.Text + "','" + txtML.Text + "')", Connection.MyConnection, trn);
@@ -120,21 +134,57 @@ namespace SMS
                                 con.Close();
                             }
                         }
-                        MessageBox.Show("Record Saved Successfully.");
-                        clearAllControl();
+                        MessageBox.Show("Record saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        c.GetMdiParent(this).AfterSaveClick();
+                        //clearAllControl();
+                        EnabledFalseAllControl();
                     }
                     else
                     {
-                        MessageBox.Show("Please Insert Record Carefully.");
+                        MessageBox.Show("Please enter values correctly.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
+                }
             }
             catch (Exception ex)
             {
                 trn.Rollback();
                 Logger.LogError(ex); 
-                MessageBox.Show("Some Record Missin!!! \n\tPlease Try Again.");
+                MessageBox.Show("Something went wrong. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        public override void btndelete_Click(object sender, EventArgs e)
+        {
+            SqlTransaction trn = null;
+            try
+            {
+                trn = Connection.GetMyConnection().BeginTransaction();
+                Connection.SqlTransection("delete tbl_employeeinfo where Empno='" + txtEmployeeNo.Text + "'", Connection.MyConnection, trn);
+                Connection.SqlTransection("delete tbl_employeesalaryinfo where empno='" + txtEmployeeNo.Text + "'", Connection.MyConnection, trn);
+                object val = Connection.GetExecuteScalar("select accode from tbl_account where acname='" + txtEmpName.Text + "'");
+                if (val != DBNull.Value)
+                {
+                    Connection.SqlTransection("delete tbl_account where acname='" + txtEmpName.Text + "'", Connection.MyConnection, trn);
+                }
+                Connection.SqlTransection("delete tbl_subledger_account where accode="+val.ToString(), Connection.MyConnection, trn);
+                Connection.SqlTransection("delete tbl_Code where CodeNo='" + txtEmployeeNo.Text.Trim() + "' and CodeName='EMP'", Connection.MyConnection, trn);
+                trn.Commit();
+                
+                MessageBox.Show("Record deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                c.GetMdiParent(this).AfterSaveClick();
+                clearAllControl();
+                EnabledFalseAllControl();
+            }
+            catch(Exception ex)
+            {
+                trn.Rollback();
+                Logger.LogError(ex);
+                MessageBox.Show("Something went wrong. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);            
+            }
+            
         }
          
         private void cmbEmpType_SelectedIndexChanged(object sender, EventArgs e)
@@ -205,10 +255,11 @@ namespace SMS
             txtEmployeeNo.ReadOnly = true;
             clearAllControl();
             //btnUpdate.Enabled = false;            
-           c.GetMdiParent(this).ToggleSaveButton(true);
+            c.GetMdiParent(this).AfterNewClick();
             EnabledTrueAllControl ();
             txtEmpName.Focus();
-            Connection.SetUserLevelAuth(c.GetMdiParent(this));
+            operation = "new";
+            //Connection.SetUserLevelAuth(c.GetMdiParent(this));
            
         }
         private void clearAllControl()
@@ -247,7 +298,7 @@ namespace SMS
             // imgemployee.ImageLocation = "F:\\Data\\BlankImg.jpeg";
             txtEmployeeNo.ReadOnly = true;
             txtEmpName.Focus();
-           c.GetMdiParent(this).ToggleEditButton(true);
+           //c.GetMdiParent(this).ToggleEditButton(true);
             //btnUpdate.Enabled = false;
             txtML.Enabled = true;
             txtEmployeeNo.Text = Connection.NewCode("EMP");
@@ -259,8 +310,10 @@ namespace SMS
 
         public override void btncancel_Click(object sender, EventArgs e)
         {
+            c.GetMdiParent(this).AfterCancelClick();
             clearAllControl();
-            Connection.SetUserLevelAuth(c.GetMdiParent(this));
+            EnabledFalseAllControl();
+            //Connection.SetUserLevelAuth(c.GetMdiParent(this));
         }
 
         public override void btnedit_Click(object sender, EventArgs e)
@@ -272,23 +325,23 @@ namespace SMS
                 txtEmployeeNo.Focus();
                 // btnSave.Text = "Update";
                 //btnUpdate.Enabled = true;
-               c.GetMdiParent(this).ToggleEditButton(false);
-               c.GetMdiParent(this).ToggleSaveButton(false);
+                operation = "edit";
+                c.GetMdiParent(this).AfterEditClick();
             }
             catch(Exception ex){Logger.LogError(ex); }
         }
 
-        private void txtEmployeeNo_Validated(object sender, EventArgs e)
+        private void txtEmployeeNo_Leave(object sender, EventArgs e)
         {
             try
             {
                 if (txtEmployeeNo.ReadOnly == false)
-                {
-                    EnabledTrueAllControl();
+                {                    
                     string s = "  select EmpTypeId,EmpName,Qualification,Experience, DOJ,DOB,Gender,FathersName,Address,IsActive,salaryrate,pf,lic,loan,designation,photo,rsa,aleave,ele,pfnumber,el,elbal,splinctv,EnCLLeave,contactno,DA,hra,ESIC,ESICAmt,AccountNo,BankName,IsPermanent,Qualification, Experience, AttendanceID from tbl_EmployeeInfo  where  EmpNo='" + txtEmployeeNo.Text.Trim() + "' ";
                     DataSet ds = Connection.GetDataSet(s);
                     if (ds.Tables[0].Rows.Count > 0)
                     {
+                        EnabledTrueAllControl();
                         int n = Convert.ToInt32(ds.Tables[0].Rows[0]["emptypeid"].ToString());
                         DataSet ds1 = Connection.GetDataSet("select detail from tbl_employeetype where emptypeid='" + n + "'");
                         string gen = ds.Tables[0].Rows[0]["gender"].ToString().Trim();
@@ -302,7 +355,7 @@ namespace SMS
                             rdoFemale.Checked = true;
                             rdoMale.Checked = false;
                         }
-                        
+
                         if (ds.Tables[0].Rows[0]["isactive"].ToString() == "1")
                             chkIsActive.Checked = true;
                         else
@@ -339,10 +392,10 @@ namespace SMS
                         txtESICAmt.Text = ds.Tables[0].Rows[0]["ESICAmt"].ToString();
                         txtAccountNo.Text = ds.Tables[0].Rows[0]["AccountNo"].ToString();
                         txtBankName.Text = ds.Tables[0].Rows[0]["BankName"].ToString();
-                        txtMachineID .Text = ds.Tables[0].Rows[0]["AttendanceID"].ToString();
+                        txtMachineID.Text = ds.Tables[0].Rows[0]["AttendanceID"].ToString();
                         ////7-Aug By Gtl
-                        SalaryRate = Convert .ToDecimal(ds.Tables[0].Rows[0]["salaryrate"]);
-
+                        SalaryRate = Convert.ToDecimal(ds.Tables[0].Rows[0]["salaryrate"]);
+                        calculateDA();
                         try
                         {
                             byte[] b = (byte[])ds.Tables[0].Rows[0]["photo"];
@@ -351,18 +404,25 @@ namespace SMS
                         }
                         catch (Exception ex)
                         {
-                            Logger.LogError(ex); 
+                            Logger.LogError(ex);
+                            EmpImage = null;
+                            imgemployee.Image = imgClear; ;
                         }
                         lblMID.Visible = txtMachineID.Visible = true;
-                        txtsalaryrate.Focus();                   
-                }
+                        
+                        c.GetMdiParent(this).ToggleDeleteButton(true);
+                        txtsalaryrate.Focus();
+                    }
                     else
                     {
-                        MessageBox.Show("Record is not availabe about this identity.");
-                        txtEmployeeNo.ReadOnly = true;
-                        clearAllControl();
-                        EnabledFalseAllControl ();
-                        return;
+                        MessageBox.Show("Record is not availabe for this id.");
+                        //txtEmployeeNo.Focus();
+                        //txtEmployeeNo.SelectAll();
+
+                        //clearAllControl();
+                        //EnabledFalseAllControl ();
+                        //txtEmployeeNo.ReadOnly = false;
+                        //return;
                     }
                 }
             }
@@ -509,7 +569,7 @@ namespace SMS
                 if (!txtEmployeeNo.ReadOnly)
                     if (SalaryRate != Convert.ToDecimal(txtsalaryrate.Text))
                     {
-                        MessageBox.Show("Salary Rate Is Increased.,\n Please Select Salary Start Date! ", "Attension !!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Salary rate is increased.,\n Please select Salary Start Date. ", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         gbxSalaryRateChange.Visible = true;
                         txtOldSalaryRate.Text = SalaryRate.ToString();
                     }
@@ -669,7 +729,7 @@ namespace SMS
             }
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private void UpdateEmployeeRecord()
         {
             SqlTransaction trn = null;
             DialogResult res = new DialogResult();
@@ -678,7 +738,7 @@ namespace SMS
             {
                 //if( EmpImage!=null)
                 
-                        res = MessageBox.Show("Are You Sure To Perform This Operation?", "Information", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        res = MessageBox.Show("Are you sure you want to update the record?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         if (res == DialogResult.Yes)
                         {
                             int a = checkMandatary();
@@ -697,6 +757,14 @@ namespace SMS
                                 ispermanent = 1;
                             else
                                 ispermanent = 0;
+                            
+                            int count = Convert.ToInt16(Connection.GetExecuteScalar("select count(*) from tbl_employeeinfo where EmpName='" + txtEmpName.Text.Trim() + "' and empno <> '" + txtEmployeeNo.Text.Trim() + "'"));
+                            if(count > 0)
+                            {
+                                MessageBox.Show("Employee with this name already exists.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                txtEmpName.Focus();
+                                return;
+                            }
 
                             trn = Connection.GetMyConnection().BeginTransaction();
                             Connection.SqlTransection("update tbl_employeeinfo set EmpTypeId='" + cmbEmpType.SelectedValue + "', EmpName='" + myTextInfo.ToTitleCase(txtEmpName.Text) + "', Qualification = '" + txtQualification.Text + "',Experience = '" + txtExperience.Text + "' ,DOJ='" + dtpDOJ.Value + "', DOB='" + dtpDOB.Value + "', Gender='" + gender + "', FathersName='" + myTextInfo.ToTitleCase(txtFatherName.Text) + "', Address='" + txtAddress.Text + "', IsActive='" + isactive + "', salaryrate='" + txtsalaryrate.Text + "', pf='" + txtpfPer.Text + "', lic='" + txtLICdeduction.Text + "', loan='" + txtLoanDeduction.Text + "', designation=N'" + txtDesignation.Text + "', photo='" + EmpImage + "', rsa='" + txtSpcAllowence.Text + "', aleave='" + txtAllowedCL.Text + "',pfnumber='" + txtPFno.Text + "', el='" + txtAllowedEL.Text + "', splinctv='" + txtSpcIncentive.Text + "', EnCLLeave='" + txtAllowedCL.Text + "', DA='" + txtda.Text + "', HRA='" + txthra.Text + "', contactno='" + txtcontactno.Text + "', DAAmt='" + txtdaamt.Text + "', PFAmt='" + txtpfamt.Text + "', NetSalary='" + txtsalaryrate.Text + "',esic='" + txtESICPer.Text + "',esicamt='" + txtESICAmt.Text + "',accountno='" + txtAccountNo.Text + "',bankname='" + txtBankName.Text + "',ML='" + txtML.Text + "',IsPermanent='" + ispermanent + "', AttendanceID='" + txtMachineID.Text.Trim() + "' where empno='" + txtEmployeeNo.Text + "'", Connection.MyConnection, trn);
@@ -732,9 +800,11 @@ namespace SMS
                                 }
                             }
                             catch(Exception ex){Logger.LogError(ex); }
-                            MessageBox.Show("Employee Record Updated!!!", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            clearAllControl();
-                           c.GetMdiParent(this).ToggleEditButton(true);
+                            MessageBox.Show("Employee record updated successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            //clearAllControl();
+                            c.GetMdiParent(this).AfterSaveClick();
+                            EnabledFalseAllControl();
+                            txtEmployeeNo.ReadOnly = true;
                             //btnUpdate.Enabled = false;
                             gbxSalaryRateChange.Visible = false;
                         }
@@ -748,7 +818,7 @@ namespace SMS
             {
                 trn.Rollback();
                 Logger.LogError(ex); 
-                MessageBox.Show("Some Record Missing!!!\n\tPlease Try Again.", "Alert!!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Something went wrong.\n\tPlease try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }           
         }
 
@@ -846,7 +916,7 @@ namespace SMS
         }
      
         private void EnabledTrueAllControl()
-        {
+        {            
             txtEmpName.Enabled = true;
             txtFatherName.Enabled = true;
             cmbEmpType.Enabled = true;
@@ -878,6 +948,12 @@ namespace SMS
             chkIsActive.Enabled = true;
             CHKPermanent.Enabled = true;
             txtML.Enabled = true;
+            txtdaamt.Enabled = true;
+            txtESICAmt.Enabled = true;
+            txtpfamt.Enabled = true;
+            btnPhoto.Enabled = true;
+            txtOldSalaryRate.Enabled = true;
+            dtpSalaryChange.Enabled = true;
         }
         private void EnabledFalseAllControl()
         {
@@ -912,6 +988,12 @@ namespace SMS
             chkIsActive.Enabled = false;
             CHKPermanent.Enabled = false;
             txtML.Enabled = false ;
+            txtdaamt.Enabled = false;
+            txtESICAmt.Enabled = false;
+            txtpfamt.Enabled = false;
+            btnPhoto.Enabled = false;
+            txtOldSalaryRate.Enabled = false;
+            dtpSalaryChange.Enabled = false;
         }
 
         private void txtESICPer_TextChanged(object sender, EventArgs e)

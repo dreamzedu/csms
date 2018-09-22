@@ -53,7 +53,7 @@ namespace SMS
             #endregion
             //Application Path Registration
             #region
-            dtApplicationSetupPath.ReadXml(Application.StartupPath + @"\Mahanta.xml");
+            dtApplicationSetupPath.ReadXml(Application.StartupPath + @"\AppPaths.xml");
             dtgApplicationPath.Rows.Clear();
             foreach(DataColumn c in dtApplicationSetupPath.Tables [0].Columns)
             {
@@ -157,8 +157,7 @@ namespace SMS
 
         private void btnServer_Click(object sender, EventArgs e)
         {
-            frmDBServer d = new frmDBServer();
-            d.Show();
+            
         }
 
         private void dtgApplicationPath_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -208,7 +207,7 @@ namespace SMS
                         R[r.Cells["Title"].Value.ToString ()] = r.Cells["Path"].Value;
                     }
                 dtApplicationSetupPath.Tables[0].Rows.Add(R);
-                dtApplicationSetupPath.WriteXml(Application.StartupPath + @"\Mahanta.xml");
+                dtApplicationSetupPath.WriteXml(Application.StartupPath + @"\AppPaths.xml");
                 MessageBox.Show("Path Saved...", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }

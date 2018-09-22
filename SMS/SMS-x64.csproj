@@ -3143,6 +3143,9 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AppPaths.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Image\new icons\Add User Group Woman Man-48.png" />
     <Content Include="Image\new icons\Administrator Male-48.png" />
     <Content Include="Image\new icons\Calendar-48.png" />
@@ -3218,6 +3221,9 @@
     </Content>
     <Content Include="Libs\SMSClientLibrary.dll" />
     <Content Include="school.ico" />
+    <Content Include="SystemSetting.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Image\bookimage.jpg" />
     <Content Include="Back Icon.jpg" />
     <Content Include="Image\Back Icon.jpg" />

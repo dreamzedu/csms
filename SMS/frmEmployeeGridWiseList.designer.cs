@@ -51,7 +51,6 @@
             this.ESICAmt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isactive = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.btnOk = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnincESIC = new System.Windows.Forms.Button();
             this.txtIncESIC = new System.Windows.Forms.TextBox();
@@ -66,22 +65,10 @@
             this.txtincda = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnReset = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.cmbEmpType = new System.Windows.Forms.ComboBox();
+            this.chkOnlyActive = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgv
@@ -111,10 +98,10 @@
             this.ESIC,
             this.ESICAmt,
             this.isactive});
-            this.dgv.Location = new System.Drawing.Point(66, 61);
+            this.dgv.Location = new System.Drawing.Point(66, 83);
             this.dgv.Margin = new System.Windows.Forms.Padding(4);
             this.dgv.Name = "dgv";
-            this.dgv.Size = new System.Drawing.Size(688, 404);
+            this.dgv.Size = new System.Drawing.Size(1193, 404);
             this.dgv.TabIndex = 0;
             this.dgv.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.dgv_DataError_1);
             // 
@@ -253,7 +240,7 @@
             // btnOk
             // 
             this.btnOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOk.Location = new System.Drawing.Point(600, 532);
+            this.btnOk.Location = new System.Drawing.Point(1104, 495);
             this.btnOk.Margin = new System.Windows.Forms.Padding(4);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(155, 28);
@@ -261,18 +248,6 @@
             this.btnOk.Text = "Update";
             this.btnOk.UseVisualStyleBackColor = true;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
-            // 
-            // btnExit
-            // 
-            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(600, 579);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(4);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(155, 28);
-            this.btnExit.TabIndex = 4;
-            this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // groupBox1
             // 
@@ -289,7 +264,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtincda);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(66, 472);
+            this.groupBox1.Location = new System.Drawing.Point(66, 494);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
@@ -300,10 +275,10 @@
             // btnincESIC
             // 
             this.btnincESIC.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnincESIC.Location = new System.Drawing.Point(387, 98);
+            this.btnincESIC.Location = new System.Drawing.Point(387, 95);
             this.btnincESIC.Margin = new System.Windows.Forms.Padding(4);
             this.btnincESIC.Name = "btnincESIC";
-            this.btnincESIC.Size = new System.Drawing.Size(93, 31);
+            this.btnincESIC.Size = new System.Drawing.Size(93, 28);
             this.btnincESIC.TabIndex = 5;
             this.btnincESIC.Text = "Ok";
             this.btnincESIC.UseVisualStyleBackColor = true;
@@ -311,7 +286,7 @@
             // 
             // txtIncESIC
             // 
-            this.txtIncESIC.Location = new System.Drawing.Point(257, 100);
+            this.txtIncESIC.Location = new System.Drawing.Point(257, 99);
             this.txtIncESIC.Margin = new System.Windows.Forms.Padding(4);
             this.txtIncESIC.Name = "txtIncESIC";
             this.txtIncESIC.Size = new System.Drawing.Size(96, 22);
@@ -334,10 +309,10 @@
             // btnincpay
             // 
             this.btnincpay.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnincpay.Location = new System.Drawing.Point(387, 137);
+            this.btnincpay.Location = new System.Drawing.Point(387, 134);
             this.btnincpay.Margin = new System.Windows.Forms.Padding(4);
             this.btnincpay.Name = "btnincpay";
-            this.btnincpay.Size = new System.Drawing.Size(93, 31);
+            this.btnincpay.Size = new System.Drawing.Size(93, 28);
             this.btnincpay.TabIndex = 7;
             this.btnincpay.Text = "Ok";
             this.btnincpay.UseVisualStyleBackColor = true;
@@ -345,7 +320,7 @@
             // 
             // txtincbasicpay
             // 
-            this.txtincbasicpay.Location = new System.Drawing.Point(257, 140);
+            this.txtincbasicpay.Location = new System.Drawing.Point(257, 138);
             this.txtincbasicpay.Margin = new System.Windows.Forms.Padding(4);
             this.txtincbasicpay.Name = "txtincbasicpay";
             this.txtincbasicpay.Size = new System.Drawing.Size(96, 22);
@@ -368,10 +343,10 @@
             // btnpfamt
             // 
             this.btnpfamt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnpfamt.Location = new System.Drawing.Point(387, 59);
+            this.btnpfamt.Location = new System.Drawing.Point(387, 56);
             this.btnpfamt.Margin = new System.Windows.Forms.Padding(4);
             this.btnpfamt.Name = "btnpfamt";
-            this.btnpfamt.Size = new System.Drawing.Size(93, 31);
+            this.btnpfamt.Size = new System.Drawing.Size(93, 28);
             this.btnpfamt.TabIndex = 3;
             this.btnpfamt.Text = "Ok";
             this.btnpfamt.UseVisualStyleBackColor = true;
@@ -379,7 +354,7 @@
             // 
             // txtincpf
             // 
-            this.txtincpf.Location = new System.Drawing.Point(257, 59);
+            this.txtincpf.Location = new System.Drawing.Point(257, 60);
             this.txtincpf.Margin = new System.Windows.Forms.Padding(4);
             this.txtincpf.Name = "txtincpf";
             this.txtincpf.Size = new System.Drawing.Size(96, 22);
@@ -393,7 +368,7 @@
             this.btnokda.Location = new System.Drawing.Point(387, 17);
             this.btnokda.Margin = new System.Windows.Forms.Padding(4);
             this.btnokda.Name = "btnokda";
-            this.btnokda.Size = new System.Drawing.Size(93, 31);
+            this.btnokda.Size = new System.Drawing.Size(93, 28);
             this.btnokda.TabIndex = 1;
             this.btnokda.Text = "Ok";
             this.btnokda.UseVisualStyleBackColor = true;
@@ -437,7 +412,7 @@
             // btnReset
             // 
             this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Location = new System.Drawing.Point(600, 485);
+            this.btnReset.Location = new System.Drawing.Point(941, 495);
             this.btnReset.Margin = new System.Windows.Forms.Padding(4);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(155, 28);
@@ -446,165 +421,27 @@
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
-            // groupBox2
+            // cmbEmpType
             // 
-            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox2.Controls.Add(this.button1);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.button2);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.button3);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.button4);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Location = new System.Drawing.Point(66, 472);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(503, 186);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
+            this.cmbEmpType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbEmpType.FormattingEnabled = true;
+            this.cmbEmpType.Location = new System.Drawing.Point(66, 52);
+            this.cmbEmpType.Name = "cmbEmpType";
+            this.cmbEmpType.Size = new System.Drawing.Size(121, 24);
+            this.cmbEmpType.TabIndex = 5;
             // 
-            // button1
+            // chkOnlyActive
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(387, 95);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 25);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Ok";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.btnincESIC_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(257, 97);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(96, 22);
-            this.textBox1.TabIndex = 4;
-            this.textBox1.Text = "0";
-            this.textBox1.Leave += new System.EventHandler(this.txtIncESIC_Leave);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(8, 100);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(180, 20);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Increament ESIC(%)";
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(387, 134);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(93, 25);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Ok";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.btnincpay_Click);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(257, 137);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(96, 22);
-            this.textBox2.TabIndex = 6;
-            this.textBox2.Text = "0";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(8, 139);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(229, 20);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Increament Basic Pay (%)";
-            this.label7.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // button3
-            // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(387, 55);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(93, 25);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Ok";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.btnpfamt_Click);
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(257, 58);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(96, 22);
-            this.textBox3.TabIndex = 2;
-            this.textBox3.Text = "0";
-            this.textBox3.Leave += new System.EventHandler(this.txtincpf_Leave);
-            // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(387, 16);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(93, 25);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "Ok";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.btnokda_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(8, 60);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(161, 20);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "Increament PF(%)";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(257, 18);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(96, 22);
-            this.textBox4.TabIndex = 0;
-            this.textBox4.Text = "0";
-            this.textBox4.Enter += new System.EventHandler(this.txtincda_Enter);
-            this.textBox4.Leave += new System.EventHandler(this.txtincda_Leave);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(8, 21);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(164, 20);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Increament DA(%)";
+            this.chkOnlyActive.AutoSize = true;
+            this.chkOnlyActive.Checked = true;
+            this.chkOnlyActive.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkOnlyActive.Location = new System.Drawing.Point(223, 55);
+            this.chkOnlyActive.Name = "chkOnlyActive";
+            this.chkOnlyActive.Size = new System.Drawing.Size(207, 21);
+            this.chkOnlyActive.TabIndex = 6;
+            this.chkOnlyActive.Text = "Show only active employees";
+            this.chkOnlyActive.UseVisualStyleBackColor = true;
+            this.chkOnlyActive.CheckedChanged += new System.EventHandler(this.chkOnlyActive_CheckedChanged);
             // 
             // frmEmployeeGridWiseList
             // 
@@ -612,24 +449,23 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.chkOnlyActive);
+            this.Controls.Add(this.cmbEmpType);
             this.Controls.Add(this.btnReset);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.dgv);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmEmployeeGridWiseList";
-            this.Size = new System.Drawing.Size(835, 712);
+            this.Size = new System.Drawing.Size(1329, 712);
             this.Tag = "1064";
             this.Load += new System.EventHandler(this.frmEmployeeGridWiseList_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmEmployeeGridWiseList_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -637,7 +473,6 @@
 
         private System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.Button btnOk;
-        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnokda;
         private System.Windows.Forms.TextBox txtincda;
@@ -673,18 +508,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ESIC;
         private System.Windows.Forms.DataGridViewTextBoxColumn ESICAmt;
         private System.Windows.Forms.DataGridViewComboBoxColumn isactive;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cmbEmpType;
+        private System.Windows.Forms.CheckBox chkOnlyActive;
     }
 }

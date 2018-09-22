@@ -156,7 +156,7 @@ namespace SMS
         private void btnShowAttendance_Click(object sender, EventArgs e)
         {
             Connection.SetValue_0_For_MS_Access_1_For_MS_Excel = 0;
-            Connection.MSAccessFileInfoFullName = Convert.ToString(Connection.GetAttributeObjectFromXMLFile("Mahanta", "AttendanceMachinePath"));
+            Connection.MSAccessFileInfoFullName = Convert.ToString(Connection.GetAttributeObjectFromXMLFile("AppPaths", "AttendanceMachinePath"));
             DataTable dsMachineAttendance = Connection.GetDataTableFromExcelFile("Select EmployeeID, InTime, OutTime, StatusCode "+
                 " From AttendanceLogs Where AttendanceDate = #" + txtAttandanceDate.Value.Date.ToString("MM/dd/yyyy")  + "#");
             if (dsMachineAttendance.Rows.Count > 0)
@@ -249,7 +249,7 @@ namespace SMS
                 if (DialogResult.Yes.Equals(MessageBox.Show("Are You Sure To Save Attendance Date Of \" " + txtAttandanceDate.Text + " \" ?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question)))
                 {
                     Connection.SetValue_0_For_MS_Access_1_For_MS_Excel = 0;
-                    Connection.MSAccessFileInfoFullName = Convert.ToString(Connection.GetAttributeObjectFromXMLFile("Mahanta", "AttendanceMachinePath"));
+                    Connection.MSAccessFileInfoFullName = Convert.ToString(Connection.GetAttributeObjectFromXMLFile("AppPaths", "AttendanceMachinePath"));
                     DataTable dsMachineAttendance = Connection.GetDataTableFromExcelFile("Select EmployeeID, AttendanceDate, InTime, OutTime, StatusCode " +
                         " From AttendanceLogs Where MONTH(AttendanceDate) = MONTH(#" + txtAttandanceDate.Value.Date  + "#) And  "+
                         " YEAR(AttendanceDate) = YEAR(#" + txtAttandanceDate.Value.Date  + "#)");

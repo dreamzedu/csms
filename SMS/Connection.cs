@@ -458,10 +458,10 @@ namespace SMS
             frm.ToggleNewButton(true);
             frm.TogglePrintButton(true);
 
-            if (Connection.UserLevel == 1 || Connection.UserName.ToUpper().Equals("DESS"))
+            if (Connection.UserLevel == 1 || Connection.UserName.ToUpper().Equals("CSMS"))
             {
                 frm.ToggleEditButton(true);
-                frm.ToggleDeleteButton(true);
+                //frm.ToggleDeleteButton(true);
             }
             else
             {
@@ -761,10 +761,11 @@ namespace SMS
             }
             catch (Exception ex)
             {
-                Logger.LogError(ex); 
-                MessageBox.Show(
-                    "There is some issue in your database setup. Please contact your vendor with below information.\n" +
-                    ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.LogError(ex);
+                throw ex;
+                //MessageBox.Show(
+                //    "There is some issue in your database setup. Please contact your vendor with below information.\n" +
+                //    ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 
             }
         }

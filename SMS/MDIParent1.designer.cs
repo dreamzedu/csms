@@ -173,6 +173,7 @@
             this.frmDesigneToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.frmDesigneReprotToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sMSTemplateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.databaseToolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vHelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -644,15 +645,15 @@
             // newEmployeeToolStripMenuItem
             // 
             this.newEmployeeToolStripMenuItem.Name = "newEmployeeToolStripMenuItem";
-            this.newEmployeeToolStripMenuItem.Size = new System.Drawing.Size(249, 26);
+            this.newEmployeeToolStripMenuItem.Size = new System.Drawing.Size(251, 26);
             this.newEmployeeToolStripMenuItem.Tag = "New Employee";
-            this.newEmployeeToolStripMenuItem.Text = "New Employee";
+            this.newEmployeeToolStripMenuItem.Text = "Add\\Edit Employee";
             this.newEmployeeToolStripMenuItem.Click += new System.EventHandler(this.newEmployeeToolStripMenuItem_Click);
             // 
             // employeeListToolStripMenuItem
             // 
             this.employeeListToolStripMenuItem.Name = "employeeListToolStripMenuItem";
-            this.employeeListToolStripMenuItem.Size = new System.Drawing.Size(249, 26);
+            this.employeeListToolStripMenuItem.Size = new System.Drawing.Size(251, 26);
             this.employeeListToolStripMenuItem.Tag = "Employee List";
             this.employeeListToolStripMenuItem.Text = "Employee List";
             this.employeeListToolStripMenuItem.Click += new System.EventHandler(this.employeeListToolStripMenuItem_Click);
@@ -660,7 +661,7 @@
             // employeeLitToolStripMenuItem
             // 
             this.employeeLitToolStripMenuItem.Name = "employeeLitToolStripMenuItem";
-            this.employeeLitToolStripMenuItem.Size = new System.Drawing.Size(249, 26);
+            this.employeeLitToolStripMenuItem.Size = new System.Drawing.Size(251, 26);
             this.employeeLitToolStripMenuItem.Tag = "Employee Gridwise";
             this.employeeLitToolStripMenuItem.Text = "Employee Gridwise";
             this.employeeLitToolStripMenuItem.Click += new System.EventHandler(this.employeeLitToolStripMenuItem_Click);
@@ -1479,7 +1480,8 @@
             this.messageToStudentsParentToolStripMenuItem,
             this.frmDesigneToolStripMenuItem,
             this.frmDesigneReprotToolStripMenuItem,
-            this.sMSTemplateToolStripMenuItem});
+            this.sMSTemplateToolStripMenuItem,
+            this.databaseToolToolStripMenuItem});
             this.utilityToolStripMenuItem.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.utilityToolStripMenuItem.Name = "utilityToolStripMenuItem";
             this.utilityToolStripMenuItem.Size = new System.Drawing.Size(92, 25);
@@ -1552,6 +1554,13 @@
             this.sMSTemplateToolStripMenuItem.Tag = "SMS Template ";
             this.sMSTemplateToolStripMenuItem.Text = "SMS Template ";
             this.sMSTemplateToolStripMenuItem.Click += new System.EventHandler(this.sMSTemplateToolStripMenuItem_Click);
+            // 
+            // databaseToolToolStripMenuItem
+            // 
+            this.databaseToolToolStripMenuItem.Name = "databaseToolToolStripMenuItem";
+            this.databaseToolToolStripMenuItem.Size = new System.Drawing.Size(329, 26);
+            this.databaseToolToolStripMenuItem.Text = "Database Tool";
+            this.databaseToolToolStripMenuItem.Click += new System.EventHandler(this.databaseToolToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -1765,6 +1774,7 @@
             this.btnNewEmployee.Size = new System.Drawing.Size(44, 44);
             this.btnNewEmployee.Tag = "New Employee";
             this.btnNewEmployee.Text = "New Employee";
+            this.btnNewEmployee.ToolTipText = "Add\\Edit Employee";
             this.btnNewEmployee.Click += new System.EventHandler(this.btnNewEmployee_Click);
             // 
             // toolStripSeparator4
@@ -2267,6 +2277,7 @@
         private System.Windows.Forms.ToolStripButton btnPrint;
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.ToolStripButton btnDelete;
+        private System.Windows.Forms.ToolStripMenuItem databaseToolToolStripMenuItem;
     }
 }
 
