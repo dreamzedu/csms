@@ -16,5 +16,10 @@ namespace SMS
             InitializeComponent();
             this.CenterToParent();
         }
+
+        private void frmProductInfo_Load(object sender, EventArgs e)
+        {
+            lblProdVersion.Text = Application.ProductVersion;
+        }
     }
 }
