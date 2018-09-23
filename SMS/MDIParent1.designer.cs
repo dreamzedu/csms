@@ -73,7 +73,6 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.employeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newEmployeeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.employeeListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.employeeLitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.attendanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salaryProcessingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -635,7 +634,6 @@
             // 
             this.employeeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newEmployeeToolStripMenuItem,
-            this.employeeListToolStripMenuItem,
             this.employeeLitToolStripMenuItem});
             this.employeeToolStripMenuItem.Name = "employeeToolStripMenuItem";
             this.employeeToolStripMenuItem.Size = new System.Drawing.Size(237, 26);
@@ -650,20 +648,12 @@
             this.newEmployeeToolStripMenuItem.Text = "Add\\Edit Employee";
             this.newEmployeeToolStripMenuItem.Click += new System.EventHandler(this.newEmployeeToolStripMenuItem_Click);
             // 
-            // employeeListToolStripMenuItem
-            // 
-            this.employeeListToolStripMenuItem.Name = "employeeListToolStripMenuItem";
-            this.employeeListToolStripMenuItem.Size = new System.Drawing.Size(251, 26);
-            this.employeeListToolStripMenuItem.Tag = "Employee List";
-            this.employeeListToolStripMenuItem.Text = "Employee List";
-            this.employeeListToolStripMenuItem.Click += new System.EventHandler(this.employeeListToolStripMenuItem_Click);
-            // 
             // employeeLitToolStripMenuItem
             // 
             this.employeeLitToolStripMenuItem.Name = "employeeLitToolStripMenuItem";
             this.employeeLitToolStripMenuItem.Size = new System.Drawing.Size(251, 26);
             this.employeeLitToolStripMenuItem.Tag = "Employee Gridwise";
-            this.employeeLitToolStripMenuItem.Text = "Employee Gridwise";
+            this.employeeLitToolStripMenuItem.Text = "Employees Detail";
             this.employeeLitToolStripMenuItem.Click += new System.EventHandler(this.employeeLitToolStripMenuItem_Click);
             // 
             // attendanceToolStripMenuItem
@@ -2125,7 +2115,6 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem employeeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newEmployeeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem employeeListToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem employeeLitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem attendanceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salaryProcessingToolStripMenuItem;

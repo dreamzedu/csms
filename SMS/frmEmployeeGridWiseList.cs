@@ -6,13 +6,17 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using CrystalDecisions.Shared;
 
 namespace SMS
 {
     public partial class frmEmployeeGridWiseList :UserControlBase
     {
         DataSet dsEmpType;
+        DataSet ds;
         //decimal da,daamt,pf,pfamt,bs;
+        school1 c = new school1();
+
         public frmEmployeeGridWiseList()
         {
             InitializeComponent();
@@ -30,6 +34,7 @@ namespace SMS
                // this.dgv .EditingControlShowing +=new DataGridViewEditingControlShowingEventHandler(dataGridView1_EditingControlShowing);
 
                 this.cmbEmpType.SelectedIndexChanged += new System.EventHandler(this.cmbEmpType_SelectedIndexChanged);
+                c.GetMdiParent(this).TogglePrintButton(true);
             }
             catch(Exception ex){Logger.LogError(ex); }
         }
@@ -48,9 +53,72 @@ namespace SMS
                 cmbEmpType.DisplayMember = "Detail";
                 cmbEmpType.ValueMember = "EmpTypeId";
             }
-
         }
-      
+
+        public override void btnprint_Click(object sender, EventArgs e)
+        {
+            OpenReport();
+        }
+
+        private void OpenReport()
+        {
+            DataSet empds;
+            string str;
+            try
+            {
+                if (chkOnlyActive.Checked)
+                {
+                    if (cmbEmpType.SelectedIndex <= 0)
+                    {
+                        str = "SELECT tbl_EmployeeInfo.EmpNo, tbl_EmployeeInfo.EmpName, tbl_EmployeeInfo.FathersName, tbl_EmployeeInfo.Address, tbl_EmployeeInfo.DOJ, tbl_EmployeeInfo.DOB, tbl_EmployeeInfo.Gender, tbl_EmployeeInfo.salaryrate, tbl_EmployeeInfo.pf, tbl_EmployeeInfo.lic, tbl_EmployeeInfo.loan, tbl_EmployeeInfo.designation, tbl_EmployeeInfo.photo, tbl_EmployeeInfo.rsa, tbl_EmployeeInfo.pfnumber, tbl_EmployeeInfo.splinctv, tbl_EmployeeInfo.HRA, tbl_EmployeeInfo.contactno, tbl_EmployeeInfo.DAAmt, tbl_EmployeeInfo.PFAmt, tbl_EmployeeInfo.ESICAmt,  tbl_EmployeeInfo.AccountNo, tbl_EmployeeInfo.BankName, tbl_EmployeeInfo.DA, tbl_EmployeeInfo.ESIC, tbl_EmployeeType.Detail FROM         tbl_EmployeeInfo INNER JOIN      tbl_EmployeeType ON tbl_EmployeeInfo.EmpTypeId = tbl_EmployeeType.EmpTypeId where IsActive=1 order by empno;";
+                        str = str + " SELECT schoolname, schooladdress, affiliate_by, logoimage FROM tbl_school ";                        
+                    }
+                    else
+                    {
+                        str = "SELECT tbl_EmployeeInfo.EmpNo, tbl_EmployeeInfo.EmpName, tbl_EmployeeInfo.FathersName, tbl_EmployeeInfo.Address, tbl_EmployeeInfo.DOJ, tbl_EmployeeInfo.DOB, tbl_EmployeeInfo.Gender, tbl_EmployeeInfo.salaryrate, tbl_EmployeeInfo.pf, tbl_EmployeeInfo.lic, tbl_EmployeeInfo.loan, tbl_EmployeeInfo.designation, tbl_EmployeeInfo.photo, tbl_EmployeeInfo.rsa, tbl_EmployeeInfo.pfnumber, tbl_EmployeeInfo.splinctv, tbl_EmployeeInfo.HRA, tbl_EmployeeInfo.contactno, tbl_EmployeeInfo.DAAmt, tbl_EmployeeInfo.PFAmt, tbl_EmployeeInfo.ESICAmt,  tbl_EmployeeInfo.AccountNo, tbl_EmployeeInfo.BankName, tbl_EmployeeInfo.DA, tbl_EmployeeInfo.ESIC, tbl_EmployeeType.Detail FROM         tbl_EmployeeInfo INNER JOIN      tbl_EmployeeType ON tbl_EmployeeInfo.EmpTypeId = tbl_EmployeeType.EmpTypeId where IsActive=1 and tbl_EmployeeInfo .EmpTypeId=" + cmbEmpType.SelectedValue +  "' order by empno";
+                        str = str + " SELECT schoolname, schooladdress, affiliate_by, logoimage FROM tbl_school ";
+                    }
+                }
+                else
+                {
+                    if (cmbEmpType.SelectedIndex <= 0)
+                    {
+                        str = "SELECT tbl_EmployeeInfo.EmpNo, tbl_EmployeeInfo.EmpName, tbl_EmployeeInfo.FathersName, tbl_EmployeeInfo.Address, tbl_EmployeeInfo.DOJ, tbl_EmployeeInfo.DOB, tbl_EmployeeInfo.Gender, tbl_EmployeeInfo.salaryrate, tbl_EmployeeInfo.pf, tbl_EmployeeInfo.lic, tbl_EmployeeInfo.loan, tbl_EmployeeInfo.designation, tbl_EmployeeInfo.photo, tbl_EmployeeInfo.rsa, tbl_EmployeeInfo.pfnumber, tbl_EmployeeInfo.splinctv, tbl_EmployeeInfo.HRA, tbl_EmployeeInfo.contactno, tbl_EmployeeInfo.DAAmt, tbl_EmployeeInfo.PFAmt, tbl_EmployeeInfo.ESICAmt,  tbl_EmployeeInfo.AccountNo, tbl_EmployeeInfo.BankName, tbl_EmployeeInfo.DA, tbl_EmployeeInfo.ESIC, tbl_EmployeeType.Detail FROM         tbl_EmployeeInfo INNER JOIN      tbl_EmployeeType ON tbl_EmployeeInfo.EmpTypeId = tbl_EmployeeType.EmpTypeId order by empno";
+                        str = str + " SELECT schoolname, schooladdress, affiliate_by, logoimage FROM tbl_school ";
+                    }
+                    else
+                    {
+                        str = "SELECT tbl_EmployeeInfo.EmpNo, tbl_EmployeeInfo.EmpName, tbl_EmployeeInfo.FathersName, tbl_EmployeeInfo.Address, tbl_EmployeeInfo.DOJ, tbl_EmployeeInfo.DOB, tbl_EmployeeInfo.Gender, tbl_EmployeeInfo.salaryrate, tbl_EmployeeInfo.pf, tbl_EmployeeInfo.lic, tbl_EmployeeInfo.loan, tbl_EmployeeInfo.designation, tbl_EmployeeInfo.photo, tbl_EmployeeInfo.rsa, tbl_EmployeeInfo.pfnumber, tbl_EmployeeInfo.splinctv, tbl_EmployeeInfo.HRA, tbl_EmployeeInfo.contactno, tbl_EmployeeInfo.DAAmt, tbl_EmployeeInfo.PFAmt, tbl_EmployeeInfo.ESICAmt,  tbl_EmployeeInfo.AccountNo, tbl_EmployeeInfo.BankName, tbl_EmployeeInfo.DA, tbl_EmployeeInfo.ESIC, tbl_EmployeeType.Detail FROM         tbl_EmployeeInfo INNER JOIN      tbl_EmployeeType ON tbl_EmployeeInfo.EmpTypeId = tbl_EmployeeType.EmpTypeId Where where tbl_EmployeeInfo .EmpTypeId=" + cmbEmpType.SelectedValue + "' order by empno";
+                        str = str + " SELECT schoolname, schooladdress, affiliate_by, logoimage FROM tbl_school ";
+                    }
+                }
+                empds = Connection.GetDataSet(str);
+
+
+                if (empds != null && empds.Tables.Count > 0 && empds.Tables[0].Rows.Count > 0)
+                {
+                    ds.WriteXmlSchema(@"" + Connection.GetAccessPathId() + @"Barcodes\a\EmployeeListReport.xsd");
+                    rptEmployeeList rl = new rptEmployeeList();
+                    rl.PrintOptions.PaperOrientation = PaperOrientation.Landscape;
+                    rl.PrintOptions.PaperSize = CrystalDecisions.Shared.PaperSize.PaperLetter;
+                    rl.SetDataSource(empds);
+                    ShowAllReports f = new ShowAllReports();
+                    f.crystalReportViewer1.ReportSource = rl;
+                    f.Show();
+                }
+                else
+                {
+                    MessageBox.Show("There is no record available.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch(Exception ex)
+            {
+                Logger.LogError(ex);
+                MessageBox.Show("Some error occurred while performing this operation. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
+            }
+        }
+
         private void btnOk_Click(object sender, EventArgs e)
         {
             try
@@ -151,7 +219,7 @@ namespace SMS
                 dcmb.DisplayMember = "Detail";
                 dcmb.ValueMember = "EmpTypeId";
             }
-            DataSet ds = new DataSet();
+
             if (chkOnlyActive.Checked)
             {
                 if (cmbEmpType.SelectedIndex == 0)
@@ -396,6 +464,11 @@ namespace SMS
         private void cmbEmpType_SelectedIndexChanged(object sender, EventArgs e)
         {
             getEmployeeList();
+        }
+
+        private void btnViewReport_Click(object sender, EventArgs e)
+        {
+            OpenReport();
         }
 
     }

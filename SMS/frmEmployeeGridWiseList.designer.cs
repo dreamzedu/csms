@@ -67,6 +67,7 @@
             this.btnReset = new System.Windows.Forms.Button();
             this.cmbEmpType = new System.Windows.Forms.ComboBox();
             this.chkOnlyActive = new System.Windows.Forms.CheckBox();
+            this.btnViewReport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -240,7 +241,7 @@
             // btnOk
             // 
             this.btnOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOk.Location = new System.Drawing.Point(1104, 495);
+            this.btnOk.Location = new System.Drawing.Point(942, 495);
             this.btnOk.Margin = new System.Windows.Forms.Padding(4);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(155, 28);
@@ -412,7 +413,7 @@
             // btnReset
             // 
             this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Location = new System.Drawing.Point(941, 495);
+            this.btnReset.Location = new System.Drawing.Point(780, 495);
             this.btnReset.Margin = new System.Windows.Forms.Padding(4);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(155, 28);
@@ -443,12 +444,24 @@
             this.chkOnlyActive.UseVisualStyleBackColor = true;
             this.chkOnlyActive.CheckedChanged += new System.EventHandler(this.chkOnlyActive_CheckedChanged);
             // 
+            // btnViewReport
+            // 
+            this.btnViewReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.btnViewReport.Location = new System.Drawing.Point(1104, 495);
+            this.btnViewReport.Name = "btnViewReport";
+            this.btnViewReport.Size = new System.Drawing.Size(155, 28);
+            this.btnViewReport.TabIndex = 7;
+            this.btnViewReport.Text = "View Report";
+            this.btnViewReport.UseVisualStyleBackColor = true;
+            this.btnViewReport.Click += new System.EventHandler(this.btnViewReport_Click);
+            // 
             // frmEmployeeGridWiseList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Controls.Add(this.btnViewReport);
             this.Controls.Add(this.chkOnlyActive);
             this.Controls.Add(this.cmbEmpType);
             this.Controls.Add(this.btnReset);
@@ -510,5 +523,6 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn isactive;
         private System.Windows.Forms.ComboBox cmbEmpType;
         private System.Windows.Forms.CheckBox chkOnlyActive;
+        private System.Windows.Forms.Button btnViewReport;
     }
 }

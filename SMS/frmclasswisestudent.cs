@@ -25,10 +25,21 @@ namespace SMS
             Connection.FillComboBox(cmbClass, " select classcode,classname from tbl_classmaster order by classcode ");
             Connection.FillCombo(ref strCmbReligion, "select Religion from tbl_student Where Datalength(Religion)>0 Group By Religion Order By Religion");
             cmbSession.SelectedValue = school.CurrentSessionCode;
-            cmbStudentStatus.SelectedIndex = 0;
-            strstdcategory.SelectedIndex = 0;
-            strCmbReligion.SelectedIndex = 0;
-            cmbgender.SelectedIndex = 0;
+
+
+            if (cmbStudentStatus.Items.Count > 0)
+                cmbStudentStatus.SelectedIndex = 0;
+
+
+            if (strstdcategory.Items.Count > 0)
+                strstdcategory.SelectedIndex = 0;
+
+            if (strCmbReligion.Items.Count > 0)
+                strCmbReligion.SelectedIndex = 0;
+
+            if (cmbgender.Items.Count > 0)
+                cmbgender.SelectedIndex = 0;
+
             c.GetMdiParent(this).TogglePrintButton(true);
             this.cmbSession.SelectedIndexChanged += new System.EventHandler(this.cmbSession_SelectedIndexChanged);
         }         
@@ -40,7 +51,7 @@ namespace SMS
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message + "\n\t Please Select Class or Section Properly...");
+                MessageBox.Show(ex.Message + "\n\t Please Select Class or Section Correctly.");
             }
         }
 

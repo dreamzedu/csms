@@ -1624,12 +1624,6 @@
     <Compile Include="frmEmployeeGridWiseList.designer.cs">
       <DependentUpon>frmEmployeeGridWiseList.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEmployeeListView.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="frmEmployeeListView.designer.cs">
-      <DependentUpon>frmEmployeeListView.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmFeeCollecton.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -2582,10 +2576,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEmployeeGridWiseList.resx">
       <DependentUpon>frmEmployeeGridWiseList.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmEmployeeListView.resx">
-      <DependentUpon>frmEmployeeListView.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="frmFeeCollecton.resx">

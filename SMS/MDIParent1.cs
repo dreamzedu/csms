@@ -489,11 +489,7 @@ namespace SMS
         {
             ShowUserControl(new frmNewEmployee(),sender);
         }
-
-        private void employeeListToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ShowUserControl(new frmEmployeeListView(),sender);
-        }
+              
 
         private void employeeLitToolStripMenuItem_Click(object sender, EventArgs e)
         {
