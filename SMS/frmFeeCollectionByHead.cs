@@ -34,9 +34,14 @@ namespace SMS
 
         void ClearControl()
         {
-            txtTotalFeeAmount.Text = txtLateFee.Text = txtTotalRecAmont.Text = txtrecivedamt.Text
-                = txtConsession.Text = txtdueamt.Text = "0";
+            txtTotalFeeAmount.Text = txtLateFee.Text = txtTotalRecAmont.Text
+                = txtConsession.Text =  txtPrevConcession.Text = txtPrevLateFee.Text = txtschamt.Text = "0";
             dtpfeedate.Value = DateTime.Now;
+            txtrecivedamt.Text = "0";
+            txtdueamt.Text = "0";
+
+            dgvPaymentDetail.DataSource = null;
+            //dtgfee.Rows.Clear();
         }
         void TotalPaid()
         {
@@ -592,7 +597,7 @@ namespace SMS
                    c.GetMdiParent(this).ToggleCancelButton(false);
                     txtFeeRcptNo.Enabled = false;
                     c.GetMdiParent(this).TogglePrintButton(false);
-                    this.ClearControl();
+                    //this.ClearControl();
                     //}
                     //else
                     //    MessageBox.Show("Please select Current Date.", "School", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -794,6 +799,7 @@ namespace SMS
                                 txtschamt.Enabled = false;
                             }
 
+                            decimal prevRecvAmt = 0;
                             dtgfee.Rows.Clear();
                             if (dtFeeType.Rows.Count > 0)
                             {
@@ -807,6 +813,7 @@ namespace SMS
                                 {
                                     dtgfee.Rows.Add(dr["FeeCode"], dr["FeeHead"], dr["Amount"], dr["RAmount"], dr["BAmount"], dr["PAmount"]);
                                     totFeeAmt += decimal.Parse(dr["Amount"].ToString());
+                                    prevRecvAmt += decimal.Parse(dr["RAmount"].ToString());
                                 }
                                 txtTotalFeeAmount.Text = totFeeAmt.ToString();
                             }
@@ -850,12 +857,17 @@ namespace SMS
                                     txtConsession.Text = dr["Fee Consession"].ToString();
                                     txtLateFee.Text = dr["Late Fee"].ToString();
                                 }
-                                totRecAmt += Convert.ToDecimal(dr["Rcv. Amt."]);
-                                totLateFee += Convert.ToDecimal(dr["Late Fee"]);
-                                totConcession += Convert.ToDecimal(dr["Fee Consession"]);
+                                else
+                                {
+                                    //totRecAmt += Convert.ToDecimal(dr["Rcv. Amt."]);
+                                    totLateFee += Convert.ToDecimal(dr["Late Fee"]);
+                                    totConcession += Convert.ToDecimal(dr["Fee Consession"]);
+                                }
                             }
 
-                            totDue = totFeeAmt + totLateFee - totRecAmt - totConcession - Convert.ToDecimal(txtschamt.Text);
+                            totRecAmt = prevRecvAmt + totLateFee - totConcession;
+
+                            totDue = totFeeAmt + totLateFee - totRecAmt - totConcession - Convert.ToDecimal(txtConsession.Text) + Convert.ToDecimal(txtLateFee.Text) - Convert.ToDecimal(txtschamt.Text);
 
                             txtTotalRecAmont.Text = totRecAmt.ToString();
                             txtPrevLateFee.Text = totLateFee.ToString();
