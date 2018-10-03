@@ -158,7 +158,7 @@ namespace SMS.Report.Fees.ReportForm
                         }
                         else
                         {
-                            MessageBox.Show("You are not Elegible for submitted Fee...\n\tPlease Check Student Type From Student Master Form!!!");
+                            MessageBox.Show("You are not eligible for submitted Fee...\n\tPlease Check Student Type From Student Master Form!!!");
                         }
                         if (dtFeeType.Rows.Count > 0)
                         {

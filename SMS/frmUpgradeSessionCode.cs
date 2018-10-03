@@ -94,13 +94,13 @@ namespace SMS
 
         private void btnUpgradeSession_Click(object sender, EventArgs e)
         {
-            if (DialogResult.Yes.Equals(MessageBox.Show("Are You Sure To Upgrade Session...", "Session", MessageBoxButtons.YesNo, MessageBoxIcon.Question)))
+            if (DialogResult.Yes.Equals(MessageBox.Show("Are you sure to upgrade Session.", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question)))
             {
                 Session.EndInit();
                 dataGridView1.EndEdit();
                 DataAdapter.UpdateCommand = new SqlCommandBuilder(DataAdapter).GetUpdateCommand();
                 DataAdapter.Update(Session);
-                MessageBox.Show("Session Upgrad Successfully...\n\t\tNow Application Will  Restarting Soon...", "Session", MessageBoxButtons.OK , MessageBoxIcon.Information);
+                MessageBox.Show("Session upgraded successfully.\n\t\tYour application will  restarting now.", "Success", MessageBoxButtons.OK , MessageBoxIcon.Information);
                 Application.Exit();
                 foreach (System.Diagnostics.Process p in System.Diagnostics.Process.GetProcessesByName(Application.ProductName))
                     p.Kill();

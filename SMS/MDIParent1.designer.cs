@@ -45,13 +45,17 @@
             this.subjectMasterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.classSectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.subjectClassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.studentMasterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.smartCardGenerationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.studentEnquiryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.feeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.feeHeadsMasterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.yearlyClassFeeHeadsMasterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem_Student = new System.Windows.Forms.ToolStripMenuItem();
+            this.studentMasterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.studentSearchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.studentEnquiryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.attandanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.promoteStudentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.smartCardGenerationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.feeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.yearlyClassFeeHeadsMasterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.scholarshipStatusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.feeCallectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.duplicateFeeReceiptSlipToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -59,7 +63,6 @@
             this.duplicateFeeReceiptByHeadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eXAMINATIONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rollNoGenerationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.attandanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cCEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newCCEMarksDetailToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newAddSkillsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -165,7 +168,6 @@
             this.monthlyFeeReceiptReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.utilityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ControlPanelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.promoteStudentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.calculaterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notepadF9ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.messageToStudentsParentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -239,6 +241,7 @@
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.userToolStripMenuItem1,
             this.schoolToolStripMenuItem,
+            this.toolStripMenuItem_Student,
             this.feeToolStripMenuItem,
             this.eXAMINATIONToolStripMenuItem,
             this.toolStripMenuItem1,
@@ -253,7 +256,7 @@
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(0);
-            this.menuStrip.Size = new System.Drawing.Size(1284, 25);
+            this.menuStrip.Size = new System.Drawing.Size(1420, 25);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Tag = "Menu";
             this.menuStrip.Text = "User";
@@ -297,6 +300,7 @@
             this.loginToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
             this.loginToolStripMenuItem.Tag = "Login";
             this.loginToolStripMenuItem.Text = "Login";
+            this.loginToolStripMenuItem.Visible = false;
             this.loginToolStripMenuItem.Click += new System.EventHandler(this.loginToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem1
@@ -306,6 +310,7 @@
             this.exitToolStripMenuItem1.Size = new System.Drawing.Size(247, 26);
             this.exitToolStripMenuItem1.Tag = "";
             this.exitToolStripMenuItem1.Text = "Q&uit";
+            this.exitToolStripMenuItem1.Visible = false;
             this.exitToolStripMenuItem1.Click += new System.EventHandler(this.exitToolStripMenuItem1_Click);
             // 
             // schoolToolStripMenuItem
@@ -319,9 +324,8 @@
             this.subjectMasterToolStripMenuItem,
             this.classSectionToolStripMenuItem,
             this.subjectClassToolStripMenuItem,
-            this.studentMasterToolStripMenuItem,
-            this.smartCardGenerationToolStripMenuItem,
-            this.studentEnquiryToolStripMenuItem});
+            this.feeHeadsMasterToolStripMenuItem,
+            this.toolStripMenuItem4});
             this.schoolToolStripMenuItem.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.schoolToolStripMenuItem.Name = "schoolToolStripMenuItem";
             this.schoolToolStripMenuItem.Size = new System.Drawing.Size(92, 25);
@@ -331,15 +335,15 @@
             // schoolDetailsToolStripMenuItem
             // 
             this.schoolDetailsToolStripMenuItem.Name = "schoolDetailsToolStripMenuItem";
-            this.schoolDetailsToolStripMenuItem.Size = new System.Drawing.Size(276, 26);
+            this.schoolDetailsToolStripMenuItem.Size = new System.Drawing.Size(279, 26);
             this.schoolDetailsToolStripMenuItem.Tag = "School Details";
-            this.schoolDetailsToolStripMenuItem.Text = "School Details";
+            this.schoolDetailsToolStripMenuItem.Text = "School Detail";
             this.schoolDetailsToolStripMenuItem.Click += new System.EventHandler(this.schoolDetailsToolStripMenuItem_Click);
             // 
             // sessionMasterToolStripMenuItem
             // 
             this.sessionMasterToolStripMenuItem.Name = "sessionMasterToolStripMenuItem";
-            this.sessionMasterToolStripMenuItem.Size = new System.Drawing.Size(276, 26);
+            this.sessionMasterToolStripMenuItem.Size = new System.Drawing.Size(279, 26);
             this.sessionMasterToolStripMenuItem.Tag = "Session Master";
             this.sessionMasterToolStripMenuItem.Text = "Session Master";
             this.sessionMasterToolStripMenuItem.Click += new System.EventHandler(this.sessionMasterToolStripMenuItem_Click);
@@ -347,7 +351,7 @@
             // classMasterToolStripMenuItem
             // 
             this.classMasterToolStripMenuItem.Name = "classMasterToolStripMenuItem";
-            this.classMasterToolStripMenuItem.Size = new System.Drawing.Size(276, 26);
+            this.classMasterToolStripMenuItem.Size = new System.Drawing.Size(279, 26);
             this.classMasterToolStripMenuItem.Tag = "Class Master";
             this.classMasterToolStripMenuItem.Text = "Class Master";
             this.classMasterToolStripMenuItem.Click += new System.EventHandler(this.classMasterToolStripMenuItem_Click);
@@ -355,7 +359,7 @@
             // sectionMasterToolStripMenuItem
             // 
             this.sectionMasterToolStripMenuItem.Name = "sectionMasterToolStripMenuItem";
-            this.sectionMasterToolStripMenuItem.Size = new System.Drawing.Size(276, 26);
+            this.sectionMasterToolStripMenuItem.Size = new System.Drawing.Size(279, 26);
             this.sectionMasterToolStripMenuItem.Tag = "Section Master";
             this.sectionMasterToolStripMenuItem.Text = "Section Master";
             this.sectionMasterToolStripMenuItem.Click += new System.EventHandler(this.sectionMasterToolStripMenuItem_Click);
@@ -363,7 +367,7 @@
             // streamMasterToolStripMenuItem
             // 
             this.streamMasterToolStripMenuItem.Name = "streamMasterToolStripMenuItem";
-            this.streamMasterToolStripMenuItem.Size = new System.Drawing.Size(276, 26);
+            this.streamMasterToolStripMenuItem.Size = new System.Drawing.Size(279, 26);
             this.streamMasterToolStripMenuItem.Tag = "Stream Master";
             this.streamMasterToolStripMenuItem.Text = "Stream Master";
             this.streamMasterToolStripMenuItem.Click += new System.EventHandler(this.streamMasterToolStripMenuItem_Click);
@@ -371,7 +375,7 @@
             // subjectMasterToolStripMenuItem
             // 
             this.subjectMasterToolStripMenuItem.Name = "subjectMasterToolStripMenuItem";
-            this.subjectMasterToolStripMenuItem.Size = new System.Drawing.Size(276, 26);
+            this.subjectMasterToolStripMenuItem.Size = new System.Drawing.Size(279, 26);
             this.subjectMasterToolStripMenuItem.Tag = "Subject Master";
             this.subjectMasterToolStripMenuItem.Text = "Subject Master";
             this.subjectMasterToolStripMenuItem.Click += new System.EventHandler(this.subjectMasterToolStripMenuItem_Click);
@@ -379,50 +383,103 @@
             // classSectionToolStripMenuItem
             // 
             this.classSectionToolStripMenuItem.Name = "classSectionToolStripMenuItem";
-            this.classSectionToolStripMenuItem.Size = new System.Drawing.Size(276, 26);
+            this.classSectionToolStripMenuItem.Size = new System.Drawing.Size(279, 26);
             this.classSectionToolStripMenuItem.Tag = "Class Section";
-            this.classSectionToolStripMenuItem.Text = "Class Section";
+            this.classSectionToolStripMenuItem.Text = "Class Section Mapping";
             this.classSectionToolStripMenuItem.Click += new System.EventHandler(this.classSectionToolStripMenuItem_Click);
             // 
             // subjectClassToolStripMenuItem
             // 
             this.subjectClassToolStripMenuItem.Name = "subjectClassToolStripMenuItem";
-            this.subjectClassToolStripMenuItem.Size = new System.Drawing.Size(276, 26);
+            this.subjectClassToolStripMenuItem.Size = new System.Drawing.Size(279, 26);
             this.subjectClassToolStripMenuItem.Tag = "Subject Class";
-            this.subjectClassToolStripMenuItem.Text = "Subject Class";
+            this.subjectClassToolStripMenuItem.Text = "Subject Class Mapping";
             this.subjectClassToolStripMenuItem.Click += new System.EventHandler(this.subjectClassToolStripMenuItem_Click);
+            // 
+            // feeHeadsMasterToolStripMenuItem
+            // 
+            this.feeHeadsMasterToolStripMenuItem.Name = "feeHeadsMasterToolStripMenuItem";
+            this.feeHeadsMasterToolStripMenuItem.Size = new System.Drawing.Size(279, 26);
+            this.feeHeadsMasterToolStripMenuItem.Tag = "Fee Heads Master";
+            this.feeHeadsMasterToolStripMenuItem.Text = "Fee Heads Master";
+            this.feeHeadsMasterToolStripMenuItem.Click += new System.EventHandler(this.feeHeadsMasterToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem4
+            // 
+            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(279, 26);
+            this.toolStripMenuItem4.Tag = "Yearly  Class Scholar Ship Fee";
+            this.toolStripMenuItem4.Text = "Scholarship Master";
+            this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
+            // 
+            // toolStripMenuItem_Student
+            // 
+            this.toolStripMenuItem_Student.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.studentMasterToolStripMenuItem,
+            this.studentSearchToolStripMenuItem,
+            this.studentEnquiryToolStripMenuItem,
+            this.attandanceToolStripMenuItem,
+            this.promoteStudentToolStripMenuItem,
+            this.smartCardGenerationToolStripMenuItem});
+            this.toolStripMenuItem_Student.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem_Student.Name = "toolStripMenuItem_Student";
+            this.toolStripMenuItem_Student.Size = new System.Drawing.Size(102, 25);
+            this.toolStripMenuItem_Student.Tag = "STUDENT";
+            this.toolStripMenuItem_Student.Text = "&STUDENT";
+            this.toolStripMenuItem_Student.ToolTipText = "Click here to perform student operations";
             // 
             // studentMasterToolStripMenuItem
             // 
             this.studentMasterToolStripMenuItem.Name = "studentMasterToolStripMenuItem";
-            this.studentMasterToolStripMenuItem.Size = new System.Drawing.Size(276, 26);
+            this.studentMasterToolStripMenuItem.Size = new System.Drawing.Size(254, 26);
             this.studentMasterToolStripMenuItem.Tag = "Student Master";
-            this.studentMasterToolStripMenuItem.Text = "Student Master";
+            this.studentMasterToolStripMenuItem.Text = "Add/Edit Student";
             this.studentMasterToolStripMenuItem.Click += new System.EventHandler(this.studentMasterToolStripMenuItem_Click);
+            // 
+            // studentSearchToolStripMenuItem
+            // 
+            this.studentSearchToolStripMenuItem.Name = "studentSearchToolStripMenuItem";
+            this.studentSearchToolStripMenuItem.Size = new System.Drawing.Size(254, 26);
+            this.studentSearchToolStripMenuItem.Text = "Student Search";
+            this.studentSearchToolStripMenuItem.Click += new System.EventHandler(this.studentSearchToolStripMenuItem_Click);
+            // 
+            // studentEnquiryToolStripMenuItem
+            // 
+            this.studentEnquiryToolStripMenuItem.Name = "studentEnquiryToolStripMenuItem";
+            this.studentEnquiryToolStripMenuItem.Size = new System.Drawing.Size(254, 26);
+            this.studentEnquiryToolStripMenuItem.Tag = "Student Enquiry";
+            this.studentEnquiryToolStripMenuItem.Text = "Student Enquiry";
+            this.studentEnquiryToolStripMenuItem.Click += new System.EventHandler(this.studentEnquiryToolStripMenuItem_Click);
+            // 
+            // attandanceToolStripMenuItem
+            // 
+            this.attandanceToolStripMenuItem.Name = "attandanceToolStripMenuItem";
+            this.attandanceToolStripMenuItem.Size = new System.Drawing.Size(254, 26);
+            this.attandanceToolStripMenuItem.Tag = "Attandance";
+            this.attandanceToolStripMenuItem.Text = "Attendance";
+            this.attandanceToolStripMenuItem.Click += new System.EventHandler(this.attandanceToolStripMenuItem_Click);
+            // 
+            // promoteStudentToolStripMenuItem
+            // 
+            this.promoteStudentToolStripMenuItem.Name = "promoteStudentToolStripMenuItem";
+            this.promoteStudentToolStripMenuItem.Size = new System.Drawing.Size(254, 26);
+            this.promoteStudentToolStripMenuItem.Tag = "Promote Student";
+            this.promoteStudentToolStripMenuItem.Text = "Promote Student";
+            this.promoteStudentToolStripMenuItem.Click += new System.EventHandler(this.promoteStudentToolStripMenuItem_Click);
             // 
             // smartCardGenerationToolStripMenuItem
             // 
             this.smartCardGenerationToolStripMenuItem.Name = "smartCardGenerationToolStripMenuItem";
             this.smartCardGenerationToolStripMenuItem.ShowShortcutKeys = false;
-            this.smartCardGenerationToolStripMenuItem.Size = new System.Drawing.Size(276, 26);
+            this.smartCardGenerationToolStripMenuItem.Size = new System.Drawing.Size(254, 26);
             this.smartCardGenerationToolStripMenuItem.Tag = "Smart Card  Generation";
-            this.smartCardGenerationToolStripMenuItem.Text = "Smart Card  Generation";
+            this.smartCardGenerationToolStripMenuItem.Text = "Generate Smart Card";
             this.smartCardGenerationToolStripMenuItem.Click += new System.EventHandler(this.smartCardGenerationToolStripMenuItem_Click);
-            // 
-            // studentEnquiryToolStripMenuItem
-            // 
-            this.studentEnquiryToolStripMenuItem.Name = "studentEnquiryToolStripMenuItem";
-            this.studentEnquiryToolStripMenuItem.Size = new System.Drawing.Size(276, 26);
-            this.studentEnquiryToolStripMenuItem.Tag = "Student Enquiry";
-            this.studentEnquiryToolStripMenuItem.Text = "Student Enquiry";
-            this.studentEnquiryToolStripMenuItem.Click += new System.EventHandler(this.studentEnquiryToolStripMenuItem_Click);
             // 
             // feeToolStripMenuItem
             // 
             this.feeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.feeHeadsMasterToolStripMenuItem,
             this.yearlyClassFeeHeadsMasterToolStripMenuItem,
-            this.toolStripMenuItem4,
             this.scholarshipStatusToolStripMenuItem,
             this.feeCallectionToolStripMenuItem,
             this.duplicateFeeReceiptSlipToolStripMenuItem,
@@ -430,33 +487,17 @@
             this.duplicateFeeReceiptByHeadToolStripMenuItem});
             this.feeToolStripMenuItem.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.feeToolStripMenuItem.Name = "feeToolStripMenuItem";
-            this.feeToolStripMenuItem.Size = new System.Drawing.Size(137, 25);
+            this.feeToolStripMenuItem.Size = new System.Drawing.Size(52, 25);
             this.feeToolStripMenuItem.Tag = "STUDENT FEE";
-            this.feeToolStripMenuItem.Text = "STUDENT &FEE";
-            // 
-            // feeHeadsMasterToolStripMenuItem
-            // 
-            this.feeHeadsMasterToolStripMenuItem.Name = "feeHeadsMasterToolStripMenuItem";
-            this.feeHeadsMasterToolStripMenuItem.Size = new System.Drawing.Size(384, 26);
-            this.feeHeadsMasterToolStripMenuItem.Tag = "Fee Heads Master";
-            this.feeHeadsMasterToolStripMenuItem.Text = "Fee Heads Master";
-            this.feeHeadsMasterToolStripMenuItem.Click += new System.EventHandler(this.feeHeadsMasterToolStripMenuItem_Click);
+            this.feeToolStripMenuItem.Text = "&FEE";
             // 
             // yearlyClassFeeHeadsMasterToolStripMenuItem
             // 
             this.yearlyClassFeeHeadsMasterToolStripMenuItem.Name = "yearlyClassFeeHeadsMasterToolStripMenuItem";
             this.yearlyClassFeeHeadsMasterToolStripMenuItem.Size = new System.Drawing.Size(384, 26);
             this.yearlyClassFeeHeadsMasterToolStripMenuItem.Tag = "Yearly  Class Fee Heads Master";
-            this.yearlyClassFeeHeadsMasterToolStripMenuItem.Text = "Yearly  Class Fee Heads Master";
+            this.yearlyClassFeeHeadsMasterToolStripMenuItem.Text = "Yearly  Class Fee Setup";
             this.yearlyClassFeeHeadsMasterToolStripMenuItem.Click += new System.EventHandler(this.yearlyClassFeeHeadsMasterToolStripMenuItem_Click_1);
-            // 
-            // toolStripMenuItem4
-            // 
-            this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(384, 26);
-            this.toolStripMenuItem4.Tag = "Yearly  Class Scholar Ship Fee";
-            this.toolStripMenuItem4.Text = "Yearly  Class Scholar Ship Fee";
-            this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
             // scholarshipStatusToolStripMenuItem
             // 
@@ -472,7 +513,6 @@
             this.feeCallectionToolStripMenuItem.Size = new System.Drawing.Size(384, 26);
             this.feeCallectionToolStripMenuItem.Tag = "Fee Collection";
             this.feeCallectionToolStripMenuItem.Text = "Fee Collection (Without fee heads)";
-            this.feeCallectionToolStripMenuItem.Visible = false;
             this.feeCallectionToolStripMenuItem.Click += new System.EventHandler(this.feeCallectionToolStripMenuItem_Click);
             // 
             // duplicateFeeReceiptSlipToolStripMenuItem
@@ -504,14 +544,13 @@
             // 
             this.eXAMINATIONToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.rollNoGenerationToolStripMenuItem,
-            this.attandanceToolStripMenuItem,
             this.cCEToolStripMenuItem,
             this.mPBoardPaternToolStripMenuItem});
             this.eXAMINATIONToolStripMenuItem.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.eXAMINATIONToolStripMenuItem.Name = "eXAMINATIONToolStripMenuItem";
-            this.eXAMINATIONToolStripMenuItem.Size = new System.Drawing.Size(148, 25);
+            this.eXAMINATIONToolStripMenuItem.Size = new System.Drawing.Size(71, 25);
             this.eXAMINATIONToolStripMenuItem.Tag = "EXAMINATION";
-            this.eXAMINATIONToolStripMenuItem.Text = "E&XAMINATION";
+            this.eXAMINATIONToolStripMenuItem.Text = "&EXAM";
             // 
             // rollNoGenerationToolStripMenuItem
             // 
@@ -520,14 +559,6 @@
             this.rollNoGenerationToolStripMenuItem.Tag = "Roll No. Generation";
             this.rollNoGenerationToolStripMenuItem.Text = "Roll No. Generation";
             this.rollNoGenerationToolStripMenuItem.Click += new System.EventHandler(this.rollNoGenerationToolStripMenuItem_Click);
-            // 
-            // attandanceToolStripMenuItem
-            // 
-            this.attandanceToolStripMenuItem.Name = "attandanceToolStripMenuItem";
-            this.attandanceToolStripMenuItem.Size = new System.Drawing.Size(253, 26);
-            this.attandanceToolStripMenuItem.Tag = "Attandance";
-            this.attandanceToolStripMenuItem.Text = "Attandance";
-            this.attandanceToolStripMenuItem.Click += new System.EventHandler(this.attandanceToolStripMenuItem_Click);
             // 
             // cCEToolStripMenuItem
             // 
@@ -628,7 +659,7 @@
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(101, 25);
             this.toolStripMenuItem1.Tag = "PAYROLL";
-            this.toolStripMenuItem1.Text = "PA&YROLL";
+            this.toolStripMenuItem1.Text = "&PAYROLL";
             // 
             // employeeToolStripMenuItem
             // 
@@ -1464,7 +1495,6 @@
             // 
             this.utilityToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ControlPanelToolStripMenuItem,
-            this.promoteStudentToolStripMenuItem,
             this.calculaterToolStripMenuItem,
             this.notepadF9ToolStripMenuItem,
             this.messageToStudentsParentToolStripMenuItem,
@@ -1486,14 +1516,6 @@
             this.ControlPanelToolStripMenuItem.Tag = "$$$$$$$$$$";
             this.ControlPanelToolStripMenuItem.Text = "Control Panel";
             this.ControlPanelToolStripMenuItem.Click += new System.EventHandler(this.ControlPanelToolStripMenuItem_Click);
-            // 
-            // promoteStudentToolStripMenuItem
-            // 
-            this.promoteStudentToolStripMenuItem.Name = "promoteStudentToolStripMenuItem";
-            this.promoteStudentToolStripMenuItem.Size = new System.Drawing.Size(329, 26);
-            this.promoteStudentToolStripMenuItem.Tag = "Promote Student";
-            this.promoteStudentToolStripMenuItem.Text = "Promote Student";
-            this.promoteStudentToolStripMenuItem.Click += new System.EventHandler(this.promoteStudentToolStripMenuItem_Click);
             // 
             // calculaterToolStripMenuItem
             // 
@@ -1596,7 +1618,7 @@
             this.lblStatus});
             this.statusStrip.Location = new System.Drawing.Point(0, 671);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(1284, 22);
+            this.statusStrip.Size = new System.Drawing.Size(1420, 22);
             this.statusStrip.Stretch = false;
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "StatusStrip";
@@ -1660,7 +1682,7 @@
             this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.toolStrip1.Location = new System.Drawing.Point(0, 25);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1284, 47);
+            this.toolStrip1.Size = new System.Drawing.Size(1420, 47);
             this.toolStrip1.TabIndex = 6;
             this.toolStrip1.Text = "toolStrip1";
             this.toolStrip1.Paint += new System.Windows.Forms.PaintEventHandler(this.toolStrip1_Paint);
@@ -1856,8 +1878,8 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.pnlNotification);
             this.splitContainer1.Panel2.Controls.Add(this.pnlNotificationsHeading);
-            this.splitContainer1.Size = new System.Drawing.Size(1272, 587);
-            this.splitContainer1.SplitterDistance = 959;
+            this.splitContainer1.Size = new System.Drawing.Size(1408, 587);
+            this.splitContainer1.SplitterDistance = 1061;
             this.splitContainer1.TabIndex = 8;
             // 
             // pnlMainHeading
@@ -1868,7 +1890,7 @@
             this.pnlMainHeading.ForeColor = System.Drawing.Color.White;
             this.pnlMainHeading.Location = new System.Drawing.Point(0, 0);
             this.pnlMainHeading.Name = "pnlMainHeading";
-            this.pnlMainHeading.Size = new System.Drawing.Size(957, 37);
+            this.pnlMainHeading.Size = new System.Drawing.Size(1059, 37);
             this.pnlMainHeading.TabIndex = 1;
             // 
             // lblMainHeading
@@ -1892,7 +1914,7 @@
             this.pnlMainContainer.Controls.Add(this.pnlMain);
             this.pnlMainContainer.Location = new System.Drawing.Point(3, 41);
             this.pnlMainContainer.Name = "pnlMainContainer";
-            this.pnlMainContainer.Size = new System.Drawing.Size(951, 541);
+            this.pnlMainContainer.Size = new System.Drawing.Size(1053, 541);
             this.pnlMainContainer.TabIndex = 0;
             // 
             // toolStrip2
@@ -1909,7 +1931,7 @@
             this.toolStrip2.Location = new System.Drawing.Point(0, 0);
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.toolStrip2.Size = new System.Drawing.Size(949, 27);
+            this.toolStrip2.Size = new System.Drawing.Size(1051, 27);
             this.toolStrip2.TabIndex = 1;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -1920,7 +1942,7 @@
             this.btnNew.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(63, 24);
-            this.btnNew.Text = "&New";
+            this.btnNew.Text = "New";
             this.btnNew.ToolTipText = "New (Ctrl + N)";
             this.btnNew.Click += new System.EventHandler(this.btnnew_Click);
             // 
@@ -1931,7 +1953,7 @@
             this.btnEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(59, 24);
-            this.btnEdit.Text = "&Edit";
+            this.btnEdit.Text = "Edit";
             this.btnEdit.ToolTipText = "Edit  (Ctrl + E)";
             this.btnEdit.Click += new System.EventHandler(this.btnedit_Click);
             // 
@@ -1942,7 +1964,7 @@
             this.btnDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(77, 24);
-            this.btnDelete.Text = "&Delete";
+            this.btnDelete.Text = "Delete";
             this.btnDelete.ToolTipText = "Delete (Ctrl + D)";
             this.btnDelete.Click += new System.EventHandler(this.btndelete_Click);
             // 
@@ -1964,7 +1986,7 @@
             this.btnCancel.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(77, 24);
-            this.btnCancel.Text = "&Cancel";
+            this.btnCancel.Text = "Cancel";
             this.btnCancel.ToolTipText = "Cancel (Ctrl + C)";
             this.btnCancel.Click += new System.EventHandler(this.btncancel_Click);
             // 
@@ -1975,7 +1997,7 @@
             this.btnPrint.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(63, 24);
-            this.btnPrint.Text = "&Print";
+            this.btnPrint.Text = "Print";
             this.btnPrint.ToolTipText = "Print (Ctrl + P)";
             this.btnPrint.Click += new System.EventHandler(this.btnprint_Click);
             // 
@@ -1987,7 +2009,7 @@
             this.pnlMain.BackColor = System.Drawing.Color.White;
             this.pnlMain.Location = new System.Drawing.Point(-1, 29);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(950, 513);
+            this.pnlMain.Size = new System.Drawing.Size(1052, 513);
             this.pnlMain.TabIndex = 0;
             // 
             // pnlNotification
@@ -1998,7 +2020,7 @@
             this.pnlNotification.BackColor = System.Drawing.Color.White;
             this.pnlNotification.Location = new System.Drawing.Point(0, 41);
             this.pnlNotification.Name = "pnlNotification";
-            this.pnlNotification.Size = new System.Drawing.Size(307, 541);
+            this.pnlNotification.Size = new System.Drawing.Size(341, 541);
             this.pnlNotification.TabIndex = 1;
             // 
             // pnlNotificationsHeading
@@ -2008,7 +2030,7 @@
             this.pnlNotificationsHeading.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlNotificationsHeading.Location = new System.Drawing.Point(0, 0);
             this.pnlNotificationsHeading.Name = "pnlNotificationsHeading";
-            this.pnlNotificationsHeading.Size = new System.Drawing.Size(307, 37);
+            this.pnlNotificationsHeading.Size = new System.Drawing.Size(341, 37);
             this.pnlNotificationsHeading.TabIndex = 0;
             // 
             // label1
@@ -2029,14 +2051,14 @@
             this.pnlOuterContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlOuterContainer.Location = new System.Drawing.Point(0, 72);
             this.pnlOuterContainer.Name = "pnlOuterContainer";
-            this.pnlOuterContainer.Size = new System.Drawing.Size(1284, 599);
+            this.pnlOuterContainer.Size = new System.Drawing.Size(1420, 599);
             this.pnlOuterContainer.TabIndex = 9;
             // 
             // MDIParent1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1284, 693);
+            this.ClientSize = new System.Drawing.Size(1420, 693);
             this.Controls.Add(this.pnlOuterContainer);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip);
@@ -2267,6 +2289,8 @@
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.ToolStripButton btnDelete;
         private System.Windows.Forms.ToolStripMenuItem databaseToolToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_Student;
+        private System.Windows.Forms.ToolStripMenuItem studentSearchToolStripMenuItem;
     }
 }
 

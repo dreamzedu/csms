@@ -25,14 +25,18 @@ namespace SMS.Report.Student.ReportForm
             Connection.FillComboBox(cmbClass, " select classcode,classname from tbl_classmaster order by classcode ");
             Connection.FillCombo(ref strCmbReligion, "select Religion from tbl_student Where Datalength(Religion)>0 Group By Religion Order By Religion");
             cmbSession.SelectedValue = school.CurrentSessionCode;
-            cmbStudentStatus.SelectedIndex = 0;
+            cmbStudentStatus.SelectedIndex = 0;           
             strstdcategory.SelectedIndex = 0;
             strCmbReligion.SelectedIndex = 0;
             cmbgender.SelectedIndex = 0;
             c.GetMdiParent(this).TogglePrintButton(true);
             this.cmbSession.SelectedIndexChanged += new System.EventHandler(this.cmbSession_SelectedIndexChanged);
-            
+            this.cmbStudentStatus.SelectedIndexChanged += new System.EventHandler(this.cmbStudentStatus_SelectedIndexChanged);
+            this.strstdcategory.SelectedIndexChanged += new System.EventHandler(this.strstdcategory_SelectedIndexChanged);
+            this.strCmbReligion.SelectedIndexChanged += new System.EventHandler(this.strCmbReligion_SelectedIndexChanged);
+            this.cmbgender.SelectedIndexChanged += new System.EventHandler(this.cmbgender_SelectedIndexChanged);            
         }
+
         public void GetFilterRecord()
         {
             try

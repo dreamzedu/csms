@@ -1646,7 +1646,7 @@ namespace SMS
             this.GPSDetail.Location = new System.Drawing.Point(323, 368);
             this.GPSDetail.Name = "GPSDetail";
             this.GPSDetail.Size = new System.Drawing.Size(253, 112);
-            this.GPSDetail.TabIndex = 224;
+            this.GPSDetail.TabIndex = 0;
             this.GPSDetail.TabStop = false;
             this.GPSDetail.Tag = "";
             this.GPSDetail.Text = "Scholership Bank Details";

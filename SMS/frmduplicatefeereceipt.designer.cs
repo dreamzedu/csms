@@ -48,7 +48,7 @@
             // 
             this.txtfeeno.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtfeeno.ForeColor = System.Drawing.Color.Blue;
-            this.txtfeeno.Location = new System.Drawing.Point(188, 55);
+            this.txtfeeno.Location = new System.Drawing.Point(188, 43);
             this.txtfeeno.MaxLength = 40;
             this.txtfeeno.Name = "txtfeeno";
             this.txtfeeno.Size = new System.Drawing.Size(182, 25);
@@ -63,11 +63,11 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(56, 57);
+            this.label6.Location = new System.Drawing.Point(56, 45);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 19);
+            this.label6.Size = new System.Drawing.Size(100, 19);
             this.label6.TabIndex = 29;
-            this.label6.Text = "Fee No.";
+            this.label6.Text = "Receipt No.";
             // 
             // lblschloarno
             // 

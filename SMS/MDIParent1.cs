@@ -700,7 +700,7 @@ namespace SMS
                     System.Diagnostics.Process.Start(@"Calc.exe");
                 else if (e.KeyCode.Equals(Keys.F9))
                     System.Diagnostics.Process.Start(@"Notepad.exe");
-                else
+                else if(pnlMain.Controls.Count > 0)
                 {
                    ((UserControlBase)pnlMain.Controls[0]).frm_keydown(sender, e);
                 }
@@ -1364,6 +1364,11 @@ namespace SMS
         {
             frmDBServer d = new frmDBServer();
             d.Show();
+        }
+
+        private void studentSearchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowUserControl(new frmDetail(), sender);        
         }
 
        

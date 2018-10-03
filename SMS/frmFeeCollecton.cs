@@ -181,7 +181,7 @@ namespace SMS
                         }
                         else
                         {
-                            MessageBox.Show("You are not Elegible for submitted Fee...\n\tPlease Check Student Type From Student Master Form!!!");
+                            MessageBox.Show("You are not eligible for submitted Fee...\n\tPlease Check Student Type From Student Master Form!!!");
                         }
                         dtgfee.Rows.Clear();
                         if (dtFeeType.Rows.Count > 0)
@@ -832,7 +832,7 @@ namespace SMS
                             }
                             else
                             {
-                                MessageBox.Show("You are not Elegible for submitted Fee...\n\tPlease Check Student Type From Student Master Form!!!");
+                                MessageBox.Show("You are not eligible for submitted Fee.\n\tPlease Check Student Type From Student Master Form!!!");
                             }
                             dtgfee.Rows.Clear();
                             if (dtFeeType.Rows.Count > 0)

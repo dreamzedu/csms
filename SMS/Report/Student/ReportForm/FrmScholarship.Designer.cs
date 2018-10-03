@@ -112,7 +112,6 @@
             this.strstdcategory.TabIndex = 238;
             this.strstdcategory.Tag = "casttype";
             this.strstdcategory.Text = "-Select-";
-            this.strstdcategory.SelectedIndexChanged += new System.EventHandler(this.strstdcategory_SelectedIndexChanged);
             // 
             // strCmbReligion
             // 
@@ -124,7 +123,6 @@
             this.strCmbReligion.Size = new System.Drawing.Size(127, 24);
             this.strCmbReligion.TabIndex = 237;
             this.strCmbReligion.Tag = "Religion";
-            this.strCmbReligion.SelectedIndexChanged += new System.EventHandler(this.strCmbReligion_SelectedIndexChanged);
             // 
             // btnPrint
             // 
@@ -152,7 +150,6 @@
             this.cmbStudentStatus.Name = "cmbStudentStatus";
             this.cmbStudentStatus.Size = new System.Drawing.Size(241, 24);
             this.cmbStudentStatus.TabIndex = 233;
-            this.cmbStudentStatus.SelectedIndexChanged += new System.EventHandler(this.cmbStudentStatus_SelectedIndexChanged);
             // 
             // chkSection
             // 
@@ -275,7 +272,6 @@
             this.cmbgender.Size = new System.Drawing.Size(99, 24);
             this.cmbgender.TabIndex = 242;
             this.cmbgender.Tag = "Religion";
-            this.cmbgender.SelectedIndexChanged += new System.EventHandler(this.cmbgender_SelectedIndexChanged);
             // 
             // chkIsScholar
             // 

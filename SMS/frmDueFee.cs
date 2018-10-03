@@ -33,6 +33,7 @@ namespace SMS
             this.cmbSession.SelectedIndexChanged += new System.EventHandler(this.cmbSession_SelectedIndexChanged);
             c.GetMdiParent(this).TogglePrintButton(true);
             LoadStudentFeeDetail();
+
         } 
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -45,30 +46,31 @@ namespace SMS
         {
             if (dataGridView1.RowCount > 0)
             {
-                if (ChkIdDueGreater.Checked)
-                {
-                    if (chkClassWise.Checked == true && chkSection.Checked == false)
-                    {
-                        DataView dv = dtTotalFee.DefaultView;
-                        dv.RowFilter = "ClassNo='" + cmbClass.SelectedValue + "' And SessionCode='" + cmbSession.SelectedValue + "' and [Due Fee]>0";
-                        dv.Sort = "Name";
-                        dataGridView1.DataSource = dv;
-                    }
-                    else if (chkClassWise.Checked ==true && chkSection.Checked == true)
-                    {
-                        DataView dv = dtTotalFee.DefaultView;
-                        dv.RowFilter = "ClassNo='" + cmbClass.SelectedValue + "' And SessionCode='" + cmbSession.SelectedValue + "' And SectionNo='" + cmbSection.SelectedValue + "' and [Due Fee]>0";
-                        dv.Sort = "Name";
-                        dataGridView1.DataSource = dv;
-                    }
-                    else
-                    {
-                        DataView dv = dtTotalFee.DefaultView;
-                        dv.RowFilter = "[Due Fee]>0";
-                        dv.Sort = "Name";
-                        dataGridView1.DataSource = dv;
-                    }
-                }
+                //if (ChkIdDueGreater.Checked)
+                //{
+                //    if (chkClassWise.Checked == true && chkSection.Checked == false)
+                //    {
+                //        DataView dv = dtTotalFee.DefaultView;
+                //        dv.RowFilter = "ClassNo='" + cmbClass.SelectedValue + "' And SessionCode='" + cmbSession.SelectedValue + "' and [Due Fee]>0";
+                //        dv.Sort = "Name";
+                //        dataGridView1.DataSource = dv;
+                //    }
+                //    else if (chkClassWise.Checked ==true && chkSection.Checked == true)
+                //    {
+                //        DataView dv = dtTotalFee.DefaultView;
+                //        dv.RowFilter = "ClassNo='" + cmbClass.SelectedValue + "' And SessionCode='" + cmbSession.SelectedValue + "' And SectionNo='" + cmbSection.SelectedValue + "' and [Due Fee]>0";
+                //        dv.Sort = "Name";
+                //        dataGridView1.DataSource = dv;
+                //    }
+                //    else
+                //    {
+                //        DataView dv = dtTotalFee.DefaultView;
+                //        dv.RowFilter = "[Due Fee]>0";
+                //        dv.Sort = "Name";
+                //        dataGridView1.DataSource = dv;
+                //    }
+                //}
+
                 DataSet ds = Connection.GetDataSet("SELECT schoolname, schooladdress, schoolcity, schoolphone, affiliate_by, principal, registrationno, logoimage   From   tbl_school");
                 ds.Tables.Add(Connection.GetDataTableFromDataGridView(dataGridView1));
                 ds.WriteXmlSchema(@"" + Connection.GetAccessPathId() + @"Barcodes\a\DueFee.xsd");
@@ -169,7 +171,7 @@ namespace SMS
 
                         dtTotalFee.Rows[i]["Fee Amount"] = (Obj != DBNull.Value) ? Obj : Convert.ToDecimal(0.00);
                         dtTotalFee.Rows[i]["Total Fee"] = Math.Round((Convert.ToDecimal(dtTotalFee.Rows[i]["Fee Amount"]) + Convert.ToDecimal(dtTotalFee.Rows[i]["Bus Fee"])), 2);
-                        dtTotalFee.Rows[i]["Due Fee"] = Math.Round(((Convert.ToDecimal(dtTotalFee.Rows[i]["Total Fee"]) - schamt) - (Convert.ToDecimal(dtTotalFee.Rows[i]["Paid Fee"]) + tdc)), 2);
+                        dtTotalFee.Rows[i]["Due Fee"] = Math.Round(((Convert.ToDecimal(dtTotalFee.Rows[i]["Total Fee"]) - schamt) - (Convert.ToDecimal(dtTotalFee.Rows[i]["Paid Fee"]) + tdc - tdl)), 2);
                         dtTotalFee.Rows[i]["Consession Fee"] = Math.Round(tdc, 2);
                         dtTotalFee.Rows[i]["Late Fee"] = Math.Round(tdl, 2);
                     }
@@ -181,13 +183,22 @@ namespace SMS
                             Obj = dtAllFeeType.Compute("Sum([Total Fee])", "SessionCode='" + cmbSession.SelectedValue + "' And ClassNo='" + dtTotalFee.Rows[i]["ClassNo"] + "' And  stream='" + dtTotalFee.Rows[i]["stream"] + "'");
                         dtTotalFee.Rows[i]["Fee Amount"] = (Obj != DBNull.Value) ? Obj : Convert.ToDecimal(0.00);
                         dtTotalFee.Rows[i]["Total Fee"] = Math.Round((Convert.ToDecimal(dtTotalFee.Rows[i]["Fee Amount"]) + Convert.ToDecimal(dtTotalFee.Rows[i]["Bus Fee"])), 2);
-                        dtTotalFee.Rows[i]["Due Fee"] = Math.Round(((Convert.ToDecimal(dtTotalFee.Rows[i]["Total Fee"]) - schamt) - (Convert.ToDecimal(dtTotalFee.Rows[i]["Paid Fee"]) + tdc)), 2);
+                        dtTotalFee.Rows[i]["Due Fee"] = Math.Round(((Convert.ToDecimal(dtTotalFee.Rows[i]["Total Fee"]) - schamt) - (Convert.ToDecimal(dtTotalFee.Rows[i]["Paid Fee"]) + tdc - tdl)), 2);
                         dtTotalFee.Rows[i]["Consession Fee"] = Math.Round(tdc, 2);
                         dtTotalFee.Rows[i]["Late Fee"] = Math.Round(tdl, 2);
                     }
                 }
 
                 dataGridView1.DataSource = dtTotalFee;
+
+                if(dtTotalFee != null)
+                {
+                    dataGridView1.Columns[0].Frozen = true;
+                    dataGridView1.Columns[1].Frozen = true;
+                    dataGridView1.Columns[2].Frozen = true;
+                    dataGridView1.Columns[3].Frozen = true;
+                    dataGridView1.Columns[4].Frozen = true;
+                }
             }
             catch (Exception ex) { Logger.LogError(ex); }
 
@@ -282,6 +293,10 @@ namespace SMS
             if (cmbStudentStatus.SelectedIndex > 0)
                 filter += " And Status='" + cmbStudentStatus.Text.Trim() + "'";
                    
+            if(ChkIdDueGreater.Checked)
+            {
+                filter += " And [Due Fee]>0 ";
+            }
 
             return filter;
         }
@@ -364,7 +379,10 @@ namespace SMS
             LoadStudentFeeDetail();
         }
 
-       
+        private void ChkIdDueGreater_CheckedChanged(object sender, EventArgs e)
+        {
+            LoadStudentFeeDetail();
+        } 
 
  
     }

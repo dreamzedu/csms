@@ -1985,9 +1985,9 @@ namespace SMS
                         //------
                     }
                     if (this.MessageService && add_edit)
-                        MessageBox.Show("Record Saved...\n\tMessage Sent To Parents...", "School");
+                        MessageBox.Show("Student record saved successfully.\n\tMessage sent to registered number.", "School");
                     else
-                        MessageBox.Show("Record Saved...", "School");
+                        MessageBox.Show("Student record saved successfully.", "Success");
 
                     c.GetMdiParent(this).EnableAllEditMenuButtons();
                     pbxBarCode.Visible = false;

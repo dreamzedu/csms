@@ -19,6 +19,7 @@ namespace SMS
             cmbSession.SelectedValue = Convert.ToInt32(Connection.GetExecuteScalar("Select SessionCode From tbl_Session Where SessionStatus=1"));
             seletedCode = Convert.ToInt32(cmbSession.SelectedValue);
             this.cmbSession.SelectedIndexChanged += new System.EventHandler(this.cmbSession_SelectedIndexChanged);
+            //btnDone.Focus();
         }
 
         private void btnDone_Click(object sender, EventArgs e)
@@ -52,7 +53,14 @@ namespace SMS
                 {
                     chkSetSession.Checked = false;
                 }
+                btnDone.Focus();
             }
+        }
+
+        private void frmAcademicSession_Load(object sender, EventArgs e)
+        {
+            btnDone.Focus();
+            btnDone.Select();
         }
     }
 }

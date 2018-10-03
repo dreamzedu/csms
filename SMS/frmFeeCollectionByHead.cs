@@ -22,12 +22,19 @@ namespace SMS
         static int StudentNo;
         static int ClassCode;
         static int AFlag;
-        static bool trte = false;
+        static bool trte = false,tsch=false;
         static string MobileNoOfStudentParent = string.Empty;
+        static decimal TRecFee = 0;
+
         school c = new school();
+
+        decimal totRecAmt = 0, totLateFee = 0, totConcession = 0, totDue = 0;
+
+        decimal totFeeAmt = 0;
+
         void ClearControl()
         {
-            txtTotalFeeAmount.Text = txtLateFee.Text = txtPaidAmont.Text = txtrecivedamt.Text
+            txtTotalFeeAmount.Text = txtLateFee.Text = txtTotalRecAmont.Text = txtrecivedamt.Text
                 = txtConsession.Text = txtdueamt.Text = "0";
             dtpfeedate.Value = DateTime.Now;
         }
@@ -36,18 +43,24 @@ namespace SMS
             try
             {
                 txtdueamt.Text = (decimal.Parse(txtTotalFeeAmount.Text) -
-                     decimal.Parse(txtPaidAmont.Text)).ToString();
+                     decimal.Parse(txtTotalRecAmont.Text)).ToString();
             }
             catch(Exception ex){Logger.LogError(ex); }
         }
         private void txtscholarno_Validated(object sender, EventArgs e)
         {
+            totRecAmt = 0;
+            totLateFee = 0;
+            totConcession = 0;
+            totDue = 0;
+            totFeeAmt = 0;
+
             if (!txtFeeRcptNo.Enabled)
             {
                 if (!string.IsNullOrEmpty(txtscholarno.Text))
                 {
                     lblstdtype.Text = Convert.ToString(Connection.GetExecuteScalar("SELECT DISTINCT Ltrim(Rtrim(tbl_classstudent.stdtype))   FROM tbl_student INNER JOIN tbl_classstudent ON tbl_student.studentno = tbl_classstudent.studentno  WHERE     (tbl_student.scholarno = '" + txtscholarno.Text + "') AND (tbl_classstudent.sessioncode = '" + school.CurrentSessionCode + "')    "));
-                    DataSet ds = Connection.GetDataSet("SELECT  tbl_student.StudentNo, tbl_student.name, tbl_student.father,tbl_student.phone,tbl_classmaster.ClassCode, tbl_classmaster.classname + ' ' + tbl_section.sectionname + ' ' + tbl_sankay.sankayname AS Classname,(Case When busfacility=1 Then ISNULL(tbl_StopDetails.BusStopNo, '-') Else  '-' End) AS BusStopNo,(Case When busfacility=1 Then ISNULL(tbl_StopDetails.StopName, '-') Else  '-' End) AS StopName,(Case When busfacility=1 Then ISNULL(tbl_StopDetails.StopFee, 0) Else 0 End) AS StopFee,tbl_student.IsRTE FROM tbl_classmaster INNER JOIN  " +
+                    DataSet ds = Connection.GetDataSet("SELECT  tbl_student.StudentNo, tbl_student.name, tbl_student.father,tbl_student.phone,tbl_classmaster.ClassCode, tbl_classmaster.classname + ' ' + tbl_section.sectionname + ' ' + tbl_sankay.sankayname AS Classname,(Case When busfacility=1 Then ISNULL(tbl_StopDetails.BusStopNo, '-') Else  '-' End) AS BusStopNo,(Case When busfacility=1 Then ISNULL(tbl_StopDetails.StopName, '-') Else  '-' End) AS StopName,(Case When busfacility=1 Then ISNULL(tbl_StopDetails.StopFee, 0) Else 0 End) AS StopFee,tbl_student.IsRTE, tbl_student.IsScholarship FROM tbl_classmaster INNER JOIN  " +
                      "  tbl_classstudent ON tbl_classmaster.classcode = tbl_classstudent.classno INNER JOIN tbl_section ON tbl_classstudent.Section = tbl_section.sectioncode INNER JOIN tbl_sankay ON tbl_classstudent.Stream = tbl_sankay.sankaycode INNER JOIN tbl_student ON tbl_classstudent.studentno = tbl_student.studentno LEFT OUTER JOIN tbl_StopDetails ON tbl_student.BusStopNo = tbl_StopDetails.BusStopNo " +
                      "  WHERE     (tbl_student.scholarno = '" + txtscholarno.Text.Trim() + "') AND (tbl_classstudent.sessioncode = '" + school.CurrentSessionCode + "')");
                     if (ds.Tables[0].Rows.Count > 0)
@@ -94,8 +107,37 @@ namespace SMS
                         }
                         else
                         {
-                            MessageBox.Show("You are not Elegible for submitted Fee...\n\tPlease Check Student Type From Student Master Form!!!");
+                            MessageBox.Show("You are not eligible for submitted Fee...\n\tPlease Check Student Type From Student Master Form!!!");
                         }
+
+                        string tstr = string.Empty;
+                        tsch = Convert.ToBoolean(ds.Tables[0].Rows[0]["IsScholarship"]);
+                            if (tsch)
+                            {
+                                tstr = Convert.ToString(Connection.GetExecuteScalar("select schamount from tbl_classstudent where sessioncode='" + school.CurrentSessionCode + "' and studentno='" + frmFeeCollectionByHead.StudentNo + "'"));
+                                if (string.IsNullOrEmpty(tstr))
+                                {
+                                    txtschamt.Text = Convert.ToString(Connection.GetExecuteScalar("select dbo.GetSchAmountByCat('" + school.CurrentSessionCode + "','" + frmFeeCollectionByHead.StudentNo + "')"));
+                                    if (string.IsNullOrEmpty(txtschamt.Text.Trim()))
+                                        txtschamt.Text = "0";
+                                    txtschamt.Enabled = true;
+                                }
+                                else
+                                {
+                                    txtschamt.Text = Convert.ToString(Connection.GetExecuteScalar("select dbo.GetSchAmount('" + school.CurrentSessionCode + "','" + frmFeeCollectionByHead.StudentNo + "')"));
+                                    if (string.IsNullOrEmpty(txtschamt.Text.Trim()))
+                                        txtschamt.Text = "0";
+                                    txtschamt.Enabled = false;
+
+                                }
+                            }
+                            else
+                            {
+                                //--write some code here.
+                                txtschamt.Text = "0";
+                                txtschamt.Enabled = false;
+                            }
+
                         dtgfee.Rows.Clear();
                         if (dtFeeType.Rows.Count > 0)
                         {
@@ -105,41 +147,66 @@ namespace SMS
                                 decimal trcamt = 0;
                                 trcamt = Convert.ToDecimal(Connection.GetExecuteScalar("select dbo.GetRecAmountByHead(101,'" + school.CurrentSessionCode + "','" + frmFeeCollectionByHead.StudentNo + "')"));
                                 dtgfee.Rows.Add("101", "Bus Fee", lblBusFee.Text, trcamt, Convert.ToDecimal(lblBusFee.Text) - trcamt, 0);
-                                txtTotalFeeAmount.Text = lblBusFee.Text;
+                                totFeeAmt = Convert.ToDecimal(lblBusFee.Text);
                             }
                             foreach (DataRow dr in dtFeeType.Rows)
                             {
                                 dtgfee.Rows.Add(dr["FeeCode"], dr["FeeHead"], dr["Amount"], dr["RAmount"], dr["BAmount"], dr["PAmount"]);
-                                txtTotalFeeAmount.Text = (decimal.Parse(txtTotalFeeAmount.Text) + decimal.Parse(dr["Amount"].ToString())).ToString();
+                                totFeeAmt += decimal.Parse(dr["Amount"].ToString());
                             }
+
+                            txtTotalFeeAmount.Text = totFeeAmt.ToString();
                         }
 
                         //*************************
 
-                        DataTable dt = Connection.GetDataTable("select r.RecId as [Rcpt. No.] ,CONVERT(varchar, r.date, 106) AS Date,dbo.GetDueAmount(r.RecId,r.sessioncode,r.studentno)  AS [Due Amt.], isnull(sum(recamount),0) as [Rcv. Amt.],r.latefee AS [Late Fee],r.consession AS [Fee Consession] from  Tbl_Received  r inner join Tbl_ReceivedDetail rd  on r.RecId=rd.RecId and r.sessioncode=rd.sessioncode where     (r.sessioncode = '" + school.CurrentSessionCode + "') AND (r.studentno = '" + frmFeeCollectionByHead.StudentNo + "') group by r.RecId,r.latefee,r.consession,r.sessioncode,r.studentno,r.date");
+                        DataTable dt = Connection.GetDataTable("select r.RecId as [Rcpt. No.] ,CONVERT(varchar, r.date, 106) AS Date, r.dueamount  AS [Due Amt.], "
+                        + " (isnull(sum(recamount),0) + r.latefee - r.consession) as [Rcv. Amt.],r.latefee AS [Late Fee],r.consession AS [Fee Consession] from  Tbl_Received  r inner join Tbl_ReceivedDetail rd  on r.RecId=rd.RecId and r.sessioncode=rd.sessioncode where "
+                        +"(r.sessioncode = '" + school.CurrentSessionCode + "') AND (r.studentno = '" + frmFeeCollectionByHead.StudentNo + "') group by r.RecId,r.latefee,r.consession,r.sessioncode,r.studentno,r.date, r.dueamount");
                         if (dt.Rows.Count > 0)
                             dgvPaymentDetail.DataSource = dt;
 
-                        SqlDataReader datareader = Connection.GetDataReader("select  isnull(sum(recamount),0) as recamount from  Tbl_Received  r inner join Tbl_ReceivedDetail rd  on r.RecId=rd.RecId and r.sessioncode=rd.sessioncode  where r.sessioncode='" + school.CurrentSessionCode + "'  " +
-                            " And r.studentno='" + frmFeeCollectionByHead.StudentNo + "'");
+                        //SqlDataReader datareader = Connection.GetDataReader("select  isnull(sum(recamount),0) as recamount from  Tbl_Received  r inner join Tbl_ReceivedDetail rd  on r.RecId=rd.RecId and r.sessioncode=rd.sessioncode  where r.sessioncode='" + school.CurrentSessionCode + "'  " +
+                        //    " And r.studentno='" + frmFeeCollectionByHead.StudentNo + "'");
 
-                        if (datareader != null)
+                        //if (datareader != null)
+                        //{
+                        //    if (datareader.HasRows)
+                        //    {
+                        //        datareader.Read();
+                        //        txtTotalRecAmont.Text = (datareader["recamount"]).ToString();
+
+                        //        if (txtTotalRecAmont.Text.Equals(txtTotalFeeAmount.Text))
+                        //        {
+                        //            MessageBox.Show("Fee already paid in full.", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        //            txtscholarno.SelectAll();
+                        //        }
+                        //    }
+                        //}
+
+
+                        foreach (DataRow dr in dt.Rows)
                         {
-                            if (datareader.HasRows)
-                            {
-                                datareader.Read();
-                                txtPaidAmont.Text = (datareader["recamount"]).ToString();
+                            totRecAmt += Convert.ToDecimal(dr["Rcv. Amt."]);
+                            totLateFee += Convert.ToDecimal(dr["Late Fee"]);
+                            totConcession += Convert.ToDecimal(dr["Fee Consession"]);
+                        }
 
-                                if (txtPaidAmont.Text.Equals(txtTotalFeeAmount.Text))
-                                {
-                                    MessageBox.Show("Fee Already Paid...", "Alert!!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                    txtscholarno.SelectAll();
-                                }
-                            }
+                        totDue = totFeeAmt + totLateFee - totRecAmt - totConcession - Convert.ToDecimal(txtschamt.Text);
+
+                        txtTotalRecAmont.Text = totRecAmt.ToString();
+                        txtPrevLateFee.Text = totLateFee.ToString();
+                        txtPrevConcession.Text = totConcession.ToString();
+                        txtdueamt.Text = totDue.ToString();
+
+                        if (totDue <=0 )
+                        {
+                            MessageBox.Show("Fee already paid in full.", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            txtscholarno.SelectAll();
                         }
 
                         txtFeeRcptNo.Text = Convert.ToString(Connection.GetExecuteScalar("select dbo.GetTbl_ReceivedId('" + school.CurrentSessionCode + "')"));
-                        this.TotalPaid();
+                        //this.TotalPaid();
                     }
                     else
                     {
@@ -173,6 +240,7 @@ namespace SMS
             Connection.SetUserLevelAuth(c.GetMdiParent(this));
             gbxFeeDetail.Location = gbxFeeCollection.Location;
             gbxStudentDetail.Location = gbxFeeCollection.Location;
+            c.GetMdiParent(this).TogglePrintButton(false);
         }
 
         private void txtSearch_Enter(object sender, EventArgs e)
@@ -243,16 +311,18 @@ namespace SMS
             txtFeeRcptNo.ReadOnly = false;
             txtFeeRcptNo.Focus();
         }
-        static decimal TRecFee = 0;
+        
         public override void btnsave_Click(object sender, EventArgs e)
         {
             SqlTransaction trn = null;
             try
             {
+                decimal tpdamt = 0;
+
                 string MonthName = System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(dtpfeedate.Value.Month);
                 if (string.IsNullOrEmpty(txtscholarno.Text))
                 {
-                    MessageBox.Show("Scholar No. Not Available.");
+                    MessageBox.Show("Scholar No. does not exist.");
                 }
                 else
                 {
@@ -266,16 +336,18 @@ namespace SMS
                     {
                         trn = Connection.GetMyConnection().BeginTransaction();
                         c.getconnstr();
-                        decimal tpdamt = 0;
-                        for (int rows = 0; rows < dtgfee.Rows.Count; rows++)
-                        {
-                            decimal ramt = Convert.ToDecimal(dtgfee.Rows[rows].Cells["PAmount"].Value.ToString());
-                            if (ramt > 0)
-                            {
-                                tpdamt = tpdamt + ramt;
-                            }
+                        
+                        //for (int rows = 0; rows < dtgfee.Rows.Count; rows++)
+                        //{
+                        //    decimal ramt = Convert.ToDecimal(dtgfee.Rows[rows].Cells["PAmount"].Value.ToString());
+                        //    if (ramt > 0)
+                        //    {
+                        //        tpdamt = tpdamt + ramt;
+                        //    }
 
-                        }
+                        //}
+                        decimal.TryParse(txtrecivedamt.Text, out tpdamt);
+
                         txtFeeRcptNo.Text = Convert.ToString(Connection.GetExecuteScalar("select dbo.GetTbl_ReceivedId('" + school.CurrentSessionCode + "')"));
                         Connection.SqlTransection("insert into Tbl_Received(sessioncode,RecId, studentno, date, latefee,consession,dueamount) " +
                         " values ('" + school.CurrentSessionCode + "',dbo.GetTbl_ReceivedId('" + school.CurrentSessionCode + "'),'" + frmFeeCollectionByHead.StudentNo + "','" + dtpfeedate.Value.Date + "' ,'" + txtLateFee.Text + "','" + txtConsession.Text + "','" + (decimal.Parse(txtdueamt.Text) - tpdamt) + "')",
@@ -293,6 +365,12 @@ namespace SMS
                             }
 
                         }
+
+                        Connection.SqlTransection("insert into tbl_feemaster(sessioncode, rcptno, studentno, rcptdate, rcvdamt, totalpaidfee, dueamount, latefee, totfeeamt, monthname,consession) " +
+                             " values ('" + school.CurrentSessionCode + "','" + txtFeeRcptNo.Text + "','" + frmFeeCollectionByHead.StudentNo + "','" + dtpfeedate.Value.Date + "' ,'" +TRecFee + "'," +
+                             " '" + tpdamt + "','" + (decimal.Parse(txtdueamt.Text) - (tpdamt)) + "','" + txtLateFee.Text + "'," +
+                             " '" + tpdamt + "','" + MonthName + "' ,'" + txtConsession.Text + "')", Connection.MyConnection, trn);
+                            
                         //---------------------
 
                         trn.Commit();
@@ -428,13 +506,21 @@ namespace SMS
                         trn = Connection.GetMyConnection().BeginTransaction();
                         c.getconnstr();
 
-                        Connection.SqlTransection("Update Tbl_Received SET date ='" + dtpfeedate.Value.Date + "' ,  latefee='" + txtLateFee.Text + "',consession='" + txtConsession.Text + "' " +
+                        decimal.TryParse(txtrecivedamt.Text, out tpdamt);
+
+                        Connection.SqlTransection("Update tbl_feemaster SET rcptdate ='" + dtpfeedate.Value.Date + "' , rcvdamt='" + TRecFee + "', totalpaidfee='" + tpdamt + "', dueamount='" + (decimal.Parse(txtdueamt.Text) - tpdamt) + "' " +
+                            " , latefee='" + txtLateFee.Text + "', totfeeamt='" + tpdamt + "', monthname='" + MonthName + "',consession='" + txtConsession.Text + "' " +
+                            " Where SessionCode='" + school.CurrentSessionCode + "' And rcptno='" + txtFeeRcptNo.Text + "' And studentno='" + frmFeeCollectionByHead.StudentNo + "' And Status='True'  ",
+                            Connection.MyConnection, trn);
+
+
+                        Connection.SqlTransection("Update Tbl_Received SET date ='" + dtpfeedate.Value.Date + "' ,  latefee='" + txtLateFee.Text + "',consession='" + txtConsession.Text + "', dueamount='" + (decimal.Parse(txtdueamt.Text) - tpdamt) + "' " +
                         " Where SessionCode='" + school.CurrentSessionCode + "' And RecId='" + txtFeeRcptNo.Text + "' And studentno='" + frmFeeCollectionByHead.StudentNo + "' And Status='True'  ",
                         Connection.MyConnection, trn);
 
                         Connection.SqlTransection("delete Tbl_ReceivedDetail  Where  RecId='" + txtFeeRcptNo.Text + "'",
                         Connection.MyConnection, trn);
-                        decimal tpdamt = 0;
+                        
 
                         //----------A*A-------
                         for (int rows = 0; rows < dtgfee.Rows.Count; rows++)
@@ -445,8 +531,8 @@ namespace SMS
                                 Connection.SqlTransection("insert into Tbl_ReceivedDetail(RecDId,RecId, feecode, RecAmount,SessionCode) " +
                              " values (dbo.GetTbl_ReceivedDetailId(), '" + txtFeeRcptNo.Text.Trim() + "','" + dtgfee.Rows[rows].Cells["FeeCode"].Value.ToString() + "','" + dtgfee.Rows[rows].Cells["PAmount"].Value.ToString() + "','" + school.CurrentSessionCode + "')",
                              Connection.MyConnection, trn);
-                                TRecFee = TRecFee + decimal.Parse(dtgfee.Rows[rows].Cells["PAmount"].Value.ToString());
-                                tpdamt = tpdamt + ramt;
+                                TRecFee = TRecFee + ramt;// decimal.Parse(dtgfee.Rows[rows].Cells["PAmount"].Value.ToString());
+                                //tpdamt = tpdamt + ramt;
                             }
 
                         }
@@ -495,9 +581,9 @@ namespace SMS
                         }
                         #endregion
                         if (this.MessageService)
-                            MessageBox.Show("Fee Transaction Completed...\n\tMessage Sent!!!", "School");
+                            MessageBox.Show("Fee Transaction Completed.\n\tMessage Sent!!!", "School");
                         else
-                            MessageBox.Show("Fee Transaction Completed...");
+                            MessageBox.Show("Fee Transaction Completed.");
                     }
                     gbxFeeCollection.Enabled = false;
                    c.GetMdiParent(this).ToggleSaveButton(false);
@@ -505,7 +591,7 @@ namespace SMS
                    c.GetMdiParent(this).ToggleEditButton(true);
                    c.GetMdiParent(this).ToggleCancelButton(false);
                     txtFeeRcptNo.Enabled = false;
-                    c.GetMdiParent(this).TogglePrintButton(true);
+                    c.GetMdiParent(this).TogglePrintButton(false);
                     this.ClearControl();
                     //}
                     //else
@@ -517,7 +603,7 @@ namespace SMS
                 trn.Rollback();
                 MessageBox.Show("Fee Transaction Is Not Completed.\n\tPlease Try Again.");
                 Logger.LogError(ex); 
-               c.GetMdiParent(this).ToggleSaveButton(false);
+               //c.GetMdiParent(this).ToggleSaveButton(false);
             }
         }
 
@@ -625,6 +711,12 @@ namespace SMS
 
         private void txtFeeRcptNo_Validated(object sender, EventArgs e)
         {
+            totRecAmt = 0;
+            totLateFee = 0;
+            totConcession = 0;
+            totDue = 0;
+            totFeeAmt = 0;
+
             if (txtFeeRcptNo.Enabled && !string.IsNullOrEmpty(txtFeeRcptNo.Text.Trim()))
             {
                 DataTable sdr = Connection.GetDataTable("Declare @i int Declare @d datetime set @i=(SELECT COUNT(*) FROM Tbl_Received " +
@@ -639,7 +731,7 @@ namespace SMS
                     if (Convert.ToInt32(sdr.Rows[0][0]) == 0)
                     {
                         frmFeeCollectionByHead.StudentNo = Convert.ToInt32(Connection.GetExecuteScalar("SELECT ISNULL(studentno,-1000) FROM Tbl_Received WHERE (RecId = '" + txtFeeRcptNo.Text.Trim() + "') AND (sessioncode = '" + school.CurrentSessionCode + "')"));
-                        DataTable dtStudent = Connection.GetDataTable("SELECT  tbl_student.StudentNo,tbl_student.ScholarNo, tbl_student.name, tbl_student.father,tbl_classmaster.ClassCode, tbl_classmaster.classname + ' ' + tbl_section.sectionname + ' ' + tbl_sankay.sankayname AS Classname,(Case When busfacility=1 Then ISNULL(tbl_StopDetails.BusStopNo, '-') Else  '-' End) AS BusStopNo,(Case When busfacility=1 Then ISNULL(tbl_StopDetails.StopName, '-') Else  '-' End) AS StopName,(Case When busfacility=1 Then ISNULL(tbl_StopDetails.StopFee, 0) Else 0 End) AS StopFee, LTRIM(RTRIM(tbl_classstudent.stdtype)) AS Status,tbl_student.IsRTE FROM tbl_classmaster INNER JOIN  " +
+                        DataTable dtStudent = Connection.GetDataTable("SELECT  tbl_student.StudentNo,tbl_student.ScholarNo, tbl_student.name, tbl_student.father,tbl_classmaster.ClassCode, tbl_classmaster.classname + ' ' + tbl_section.sectionname + ' ' + tbl_sankay.sankayname AS Classname,(Case When busfacility=1 Then ISNULL(tbl_StopDetails.BusStopNo, '-') Else  '-' End) AS BusStopNo,(Case When busfacility=1 Then ISNULL(tbl_StopDetails.StopName, '-') Else  '-' End) AS StopName,(Case When busfacility=1 Then ISNULL(tbl_StopDetails.StopFee, 0) Else 0 End) AS StopFee, LTRIM(RTRIM(tbl_classstudent.stdtype)) AS Status,tbl_student.IsRTE, tbl_student.IsScholarship FROM tbl_classmaster INNER JOIN  " +
                          "  tbl_classstudent ON tbl_classmaster.classcode = tbl_classstudent.classno INNER JOIN tbl_section ON tbl_classstudent.Section = tbl_section.sectioncode INNER JOIN tbl_sankay ON tbl_classstudent.Stream = tbl_sankay.sankaycode INNER JOIN tbl_student ON tbl_classstudent.studentno = tbl_student.studentno LEFT OUTER JOIN tbl_StopDetails ON tbl_student.BusStopNo = tbl_StopDetails.BusStopNo " +
                          "  WHERE (tbl_student.StudentNo = '" + frmFeeCollectionByHead.StudentNo + "') AND (tbl_classstudent.sessioncode = '" + school.CurrentSessionCode + "')");
                         if (dtStudent.Rows.Count > 0)
@@ -670,24 +762,55 @@ namespace SMS
                             }
                             else
                             {
-                                MessageBox.Show("You are not Elegible for submitted Fee...\n\tPlease Check Student Type From Student Master Form!!!");
+                                MessageBox.Show("You are not eligible for submitted Fee.\n\tPlease Check Student Type From Student Master Form!!!");
                             }
+
+                            string tstr = string.Empty;
+                            //-For Scholarship amount .
+                            tsch = Convert.ToBoolean(dtStudent.Rows[0]["IsScholarship"]);
+                            if (tsch)
+                            {
+                                tstr = Convert.ToString(Connection.GetExecuteScalar("select schamount from tbl_classstudent where sessioncode='" + school.CurrentSessionCode + "' and studentno='" + frmFeeCollectionByHead.StudentNo + "'"));
+                                if (string.IsNullOrEmpty(tstr))
+                                {
+                                    txtschamt.Text = Convert.ToString(Connection.GetExecuteScalar("select dbo.GetSchAmountByCat('" + school.CurrentSessionCode + "','" + frmFeeCollectionByHead.StudentNo + "')"));
+                                    if (string.IsNullOrEmpty(txtschamt.Text.Trim()))
+                                        txtschamt.Text = "0";
+                                    txtschamt.Enabled = true;
+                                }
+                                else
+                                {
+                                    txtschamt.Text = Convert.ToString(Connection.GetExecuteScalar("select dbo.GetSchAmount('" + school.CurrentSessionCode + "','" + frmFeeCollectionByHead.StudentNo + "')"));
+                                    if (string.IsNullOrEmpty(txtschamt.Text.Trim()))
+                                        txtschamt.Text = "0";
+                                    txtschamt.Enabled = false;
+
+                                }
+                            }
+                            else
+                            {
+                                //--write some code here.
+                                txtschamt.Text = "0";
+                                txtschamt.Enabled = false;
+                            }
+
                             dtgfee.Rows.Clear();
                             if (dtFeeType.Rows.Count > 0)
                             {
                                 txtTotalFeeAmount.Text = "0";
-                                if (Convert.ToDecimal(lblBusFee.Text) > 0)
-                                {
-                                    //dtgfee.Rows.Add("101", "Bus Fee", lblBusFee.Text,0,0,0);
-                                    txtTotalFeeAmount.Text = lblBusFee.Text;
-                                }
+                                //if (Convert.ToDecimal(lblBusFee.Text) > 0)
+                                //{
+                                //    totFeeAmt = Convert.ToDecimal(lblBusFee.Text);
+
+                                //}
                                 foreach (DataRow dr in dtFeeType.Rows)
                                 {
                                     dtgfee.Rows.Add(dr["FeeCode"], dr["FeeHead"], dr["Amount"], dr["RAmount"], dr["BAmount"], dr["PAmount"]);
-                                    txtTotalFeeAmount.Text = (decimal.Parse(txtTotalFeeAmount.Text) + decimal.Parse(dr["Amount"].ToString())).ToString();
+                                    totFeeAmt += decimal.Parse(dr["Amount"].ToString());
                                 }
+                                txtTotalFeeAmount.Text = totFeeAmt.ToString();
                             }
-                            DataTable dt = Connection.GetDataTable("select r.RecId as [Rcpt. No.] ,CONVERT(varchar, r.date, 106) AS Date,dbo.GetDueAmount(r.RecId,r.sessioncode,r.studentno)  AS [Due Amt.], isnull(sum(recamount),0) as [Rcv. Amt.],r.latefee AS [Late Fee],r.consession AS [Fee Consession] from  Tbl_Received  r inner join Tbl_ReceivedDetail rd  on r.RecId=rd.RecId and r.sessioncode=rd.sessioncode where     (r.sessioncode = '" + school.CurrentSessionCode + "') AND (r.studentno = '" + frmFeeCollectionByHead.StudentNo + "') group by r.RecId,r.latefee,r.consession,r.sessioncode,r.studentno,r.date");
+                            DataTable dt = Connection.GetDataTable("select r.RecId as [Rcpt. No.] ,CONVERT(varchar, r.date, 106) AS Date, r.dueamount  AS [Due Amt.], (isnull(sum(recamount),0) + r.latefee - r.consession) as [Rcv. Amt.],r.latefee AS [Late Fee],r.consession AS [Fee Consession] from  Tbl_Received  r inner join Tbl_ReceivedDetail rd  on r.RecId=rd.RecId and r.sessioncode=rd.sessioncode where     (r.sessioncode = '" + school.CurrentSessionCode + "') AND (r.studentno = '" + frmFeeCollectionByHead.StudentNo + "') group by r.RecId,r.latefee,r.consession,r.sessioncode,r.studentno,r.date, r.dueamount");
                             if (dt.Rows.Count > 0)
                                 dgvPaymentDetail.DataSource = dt;
 
@@ -697,28 +820,48 @@ namespace SMS
                             //    "   sessioncode='" + school.CurrentSessionCode + "' And studentno='" + frmFeeCollecton.StudentNo + "' GROUP BY sessioncode, studentno");
 
 
-                            SqlDataReader datareader = Connection.GetDataReader("select  isnull(sum(recamount),0) as recamount from  Tbl_Received  r inner join Tbl_ReceivedDetail rd  on r.RecId=rd.RecId and r.sessioncode=rd.sessioncode where r.sessioncode='" + school.CurrentSessionCode + "'  " +
-                            " And r.studentno='" + frmFeeCollectionByHead.StudentNo + "'");
+                            //SqlDataReader datareader = Connection.GetDataReader("select  isnull(sum(recamount),0) as recamount from  Tbl_Received  r inner join Tbl_ReceivedDetail rd  on r.RecId=rd.RecId and r.sessioncode=rd.sessioncode where r.sessioncode='" + school.CurrentSessionCode + "'  " +
+                            //" And r.studentno='" + frmFeeCollectionByHead.StudentNo + "'");
 
-                            if (datareader != null)
+                            //if (datareader != null)
+                            //{
+                            //    datareader.Read();
+                            //    txtTotalRecAmont.Text = (datareader["recamount"]).ToString();
+                            //    if (txtTotalRecAmont.Text.Equals(txtTotalFeeAmount.Text))
+                            //    {
+                            //        MessageBox.Show("Fee Already Paid...", "Alert!!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            //    }
+                            //}
+                            //DataTable dtFee = Connection.GetDataTable("select convert(varchar, r.RecId) as RecId,  date,dbo.GetDueAmount(r.RecId,r.sessioncode,r.studentno) as DueAmount, isnull(sum(recamount),0) as RecAmount,dbo.Num_ToWords(isnull(sum(recamount),0)) as Word,r.latefee,r.consession from  Tbl_Received  r inner join Tbl_ReceivedDetail rd  on r.RecId=rd.RecId and r.sessioncode=rd.sessioncode WHERE (r.RecId = '" + txtFeeRcptNo.Text.Trim() + "') AND (r.sessioncode = '" + school.CurrentSessionCode + "') group by r.RecId,r.latefee,r.consession,r.sessioncode,r.studentno,r.date");
+                            //if (dtFee.Rows.Count > 0)
+                            //{
+                            //    //txtFeeAmount.Text = dtFee.Rows[0]["rcvdamt"].ToString();
+                            //    txtdueamt.Text = dtFee.Rows[0]["DueAmount"].ToString();
+                            //    txtLateFee.Text = dtFee.Rows[0]["latefee"].ToString();
+                            //    txtConsession.Text = dtFee.Rows[0]["consession"].ToString();
+                            //    dtpfeedate.Value = (DateTime)dtFee.Rows[0]["date"];
+                            //    dtpfeedate.Focus();
+                            //}
+
+                            foreach (DataRow dr in dt.Rows)
                             {
-                                datareader.Read();
-                                txtPaidAmont.Text = (datareader["recamount"]).ToString();
-                                if (txtPaidAmont.Text.Equals(txtTotalFeeAmount.Text))
+                                if (dr["Rcpt. No."].ToString() == txtFeeRcptNo.Text.Trim())
                                 {
-                                    MessageBox.Show("Fee Already Paid...", "Alert!!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                    txtConsession.Text = dr["Fee Consession"].ToString();
+                                    txtLateFee.Text = dr["Late Fee"].ToString();
                                 }
+                                totRecAmt += Convert.ToDecimal(dr["Rcv. Amt."]);
+                                totLateFee += Convert.ToDecimal(dr["Late Fee"]);
+                                totConcession += Convert.ToDecimal(dr["Fee Consession"]);
                             }
-                            DataTable dtFee = Connection.GetDataTable("select convert(varchar, r.RecId) as RecId,  date,dbo.GetDueAmount(r.RecId,r.sessioncode,r.studentno) as DueAmount, isnull(sum(recamount),0) as RecAmount,dbo.Num_ToWords(isnull(sum(recamount),0)) as Word,r.latefee,r.consession from  Tbl_Received  r inner join Tbl_ReceivedDetail rd  on r.RecId=rd.RecId and r.sessioncode=rd.sessioncode WHERE (r.RecId = '" + txtFeeRcptNo.Text.Trim() + "') AND (r.sessioncode = '" + school.CurrentSessionCode + "') group by r.RecId,r.latefee,r.consession,r.sessioncode,r.studentno,r.date");
-                            if (dtFee.Rows.Count > 0)
-                            {
-                                //txtFeeAmount.Text = dtFee.Rows[0]["rcvdamt"].ToString();
-                                txtdueamt.Text = dtFee.Rows[0]["DueAmount"].ToString();
-                                txtLateFee.Text = dtFee.Rows[0]["latefee"].ToString();
-                                txtConsession.Text = dtFee.Rows[0]["consession"].ToString();
-                                dtpfeedate.Value = (DateTime)dtFee.Rows[0]["date"];
-                                dtpfeedate.Focus();
-                            }
+
+                            totDue = totFeeAmt + totLateFee - totRecAmt - totConcession - Convert.ToDecimal(txtschamt.Text);
+
+                            txtTotalRecAmont.Text = totRecAmt.ToString();
+                            txtPrevLateFee.Text = totLateFee.ToString();
+                            txtPrevConcession.Text = totConcession.ToString();
+                            txtdueamt.Text = totDue.ToString();
+                                                       
                         }
                         else
                         {
@@ -734,6 +877,7 @@ namespace SMS
                         txtFeeRcptNo.Focus();
                     }
                 }
+                c.GetMdiParent(this).TogglePrintButton(true);
             }
         }
 
@@ -750,6 +894,10 @@ namespace SMS
 
         private void txtLateFee_Leave(object sender, EventArgs e)
         {
+            if(string.IsNullOrEmpty(txtLateFee.Text))
+            {
+                txtLateFee.Text = "0";
+            }
             txtConsession.SelectAll();
             txtConsession.Focus();
         }
@@ -776,10 +924,16 @@ namespace SMS
                     }
 
                 }
-                txtrecivedamt.Text = (decimal.Round((tramt +
-                     decimal.Parse(txtLateFee.Text)) -
-                      decimal.Parse(txtConsession.Text), 2)).ToString();
 
+                decimal concession = 0, latefee = 0;
+                decimal.TryParse(txtConsession.Text, out concession);
+
+                decimal.TryParse(txtLateFee.Text, out latefee);
+
+                txtrecivedamt.Text = decimal.Round(tramt + latefee - concession, 2).ToString();
+                
+                totDue = totFeeAmt - totRecAmt - totConcession - concession + totLateFee +latefee - Convert.ToDecimal(txtschamt.Text);
+                txtdueamt.Text = totDue.ToString();
             }
             catch(Exception ex){Logger.LogError(ex); }
         }
@@ -803,7 +957,10 @@ namespace SMS
 
         private void txtConsession_Leave(object sender, EventArgs e)
         {
-            
+            if (string.IsNullOrEmpty(txtConsession.Text))
+            {
+                txtConsession.Text = "0";
+            }
         }
 
         private void frmFeeCollectionByHead_KeyDown(object sender, KeyEventArgs e)

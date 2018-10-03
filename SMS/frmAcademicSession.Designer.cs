@@ -51,7 +51,6 @@
             this.cmbSession.Name = "cmbSession";
             this.cmbSession.Size = new System.Drawing.Size(224, 24);
             this.cmbSession.TabIndex = 1;
-            
             // 
             // btnDone
             // 
@@ -90,6 +89,7 @@
             this.Name = "frmAcademicSession";
             this.ShowInTaskbar = false;
             this.Text = "Select Academic Session";
+            this.Load += new System.EventHandler(this.frmAcademicSession_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
