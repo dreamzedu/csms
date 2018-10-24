@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MDIParent1));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.userToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -182,8 +181,8 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.processName = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.toolTip = new System.Windows.Forms.ToolTip();
+            this.timer1 = new System.Windows.Forms.Timer();
             this.bkgProcess = new System.ComponentModel.BackgroundWorker();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnSearch = new System.Windows.Forms.ToolStripButton();
@@ -513,6 +512,7 @@
             this.feeCallectionToolStripMenuItem.Size = new System.Drawing.Size(384, 26);
             this.feeCallectionToolStripMenuItem.Tag = "Fee Collection";
             this.feeCallectionToolStripMenuItem.Text = "Fee Collection (Without fee heads)";
+            this.feeCallectionToolStripMenuItem.Visible = false;
             this.feeCallectionToolStripMenuItem.Click += new System.EventHandler(this.feeCallectionToolStripMenuItem_Click);
             // 
             // duplicateFeeReceiptSlipToolStripMenuItem

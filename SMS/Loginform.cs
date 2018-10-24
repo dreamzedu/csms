@@ -387,12 +387,21 @@ namespace SMS
             if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
             {
                 DateTime date = Convert.ToDateTime(ds.Tables[0].Rows[0]["ActivationValidTill"]);
-                
-                if(DateTime.Now.AddDays(30) > date)
+
+                int dayCount = 15;
+                try
+                {
+
+                }
+                catch
+                {
+                    dayCount = Convert.ToInt16(ConfigurationManager.AppSettings["DayCount"]);
+                }
+
+                if(DateTime.Now.AddDays(dayCount) > date)
                 {
                     int dateDiff = date.Subtract(DateTime.Today).Days;
                     MessageBox.Show("Your subscription is expiring in next " + dateDiff + " days, please renew your subscription to avoid disruption in your business.");
-                
                 }
                 return true;
             }
