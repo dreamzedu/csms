@@ -45,8 +45,6 @@
             // 
             this.ChkIdDueGreater.AutoSize = true;
             this.ChkIdDueGreater.BackColor = System.Drawing.Color.Transparent;
-            this.ChkIdDueGreater.Checked = true;
-            this.ChkIdDueGreater.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ChkIdDueGreater.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ChkIdDueGreater.ForeColor = System.Drawing.Color.White;
             this.ChkIdDueGreater.Location = new System.Drawing.Point(67, 484);
@@ -162,7 +160,6 @@
             this.cmbClass.Name = "cmbClass";
             this.cmbClass.Size = new System.Drawing.Size(106, 28);
             this.cmbClass.TabIndex = 2;
-            this.cmbClass.SelectedIndexChanged += new System.EventHandler(this.cmbClass_SelectedIndexChanged);
             this.cmbClass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.cmbClass_KeyPress);
             this.cmbClass.Leave += new System.EventHandler(this.cmbClass_Leave);
             // 

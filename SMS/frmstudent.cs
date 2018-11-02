@@ -60,13 +60,13 @@ namespace SMS
                 int k = Convert.ToInt32(ds545.Tables[0].Rows[0][0]);
                 if (k > 0)
                 {
-                    DataSet dstt = Connection.GetDataSet("Select Max(studentno) from tbl_student ");
-                    if (dstt.Tables[0].Rows.Count > 0)
+                    DataSet dsty = Connection.GetDataSet("Select ScholarNo, name, studentno from tbl_student where studentno= (Select Max(studentno) from tbl_student) ");
+                    if (dsty.Tables[0].Rows.Count > 0)
                     {
-                        DataSet dsty = Connection.GetDataSet("Select ScholarNo,name from tbl_student where studentno='" + dstt.Tables[0].Rows[0][0].ToString() + "'");
+                        //DataSet dsty = Connection.GetDataSet("Select ScholarNo,name from tbl_student where studentno='" + dstt.Tables[0].Rows[0][0].ToString() + "'");
                         txtScholarNo.Text = dsty.Tables[0].Rows[0].ItemArray[0].ToString();
                         txtStudentName.Text = dsty.Tables[0].Rows[0].ItemArray[1].ToString();
-                        txtstudentno.Text = dstt.Tables[0].Rows[0][0].ToString();
+                        txtstudentno.Text = dsty.Tables[0].Rows[0].ItemArray[2].ToString();
                     }
                 }
                 button9.Visible = false;
@@ -149,6 +149,7 @@ namespace SMS
             //DesignForm.fromDesign1(this);
             c.GetMdiParent(this).EnableAllEditMenuButtons();
             Connection.SetUserLevelAuth(c.GetMdiParent(this));
+            c.GetMdiParent(this).ToggleDeleteButton(false);
         }
         private void btnexit_Click(object sender, EventArgs e)
         {
@@ -160,11 +161,17 @@ namespace SMS
             pbxBarCode.Visible = false;
             tabControl1.SelectedIndex = 0;
             c.GetMdiParent(this).EnableAllEditMenuButtons();
-            
-
+            txtScholarNo.Text = "";
             DesignForm.fromDesign1(this);
+            DataSet dsty = Connection.GetDataSet("Select ScholarNo,name,studentno from tbl_student where studentno=(select max(studentno) from tbl_student)");
+            txtScholarNo.Text = dsty.Tables[0].Rows[0].ItemArray[0].ToString();
+            txtStudentName.Text = dsty.Tables[0].Rows[0].ItemArray[1].ToString();
+            txtstudentno.Text = dsty.Tables[0].Rows[0].ItemArray[2].ToString();
+
+
             valcmbsession.Enabled = false;
             Connection.SetUserLevelAuth(c.GetMdiParent(this));
+            c.GetMdiParent(this).ToggleDeleteButton(false);
         }
 
         private void txtscholarno_KeyPress(object sender, KeyPressEventArgs e)
@@ -181,7 +188,7 @@ namespace SMS
             add_edit = false;
             c.GetMdiParent(this).DisableAllEditMenuButtons();
             txtScholarNo.Focus();
-            c.GetMdiParent(this).ToggleDeleteButton(true);
+            c.GetMdiParent(this).ToggleSaveButton(false);
             valcmbsession.Enabled = false;
         }
         private void chkphychallanged_CheckedChanged(object sender, EventArgs e)
@@ -583,6 +590,9 @@ namespace SMS
                             if (ds3.Tables[0].Rows.Count > 0)
                                 checkedListBox1.Text = ds3.Tables[0].Rows[0].ItemArray[0].ToString();
                             #endregion
+
+                            c.GetMdiParent(this).ToggleDeleteButton(true);
+                            c.GetMdiParent(this).ToggleSaveButton(true);
                         }
                         else
                         {
@@ -948,35 +958,38 @@ namespace SMS
         }
         public override void btndelete_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(Connection.GetExecuteScalar("select count(*) from tbl_classstudent " +
-                "   where studentno='" + txtstudentno.Text + "'")) > 0)
-            {
-                MessageBox.Show("You cannot delete student record.");
-            }
-            else
-            {
+            //if (Convert.ToInt32(Connection.GetExecuteScalar("select count(*) from tbl_classstudent " +
+            //    "   where studentno='" + txtstudentno.Text + "'")) > 0)
+            //{
+            //    MessageBox.Show("You cannot delete student record.");
+            //}
+            //else
+            //{
                 DialogResult d = MessageBox.Show("Are you sure, you want to delete student record.", "Delete Student", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (d.ToString() == "Yes")
+                if (d == DialogResult.Yes)
                 {
-                    SqlTransaction trn = null;
+                    //SqlTransaction trn = null;
                     try
                     {
-                        trn = Connection.GetMyConnection().BeginTransaction();
+                        //trn = Connection.GetMyConnection().BeginTransaction();
 
-                        Connection.SqlTransection("Delete from tbl_Student where scholarno ='" + txtScholarNo.Text + "'",
-                            Connection.MyConnection, trn);
-                        trn.Commit();
+                        //Connection.SqlTransection("Delete from tbl_Student where scholarno ='" + txtScholarNo.Text + "'",  Connection.MyConnection, trn);
+                        //trn.Commit();
+                        Connection.ExecuteNonQuery("exec DeleteStudent " + txtScholarNo.Text, Connection.GetMyConnection());
                         MessageBox.Show("Record deleted successfully","Delete Student", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         frmstudent_Load(this, null);
+                        c.GetMdiParent(this).ToggleDeleteButton(false);
                     }
                     catch
                     {
-                        trn.Rollback();
+                        MessageBox.Show("Failed to deleted student record.", "Delete Student", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        //trn.Rollback();
                     }
                     DesignForm.fromClear(this); 
                     frmstudent_Load(this, null);                    
                 }
-            }
+            //}
             valcmbsession.Enabled = false;
         }
         private void txtobtained3_TextChanged(object sender, EventArgs e)
@@ -2001,7 +2014,7 @@ namespace SMS
                 else { button6.Focus(); }
             }
             //}
-
+            c.GetMdiParent(this).ToggleDeleteButton(false);
             valcmbsession.Enabled = false;
 
         }

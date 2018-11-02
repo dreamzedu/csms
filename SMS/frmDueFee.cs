@@ -27,10 +27,12 @@ namespace SMS
         {
             Connection.FillComboBox(cmbSession, " select sessioncode,sessionname from tbl_session order by sessioncode ");
             Connection.FillComboBox(cmbClass, " select classcode,classname from tbl_classmaster order by classcode ");
+            
             cmbSession.SelectedValue = school.CurrentSessionCode;
             cmbStudentStatus.SelectedIndex = 0;
-
+            PopulateSections();
             this.cmbSession.SelectedIndexChanged += new System.EventHandler(this.cmbSession_SelectedIndexChanged);
+            this.cmbClass.SelectedIndexChanged += new System.EventHandler(this.cmbClass_SelectedIndexChanged);
             c.GetMdiParent(this).TogglePrintButton(true);
             LoadStudentFeeDetail();
 
@@ -93,17 +95,24 @@ namespace SMS
 
         private void cmbClass_SelectedIndexChanged(object sender, EventArgs e)
         {
+            PopulateSections();
+        }
+
+        private void PopulateSections()
+        {
             try
             {
                 Connection.FillComboBox(cmbSection, " SELECT tbl_section.sectioncode, tbl_section.sectionname FROM " +
-                 " tbl_classstudent INNER JOIN tbl_section ON tbl_classstudent.Section = tbl_section.sectioncode " +
-                 " WHERE (tbl_classstudent.classno = '" + cmbClass.SelectedValue + "') And  (tbl_classstudent.sessioncode = " +
-                 " '" + cmbSession .SelectedValue + "') GROUP BY tbl_section.sectioncode, tbl_section.sectionname " +
-                 " Order by tbl_section.sectioncode");
+                                                    " tbl_classstudent INNER JOIN tbl_section ON tbl_classstudent.Section = tbl_section.sectioncode " +
+                                                    " WHERE (tbl_classstudent.classno = '" + cmbClass.SelectedValue + "') And  (tbl_classstudent.sessioncode = " +
+                                                    " '" + cmbSession.SelectedValue + "') GROUP BY tbl_section.sectioncode, tbl_section.sectionname " +
+                                                    " Order by tbl_section.sectioncode");
             }
-            catch(Exception ex){Logger.LogError(ex); }
+            catch (Exception ex) { Logger.LogError(ex); }
         }
+
         static bool tsch = false; static decimal schamt = 0;
+        
         private void cmbSession_Leave(object sender, EventArgs e)
         {
         }
@@ -203,6 +212,7 @@ namespace SMS
             catch (Exception ex) { Logger.LogError(ex); }
 
         }
+
         private void dataGridView1_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {
             Connection.SetDataGridViewRowPostPaint(dataGridView1, e);
@@ -377,11 +387,20 @@ namespace SMS
         private void cmbSession_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadStudentFeeDetail();
+            DataView dv = dtTotalFee.DefaultView;
+            dv.RowFilter = GetFilter();
+            dv.Sort = "Name";
+            dataGridView1.DataSource = dv;
+
         }
 
         private void ChkIdDueGreater_CheckedChanged(object sender, EventArgs e)
         {
-            LoadStudentFeeDetail();
+            DataView dv = dtTotalFee.DefaultView;
+            dv.RowFilter = GetFilter();
+            dv.Sort = "Name";
+            dataGridView1.DataSource = dv;
+
         } 
 
  
