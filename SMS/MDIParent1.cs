@@ -1371,6 +1371,11 @@ namespace SMS
             ShowUserControl(new frmDetail(), sender);        
         }
 
+        private void recoverDeletedStudentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowUserControl(new RecoverStudents(), sender);
+        }
+
        
     }
 }

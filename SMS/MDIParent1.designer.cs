@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MDIParent1));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.userToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -181,8 +182,8 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.processName = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolTip = new System.Windows.Forms.ToolTip();
-            this.timer1 = new System.Windows.Forms.Timer();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.bkgProcess = new System.ComponentModel.BackgroundWorker();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnSearch = new System.Windows.Forms.ToolStripButton();
@@ -221,6 +222,7 @@
             this.pnlNotificationsHeading = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pnlOuterContainer = new System.Windows.Forms.Panel();
+            this.recoverDeletedStudentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -419,7 +421,8 @@
             this.studentEnquiryToolStripMenuItem,
             this.attandanceToolStripMenuItem,
             this.promoteStudentToolStripMenuItem,
-            this.smartCardGenerationToolStripMenuItem});
+            this.smartCardGenerationToolStripMenuItem,
+            this.recoverDeletedStudentsToolStripMenuItem});
             this.toolStripMenuItem_Student.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem_Student.Name = "toolStripMenuItem_Student";
             this.toolStripMenuItem_Student.Size = new System.Drawing.Size(102, 25);
@@ -430,7 +433,7 @@
             // studentMasterToolStripMenuItem
             // 
             this.studentMasterToolStripMenuItem.Name = "studentMasterToolStripMenuItem";
-            this.studentMasterToolStripMenuItem.Size = new System.Drawing.Size(254, 26);
+            this.studentMasterToolStripMenuItem.Size = new System.Drawing.Size(308, 26);
             this.studentMasterToolStripMenuItem.Tag = "Student Master";
             this.studentMasterToolStripMenuItem.Text = "Add/Edit Student";
             this.studentMasterToolStripMenuItem.Click += new System.EventHandler(this.studentMasterToolStripMenuItem_Click);
@@ -438,14 +441,14 @@
             // studentSearchToolStripMenuItem
             // 
             this.studentSearchToolStripMenuItem.Name = "studentSearchToolStripMenuItem";
-            this.studentSearchToolStripMenuItem.Size = new System.Drawing.Size(254, 26);
+            this.studentSearchToolStripMenuItem.Size = new System.Drawing.Size(308, 26);
             this.studentSearchToolStripMenuItem.Text = "Student Search";
             this.studentSearchToolStripMenuItem.Click += new System.EventHandler(this.studentSearchToolStripMenuItem_Click);
             // 
             // studentEnquiryToolStripMenuItem
             // 
             this.studentEnquiryToolStripMenuItem.Name = "studentEnquiryToolStripMenuItem";
-            this.studentEnquiryToolStripMenuItem.Size = new System.Drawing.Size(254, 26);
+            this.studentEnquiryToolStripMenuItem.Size = new System.Drawing.Size(308, 26);
             this.studentEnquiryToolStripMenuItem.Tag = "Student Enquiry";
             this.studentEnquiryToolStripMenuItem.Text = "Student Enquiry";
             this.studentEnquiryToolStripMenuItem.Click += new System.EventHandler(this.studentEnquiryToolStripMenuItem_Click);
@@ -453,7 +456,7 @@
             // attandanceToolStripMenuItem
             // 
             this.attandanceToolStripMenuItem.Name = "attandanceToolStripMenuItem";
-            this.attandanceToolStripMenuItem.Size = new System.Drawing.Size(254, 26);
+            this.attandanceToolStripMenuItem.Size = new System.Drawing.Size(308, 26);
             this.attandanceToolStripMenuItem.Tag = "Attandance";
             this.attandanceToolStripMenuItem.Text = "Attendance";
             this.attandanceToolStripMenuItem.Click += new System.EventHandler(this.attandanceToolStripMenuItem_Click);
@@ -461,7 +464,7 @@
             // promoteStudentToolStripMenuItem
             // 
             this.promoteStudentToolStripMenuItem.Name = "promoteStudentToolStripMenuItem";
-            this.promoteStudentToolStripMenuItem.Size = new System.Drawing.Size(254, 26);
+            this.promoteStudentToolStripMenuItem.Size = new System.Drawing.Size(308, 26);
             this.promoteStudentToolStripMenuItem.Tag = "Promote Student";
             this.promoteStudentToolStripMenuItem.Text = "Promote Student";
             this.promoteStudentToolStripMenuItem.Click += new System.EventHandler(this.promoteStudentToolStripMenuItem_Click);
@@ -470,7 +473,7 @@
             // 
             this.smartCardGenerationToolStripMenuItem.Name = "smartCardGenerationToolStripMenuItem";
             this.smartCardGenerationToolStripMenuItem.ShowShortcutKeys = false;
-            this.smartCardGenerationToolStripMenuItem.Size = new System.Drawing.Size(254, 26);
+            this.smartCardGenerationToolStripMenuItem.Size = new System.Drawing.Size(308, 26);
             this.smartCardGenerationToolStripMenuItem.Tag = "Smart Card  Generation";
             this.smartCardGenerationToolStripMenuItem.Text = "Generate Smart Card";
             this.smartCardGenerationToolStripMenuItem.Click += new System.EventHandler(this.smartCardGenerationToolStripMenuItem_Click);
@@ -2054,6 +2057,13 @@
             this.pnlOuterContainer.Size = new System.Drawing.Size(1420, 599);
             this.pnlOuterContainer.TabIndex = 9;
             // 
+            // recoverDeletedStudentsToolStripMenuItem
+            // 
+            this.recoverDeletedStudentsToolStripMenuItem.Name = "recoverDeletedStudentsToolStripMenuItem";
+            this.recoverDeletedStudentsToolStripMenuItem.Size = new System.Drawing.Size(308, 26);
+            this.recoverDeletedStudentsToolStripMenuItem.Text = "Recover Deleted Students";
+            this.recoverDeletedStudentsToolStripMenuItem.Click += new System.EventHandler(this.recoverDeletedStudentsToolStripMenuItem_Click);
+            // 
             // MDIParent1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
@@ -2291,6 +2301,7 @@
         private System.Windows.Forms.ToolStripMenuItem databaseToolToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem_Student;
         private System.Windows.Forms.ToolStripMenuItem studentSearchToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem recoverDeletedStudentsToolStripMenuItem;
     }
 }
 

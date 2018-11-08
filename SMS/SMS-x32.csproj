@@ -38,7 +38,7 @@
     <MinimumRequiredVersion>4.0.0.0</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>4.0.5.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -427,6 +427,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RecoverStudents.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RecoverStudents.Designer.cs">
+      <DependentUpon>RecoverStudents.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlBase.cs">
       <SubType>UserControl</SubType>
@@ -1870,6 +1876,9 @@
     <EmbeddedResource Include="frmSubjectForm.resx">
       <DependentUpon>frmSubjectForm.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecoverStudents.resx">
+      <DependentUpon>RecoverStudents.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="rptTCFormat4.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -3601,6 +3610,16 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CSMS.DataAccess\CSMS.DataAccess.csproj">
+      <Project>{6af357fc-f5a8-4a1b-9e33-0e696466ce40}</Project>
+      <Name>CSMS.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CSMS.Entities\CSMS.Entities.csproj">
+      <Project>{73f87793-6797-4a11-a2b4-35df8ae7f9a7}</Project>
+      <Name>CSMS.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
