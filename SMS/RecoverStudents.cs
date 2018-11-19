@@ -53,7 +53,7 @@ namespace SMS
         {
             try
             {
-                IList<string> selectedStudentNos = new List<string>();
+                IList<string> selectedScholarNos = new List<string>();
 
                 foreach (DataGridViewRow row in grdvStudents.Rows)
                 {
@@ -62,32 +62,53 @@ namespace SMS
                         Boolean isSelected = Convert.ToBoolean(((DataGridViewCheckBoxCell)row.Cells[0]).Value);
                         if (isSelected)
                         {
-                            selectedStudentNos.Add(row.Cells[1].Value.ToString());
+                            selectedScholarNos.Add(row.Cells[2].Value.ToString());
                         }
                     }
                 }
 
-                if (selectedStudentNos.Count > 0)
+                if (selectedScholarNos.Count > 0)
                 {
                     StudentData std = new StudentData(Connection.GetMyConnection());
-                    List<string> unrecoveredStudents = std.RecoverSelectedStudents(selectedStudentNos);
-
                     List<string> unrecoveredScholarNos = new List<string>();
-                    if(unrecoveredStudents.Count > 0)
-                    {
-                        List<Student> students = (List<Student>)grdvStudents.DataSource;
-                        unrecoveredScholarNos = students.Where(x => unrecoveredStudents.Contains(x.StudentNo)).Select(x => x.ScholarNo).ToList<string>();
-                    }
 
+                    foreach (var scholarNo in selectedScholarNos)
+                    {
+                        try
+                        {
+                            if (std.IsStudentExists(scholarNo))
+                            {
+                                ConfirmNewScholarNo cnsn = new ConfirmNewScholarNo();
+                                if (cnsn.ShowDialog() == DialogResult.OK)
+                                {
+                                    std.RecoverStudent(scholarNo, cnsn.scholarNo);
+                                }
+                                else
+                                {
+                                    unrecoveredScholarNos.Add(scholarNo);
+                                }
+                            }
+                            else
+                            {
+                                std.RecoverStudent(scholarNo, null);
+                            }
+                        }
+                        catch(Exception ex)
+                        {
+                            Logger.LogError(ex);
+                            unrecoveredScholarNos.Add(scholarNo);
+                        }
+                    }
+                                        
                     LoadBackupStudents();
 
-                    if(unrecoveredStudents.Count == 0)
+                    if(unrecoveredScholarNos.Count == 0)
                     {
                         MessageBox.Show("Recovered deleted students successfully.");                     
                     }
-                    else if(selectedStudentNos.Count == unrecoveredStudents.Count)
+                    else if(selectedScholarNos.Count == unrecoveredScholarNos.Count)
                     {
-                        MessageBox.Show("Could not revocer any student.");
+                        MessageBox.Show("Could not recover any student.");
                     }
                     else
                     {
@@ -102,5 +123,6 @@ namespace SMS
                 MessageBox.Show("Unable to recover deleted students.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }

@@ -199,8 +199,9 @@ namespace SMS
                     if (dsDetail.Tables[0].Rows.Count > 0)
                     {
                         dv = dsDetail.Tables[0].DefaultView;
-
+                        tempTable = dsDetail.Tables[0].Clone();
                         RecalculatePages();
+                        bs_PositionChanged(null, null);
                     }
 
                 }

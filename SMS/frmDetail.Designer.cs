@@ -99,6 +99,7 @@
             // cmbSession
             // 
             this.cmbSession.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSession.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
             this.cmbSession.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSession.Name = "cmbSession";
             this.cmbSession.Size = new System.Drawing.Size(160, 52);
@@ -118,6 +119,7 @@
             // 
             // cmbClass
             // 
+            this.cmbClass.FlatStyle = System.Windows.Forms.FlatStyle.Standard;
             this.cmbClass.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbClass.Name = "cmbClass";
             this.cmbClass.Size = new System.Drawing.Size(160, 52);
@@ -138,6 +140,7 @@
             // 
             // txtName
             // 
+            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtName.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(132, 52);
@@ -157,6 +160,7 @@
             // 
             // txtScholarNo
             // 
+            this.txtScholarNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtScholarNo.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtScholarNo.Name = "txtScholarNo";
             this.txtScholarNo.Size = new System.Drawing.Size(132, 52);

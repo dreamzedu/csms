@@ -403,6 +403,12 @@
     <Compile Include="AgrodExam.Designer.cs">
       <DependentUpon>AgrodExam.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConfirmNewScholarNo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfirmNewScholarNo.Designer.cs">
+      <DependentUpon>ConfirmNewScholarNo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAcademicSession.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1866,6 +1872,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AgrodExam.resx">
       <DependentUpon>AgrodExam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConfirmNewScholarNo.resx">
+      <DependentUpon>ConfirmNewScholarNo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAcademicSession.resx">
       <DependentUpon>frmAcademicSession.cs</DependentUpon>

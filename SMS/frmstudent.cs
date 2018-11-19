@@ -366,7 +366,7 @@ namespace SMS
                         if (reader.HasRows)
                         {
 
-                            MessageBox.Show("Scholar No. is Already Exists, Please Check..", "Student");
+                            MessageBox.Show("Scholar No. already exists, please check records.", "Student");
                             txtScholarNo.Text = "";
                             txtScholarNo.Focus();
                         }
@@ -982,7 +982,7 @@ namespace SMS
                     }
                     catch
                     {
-                        MessageBox.Show("Failed to deleted student record.", "Delete Student", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Failed to delete student record.", "Delete Student", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         //trn.Rollback();
                     }
