@@ -13,9 +13,10 @@ namespace SMS
     public partial class ConfirmNewScholarNo : Form
     {
         public string scholarNo = "";
-        public ConfirmNewScholarNo()
+        public ConfirmNewScholarNo(string existingScholarNo)
         {
             InitializeComponent();
+            lblScholarNo.Text = existingScholarNo + ": ";
         }
 
 
@@ -32,9 +33,16 @@ namespace SMS
                 lblError.Text = "Please enter scholar no";
             }
             else{
-                this.DialogResult = System.Windows.Forms.DialogResult.OK;
-                this.scholarNo = txtScholarNo.Text;
-                this.Close();
+                if (std.IsStudentExists(txtScholarNo.Text.Trim()))
+                {
+                    lblError.Text = "Scholar No already exists, please enter a new scholar no or auto generate.";
+                }
+                else
+                {
+                    this.DialogResult = System.Windows.Forms.DialogResult.OK;
+                    this.scholarNo = txtScholarNo.Text;
+                    this.Close();
+                }
             }
         }
 
@@ -42,6 +50,11 @@ namespace SMS
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void ConfirmNewScholarNo_Load(object sender, EventArgs e)
+        {
+            lblSnoExists.Location.X = lblScholarNo.Location.X + lblScholarNo.Width + 2;
         }
     }
 }

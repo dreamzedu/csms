@@ -32,12 +32,13 @@
             this.btnOk = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.txtScholarNo = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblSnoExists = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnAutoGenerate = new System.Windows.Forms.Button();
             this.lblError = new System.Windows.Forms.Label();
+            this.lblScholarNo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnOk
@@ -69,15 +70,15 @@
             this.txtScholarNo.Size = new System.Drawing.Size(100, 22);
             this.txtScholarNo.TabIndex = 3;
             // 
-            // label2
+            // lblSnoExists
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(20, 23);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(362, 18);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "A student with same Scholar No already exists.";
+            this.lblSnoExists.AutoSize = true;
+            this.lblSnoExists.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSnoExists.Location = new System.Drawing.Point(69, 23);
+            this.lblSnoExists.Name = "lblSnoExists";
+            this.lblSnoExists.Size = new System.Drawing.Size(316, 18);
+            this.lblSnoExists.TabIndex = 4;
+            this.lblSnoExists.Text = "A student with same Scholar No already exists.";
             // 
             // label1
             // 
@@ -106,9 +107,9 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(20, 166);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(391, 18);
+            this.label4.Size = new System.Drawing.Size(408, 18);
             this.label4.TabIndex = 7;
-            this.label4.Text = "If you do not want to recover this record then click \'Cancel\'";
+            this.label4.Text = "If you DO NOT want to recover this record then click \'Cancel\'";
             // 
             // btnAutoGenerate
             // 
@@ -131,18 +132,28 @@
             this.lblError.Size = new System.Drawing.Size(0, 17);
             this.lblError.TabIndex = 9;
             // 
+            // lblScholarNo
+            // 
+            this.lblScholarNo.AutoSize = true;
+            this.lblScholarNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblScholarNo.Location = new System.Drawing.Point(20, 25);
+            this.lblScholarNo.Name = "lblScholarNo";
+            this.lblScholarNo.Size = new System.Drawing.Size(0, 18);
+            this.lblScholarNo.TabIndex = 10;
+            // 
             // ConfirmNewScholarNo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(865, 304);
+            this.ClientSize = new System.Drawing.Size(898, 304);
             this.ControlBox = false;
+            this.Controls.Add(this.lblScholarNo);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnAutoGenerate);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblSnoExists);
             this.Controls.Add(this.txtScholarNo);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOk);
@@ -153,6 +164,7 @@
             this.Name = "ConfirmNewScholarNo";
             this.ShowInTaskbar = false;
             this.Text = "Confirm New ScholarNo";
+            this.Load += new System.EventHandler(this.ConfirmNewScholarNo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -163,11 +175,12 @@
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.TextBox txtScholarNo;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblSnoExists;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnAutoGenerate;
         private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.Label lblScholarNo;
     }
 }
