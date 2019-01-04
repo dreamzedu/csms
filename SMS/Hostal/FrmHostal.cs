@@ -21,7 +21,8 @@ namespace SMS.Hostal
         Boolean add_edit = false;
         private void FrmHostal_Load(object sender, EventArgs e)
         {
-            c.GetMdiParent(this).EnableAllEditMenuButtons();
+            //c.GetMdiParent(this).EnableAllEditMenuButtons();
+            c.GetMdiParent(this).ToggleNewButton(true);
             c.getconnstr();
             
             c.FillListBox("select * from tbl_hostel", "hostelname", "hostelcode", ref  listBox1);
@@ -47,9 +48,9 @@ namespace SMS.Hostal
 
         public override void btnsave_Click(object sender, EventArgs e)
         {
-            if (txtclassname.Text == "" && textBox1.Text == "" && textBox2.Text == "" && textBox3.Text == "")
+            if (txtclassname.Text == "" || textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "")
             {
-                MessageBox.Show("Null Value Not Allowed");
+                MessageBox.Show("Empty values not allowed.");
 
             }
 
@@ -76,20 +77,24 @@ namespace SMS.Hostal
                     else
                     {
                         MessageBox.Show("Duplicate data not allowed");
+                        return;
                     }
                     c.FillListBox("select * from tbl_hostel", "hostelname", "hostelcode", ref  listBox1);
 
                     DesignForm.fromDesign1(this);
+                    MessageBox.Show("Record Saved...", "School");
+
+                   
                 }
-                if (add_edit == false)
+                else if (add_edit == false)
                 {
                     c.updatedata("tbl_hostel", c.myconn, this, "hostelcode", txtclasscode.Text);
                     DesignForm.fromDesign1(this);
+                    c.FillListBox("select * from tbl_hostel", "hostelname", "hostelcode", ref  listBox1);
+                    MessageBox.Show("Record Saved...", "School");
                 }
-                MessageBox.Show("Record Saved...", "School");
-                c.GetMdiParent(this).EnableAllEditMenuButtons();
-                
-                c.FillListBox("select * from tbl_hostel", "hostelname", "hostelcode", ref  listBox1);
+                c.GetMdiParent(this).AfterSaveClick();
+                c.GetMdiParent(this).ToggleEditButton(false);
             }
         }
 
@@ -97,16 +102,12 @@ namespace SMS.Hostal
         {
             DesignForm.fromDesign1(this);
             add_edit = false;
-            c.GetMdiParent(this).EnableAllEditMenuButtons();
-            
+            //c.GetMdiParent(this).EnableAllEditMenuButtons();
+            c.GetMdiParent(this).AfterCancelClick();
             DesignForm.fromDesign1(this);
         }
 
-        private void btnexit_Click(object sender, EventArgs e)
-        {
-            //this.Close();
-        }
-
+       
         private void txtclassname_KeyPress(object sender, KeyPressEventArgs e)
         {
             c.entertotab(e.KeyChar);
@@ -118,6 +119,8 @@ namespace SMS.Hostal
             {
                 String lstval = Convert.ToString(listBox1.SelectedValue);
                 c.showdata("tbl_hostel", c.myconn, this, "hostelcode", lstval);
+                c.GetMdiParent(this).ToggleEditButton(true);
+                c.GetMdiParent(this).ToggleDeleteButton(true);
             }
             catch(Exception ex){Logger.LogError(ex); }
         }
@@ -128,14 +131,16 @@ namespace SMS.Hostal
             int l = Connection.Login("select count(*) from tbl_hostelfee where hostelcode='" + txtclasscode.Text + "'");
             int m = Connection.Login("select count(*) from tbl_roomdet where hostelcode='" + txtclasscode.Text + "'");
             if (k > 0 || l > 0 || m > 0)
-            { MessageBox.Show("You Can Not Deleted Hostel:-" + txtclassname.Text + " ,Because It Has A Refrence Of Another Palce"); }
+            { MessageBox.Show("You cannot delete hostel:-" + txtclassname.Text + " ,Because it has a refrence of another place"); }
             else
             {
                 Connection.AllPerform("delete  from tbl_hostel where hostelname='" + txtclassname.Text + "' ");
-                MessageBox.Show("Record Deleted");
+                c.cleartext(this);
+                c.GetMdiParent(this).AfterDeleteClick();
+                c.FillListBox("select * from tbl_hostel", "hostelname", "hostelcode", ref  listBox1);
+                MessageBox.Show("Record deleted successfully.");
             }
-            c.cleartext(this);
-            c.FillListBox("select * from tbl_hostel", "hostelname", "hostelcode", ref  listBox1);
+            
         }
 
         private void FrmHostal_KeyPress(object sender, KeyPressEventArgs e)

@@ -11,7 +11,7 @@ using System.IO;
 
 namespace SMS.Library
 {
-    public partial class FmTitle : UserControl
+    public partial class FmTitle : UserControlBase
     {
         public FmTitle()
         {
@@ -118,7 +118,7 @@ namespace SMS.Library
                             while (i <= dtgbook.Rows.Count - 1);
                             if (foundinsamerow == false)
                             {
-                                MessageBox.Show("Book Title  Already Exists for other Book..", "School");
+                                MessageBox.Show("Book Title  Already Exists for other Book.", "School");
                                 dtgbook.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = "";
 
                             }
@@ -126,7 +126,7 @@ namespace SMS.Library
                         }
                         else
                         {
-                            MessageBox.Show("Book Title  Already Exists for other Book..", "School");
+                            MessageBox.Show("Book Title  Already Exists for other Book.", "School");
                             dtgbook.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = "";
                         }
 
@@ -159,7 +159,7 @@ namespace SMS.Library
                         while (i <= dtgbook.Rows.Count - 1);
                         if (book1 == book2 && foundinotherrow == true)
                         {
-                            MessageBox.Show("Book Title  Already Exists for other Book..", "School");
+                            MessageBox.Show("Book Title  Already Exists for other Book.", "School");
                             dtgbook.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = "";
                         }
                     }
@@ -214,7 +214,7 @@ namespace SMS.Library
         }
 
         
-        private void btnsave_Click(object sender, EventArgs e)
+        public override void btnsave_Click(object sender, EventArgs e)
         {
 
             if (dtgbook.Rows.Count < 1)
@@ -295,11 +295,7 @@ namespace SMS.Library
             }
         }
 
-        private void btnexit_Click(object sender, EventArgs e)
-        {
-            //this.Close();
-        }
-
+       
         private void FmTitle_Paint(object sender, PaintEventArgs e)
         {
             //public static void fromClear(Form f);

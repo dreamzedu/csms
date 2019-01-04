@@ -33,6 +33,8 @@ namespace SMS
                 lblError.Text = "Please enter scholar no";
             }
             else{
+
+                StudentData std = new StudentData(Connection.GetMyConnection());
                 if (std.IsStudentExists(txtScholarNo.Text.Trim()))
                 {
                     lblError.Text = "Scholar No already exists, please enter a new scholar no or auto generate.";
@@ -54,7 +56,7 @@ namespace SMS
 
         private void ConfirmNewScholarNo_Load(object sender, EventArgs e)
         {
-            lblSnoExists.Location.X = lblScholarNo.Location.X + lblScholarNo.Width + 2;
+            lblSnoExists.Location = new Point(lblScholarNo.Location.X + lblScholarNo.Width + 2, lblSnoExists.Location.Y);
         }
     }
 }

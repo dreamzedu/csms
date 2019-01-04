@@ -754,7 +754,7 @@ namespace SMS
                     Connection.Open();
                 }
                 cmd.Transaction = TransectionObject;
-                cmd.CommandTimeout = 250;
+                cmd.CommandTimeout = 1000;
                 cmd.CommandText = CmdText;
                 cmd.ExecuteNonQuery();
                 cmd.Dispose();
@@ -770,6 +770,7 @@ namespace SMS
             }
         }
 
+        
         public static DataSet GetDataSet(string str)
         {
             try

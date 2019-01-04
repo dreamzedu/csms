@@ -10,28 +10,32 @@ using System.Data.SqlClient;
 
 namespace SMS.Library
 {
-    public partial class FrmPublisher : Form
+    public partial class FrmPublisher : UserControlBase
     {
-        public FrmPublisher()
+        IParent parentForm;
+
+        public FrmPublisher(IParent parentForm)
         {
             InitializeComponent();
+            this.parentForm = parentForm;
         }
-        school c = new school();
+        school1 c = new school1();
 
         Boolean add_edit = false;
-        private void btnnew_Click(object sender, EventArgs e)
+        public override void btnnew_Click(object sender, EventArgs e)
         {
             add_edit = true;
             c.cleartext(this);
-            c.btndisable(btnnew, btnedit, btndelete, btnsave, btncancel, btnprint, btnexit);
+            //c.btndisable(btnnew, btnedit, btndelete, btnsave, btncancel, btnprint, btnexit);
             txtsankayname.Focus();
+            parentForm.AfterNewClick();
         }
 
         private void FrmPublisher_Load(object sender, EventArgs e)
         {
-            c.btnenable(btnnew, btnedit, btndelete, btnsave, btncancel, btnprint, btnexit);
+            //c.btnenable(btnnew, btnedit, btndelete, btnsave, btncancel, btnprint, btnexit);
             c.getconnstr();
-            btnnew.Focus();
+            //btnnew.Focus();
 
             c.FillListBox("select * from tbl_publisher", "publishar", "publishcode", ref  listBox1);
 
@@ -44,25 +48,26 @@ namespace SMS.Library
             {
                 mstudentno = Convert.ToInt32(command.ExecuteScalar()) + 1;
             }
-            
+            parentForm.ToggleNewButton(true);
         }
 
-        private void btnedit_Click(object sender, EventArgs e)
+        public override void btnedit_Click(object sender, EventArgs e)
         {
             add_edit = false;
-            c.btndisable(btnnew, btnedit, btndelete, btnsave, btncancel, btnprint, btnexit);
+            parentForm.AfterEditClick();
+            //c.btndisable(btnnew, btnedit, btndelete, btnsave, btncancel, btnprint, btnexit);
         }
 
-        private void btndelete_Click(object sender, EventArgs e)
+        public override void btndelete_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btnsave_Click(object sender, EventArgs e)
+        public override void btnsave_Click(object sender, EventArgs e)
         {
             if (txtsankayname.Text == "")
             {
-                MessageBox.Show("Null Value Not Allowed");
+                MessageBox.Show("Please fill all the required fields.");
 
             }
 
@@ -98,38 +103,39 @@ namespace SMS.Library
                     c.updatedata("tbl_publisher", c.myconn, this, "publishcode", txtsankaycode.Text);
                     c.FillListBox("select * from tbl_publisher", "publishar", "publishcode", ref  listBox1);
                 }
-                MessageBox.Show("Record Saved...", "School");
-                c.btnenable(btnnew, btnedit, btndelete, btnsave, btncancel, btnprint, btnexit);
-                btnnew.Focus();
+                MessageBox.Show("Record saved successfully", "School");
+                //c.btnenable(btnnew, btnedit, btndelete, btnsave, btncancel, btnprint, btnexit);
+                parentForm.AfterSaveClick();
+                parentForm.ToggleEditButton(false);
+                //btnnew.Focus();
             }
         }
 
-        private void btncancel_Click(object sender, EventArgs e)
+        public override void btncancel_Click(object sender, EventArgs e)
         {
             add_edit = false;
-            c.btnenable(btnnew, btnedit, btndelete, btnsave, btncancel, btnprint, btnexit);
-            btnnew.Focus();
+            //c.btnenable(btnnew, btnedit, btndelete, btnsave, btncancel, btnprint, btnexit);
+            //btnnew.Focus();
+            parentForm.AfterCancelClick();
+            parentForm.ToggleEditButton(false);
         }
 
-        private void btnprint_Click(object sender, EventArgs e)
+        public override void btnprint_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btnexit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
         private void listBox1_Click(object sender, EventArgs e)
         {
             String lstval = Convert.ToString(listBox1.SelectedValue);
             c.showdata("tbl_publisher", c.myconn, this, "publishcode", lstval);
+            parentForm.ToggleEditButton(true);
         }
 
         private void txtsankayname_Validated(object sender, EventArgs e)
         {
-            btnsave.Focus();
+            //btnsave.Focus();
         }
 
         private void txtsankayname_KeyPress(object sender, KeyPressEventArgs e)

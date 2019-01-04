@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using CrystalDecisions.Shared;
+using System.Data.SqlClient;
 
 namespace SMS
 {
@@ -121,83 +122,114 @@ namespace SMS
 
         private void btnOk_Click(object sender, EventArgs e)
         {
+            SqlConnection con = null;
+            SqlTransaction trns = null;
             try
+            {
+                DialogResult result = MessageBox.Show("Are you sure to update employee data?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
                 {
-                    DialogResult result = MessageBox.Show("Are you sure to update employee data?", "Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                            if (result == DialogResult.Yes)
+                    int a = 0;
+                    con = Connection.Conn();
+                    con.Open();
+                   
+                    for (int i = 0; i < dgv.Rows.Count; i++)
+                    {
+                        string emptype = dgv.Rows[i].Cells[2].Value.ToString().Trim();
+                        //DataSet ds = Connection.GetDataSet("select emptypeid from tbl_EmployeeType where detail=N'" + emptype + "'");
+                        var row = dsEmpType.Tables[0].Select("detail='" + emptype + "'");
+
+                        int id = 0;
+                        if (row != null && row.Length > 0)
                         {
-                            int a = 0;
-                            for (int i = 0; i < dgv.Rows.Count; i++)
-                            {
-                                string emptype = dgv.Rows[i].Cells[2].Value.ToString().Trim();
-                                //DataSet ds = Connection.GetDataSet("select emptypeid from tbl_EmployeeType where detail=N'" + emptype + "'");
-                                int id = Convert.ToInt32(emptype);
-                                string isactive = dgv.Rows[i].Cells["isactive"].Value.ToString().Trim();
-                                if (isactive == "Yes")
-                                    a = 1;
-                                else if (isactive == "No")
-                                    a = 0;
-                                int empno = Convert.ToInt32(dgv.Rows[i].Cells[0].Value.ToString());
-                                string name = dgv.Rows[i].Cells[1].Value.ToString().Trim();
-                                // string fname = dgv.Rows[i].Cells[2].Value.ToString().Trim();
-                                // string contactno=(dgv.Rows[i].Cells[3].Value.ToString().Trim());
-                                // string gender = dgv.Rows[i].Cells[4].Value.ToString().Trim();
-                                //  DateTime doj = Convert.ToDateTime(dgv.Rows[i].Cells[5].Value.ToString());
-                                // DateTime dob = Convert.ToDateTime(dgv.Rows[i].Cells[6].Value.ToString());
-                                // string address = dgv.Rows[i].Cells[7].Value.ToString().Trim();
-                                //  string designation = dgv.Rows[i].Cells[10].Value.ToString().Trim();
-                                double srate = Convert.ToDouble(dgv.Rows[i].Cells[3].Value.ToString().Trim());
-                                double pf = Convert.ToDouble(dgv.Rows[i].Cells[4].Value.ToString().Trim());
-                                double pfamt = Convert.ToDouble(dgv.Rows[i].Cells[5].Value.ToString());
-                                double lic = Convert.ToDouble(dgv.Rows[i].Cells[6].Value.ToString().Trim());
-                                double loan = Convert.ToDouble(dgv.Rows[i].Cells[7].Value.ToString().Trim());
-                                double rsa = Convert.ToDouble(dgv.Rows[i].Cells[8].Value.ToString().Trim());
-                                int splinctv = Convert.ToInt32(dgv.Rows[i].Cells[9].Value.ToString().Trim());
-                                int aleave = Convert.ToInt32(dgv.Rows[i].Cells[10].Value.ToString().Trim());
-                                // double balleave = Convert.ToDouble(dgv.Rows[i].Cells[11].Value.ToString().Trim());
-                                int el = Convert.ToInt32(dgv.Rows[i].Cells[12].Value.ToString().Trim());
-                                //  int elbal = Convert.ToInt32(dgv.Rows[i].Cells[13].Value.ToString().Trim());
-                                int enclleave = Convert.ToInt32(dgv.Rows[i].Cells[14].Value.ToString().Trim());
-                                //string pfno = dgv.Rows[i].Cells[15].Value.ToString().Trim();
+                            id = Convert.ToInt32(row[0]["emptypeid"]);
+                        }
+                        else
+                        {
+                            id = Convert.ToInt32(emptype);
+                        }
+                        string isactive = dgv.Rows[i].Cells["isactive"].Value.ToString().Trim();
+                        if (isactive == "Yes")
+                            a = 1;
+                        else if (isactive == "No")
+                            a = 0;
+                        int empno = Convert.ToInt32(dgv.Rows[i].Cells[0].Value.ToString());
+                        string name = dgv.Rows[i].Cells[1].Value.ToString().Trim();
+                        // string fname = dgv.Rows[i].Cells[2].Value.ToString().Trim();
+                        // string contactno=(dgv.Rows[i].Cells[3].Value.ToString().Trim());
+                        // string gender = dgv.Rows[i].Cells[4].Value.ToString().Trim();
+                        //  DateTime doj = Convert.ToDateTime(dgv.Rows[i].Cells[5].Value.ToString());
+                        // DateTime dob = Convert.ToDateTime(dgv.Rows[i].Cells[6].Value.ToString());
+                        // string address = dgv.Rows[i].Cells[7].Value.ToString().Trim();
+                        //  string designation = dgv.Rows[i].Cells[10].Value.ToString().Trim();
+                        double srate = Convert.ToDouble(dgv.Rows[i].Cells[3].Value.ToString().Trim());
+                        double pf = Convert.ToDouble(dgv.Rows[i].Cells[4].Value.ToString().Trim());
+                        double pfamt = Convert.ToDouble(dgv.Rows[i].Cells[5].Value.ToString());
+                        double lic = Convert.ToDouble(dgv.Rows[i].Cells[6].Value.ToString().Trim());
+                        double loan = Convert.ToDouble(dgv.Rows[i].Cells[7].Value.ToString().Trim());
+                        double rsa = Convert.ToDouble(dgv.Rows[i].Cells[8].Value.ToString().Trim());
+                        int splinctv = Convert.ToInt32(dgv.Rows[i].Cells[9].Value.ToString().Trim());
+                        int aleave = Convert.ToInt32(dgv.Rows[i].Cells[10].Value.ToString().Trim());
+                        // double balleave = Convert.ToDouble(dgv.Rows[i].Cells[11].Value.ToString().Trim());
+                        int el = Convert.ToInt32(dgv.Rows[i].Cells[12].Value.ToString().Trim());
+                        //  int elbal = Convert.ToInt32(dgv.Rows[i].Cells[13].Value.ToString().Trim());
+                        int enclleave = Convert.ToInt32(dgv.Rows[i].Cells[14].Value.ToString().Trim());
+                        //string pfno = dgv.Rows[i].Cells[15].Value.ToString().Trim();
 
-                                double da = Convert.ToDouble(dgv.Rows[i].Cells[15].Value.ToString().Trim());
-                                double daamt = Convert.ToDouble(dgv.Rows[i].Cells[16].Value.ToString());
-                                double hra = Convert.ToDouble(dgv.Rows[i].Cells[17].Value.ToString().Trim());
-                                double ESICPer = Convert.ToDouble(dgv.Rows[i].Cells[18].Value.ToString().Trim());
-                                double ESICAmt = Convert.ToDouble(dgv.Rows[i].Cells[19].Value.ToString().Trim());
+                        double da = Convert.ToDouble(dgv.Rows[i].Cells[15].Value.ToString().Trim());
+                        double daamt = Convert.ToDouble(dgv.Rows[i].Cells[16].Value.ToString());
+                        double hra = Convert.ToDouble(dgv.Rows[i].Cells[17].Value.ToString().Trim());
+                        double ESICPer = Convert.ToDouble(dgv.Rows[i].Cells[18].Value.ToString().Trim());
+                        double ESICAmt = Convert.ToDouble(dgv.Rows[i].Cells[19].Value.ToString().Trim());
 
-                                //int ele = Convert.ToInt32(dss.Tables[0].Rows[0][1].ToString());
-                                // double balleave = Convert.ToInt32(dss.Tables[0].Rows[0][2].ToString());
-                                // int elbal = Convert.ToInt32(dss.Tables[0].Rows[0][3].ToString());
+                        //int ele = Convert.ToInt32(dss.Tables[0].Rows[0][1].ToString());
+                        // double balleave = Convert.ToInt32(dss.Tables[0].Rows[0][2].ToString());
+                        // int elbal = Convert.ToInt32(dss.Tables[0].Rows[0][3].ToString());
+                        DataSet dss = Connection.GetDataSet("select pfnumber from tbl_employeeinfo where empno='" + empno + "'");
+                        string pfno = dss.Tables[0].Rows[0][0].ToString();
 
-                                Connection.AllPerform("update tbl_EmployeeInfo set isactive='" + a + "',salaryrate='" + srate + "',pf='" + pf + "',lic='" + lic + "',loan='" + loan + "',rsa='" + rsa + "',aleave='" + aleave + "',el='" + el + "',splinctv='" + splinctv + "',enclleave='" + enclleave + "',EmpTypeId='" + id + "',da='" + da + "',hra='" + hra + "',pfamt='" + pfamt + "',daamt='" + daamt + "',ESIC='" + ESICPer + "',ESICAmt='" + ESICAmt + "' where empno='" + empno + "'");
-                                //insertion for as on date...
-                                DataSet dss = Connection.GetDataSet("select pfnumber from tbl_employeeinfo where empno='" + empno + "'");
-                                string pfno = dss.Tables[0].Rows[0][0].ToString();
+                        trns = con.BeginTransaction();
 
-                                // DataSet dss = Connection.GetDataSet("select startdate,pfnumber,ele from tbl_employeesalaryinfo where empno='" + empno + "'");
-                                //  DateTime sd = Convert.ToDateTime(ds.Tables[0].Rows[0][0].ToString());
+                        Connection.SqlTransection("update tbl_EmployeeInfo set isactive='" + a + "',salaryrate='" + srate + "',pf='" + pf + "',lic='" + lic + "',loan='" + loan + "',rsa='" + rsa + "',aleave='" + aleave + "',el='" + el + "',splinctv='" + splinctv + "',enclleave='" + enclleave + "',EmpTypeId='" + id + "',da='" + da + "',hra='" + hra + "',pfamt='" + pfamt + "',daamt='" + daamt + "',ESIC='" + ESICPer + "',ESICAmt='" + ESICAmt + "' where empno='" + empno + "'", con, trns);
+                        //Connection.AllPerform("update tbl_EmployeeInfo set isactive='" + a + "',salaryrate='" + srate + "',pf='" + pf + "',lic='" + lic + "',loan='" + loan + "',rsa='" + rsa + "',aleave='" + aleave + "',el='" + el + "',splinctv='" + splinctv + "',enclleave='" + enclleave + "',EmpTypeId='" + id + "',da='" + da + "',hra='" + hra + "',pfamt='" + pfamt + "',daamt='" + daamt + "',ESIC='" + ESICPer + "',ESICAmt='" + ESICAmt + "' where empno='" + empno + "'");
+                        //insertion for as on date...
+                        
+                        // DataSet dss = Connection.GetDataSet("select startdate,pfnumber,ele from tbl_employeesalaryinfo where empno='" + empno + "'");
+                        //  DateTime sd = Convert.ToDateTime(ds.Tables[0].Rows[0][0].ToString());
 
-                                string str2 = "update tbl_employeesalaryinfo set enddate='" + DateTime.Now + "',status='" + 2 + "' where empno='" + empno + "' and status=1";
-                                Connection.AllPerform(str2);
-                                string str3 = "INSERT INTO tbl_employeesalaryinfo(empno,startdate,status,salaryrate,pf,lic,loan,rsa,aleave,pfnumber,el,splinctv,EnCLLeave ,DA,HRA,isactive,esic,esicamt)" +
-                                      "values('" + empno + "','" + DateTime.Now + "','" + 1 + "','" + srate + "','" + pf + "','" + lic + "','" + loan + "','" + rsa + "','" + aleave + "','" + pfno + "','" + el + "','" + splinctv + "','" + enclleave + "','" + da + "','" + hra + "','" + a + "','" + ESICPer + "','" + ESICAmt + "')";
-                                Connection.AllPerform(str3);
-                                //  Connection.AllPerform("update tbl_EmployeeSalaryInfo set isactive='" + a + "',salaryrate='" + srate + "',pf='" + pf + "',lic='" + lic + "',loan='" + loan + "',rsa='" + rsa + "',aleave='" + aleave + "',balleave='" + balleave + "',el='" + el + "',elbal='" + elbal + "',splinctv='" + splinctv + "',enclleave='" + enclleave + "',EmpTypeId='" + id + "',da='" + da + "',hra='" + hra + "',pfamt='" + pfamt + "',daamt='" + daamt + "' where empno='" + empno + "'");
-                            }
-                        MessageBox.Show("Employee data updated successfully.","Information",MessageBoxButtons .OK ,MessageBoxIcon.Information);
-                        btnincESIC.Enabled = true;
-                        btnincpay.Enabled = true;
-                        btnokda.Enabled = true;
-                        btnpfamt.Enabled = true;
-                            }
-            }     
-                catch(Exception ex)
-                {
-                    Logger.LogError(ex); 
-                    MessageBox.Show("Something went wrong. Please try again.","Error", MessageBoxButtons.OK, MessageBoxIcon.Error );
-                    getEmployeeList();
+                        string str2 = "update tbl_employeesalaryinfo set enddate='" + DateTime.Now + "',status='" + 2 + "' where empno='" + empno + "' and status=1";
+                        Connection.SqlTransection(str2, con, trns);
+                        //Connection.AllPerform(str2);
+                        string str3 = "INSERT INTO tbl_employeesalaryinfo(empno,startdate,status,salaryrate,pf,lic,loan,rsa,aleave,pfnumber,el,splinctv,EnCLLeave ,DA,HRA,isactive,esic,esicamt)" +
+                              "values('" + empno + "','" + DateTime.Now + "','" + 1 + "','" + srate + "','" + pf + "','" + lic + "','" + loan + "','" + rsa + "','" + aleave + "','" + pfno + "','" + el + "','" + splinctv + "','" + enclleave + "','" + da + "','" + hra + "','" + a + "','" + ESICPer + "','" + ESICAmt + "')";
+                        //Connection.AllPerform(str3);
+                        Connection.SqlTransection(str3,con, trns);
+                        //  Connection.AllPerform("update tbl_EmployeeSalaryInfo set isactive='" + a + "',salaryrate='" + srate + "',pf='" + pf + "',lic='" + lic + "',loan='" + loan + "',rsa='" + rsa + "',aleave='" + aleave + "',balleave='" + balleave + "',el='" + el + "',elbal='" + elbal + "',splinctv='" + splinctv + "',enclleave='" + enclleave + "',EmpTypeId='" + id + "',da='" + da + "',hra='" + hra + "',pfamt='" + pfamt + "',daamt='" + daamt + "' where empno='" + empno + "'");
+                        trns.Commit();
+                    }
+                    MessageBox.Show("Employee data updated successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnincESIC.Enabled = true;
+                    btnincpay.Enabled = true;
+                    btnokda.Enabled = true;
+                    btnpfamt.Enabled = true;
+
                 }
+            }
+            catch (Exception ex)
+            {
+                if (trns != null)
+                {
+                    trns.Rollback();
+                }
+                Logger.LogError(ex);
+                MessageBox.Show("Something went wrong. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                getEmployeeList();
+            }
+            finally
+            {
+                if (con != null && con.State == ConnectionState.Open)
+                    con.Close();
+            }
         }
         
         private void dgv_CellClick(object sender, DataGridViewCellEventArgs e)

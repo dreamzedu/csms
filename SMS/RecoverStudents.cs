@@ -78,7 +78,7 @@ namespace SMS
                         {
                             if (std.IsStudentExists(scholarNo))
                             {
-                                ConfirmNewScholarNo cnsn = new ConfirmNewScholarNo();
+                                ConfirmNewScholarNo cnsn = new ConfirmNewScholarNo(scholarNo);
                                 if (cnsn.ShowDialog() == DialogResult.OK)
                                 {
                                     std.RecoverStudent(scholarNo, cnsn.scholarNo);

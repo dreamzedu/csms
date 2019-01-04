@@ -385,7 +385,7 @@ namespace SMS
         {
             try
             {
-                if (e.ColumnIndex > -1)
+                if (e.ColumnIndex > -1 && e.RowIndex > -1)
                 {
                     int row = 0, f = 0;
                     if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].OwningColumn.Name.ToString() == "TC")

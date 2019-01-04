@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 
 namespace SMS.Library
 {
-    public partial class FrmBook : UserControl
+    public partial class FrmBook : UserControlBase
     {
         public FrmBook()
         {
@@ -22,36 +22,43 @@ namespace SMS.Library
 
         private void BtnAddPublisher_Click(object sender, EventArgs e)
         {
-            Library.FrmPublisher clsform = new Library.FrmPublisher();
-            clsform.StartPosition = FormStartPosition.CenterScreen;
+            PlaceHolderForm frm = new PlaceHolderForm("Publisher Master");
+            Library.FrmPublisher clsform = new Library.FrmPublisher(frm);
+                      
+            frm.AddChildControl(clsform);
             this.Enabled = false;
-            clsform.ShowDialog();
+            frm.ShowDialog();
             this.Enabled = true;
         }
 
-        private void btnnew_Click(object sender, EventArgs e)
+        public override void btnnew_Click(object sender, EventArgs e)
         {
             add_edit = true;
             c.cleartext(this);
-            c.btndisable(btnnew, btnedit, btndelete, btnsave, btncancel, btnprint, btnexit);
+            c.GetMdiParent(this).DisableAllEditMenuButtons();
+            //c.btndisable(btnnew, btnedit, btndelete, btnsave, btncancel, btnprint, btnexit);
             txtbookname.Focus();
             DesignForm.fromDesign2(this);
         }
 
-        private void btnedit_Click(object sender, EventArgs e)
+
+        public override void btnedit_Click(object sender, EventArgs e)
         {
             add_edit = false;
-            c.btndisable(btnnew, btnedit, btndelete, btnsave, btncancel, btnprint, btnexit);
+            c.GetMdiParent(this).DisableAllEditMenuButtons();
+              
+            //c.btndisable(btnnew, btnedit, btndelete, btnsave, btncancel, btnprint, btnexit);
             txtbookname.Focus();
             DesignForm.fromDesign2(this);
         }
 
-        private void btnsave_Click(object sender, EventArgs e)
+
+        public override void btnsave_Click(object sender, EventArgs e)
         {
-            if (txtbookname.Text == "" && textBox2.Text == "" && textBox3.Text == "" && txtbookopenqty.Text == "" && textBox1.Text == "")
+            if (txtbookname.Text == "" || textBox2.Text == "" || textBox3.Text == "" || txtbookopenqty.Text == "" || textBox1.Text == "" || string.IsNullOrEmpty(valcmbpublisher.SelectedItem.ToString()) || string.IsNullOrEmpty(valcmbsubject.SelectedValue.ToString()))
             {
 
-                MessageBox.Show("Null Value Not Allowed ");
+                MessageBox.Show("Please fill/select all the fields.");
             }
             else
             {
@@ -90,40 +97,45 @@ namespace SMS.Library
 
                 MessageBox.Show("Record Saved...", "School");
                 c.FillListBox("select * from tbl_book", "bookname", "bookno", ref  listBox1);
-                c.btnenable(btnnew, btnedit, btndelete, btnsave, btncancel, btnprint, btnexit);
-                btnnew.Focus();
+                //c.btnenable(btnnew, btnedit, btndelete, btnsave, btncancel, btnprint, btnexit);
+                c.GetMdiParent(this).EnableAllEditMenuButtons();
+                c.GetMdiParent(this).ToggleEditButton(false);
+                c.GetMdiParent(this).ToggleDeleteButton(false);
+                //btnnew.Focus();
 
             }
         }
 
-        private void btncancel_Click(object sender, EventArgs e)
+        public override void btncancel_Click(object sender, EventArgs e)
         {
             add_edit = false;
-            c.btnenable(btnnew, btnedit, btndelete, btnsave, btncancel, btnprint, btnexit);
+            //c.btnenable(btnnew, btnedit, btndelete, btnsave, btncancel, btnprint, btnexit);
+            c.GetMdiParent(this).EnableAllEditMenuButtons();
+            c.GetMdiParent(this).ToggleDeleteButton(false);
+            c.GetMdiParent(this).ToggleEditButton(false);
             DesignForm.fromDesign1(this);
         }
 
         private void FrmBook_Load(object sender, EventArgs e)
         {
-            c.btnenable(btnnew, btnedit, btndelete, btnsave, btncancel, btnprint, btnexit);
+            //c.btnenable(btnnew, btnedit, btndelete, btnsave, btncancel, btnprint, btnexit);
+            
+            c.GetMdiParent(this).ToggleNewButton(true);
+            c.GetMdiParent(this).TogglePrintButton(true);
+           
             c.getconnstr();
             c.FillcomboBox("select * from tbl_publisher order by publishar", "publishar", "publishcode", ref valcmbpublisher);
             c.FillcomboBox("select * from tbl_subject order by subjectname", "subjectname", "subjectno", ref valcmbsubject);
             c.FillListBox("select * from tbl_book", "bookname", "bookno", ref  listBox1);
-            btnnew.Focus();
+            //btnnew.Focus();
             DesignForm.fromDesign1(this);
         }
 
         private void BtnAddSubject_Click(object sender, EventArgs e)
         {
-            Frmsubject clsform = new Frmsubject();
-
-            PlaceHolderForm frm = new PlaceHolderForm();
-            frm.Height = clsform.Height;
-            frm.Width = clsform.Width;
-            frm.FormBorderStyle = FormBorderStyle.None;
-            frm.StartPosition = FormStartPosition.CenterParent;
-            frm.Controls.Add(clsform);
+            PlaceHolderForm frm = new PlaceHolderForm("Subject Master");
+            Frmsubject clsform = new Frmsubject(frm);
+            frm.AddChildControl(clsform);
             this.Enabled = false;
             frm.ShowDialog();
             this.Enabled = true;
@@ -178,6 +190,8 @@ namespace SMS.Library
         {
             String lstval = Convert.ToString(listBox1.SelectedValue);
             c.showdata("tbl_book", c.myconn, this, "bookno", lstval);
+            c.GetMdiParent(this).ToggleEditButton(true);
+            c.GetMdiParent(this).ToggleDeleteButton(false);              
         }
 
         private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
@@ -190,11 +204,7 @@ namespace SMS.Library
             }
         }
 
-        private void btnexit_Click(object sender, EventArgs e)
-        {
-            //this.Close();
-        }
-
+       
         private void FrmBook_Paint(object sender, PaintEventArgs e)
         {
             //public static void fromClear(Form f);

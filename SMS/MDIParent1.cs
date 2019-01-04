@@ -15,7 +15,7 @@ using System.Linq;
 namespace SMS
 {
 
-    public partial class MDIParent1 : Form
+    public partial class MDIParent1 : Form, IParent
     {
         string UserName, UserCode, Session;
         private int childFormNumber = 0;
@@ -1200,7 +1200,7 @@ namespace SMS
         }
 
         public void btnnew_Click(object sender, EventArgs e)
-        {
+        {            
             ((UserControlBase)this.pnlMain.Controls[0]).btnnew_Click(sender, e);
         }
 
@@ -1243,7 +1243,7 @@ namespace SMS
 
 
 
-        internal void DisableAllEditMenuButtons()
+        public void DisableAllEditMenuButtons()
         {
             this.btnCancel.Enabled = true;
             this.btnEdit.Enabled = false;
@@ -1253,7 +1253,7 @@ namespace SMS
             this.btnNew.Enabled = false;
         }
 
-        internal void EnableAllEditMenuButtons()
+        public void EnableAllEditMenuButtons()
         {
             this.btnCancel.Enabled = false;
             this.btnEdit.Enabled = true;
@@ -1263,12 +1263,12 @@ namespace SMS
             this.btnNew.Enabled = true;
         }
 
-        internal void ToggleNewButton(bool enable)
+        public void ToggleNewButton(bool enable)
         {
             this.btnNew.Enabled = enable;
         }
 
-        internal void ToggleEditButton(bool enable)
+        public void ToggleEditButton(bool enable)
         {
             if (enable)
             {
@@ -1283,7 +1283,7 @@ namespace SMS
             }
         }
 
-        internal void ToggleDeleteButton(bool enable)
+        public void ToggleDeleteButton(bool enable)
         {            
             if(enable)
             {
@@ -1298,23 +1298,23 @@ namespace SMS
             }
         }
 
-        internal void ToggleCancelButton(bool enable)
+        public void ToggleCancelButton(bool enable)
         {
             this.btnCancel.Enabled = enable;
         }
 
-        internal void ToggleSaveButton(bool enable)
+        public void ToggleSaveButton(bool enable)
         {
             this.btnSave.Enabled = enable;
         }
 
-        internal void TogglePrintButton(bool enable)
+        public void TogglePrintButton(bool enable)
         {
             this.btnPrint.Enabled = enable;
         }
         
         // These logic can be moved inside the button event call itself but that will need more effort to complete as it will impact all pages.
-        internal void AfterNewClick()
+        public void AfterNewClick()
         {
             btnCancel.Enabled = true;
             btnNew.Enabled = false;
@@ -1323,7 +1323,7 @@ namespace SMS
             btnSave.Enabled = true;
         }
 
-        internal void AfterEditClick()
+        public void AfterEditClick()
         {
             btnCancel.Enabled = true;
             btnNew.Enabled = false;
@@ -1331,7 +1331,16 @@ namespace SMS
             btnSave.Enabled = true;
         }
 
-        internal void AfterSaveClick()
+        public void AfterDeleteClick()
+        {
+            btnCancel.Enabled = false;
+            btnNew.Enabled = true;
+            btnEdit.Enabled = false;
+            btnSave.Enabled = false;
+            btnDelete.Enabled = false;
+        }
+
+        public void AfterSaveClick()
         {
             btnCancel.Enabled = false;
             btnNew.Enabled = true;
@@ -1343,14 +1352,15 @@ namespace SMS
             btnSave.Enabled = false;
         }
 
-        internal void AfterCancelClick()
+        public void AfterCancelClick()
         {
             btnCancel.Enabled = false;
             btnNew.Enabled = true;
-            if (Connection.UserLevel == 1 || Connection.UserName.ToUpper().Equals("CSMS"))
-            {
-                btnEdit.Enabled = true;
-            }
+            //if (Connection.UserLevel == 1 || Connection.UserName.ToUpper().Equals("CSMS"))
+            //{
+            //    btnEdit.Enabled = true;
+            //}
+            btnEdit.Enabled = false;
             btnDelete.Enabled = false;
             btnSave.Enabled = false;
         }

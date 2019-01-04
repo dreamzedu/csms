@@ -22,6 +22,11 @@ namespace SMS.Hostal
         int count;
         public override void btnsave_Click(object sender, EventArgs e)
         {
+            if (dtgbook.IsCurrentCellDirty)
+            {
+                dtgbook.CommitEdit(DataGridViewDataErrorContexts.Commit);
+            }
+
             c.getconnstr();
             i = 0;
             c.returnconn(c.myconn);
@@ -29,121 +34,109 @@ namespace SMS.Hostal
             trn = c.myconn.BeginTransaction();
             try
             {
-
-
                 Connection.AllPerform("delete tbl_hostelroom where hostelcode='" + valcmbclass.SelectedValue + "'");
                 Connection.AllPerform("delete tbl_roomdet where hostelcode='" + valcmbclass.SelectedValue + "'");
 
-
                 do
                 {
-
                     string mysql = "";
-
-
-
+                    int NoOfBed = 0;
 
                     if (dtgbook.Rows[i].Cells[0].Value != null)
                     {
-                        mysql = "insert into tbl_hostelroom (hostelcode,roomno,totalbeds) values (" + valcmbclass.SelectedValue + "," + dtgbook.Rows[i].Cells[0].Value + "," + dtgbook.Rows[i].Cells[1].Value + ")";
+                        string roomNo = dtgbook.Rows[i].Cells[0].Value.ToString();
+
+                        if (dtgbook.Rows[i].Cells[1].Value == null) NoOfBed = 0;
+                        else
+                            Int32.TryParse(dtgbook.Rows[i].Cells[1].Value.ToString(), out NoOfBed);
+
+
+                        mysql = "insert into tbl_hostelroom (hostelcode,roomno,totalbeds) values (" + valcmbclass.SelectedValue + "," + roomNo + "," + NoOfBed + ")";
                         c.connectsql(mysql, c.myconn, trn);
                     }
-                    if (dtgbook.Rows[i].Cells[1].Value != null)
+
+                    for (int j = 0; j < NoOfBed; j++)
                     {
-                        int totbed = Convert.ToInt16(dtgbook.Rows[i].Cells[1].Value);
-
-                        for (int j = 0; j < totbed; j++)
+                        string bedno = "";
+                        switch (j)
                         {
-                            string bedno = "";
-                            switch (j)
-                            {
-                                case 0:
-                                    bedno = dtgbook.Rows[i].Cells[0].Value.ToString() + "-A";
-                                    break;
-                                case 1:
-                                    bedno = dtgbook.Rows[i].Cells[0].Value.ToString() + "-B";
-                                    break;
-                                case 2:
-                                    bedno = dtgbook.Rows[i].Cells[0].Value.ToString() + "-C";
-                                    break;
-                                case 3:
-                                    bedno = dtgbook.Rows[i].Cells[0].Value.ToString() + "-D";
-                                    break;
-                                case 4:
-                                    bedno = dtgbook.Rows[i].Cells[0].Value.ToString() + "-E";
-                                    break;
-                                case 5:
-                                    bedno = dtgbook.Rows[i].Cells[0].Value.ToString() + "-F";
-                                    break;
-                                case 6:
-                                    bedno = dtgbook.Rows[i].Cells[0].Value.ToString() + "-G";
-                                    break;
-                                case 7:
-                                    bedno = dtgbook.Rows[i].Cells[0].Value.ToString() + "-H";
-                                    break;
-                                case 8:
-                                    bedno = dtgbook.Rows[i].Cells[0].Value.ToString() + "-I";
-                                    break;
-                                case 9:
-                                    bedno = dtgbook.Rows[i].Cells[0].Value.ToString() + "-J";
-                                    break;
-                                case 10:
-                                    bedno = dtgbook.Rows[i].Cells[0].Value.ToString() + "-K";
-                                    break;
-                                case 11:
-                                    bedno = dtgbook.Rows[i].Cells[0].Value.ToString() + "-L";
-                                    break;
-                                case 12:
-                                    bedno = dtgbook.Rows[i].Cells[0].Value.ToString() + "-M";
-                                    break;
-                                case 13:
-                                    bedno = dtgbook.Rows[i].Cells[0].Value.ToString() + "-N";
-                                    break;
-                                case 14:
-                                    bedno = dtgbook.Rows[i].Cells[0].Value.ToString() + "-O";
-                                    break;
-                                case 15:
-                                    bedno = dtgbook.Rows[i].Cells[0].Value.ToString() + "-P";
-                                    break;
-                                case 16:
-                                    bedno = dtgbook.Rows[i].Cells[0].Value.ToString() + "-Q";
-                                    break;
-                                case 17:
-                                    bedno = dtgbook.Rows[i].Cells[0].Value.ToString() + "-R";
-                                    break;
-                                case 18:
-                                    bedno = dtgbook.Rows[i].Cells[0].Value.ToString() + "-S";
-                                    break;
-                                case 19:
-                                    bedno = dtgbook.Rows[i].Cells[0].Value.ToString() + "-T";
-                                    break;
-                                case 20:
-                                    bedno = dtgbook.Rows[i].Cells[0].Value.ToString() + "-U";
-                                    break;
-                                default: break;
-                            }
-
-                            mysql = "insert into tbl_roomdet(hostelcode,roomno,bedno) values (" + valcmbclass.SelectedValue + "," + dtgbook.Rows[i].Cells[0].Value + ",'" + bedno + "')";
-                            c.connectsql(mysql, c.myconn, trn);
-
+                            case 0:
+                                bedno = dtgbook.Rows[i].Cells[0].Value.ToString() + "-A";
+                                break;
+                            case 1:
+                                bedno = dtgbook.Rows[i].Cells[0].Value.ToString() + "-B";
+                                break;
+                            case 2:
+                                bedno = dtgbook.Rows[i].Cells[0].Value.ToString() + "-C";
+                                break;
+                            case 3:
+                                bedno = dtgbook.Rows[i].Cells[0].Value.ToString() + "-D";
+                                break;
+                            case 4:
+                                bedno = dtgbook.Rows[i].Cells[0].Value.ToString() + "-E";
+                                break;
+                            case 5:
+                                bedno = dtgbook.Rows[i].Cells[0].Value.ToString() + "-F";
+                                break;
+                            case 6:
+                                bedno = dtgbook.Rows[i].Cells[0].Value.ToString() + "-G";
+                                break;
+                            case 7:
+                                bedno = dtgbook.Rows[i].Cells[0].Value.ToString() + "-H";
+                                break;
+                            case 8:
+                                bedno = dtgbook.Rows[i].Cells[0].Value.ToString() + "-I";
+                                break;
+                            case 9:
+                                bedno = dtgbook.Rows[i].Cells[0].Value.ToString() + "-J";
+                                break;
+                            case 10:
+                                bedno = dtgbook.Rows[i].Cells[0].Value.ToString() + "-K";
+                                break;
+                            case 11:
+                                bedno = dtgbook.Rows[i].Cells[0].Value.ToString() + "-L";
+                                break;
+                            case 12:
+                                bedno = dtgbook.Rows[i].Cells[0].Value.ToString() + "-M";
+                                break;
+                            case 13:
+                                bedno = dtgbook.Rows[i].Cells[0].Value.ToString() + "-N";
+                                break;
+                            case 14:
+                                bedno = dtgbook.Rows[i].Cells[0].Value.ToString() + "-O";
+                                break;
+                            case 15:
+                                bedno = dtgbook.Rows[i].Cells[0].Value.ToString() + "-P";
+                                break;
+                            case 16:
+                                bedno = dtgbook.Rows[i].Cells[0].Value.ToString() + "-Q";
+                                break;
+                            case 17:
+                                bedno = dtgbook.Rows[i].Cells[0].Value.ToString() + "-R";
+                                break;
+                            case 18:
+                                bedno = dtgbook.Rows[i].Cells[0].Value.ToString() + "-S";
+                                break;
+                            case 19:
+                                bedno = dtgbook.Rows[i].Cells[0].Value.ToString() + "-T";
+                                break;
+                            case 20:
+                                bedno = dtgbook.Rows[i].Cells[0].Value.ToString() + "-U";
+                                break;
+                            default: break;
                         }
-                        //     }
-                        // }
+
+                        mysql = "insert into tbl_roomdet(hostelcode,roomno,bedno) values (" + valcmbclass.SelectedValue + "," + dtgbook.Rows[i].Cells[0].Value + ",'" + bedno + "')";
+                        c.connectsql(mysql, c.myconn, trn);
+
                     }
 
                     i++;
-
-                    // }
-                    // else { MessageBox.Show("Duplicate Data Not Allowed"); }
                 }
-
-
                 while (i <= dtgbook.Rows.Count - 1);
                 trn.Commit();
-                MessageBox.Show("Data Saved..", "School");
-
-                //}
-                //else { MessageBox.Show("duplicate entry not allowed"); } 
+                MessageBox.Show("Records saved successfully", "School");
+                BtnSearch_Click(this, null);
             }
             catch (Exception ex)
             {
@@ -152,10 +145,6 @@ namespace SMS.Hostal
             }
         }
 
-        private void BtnExit_Click(object sender, EventArgs e)
-        {
-            //this.Close();
-        }
 
         private void FrmRoom_Load(object sender, EventArgs e)
         {

@@ -31,7 +31,7 @@
             this.gbxSalaryCalculation = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.EmployeeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StudentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FatherName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Designation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Present = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,11 +69,11 @@
             this.gbxSalaryCalculation.Controls.Add(this.cmbMonth);
             this.gbxSalaryCalculation.Controls.Add(this.label1);
             this.gbxSalaryCalculation.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.gbxSalaryCalculation.Location = new System.Drawing.Point(49, 50);
-            this.gbxSalaryCalculation.Margin = new System.Windows.Forms.Padding(4);
+            this.gbxSalaryCalculation.Location = new System.Drawing.Point(98, 97);
+            this.gbxSalaryCalculation.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.gbxSalaryCalculation.Name = "gbxSalaryCalculation";
-            this.gbxSalaryCalculation.Padding = new System.Windows.Forms.Padding(4);
-            this.gbxSalaryCalculation.Size = new System.Drawing.Size(1448, 598);
+            this.gbxSalaryCalculation.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.gbxSalaryCalculation.Size = new System.Drawing.Size(2688, 1159);
             this.gbxSalaryCalculation.TabIndex = 162;
             this.gbxSalaryCalculation.TabStop = false;
             // 
@@ -83,7 +83,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.EmployeeID,
-            this.Name,
+            this.StudentName,
             this.FatherName,
             this.Designation,
             this.Present,
@@ -102,10 +102,10 @@
             this.ESICAmount,
             this.NetSalary});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(4, 56);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Location = new System.Drawing.Point(8, 109);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1440, 538);
+            this.dataGridView1.Size = new System.Drawing.Size(2672, 1042);
             this.dataGridView1.TabIndex = 161;
             this.dataGridView1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView1_RowPostPaint);
             // 
@@ -117,9 +117,9 @@
             // 
             // Name
             // 
-            this.Name.HeaderText = "Name";
-            this.Name.Name = "Name";
-            this.Name.ReadOnly = true;
+            this.StudentName.HeaderText = "Name";
+            this.StudentName.Name = "Name";
+            this.StudentName.ReadOnly = true;
             // 
             // FatherName
             // 
@@ -221,10 +221,10 @@
             // cmbYear
             // 
             this.cmbYear.FormattingEnabled = true;
-            this.cmbYear.Location = new System.Drawing.Point(109, 24);
-            this.cmbYear.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbYear.Location = new System.Drawing.Point(218, 46);
+            this.cmbYear.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.cmbYear.Name = "cmbYear";
-            this.cmbYear.Size = new System.Drawing.Size(120, 24);
+            this.cmbYear.Size = new System.Drawing.Size(236, 39);
             this.cmbYear.TabIndex = 160;
             // 
             // label6
@@ -232,20 +232,20 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(291, 26);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(582, 50);
+            this.label6.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 17);
+            this.label6.Size = new System.Drawing.Size(99, 32);
             this.label6.TabIndex = 147;
             this.label6.Text = "Month";
             // 
             // cmbMonth
             // 
             this.cmbMonth.FormattingEnabled = true;
-            this.cmbMonth.Location = new System.Drawing.Point(351, 24);
-            this.cmbMonth.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbMonth.Location = new System.Drawing.Point(702, 46);
+            this.cmbMonth.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.cmbMonth.Name = "cmbMonth";
-            this.cmbMonth.Size = new System.Drawing.Size(211, 24);
+            this.cmbMonth.Size = new System.Drawing.Size(418, 39);
             this.cmbMonth.TabIndex = 159;
             this.cmbMonth.Validated += new System.EventHandler(this.cmbMonth_Validated);
             // 
@@ -254,20 +254,20 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(9, 26);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(18, 50);
+            this.label1.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 17);
+            this.label1.Size = new System.Drawing.Size(173, 32);
             this.label1.TabIndex = 148;
             this.label1.Text = "Select Year";
             // 
             // btnSalaryStatement
             // 
             this.btnSalaryStatement.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.btnSalaryStatement.Location = new System.Drawing.Point(809, 656);
-            this.btnSalaryStatement.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSalaryStatement.Location = new System.Drawing.Point(1409, 1271);
+            this.btnSalaryStatement.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.btnSalaryStatement.Name = "btnSalaryStatement";
-            this.btnSalaryStatement.Size = new System.Drawing.Size(180, 38);
+            this.btnSalaryStatement.Size = new System.Drawing.Size(360, 74);
             this.btnSalaryStatement.TabIndex = 166;
             this.btnSalaryStatement.Text = "Salary Statement";
             this.btnSalaryStatement.UseVisualStyleBackColor = true;
@@ -276,10 +276,10 @@
             // btnreportforbank
             // 
             this.btnreportforbank.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnreportforbank.Location = new System.Drawing.Point(1246, 656);
-            this.btnreportforbank.Margin = new System.Windows.Forms.Padding(4);
+            this.btnreportforbank.Location = new System.Drawing.Point(2283, 1271);
+            this.btnreportforbank.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.btnreportforbank.Name = "btnreportforbank";
-            this.btnreportforbank.Size = new System.Drawing.Size(249, 38);
+            this.btnreportforbank.Size = new System.Drawing.Size(498, 74);
             this.btnreportforbank.TabIndex = 165;
             this.btnreportforbank.Text = "Salary Statement For Other";
             this.btnreportforbank.UseVisualStyleBackColor = true;
@@ -288,10 +288,10 @@
             // btnAttendanceBetweenReport
             // 
             this.btnAttendanceBetweenReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAttendanceBetweenReport.Location = new System.Drawing.Point(997, 656);
-            this.btnAttendanceBetweenReport.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAttendanceBetweenReport.Location = new System.Drawing.Point(1785, 1271);
+            this.btnAttendanceBetweenReport.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.btnAttendanceBetweenReport.Name = "btnAttendanceBetweenReport";
-            this.btnAttendanceBetweenReport.Size = new System.Drawing.Size(241, 38);
+            this.btnAttendanceBetweenReport.Size = new System.Drawing.Size(482, 74);
             this.btnAttendanceBetweenReport.TabIndex = 163;
             this.btnAttendanceBetweenReport.Text = "Salary Statement For Bank";
             this.btnAttendanceBetweenReport.UseVisualStyleBackColor = true;
@@ -299,7 +299,7 @@
             // 
             // frmMonthlySalaryCalculation
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.btnSalaryStatement);
@@ -307,9 +307,9 @@
             this.Controls.Add(this.btnAttendanceBetweenReport);
             this.Controls.Add(this.gbxSalaryCalculation);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Margin = new System.Windows.Forms.Padding(4);
-            //this.Name = "frmMonthlySalaryCalculation";
-            this.Size = new System.Drawing.Size(1530, 710);
+            this.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.Name = "frmMonthlySalaryCalculation";
+            this.Size = new System.Drawing.Size(2869, 1376);
             this.Load += new System.EventHandler(this.frmSalaryCalculation_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.frmMonthlySalaryCalculation_Paint);
             this.gbxSalaryCalculation.ResumeLayout(false);
@@ -331,7 +331,7 @@
         private System.Windows.Forms.Button btnreportforbank;
         private System.Windows.Forms.Button btnAttendanceBetweenReport;
         private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StudentName;
         private System.Windows.Forms.DataGridViewTextBoxColumn FatherName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Designation;
         private System.Windows.Forms.DataGridViewTextBoxColumn Present;

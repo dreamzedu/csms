@@ -73,11 +73,12 @@ namespace SMS
                                 this.OneDaySalary = decimal.Round((Convert.ToDecimal(dv[0]["salaryrate"]) / DateTime.DaysInMonth(Convert.ToInt32(cmbYear.Text), cmbMonth.SelectedIndex)), 2);
                                 dataGridView1.Rows[i].Cells["PFNo"].Value = dv[0]["pfnumber"];
                                 this.SalaryRate = Convert.ToDecimal(dv[0]["salaryrate"]);
-                                this.DAAmt = Convert.ToDecimal(dv[0]["DAAmt"]);
-                                this.HRAAmt = Convert.ToDecimal(dv[0]["HRA"]);
+
+                                this.DAAmt = Convert.ToDecimal(dv[0]["DAAmt"] == DBNull.Value ? 0 : dv[0]["DAAmt"]);
+                                this.HRAAmt = Convert.ToDecimal(dv[0]["HRA"] == DBNull.Value ? 0 : dv[0]["HRA"]);
                                 this.SpecialIncentive = Convert.ToDecimal(dv[0]["rsa"]);
-                                this.PFAmt = Convert.ToDecimal(dv[0]["PFAmt"]);
-                                this.ESICAmt = Convert.ToDecimal(dv[0]["ESICAmt"]);
+                                this.PFAmt = Convert.ToDecimal(dv[0]["PFAmt"] == DBNull.Value ? 0 : dv[0]["PFAmt"]);
+                                this.ESICAmt = Convert.ToDecimal(dv[0]["ESICAmt"] == DBNull.Value ? 0 : dv[0]["ESICAmt"]);
                                 this.LoanAmt = Convert.ToDecimal(dv[0]["loan"]);
                                 this.LICAmt = Convert.ToDecimal(dv[0]["lic"]);
                             }
@@ -101,13 +102,13 @@ namespace SMS
                     }
                     else
                     {
-                        MessageBox.Show("Attendance Not Registered!", "Alert !!! ");
+                        MessageBox.Show("Attendance Not Registered.", "Error");
                         dataGridView1.Rows.Clear();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Please Select Mandatory Field!", "Alert !!! ");
+                    MessageBox.Show("Please Select Mandatory Fields.", "Alert");
                     dataGridView1.Rows.Clear();
                 }
             }

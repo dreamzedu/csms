@@ -45,9 +45,6 @@
             this.clbar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valcmbbook = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
-            this.btnsave = new System.Windows.Forms.Button();
-            this.btnexit = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgbook)).BeginInit();
             this.SuspendLayout();
@@ -58,9 +55,10 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(21, 109);
+            this.label7.Location = new System.Drawing.Point(56, 260);
+            this.label7.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(56, 16);
+            this.label7.Size = new System.Drawing.Size(135, 38);
             this.label7.TabIndex = 190;
             this.label7.Text = "Subject";
             this.label7.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -71,9 +69,10 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(439, 75);
+            this.label2.Location = new System.Drawing.Point(1171, 179);
+            this.label2.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 16);
+            this.label2.Size = new System.Drawing.Size(124, 38);
             this.label2.TabIndex = 189;
             this.label2.Text = "Author";
             this.label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -84,9 +83,10 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(21, 75);
+            this.label5.Location = new System.Drawing.Point(56, 179);
+            this.label5.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(98, 16);
+            this.label5.Size = new System.Drawing.Size(241, 38);
             this.label5.TabIndex = 188;
             this.label5.Text = "Book sub Title";
             this.label5.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -99,11 +99,12 @@
             this.barcodectrl.HeaderFont = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.barcodectrl.HeaderText = "BarCode Demo";
             this.barcodectrl.LeftMargin = 10;
-            this.barcodectrl.Location = new System.Drawing.Point(603, 144);
+            this.barcodectrl.Location = new System.Drawing.Point(1608, 343);
+            this.barcodectrl.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.barcodectrl.Name = "barcodectrl";
             this.barcodectrl.ShowFooter = false;
             this.barcodectrl.ShowHeader = false;
-            this.barcodectrl.Size = new System.Drawing.Size(193, 78);
+            this.barcodectrl.Size = new System.Drawing.Size(515, 186);
             this.barcodectrl.TabIndex = 187;
             this.barcodectrl.TopMargin = 10;
             this.barcodectrl.VertAlign = DSBarCode.BarCodeCtrl.AlignType.Center;
@@ -113,9 +114,10 @@
             // BtnShowBook
             // 
             this.BtnShowBook.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnShowBook.Location = new System.Drawing.Point(695, 29);
+            this.BtnShowBook.Location = new System.Drawing.Point(1853, 71);
+            this.BtnShowBook.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.BtnShowBook.Name = "BtnShowBook";
-            this.BtnShowBook.Size = new System.Drawing.Size(86, 34);
+            this.BtnShowBook.Size = new System.Drawing.Size(229, 59);
             this.BtnShowBook.TabIndex = 182;
             this.BtnShowBook.Text = "&Select Book";
             this.BtnShowBook.UseVisualStyleBackColor = true;
@@ -127,9 +129,10 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(21, 38);
+            this.label1.Location = new System.Drawing.Point(56, 91);
+            this.label1.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 16);
+            this.label1.Size = new System.Drawing.Size(195, 38);
             this.label1.TabIndex = 186;
             this.label1.Text = "Book Name";
             this.label1.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
@@ -148,13 +151,14 @@
             this.noofpage,
             this.Publyr,
             this.clbar});
-            this.dtgbook.Location = new System.Drawing.Point(19, 144);
+            this.dtgbook.Location = new System.Drawing.Point(51, 343);
+            this.dtgbook.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.dtgbook.Name = "dtgbook";
-            this.dtgbook.Size = new System.Drawing.Size(762, 213);
+            this.dtgbook.Size = new System.Drawing.Size(2032, 508);
             this.dtgbook.TabIndex = 183;
+            this.dtgbook.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgbook_CellContentClick);
             this.dtgbook.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgbook_CellValidated);
             this.dtgbook.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtgbook_KeyDown);
-            this.dtgbook.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgbook_CellContentClick);
             // 
             // bookno
             // 
@@ -214,9 +218,10 @@
             // 
             this.valcmbbook.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.valcmbbook.FormattingEnabled = true;
-            this.valcmbbook.Location = new System.Drawing.Point(107, 35);
+            this.valcmbbook.Location = new System.Drawing.Point(285, 83);
+            this.valcmbbook.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.valcmbbook.Name = "valcmbbook";
-            this.valcmbbook.Size = new System.Drawing.Size(571, 23);
+            this.valcmbbook.Size = new System.Drawing.Size(1516, 43);
             this.valcmbbook.TabIndex = 181;
             // 
             // label6
@@ -225,55 +230,13 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(439, 109);
+            this.label6.Location = new System.Drawing.Point(1171, 260);
+            this.label6.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(74, 16);
+            this.label6.Size = new System.Drawing.Size(183, 38);
             this.label6.TabIndex = 191;
             this.label6.Text = "Publishers";
             this.label6.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.BackColor = System.Drawing.Color.Transparent;
-            this.label41.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label41.Location = new System.Drawing.Point(357, 4);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(86, 19);
-            this.label41.TabIndex = 192;
-            this.label41.Text = "Book Title";
-            // 
-            // btnsave
-            // 
-            this.btnsave.BackColor = System.Drawing.Color.White;
-            this.btnsave.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnsave.ForeColor = System.Drawing.Color.Black;
-            this.btnsave.Image = global::SMS.Properties.Resources.save;
-            this.btnsave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnsave.Location = new System.Drawing.Point(680, 69);
-            this.btnsave.Name = "btnsave";
-            this.btnsave.Size = new System.Drawing.Size(60, 42);
-            this.btnsave.TabIndex = 193;
-            this.btnsave.Text = "Sa&ve";
-            this.btnsave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnsave.UseVisualStyleBackColor = false;
-            this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
-            // 
-            // btnexit
-            // 
-            this.btnexit.BackColor = System.Drawing.Color.White;
-            this.btnexit.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnexit.ForeColor = System.Drawing.Color.Black;
-            this.btnexit.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnexit.Location = new System.Drawing.Point(740, 69);
-            this.btnexit.Name = "btnexit";
-            this.btnexit.Size = new System.Drawing.Size(40, 42);
-            this.btnexit.TabIndex = 194;
-            this.btnexit.Text = "E&xit";
-            this.btnexit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnexit.UseVisualStyleBackColor = false;
-            this.btnexit.Click += new System.EventHandler(this.btnexit_Click);
             // 
             // label3
             // 
@@ -281,23 +244,20 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(19, 360);
+            this.label3.Location = new System.Drawing.Point(51, 858);
+            this.label3.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(327, 16);
+            this.label3.Size = new System.Drawing.Size(807, 38);
             this.label3.TabIndex = 195;
             this.label3.Text = "For Add Book Title Click on Grid and Press Ctrl+F3";
             this.label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // FmTitle
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(801, 382);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnexit);
-            this.Controls.Add(this.btnsave);
-            this.Controls.Add(this.label41);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label5);
@@ -307,10 +267,9 @@
             this.Controls.Add(this.valcmbbook);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.barcodectrl);
-            //this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            //this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(8, 7, 8, 7);
             this.Name = "FmTitle";
-            this.Text = "FmTitle";
+            this.Size = new System.Drawing.Size(2136, 911);
             this.Load += new System.EventHandler(this.FmTitle_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FmTitle_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.dtgbook)).EndInit();
@@ -330,9 +289,6 @@
         private System.Windows.Forms.DataGridView dtgbook;
         private System.Windows.Forms.ComboBox valcmbbook;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.Button btnsave;
-        private System.Windows.Forms.Button btnexit;
         private System.Windows.Forms.DataGridViewTextBoxColumn bookno;
         private System.Windows.Forms.DataGridViewTextBoxColumn booktitle;
         private System.Windows.Forms.DataGridViewTextBoxColumn prize;

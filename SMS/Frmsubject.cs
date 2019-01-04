@@ -14,9 +14,17 @@ namespace SMS
     {
         school1 c = new school1();
         Boolean add_edit = false;
+        IParent parentForm;
      
         public Frmsubject()
         {
+            InitializeComponent();
+            Connection.SetUserControlTheme(this);
+        }
+
+        public Frmsubject(IParent parentForm)
+        {
+            this.parentForm = parentForm;
             InitializeComponent();
             Connection.SetUserControlTheme(this);
         }
@@ -28,15 +36,22 @@ namespace SMS
           // valcmbboard .Items.Add("-Select-");
             add_edit = true;
             c.cleartext(this);
-            c.GetMdiParent(this).DisableAllEditMenuButtons();
-           
+            //parentForm.DisableAllEditMenuButtons();
+            parentForm.AfterNewClick();
             txtSubjectName.Focus();
             cmbboard.SelectedIndex = 0;
         }
 
         private void Frmsubject_Load(object sender, EventArgs e)
         {
-            c.GetMdiParent(this).EnableAllEditMenuButtons();
+            if(parentForm == null)
+            {
+                parentForm = c.GetMdiParent(this);
+            }
+            //parentForm.EnableAllEditMenuButtons();
+            parentForm.ToggleNewButton(true);
+            parentForm.TogglePrintButton(true);
+            
             c.getconnstr();
             c.FillListBox("Select subjectno,subjectname,SubjectCode ,SubjectOrder from tbl_subject Group By subjectno,subjectname,SubjectCode ,SubjectOrder Order By SubjectOrder ", "subjectname", "subjectno", ref  listBox1);
             cmbSubjectOrder.Items.Clear();
@@ -48,30 +63,36 @@ namespace SMS
         public override void btncancel_Click(object sender, EventArgs e)
         {
             add_edit = false;
-            c.GetMdiParent(this).EnableAllEditMenuButtons();
-                    
+            //parentForm.EnableAllEditMenuButtons();
+            parentForm.AfterCancelClick();
+            parentForm.ToggleEditButton(false);
         }
 
         public override void btnedit_Click(object sender, EventArgs e)
         { 
             add_edit = false;
-            c.GetMdiParent(this).DisableAllEditMenuButtons();
-        
+            //parentForm.DisableAllEditMenuButtons();
+            parentForm.AfterEditClick();
         }
 
       
 
         private void listBox1_Click(object sender, EventArgs e)
         {
-            String lstval = Convert.ToString(listBox1.SelectedValue);
-            DataSet ds67 = Connection.GetDataSet("select subjectname ,subjecttype,subjectno,SubjectCode,SubjectOrder from tbl_subject where subjectname = '" + listBox1.Text + "'");
-            txtSubjectName.Text = ds67.Tables[0].Rows[0].ItemArray[0].ToString();
-            cmbboard.Text = ds67.Tables[0].Rows[0].ItemArray[1].ToString();
-            txtSubjectNo.Text = ds67.Tables[0].Rows[0].ItemArray[2].ToString();
-            txtSubjectCode.Text = ds67.Tables[0].Rows[0].ItemArray[3].ToString();
-            cmbSubjectOrder.Text = ds67.Tables[0].Rows[0].ItemArray[4].ToString();
-         
-           //c.showdata("tbl_subject", c.myconn, this, "subjectno", lstval);
+            if (listBox1.Items.Count > 0)
+            {
+                String lstval = Convert.ToString(listBox1.SelectedValue);
+                DataSet ds67 = Connection.GetDataSet("select subjectname ,subjecttype,subjectno,SubjectCode,SubjectOrder from tbl_subject where subjectname = '" + listBox1.Text + "'");
+                txtSubjectName.Text = ds67.Tables[0].Rows[0].ItemArray[0].ToString();
+                cmbboard.Text = ds67.Tables[0].Rows[0].ItemArray[1].ToString();
+                txtSubjectNo.Text = ds67.Tables[0].Rows[0].ItemArray[2].ToString();
+                txtSubjectCode.Text = ds67.Tables[0].Rows[0].ItemArray[3].ToString();
+                cmbSubjectOrder.Text = ds67.Tables[0].Rows[0].ItemArray[4].ToString();
+
+                parentForm.ToggleEditButton(true);
+                parentForm.ToggleDeleteButton(true);
+                //c.showdata("tbl_subject", c.myconn, this, "subjectno", lstval);
+            }
         }
         
         public override void btnsave_Click(object sender, EventArgs e)
@@ -117,18 +138,13 @@ namespace SMS
                 }
 
                 c.FillListBox("Select subjectno,subjectname,SubjectCode ,SubjectOrder from tbl_subject Group By subjectno,subjectname,SubjectCode ,SubjectOrder Order By SubjectOrder ", "subjectname", "subjectno", ref  listBox1);
-                c.GetMdiParent(this).EnableAllEditMenuButtons();
-                
+                //parentForm.EnableAllEditMenuButtons();
+                parentForm.AfterSaveClick();
+                parentForm.ToggleEditButton(false);
             }
             //DesignForm.fromDesign1(this);
         }
-        private void btnexit_Click(object sender, EventArgs e)
-        {
-            if (this.Parent.Parent != null && this.Parent is Form)
-            {
-                ((Form)this.Parent).Close();
-            }
-        }
+       
          
 
         public override void btndelete_Click(object sender, EventArgs e)
@@ -136,7 +152,7 @@ namespace SMS
             int k = Connection.Login("SELECT     COUNT(*) AS Expr1  FROM         tbl_subwiseclass  WHERE     (subjectno = '" + txtSubjectNo.Text + "')   ");
             if (k > 0)
             {
-                MessageBox.Show("You Can Not Delete Subject  Record.");
+                MessageBox.Show("You Cannot Delete Subject.");
             }
             else
             {
@@ -148,6 +164,8 @@ namespace SMS
                     MessageBox.Show("Record Deleted.");
                     c.FillListBox("select distinct subjectno,subjectname from tbl_subject Order By subjectno", "subjectname", "subjectno", ref  listBox1);
                     DesignForm.fromClear(this);
+
+                    parentForm.AfterDeleteClick();
                 }
             }
           
