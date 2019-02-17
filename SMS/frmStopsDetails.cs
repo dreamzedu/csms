@@ -23,35 +23,43 @@ namespace SMS
 
         public override void btnsave_Click(object sender, EventArgs e)
         {
-            if (dgv1.RowCount > 0)
+            try
             {
-                if (DialogResult.Yes.Equals(MessageBox.Show("Are you sure to save Stop detail.", "Stop Details", MessageBoxButtons.YesNo, MessageBoxIcon.Question)))
+                if (dgv1.RowCount > 0)
                 {
-                    dtStopDetail.EndInit();
-                    dgv1.EndEdit();
-                    DataAdapter.UpdateCommand = new SqlCommandBuilder(DataAdapter).GetUpdateCommand();
-                    DataAdapter.Update(dtStopDetail);
-                    MessageBox.Show("Record Saved Successfully.", "Stop Detail", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    //this.Close();
+                    if (DialogResult.Yes.Equals(MessageBox.Show("Are you sure to save Stop detail.", "Stop Details", MessageBoxButtons.YesNo, MessageBoxIcon.Question)))
+                    {
+                        dtStopDetail.EndInit();
+                        dgv1.EndEdit();
+                        string sql = "";
+
+                        foreach (DataRow row in dtStopDetail.Rows)
+                        {
+                            sql += "UPDATE [tbl_StopDetails] SET [Status] = " + (row["Available"].ToString().ToLower() == "yes"? 1: 0) + ", [BusStopNo] = '" + row["BusStopNo"] + "', [StopName] = '" + row["StopName"] + "', [StopFee] = " + row["Fee"] + " WHERE [BStopId] = " + row["BStopId"] + ";";
+                        }
+
+                        if (!string.IsNullOrEmpty(sql))
+                        {
+                            SqlCommand cmd = new SqlCommand(sql, Connection.GetMyConnection());
+                            cmd.ExecuteNonQuery();
+                            MessageBox.Show("Record saved successfully.", "Stop Detail", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
                 }
+            }
+            catch(Exception ex)
+            {
+                Logger.LogError(ex);
+                MessageBox.Show("Some error occurred while saving the records. Please verify the input data and the internet connection.");
             }
         }
 
         private void frmStopsDetails_Load(object sender, EventArgs e)
         {
             //this.KeyPreview = true;
-            DataAdapter = new SqlDataAdapter("Select BStopId,Status, BusStopNo as [Stop No.], StopName as [Stop Name], StopFee as [Fee], Case When Status=1 Then 'Yes' Else 'No' End as Available From tbl_StopDetails  Order By BusStopNo", Connection.Conn());
+            DataAdapter = new SqlDataAdapter("Select BStopId, BusStopNo, StopName , StopFee as Fee, Case When Status=1 Then 'Yes' Else 'No' End as Available From tbl_StopDetails  Order By BusStopNo", Connection.Conn());
             DataAdapter.Fill(dtStopDetail);
             dgv1.DataSource = dtStopDetail;
-            dgv1.Columns["BStopId"].Visible = false;
-            dgv1.Columns["Stop No."].ReadOnly = dgv1.Columns["Available"].ReadOnly = true;
-            dgv1.Columns["Fee"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dgv1.Columns["Available"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgv1.Columns["Status"].Width = 50;
-            dgv1.Columns["Stop No."].Width = 80;
-            dgv1.Columns["Stop Name"].Width = 200;
-            dgv1.Columns["Fee"].Width = 120;
-            dgv1.Columns["Available"].Width = 100;
             c1.GetMdiParent(this).ToggleSaveButton(true);
             c1.GetMdiParent(this).ToggleNewButton(true);
         }       
@@ -64,8 +72,8 @@ namespace SMS
         public override void btnnew_Click(object sender, EventArgs e)
         {
             dtStopDetail.Rows.Add(dtStopDetail.NewRow());
-            dtStopDetail.Rows[dtStopDetail.Rows.Count - 1]["Status"] = 1;
-            dtStopDetail.Rows[dtStopDetail.Rows.Count - 1]["Stop No."] = "S-" + dtStopDetail.Rows.Count;
+            dtStopDetail.Rows[dtStopDetail.Rows.Count - 1]["Available"] = "Yes";
+            dtStopDetail.Rows[dtStopDetail.Rows.Count - 1]["BusStopNo"] = "S-" + dtStopDetail.Rows.Count;
             dtStopDetail.Rows[dtStopDetail.Rows.Count - 1]["Fee"] = 0;
         }
 
@@ -78,27 +86,22 @@ namespace SMS
                     try
                     {
                         dgv1.Rows[e.RowIndex].Cells["Fee"].Value = Convert.ToDecimal(dgv1.Rows[e.RowIndex].Cells["Fee"].Value);
-                        dgv1.Rows[e.RowIndex].Cells["Available"].Value = "Yes";
                     }
                     catch
                     {
                         dgv1.Rows[e.RowIndex].Cells["Fee"].Value = 0;
                     }
                 }
-                else if (dgv1.CurrentCell.ColumnIndex.Equals(dgv1.Rows[e.RowIndex].Cells["Stop Name"].ColumnIndex))
+                else if (dgv1.CurrentCell.ColumnIndex.Equals(dgv1.Rows[e.RowIndex].Cells["StopName"].ColumnIndex))
                 {
                     try
                     {
-                        dgv1.Rows[e.RowIndex].Cells["Stop Name"].Value = school.toproper(dgv1.Rows[e.RowIndex].Cells["Stop Name"].Value.ToString());
+                        dgv1.Rows[e.RowIndex].Cells["StopName"].Value = school.toproper(dgv1.Rows[e.RowIndex].Cells["StopName"].Value.ToString());
                     }
                     catch
                     {
-                        dgv1.Rows[e.RowIndex].Cells["Stop Name"].Value = "";
+                        dgv1.Rows[e.RowIndex].Cells["StopName"].Value = "";
                     }
-                }
-                else if (dgv1.CurrentCell.ColumnIndex.Equals(dgv1.Rows[e.RowIndex].Cells["Status"].ColumnIndex))
-                {
-                    dgv1.Rows[e.RowIndex].Cells["Available"].Value = (Convert.ToBoolean(dgv1.Rows[e.RowIndex].Cells["Status"].Value)) ? "Yes" : "No";
                 }
             }
         }

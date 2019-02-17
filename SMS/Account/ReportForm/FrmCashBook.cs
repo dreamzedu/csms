@@ -30,6 +30,11 @@ namespace SMS.Account
         {
             try
             {
+                if (valcmbcash.SelectedValue == null || valcmbbank.SelectedValue == null)
+                {
+                    MessageBox.Show("Please select accounts. If you cannot see the accounts then you probably need to setup the account first.");
+                    return;
+                }
                 DateTime cashopdate = dtpfrom.Value.Date;
                 DateTime bankopdate = dtpfrom.Value.Date;
                 decimal cashopbal = 0;
@@ -649,11 +654,7 @@ namespace SMS.Account
             }
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            //this.Close(); 
-        }
-
+       
         private void FrmCashBook_Paint(object sender, PaintEventArgs e)
         {
             //public static void fromClear(Form f);

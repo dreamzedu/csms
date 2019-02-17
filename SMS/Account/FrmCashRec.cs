@@ -33,9 +33,34 @@ namespace SMS.Account
 
         public override void btnsave_Click(object sender, EventArgs e)
         {
-            //-----------
+            if (valcmbaccountgroup.SelectedValue == null || string.IsNullOrEmpty(valcmbaccountgroup.SelectedValue.ToString()))
+            {
+                MessageBox.Show("Please select account. If you cannot see the accounts then you probably need to setup the account first.");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(textBox1.Text))
+            {
+                MessageBox.Show("Please enter amount.");
+                return;
+            }
+            if (string.IsNullOrEmpty(textBox2.Text))
+            {
+                MessageBox.Show("Please enter voucher narration.");
+                return;
+            }
+            SqlCommand cmd = new SqlCommand("select dbo.GetCashAccountCode('C') as CACode", c.myconn);
+
+            object val = cmd.ExecuteScalar();
+            if(val== null || val == DBNull.Value)
+            {
+                MessageBox.Show("Cannot find a cash account to credit the amount, please setup a cash account first.", "Error",  MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             int cactype = 0;
             SqlCommand command2 = new SqlCommand("select dbo.GetAccountCode('C') as CCode", c.myconn);
+
             SqlDataReader reader2 = command2.ExecuteReader();
             if (reader2.HasRows)
             {
@@ -147,7 +172,7 @@ namespace SMS.Account
                 trn.Commit();
                 DesignForm.fromDesign1(this);
             }
-            MessageBox.Show("Record Saved...", "School");
+            MessageBox.Show("Record saved successfully", "School");
         mline:
             c.GetMdiParent(this).EnableAllEditMenuButtons();
             

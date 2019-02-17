@@ -44,13 +44,12 @@
             this.valcmbbank.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.valcmbbank.ForeColor = System.Drawing.Color.Blue;
             this.valcmbbank.FormattingEnabled = true;
-            this.valcmbbank.Location = new System.Drawing.Point(218, 163);
-            this.valcmbbank.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.valcmbbank.Location = new System.Drawing.Point(436, 316);
+            this.valcmbbank.Margin = new System.Windows.Forms.Padding(8);
             this.valcmbbank.Name = "valcmbbank";
-            this.valcmbbank.Size = new System.Drawing.Size(347, 25);
+            this.valcmbbank.Size = new System.Drawing.Size(690, 43);
             this.valcmbbank.TabIndex = 65;
             this.valcmbbank.Tag = "";
-            this.valcmbbank.Visible = false;
             // 
             // label3
             // 
@@ -58,26 +57,24 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(70, 166);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(140, 322);
+            this.label3.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(118, 19);
+            this.label3.Size = new System.Drawing.Size(234, 38);
             this.label3.TabIndex = 64;
             this.label3.Text = "Bank Account";
-            this.label3.Visible = false;
             // 
             // valcmbcash
             // 
             this.valcmbcash.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.valcmbcash.ForeColor = System.Drawing.Color.Blue;
             this.valcmbcash.FormattingEnabled = true;
-            this.valcmbcash.Location = new System.Drawing.Point(218, 110);
-            this.valcmbcash.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.valcmbcash.Location = new System.Drawing.Point(436, 213);
+            this.valcmbcash.Margin = new System.Windows.Forms.Padding(8);
             this.valcmbcash.Name = "valcmbcash";
-            this.valcmbcash.Size = new System.Drawing.Size(111, 25);
+            this.valcmbcash.Size = new System.Drawing.Size(690, 43);
             this.valcmbcash.TabIndex = 63;
             this.valcmbcash.Tag = "";
-            this.valcmbcash.Visible = false;
             // 
             // label2
             // 
@@ -85,13 +82,12 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(70, 114);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(140, 221);
+            this.label2.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 19);
+            this.label2.Size = new System.Drawing.Size(251, 38);
             this.label2.TabIndex = 62;
             this.label2.Text = "Select Account";
-            this.label2.Visible = false;
             // 
             // dtpto
             // 
@@ -99,12 +95,11 @@
             this.dtpto.CustomFormat = "dd/MM/yyyy";
             this.dtpto.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpto.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpto.Location = new System.Drawing.Point(424, 108);
-            this.dtpto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpto.Location = new System.Drawing.Point(848, 128);
+            this.dtpto.Margin = new System.Windows.Forms.Padding(8);
             this.dtpto.Name = "dtpto";
-            this.dtpto.Size = new System.Drawing.Size(141, 25);
+            this.dtpto.Size = new System.Drawing.Size(278, 42);
             this.dtpto.TabIndex = 61;
-            this.dtpto.Visible = false;
             // 
             // label1
             // 
@@ -112,13 +107,12 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(385, 110);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(770, 132);
+            this.label1.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 19);
+            this.label1.Size = new System.Drawing.Size(65, 38);
             this.label1.TabIndex = 60;
             this.label1.Text = "To ";
-            this.label1.Visible = false;
             // 
             // dtpfrom
             // 
@@ -126,10 +120,10 @@
             this.dtpfrom.CustomFormat = "dd/MM/yyyy";
             this.dtpfrom.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpfrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpfrom.Location = new System.Drawing.Point(218, 64);
-            this.dtpfrom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtpfrom.Location = new System.Drawing.Point(436, 124);
+            this.dtpfrom.Margin = new System.Windows.Forms.Padding(8);
             this.dtpfrom.Name = "dtpfrom";
-            this.dtpfrom.Size = new System.Drawing.Size(141, 25);
+            this.dtpfrom.Size = new System.Drawing.Size(278, 42);
             this.dtpfrom.TabIndex = 59;
             // 
             // label4
@@ -138,10 +132,10 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(70, 66);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(140, 128);
+            this.label4.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 19);
+            this.label4.Size = new System.Drawing.Size(178, 38);
             this.label4.TabIndex = 58;
             this.label4.Text = "From Date";
             // 
@@ -151,18 +145,18 @@
             this.btnOk.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnOk.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOk.ForeColor = System.Drawing.Color.Black;
-            this.btnOk.Location = new System.Drawing.Point(384, 59);
-            this.btnOk.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOk.Location = new System.Drawing.Point(764, 406);
+            this.btnOk.Margin = new System.Windows.Forms.Padding(8);
             this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(181, 34);
+            this.btnOk.Size = new System.Drawing.Size(362, 66);
             this.btnOk.TabIndex = 66;
-            this.btnOk.Text = "&OK";
+            this.btnOk.Text = "&Show";
             this.btnOk.UseVisualStyleBackColor = false;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // FrmCashBook
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.btnOk);
@@ -174,9 +168,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dtpfrom);
             this.Controls.Add(this.label4);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(8);
             this.Name = "FrmCashBook";
-            this.Size = new System.Drawing.Size(569, 261);
+            this.Size = new System.Drawing.Size(1138, 506);
             this.Load += new System.EventHandler(this.FrmCashBook_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FrmCashBook_Paint);
             this.ResumeLayout(false);

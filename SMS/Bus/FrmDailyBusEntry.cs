@@ -104,7 +104,7 @@ namespace SMS.Bus
         {
             if (cmbShift.Text == "" || cmbBusNo.Text == "" || cmbDriverName.Text == "" || cmbRounds.Text == "" || txtArrivalReading.Text == "" || txtDepartureReading.Text == "" || DTPSAT.Text == "" || DTPSDT.Text == "" || DTP1.Text == "")
             {
-                MessageBox.Show("Please Fill Above Information Properly");
+                MessageBox.Show("Please fill all the details.");
             }
             else
             {
@@ -149,11 +149,6 @@ namespace SMS.Bus
             add_edit = false;
             c.GetMdiParent(this).EnableAllEditMenuButtons();
             
-        }
-
-        private void btnexit_Click(object sender, EventArgs e)
-        {
-            //this.Close();
         }
 
         private void dgv1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -222,7 +217,6 @@ namespace SMS.Bus
         {
             //public static void fromClear(Form f);
         }
-
         
     }
 }

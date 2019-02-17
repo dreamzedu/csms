@@ -65,8 +65,8 @@ namespace SMS.Bus
         private void FrmBusDeails_Load(object sender, EventArgs e)
         {
             showGrid();
-            dgv1.Enabled = false;
-            c.GetMdiParent(this).EnableAllEditMenuButtons();
+            //dgv1.Enabled = false;
+            c.GetMdiParent(this).ToggleNewButton(true);
             
             DesignForm.fromDesign1(this);
         }
@@ -80,10 +80,11 @@ namespace SMS.Bus
                 txtRTONo.Focus();
                 c.cleartext(this);
                 getId();
-                c.GetMdiParent(this).DisableAllEditMenuButtons();
+                //c.GetMdiParent(this).DisableAllEditMenuButtons();
                 DesignForm.fromDesign2(this);
                 txtBusNo.Enabled = false;
                 txtRTONo.Focus();
+                c.GetMdiParent(this).AfterNewClick();
                
             }
             catch(Exception ex){Logger.LogError(ex); }
@@ -92,12 +93,12 @@ namespace SMS.Bus
         public override void btnedit_Click(object sender, EventArgs e)
         {
 
-            DesignForm.fromDesign2(this);
+            //DesignForm.fromDesign2(this);
             add_edit = false;
-            c.GetMdiParent(this).DisableAllEditMenuButtons();
+            //c.GetMdiParent(this).DisableAllEditMenuButtons();
             dgv1.Focus();
-            dgv1.Enabled = true;
-            c.GetMdiParent(this).ToggleDeleteButton(true);
+            //dgv1.Enabled = true;
+            c.GetMdiParent(this).AfterEditClick();
             DesignForm.fromDesign2(this);
             txtBusNo.Enabled = false;
         }
@@ -110,7 +111,7 @@ namespace SMS.Bus
                 int l = Connection.Login("select count (*) from tbl_DieselDetails where BusNo='" + txtBusNo.Text + "'");
                 int m = Connection.Login("select count (*) from tbl_DailyBusEntry where BusNo='" + txtBusNo.Text + "'");
                 if (k > 0 || l > 0 || m > 0)
-                { MessageBox.Show("You Can Not Deleted BusNO:-" + txtBusNo.Text + " ,Because It Has A Refrence Of Another Palce"); }
+                { MessageBox.Show("You cannot deleted BusNO:-" + txtBusNo.Text + " ,Because It Has A Refrence Of Another Palce"); }
                 else
                 {
                     DialogResult d = MessageBox.Show("Are You Sure You Want To Delete Record.", "", MessageBoxButtons.YesNo);
@@ -120,6 +121,8 @@ namespace SMS.Bus
                         showGrid();
                     }
                 }
+
+                c.GetMdiParent(this).AfterDeleteClick();
             }
         }
         int count = 0;
@@ -128,7 +131,7 @@ namespace SMS.Bus
             
             if (txtRTONo.Text == "" || txtSeatsCapacity.Text == "" || txtModelNo.Text == "" || txtInitailReading.Text == "" || txtCompany.Text == "" || txtChechisNo.Text == "" || txtBusMilej.Text == "")
             {
-                MessageBox.Show("Please Fill Above Information Properly");
+                MessageBox.Show("All fields are required, please fill all the detail.");
             }
             else
             {
@@ -144,8 +147,8 @@ namespace SMS.Bus
 
                         showGrid();
                         txtRTONo.Focus();
-                        dgv1.Enabled = false;
-                        c.GetMdiParent(this).EnableAllEditMenuButtons();
+                        //dgv1.Enabled = false;
+                        //c.GetMdiParent(this).EnableAllEditMenuButtons();
                         
                     }
                     else { MessageBox.Show("This Bus No is Already Exist"); }
@@ -157,9 +160,9 @@ namespace SMS.Bus
                         Connection.AllPerform("update tbl_BusDetails set BusNo='" + txtBusNo.Text + "',RTONO='" + txtRTONo.Text + "',SeatsCapacity='" + txtSeatsCapacity.Text + "',BusMilej='" + txtBusMilej.Text + "',ModelNo='" + txtModelNo.Text + "',ChechisNo='" + txtChechisNo.Text + "',InitialReading='" + txtInitailReading.Text + "',PurchaseDate='" + DTP1.Value.ToString("MM/dd/yyyy") + "',Company='" + txtCompany.Text + "',RegistrationIssueDate='" + dtpRegIssueDate.Value.Date.ToString("MM-dd-yyyy") + "',RegistrationExpiryDate='" + dtpRegExpiryDate.Value.Date.ToString("MM-dd-yyyy") + "' where BusId='" + Busid + "'");
                         MessageBox.Show("Record Update.", "School");
                         showGrid();
-                        c.GetMdiParent(this).EnableAllEditMenuButtons();
+                        //c.GetMdiParent(this).EnableAllEditMenuButtons();
                         
-                        dgv1.Enabled = false;
+                        //dgv1.Enabled = false;
                     }
                     else
                     {
@@ -171,13 +174,16 @@ namespace SMS.Bus
                             Connection.AllPerform("update tbl_BusDetails set BusNo='" + txtBusNo.Text + "',RTONO='" + txtRTONo.Text + "',SeatsCapacity='" + txtSeatsCapacity.Text + "',BusMilej='" + txtBusMilej.Text + "',ModelNo='" + txtModelNo.Text + "',ChechisNo='" + txtChechisNo.Text + "',InitialReading='" + txtInitailReading.Text + "',PurchaseDate='" + DTP1.Value.ToString("MM/dd/yyyy") + "',Company='" + txtCompany.Text + "',RegistrationIssueDate='" + dtpRegIssueDate.Value.Date.ToString("MM-dd-yyyy") + "',RegistrationExpiryDate='" + dtpRegExpiryDate.Value.Date.ToString("MM-dd-yyyy") + "' where BusId='" + Busid + "'");
                             MessageBox.Show("Record Update.", "School");
                             showGrid();
-                            dgv1.Enabled = false;
-                            c.GetMdiParent(this).EnableAllEditMenuButtons();
+                            //dgv1.Enabled = false;
+                            //c.GetMdiParent(this).EnableAllEditMenuButtons();
                             
                         }
                         else { MessageBox.Show("This Bus No is Already Exist"); }
                     }
                 }
+
+                c.GetMdiParent(this).AfterSaveClick();
+                c.GetMdiParent(this).ToggleEditButton(false);
             }
         }
 
@@ -185,23 +191,17 @@ namespace SMS.Bus
         {
             add_edit = false;
             DesignForm.fromDesign1(this);
-            c.GetMdiParent(this).EnableAllEditMenuButtons();
+            //c.GetMdiParent(this).EnableAllEditMenuButtons();
+            c.GetMdiParent(this).AfterCancelClick();
             
-            
-        }
-
-        private void btnexit_Click(object sender, EventArgs e)
-        {
-            //this.Close(); 
         }
 
         private void dgv1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                if (dgv1.Rows.Count > 0)
+                if (dgv1.Rows.Count > 0 && e.RowIndex > -1)
                 {
-
 
                     BusNo= txtBusNo.Text = dgv1.Rows[e.RowIndex].Cells[0].Value.ToString();
                     txtRTONo.Text = dgv1.Rows[e.RowIndex].Cells[1].Value.ToString();
@@ -215,6 +215,12 @@ namespace SMS.Bus
                     dtpRegIssueDate.Text = dgv1.Rows[e.RowIndex].Cells[9].Value.ToString();
                     dtpRegExpiryDate.Text = dgv1.Rows[e.RowIndex].Cells[10].Value.ToString();
                     Busid =Convert.ToInt16(dgv1.Rows[e.RowIndex].Cells[12].Value.ToString());
+
+                    if (add_edit == false)
+                    {
+                        c.GetMdiParent(this).ToggleEditButton(true);
+                        c.GetMdiParent(this).ToggleDeleteButton(true);
+                    }
 
                 }
                 else { }

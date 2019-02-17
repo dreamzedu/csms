@@ -45,10 +45,10 @@ namespace SMS
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(63, 80);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(126, 155);
+            this.label1.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 19);
+            this.label1.Size = new System.Drawing.Size(186, 38);
             this.label1.TabIndex = 5;
             this.label1.Text = "User Name";
             // 
@@ -58,10 +58,10 @@ namespace SMS
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(63, 126);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(126, 244);
+            this.label2.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(129, 19);
+            this.label2.Size = new System.Drawing.Size(251, 38);
             this.label2.TabIndex = 6;
             this.label2.Text = "User Password";
             // 
@@ -70,10 +70,10 @@ namespace SMS
             this.btnok.BackColor = System.Drawing.Color.Transparent;
             this.btnok.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
             this.btnok.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.btnok.Location = new System.Drawing.Point(201, 200);
-            this.btnok.Margin = new System.Windows.Forms.Padding(4);
+            this.btnok.Location = new System.Drawing.Point(402, 388);
+            this.btnok.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.btnok.Name = "btnok";
-            this.btnok.Size = new System.Drawing.Size(96, 37);
+            this.btnok.Size = new System.Drawing.Size(192, 72);
             this.btnok.TabIndex = 3;
             this.btnok.Text = "&OK";
             this.btnok.UseVisualStyleBackColor = false;
@@ -85,10 +85,10 @@ namespace SMS
             this.btncancel.BackColor = System.Drawing.Color.Transparent;
             this.btncancel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold);
             this.btncancel.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.btncancel.Location = new System.Drawing.Point(312, 200);
-            this.btncancel.Margin = new System.Windows.Forms.Padding(4);
+            this.btncancel.Location = new System.Drawing.Point(624, 388);
+            this.btncancel.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.btncancel.Name = "btncancel";
-            this.btncancel.Size = new System.Drawing.Size(96, 37);
+            this.btncancel.Size = new System.Drawing.Size(192, 72);
             this.btncancel.TabIndex = 4;
             this.btncancel.Text = "&Cancel";
             this.btncancel.UseVisualStyleBackColor = false;
@@ -100,31 +100,31 @@ namespace SMS
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Arial", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Linen;
-            this.label3.Location = new System.Drawing.Point(35, 25);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(70, 48);
+            this.label3.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(402, 29);
+            this.label3.Size = new System.Drawing.Size(761, 56);
             this.label3.TabIndex = 4;
             this.label3.Text = "CSMS Login                                   ";
             // 
             // txtUserName
             // 
             this.txtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserName.Location = new System.Drawing.Point(205, 75);
-            this.txtUserName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtUserName.Location = new System.Drawing.Point(410, 145);
+            this.txtUserName.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(201, 26);
+            this.txtUserName.Size = new System.Drawing.Size(398, 44);
             this.txtUserName.TabIndex = 0;
             this.txtUserName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(205, 121);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPassword.Location = new System.Drawing.Point(410, 234);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(201, 26);
+            this.txtPassword.Size = new System.Drawing.Size(398, 44);
             this.txtPassword.TabIndex = 1;
             this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
             // 
@@ -134,10 +134,10 @@ namespace SMS
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(63, 167);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(126, 324);
+            this.label4.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(120, 19);
+            this.label4.Size = new System.Drawing.Size(239, 38);
             this.label4.TabIndex = 7;
             this.label4.Text = "Session Name";
             this.label4.Visible = false;
@@ -146,21 +146,21 @@ namespace SMS
             // 
             this.cmbsession.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbsession.FormattingEnabled = true;
-            this.cmbsession.Location = new System.Drawing.Point(205, 167);
-            this.cmbsession.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbsession.Location = new System.Drawing.Point(410, 324);
+            this.cmbsession.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.cmbsession.Name = "cmbsession";
-            this.cmbsession.Size = new System.Drawing.Size(201, 28);
+            this.cmbsession.Size = new System.Drawing.Size(398, 45);
             this.cmbsession.TabIndex = 2;
             this.cmbsession.Visible = false;
             this.cmbsession.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cmbsession_KeyDown);
             // 
             // Loginform
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(477, 282);
+            this.ClientSize = new System.Drawing.Size(954, 546);
             this.ControlBox = false;
             this.Controls.Add(this.cmbsession);
             this.Controls.Add(this.label4);
@@ -173,14 +173,13 @@ namespace SMS
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Loginform";
             this.Opacity = 0.95D;
-            this.Padding = new System.Windows.Forms.Padding(12, 11, 12, 11);
+            this.Padding = new System.Windows.Forms.Padding(24, 21, 24, 21);
             this.ShowIcon = false;
-            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Tag = "4";
             this.Load += new System.EventHandler(this.Loginform_Load);

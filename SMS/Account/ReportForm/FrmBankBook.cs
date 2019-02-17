@@ -22,6 +22,12 @@ namespace SMS.Account.ReportForm
         {
             try
             {
+                if (valcmbbank.SelectedValue == null)
+                {
+                    MessageBox.Show("Please select a bank account. If you cannot see the accounts then you probably need to setup the account first.");
+                    return;
+                }
+
                 DateTime opdate = dtpfrom.Value.Date;
                 c.returnconn(c.myconn);
                 string mysql;

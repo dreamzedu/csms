@@ -58,11 +58,12 @@
             // 
             // cmbTeacherName
             // 
+            this.cmbTeacherName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTeacherName.FormattingEnabled = true;
-            this.cmbTeacherName.Location = new System.Drawing.Point(238, 296);
-            this.cmbTeacherName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbTeacherName.Location = new System.Drawing.Point(476, 574);
+            this.cmbTeacherName.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.cmbTeacherName.Name = "cmbTeacherName";
-            this.cmbTeacherName.Size = new System.Drawing.Size(140, 24);
+            this.cmbTeacherName.Size = new System.Drawing.Size(276, 39);
             this.cmbTeacherName.TabIndex = 57;
             // 
             // lblTeacherName
@@ -71,20 +72,21 @@
             this.lblTeacherName.BackColor = System.Drawing.Color.Transparent;
             this.lblTeacherName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTeacherName.ForeColor = System.Drawing.Color.White;
-            this.lblTeacherName.Location = new System.Drawing.Point(54, 300);
-            this.lblTeacherName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTeacherName.Location = new System.Drawing.Point(108, 581);
+            this.lblTeacherName.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblTeacherName.Name = "lblTeacherName";
-            this.lblTeacherName.Size = new System.Drawing.Size(131, 20);
+            this.lblTeacherName.Size = new System.Drawing.Size(245, 38);
             this.lblTeacherName.TabIndex = 58;
             this.lblTeacherName.Text = "Teacher Name";
             // 
             // cmbConductorName
             // 
+            this.cmbConductorName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbConductorName.FormattingEnabled = true;
-            this.cmbConductorName.Location = new System.Drawing.Point(238, 262);
-            this.cmbConductorName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbConductorName.Location = new System.Drawing.Point(476, 508);
+            this.cmbConductorName.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.cmbConductorName.Name = "cmbConductorName";
-            this.cmbConductorName.Size = new System.Drawing.Size(140, 24);
+            this.cmbConductorName.Size = new System.Drawing.Size(276, 39);
             this.cmbConductorName.TabIndex = 55;
             // 
             // lblConductorName
@@ -93,29 +95,30 @@
             this.lblConductorName.BackColor = System.Drawing.Color.Transparent;
             this.lblConductorName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblConductorName.ForeColor = System.Drawing.Color.White;
-            this.lblConductorName.Location = new System.Drawing.Point(54, 266);
-            this.lblConductorName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblConductorName.Location = new System.Drawing.Point(108, 515);
+            this.lblConductorName.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblConductorName.Name = "lblConductorName";
-            this.lblConductorName.Size = new System.Drawing.Size(149, 20);
+            this.lblConductorName.Size = new System.Drawing.Size(278, 38);
             this.lblConductorName.TabIndex = 56;
             this.lblConductorName.Text = "Conductor Name";
             // 
             // DTPSAT
             // 
             this.DTPSAT.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.DTPSAT.Location = new System.Drawing.Point(238, 365);
-            this.DTPSAT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DTPSAT.Location = new System.Drawing.Point(476, 707);
+            this.DTPSAT.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.DTPSAT.Name = "DTPSAT";
-            this.DTPSAT.Size = new System.Drawing.Size(140, 22);
+            this.DTPSAT.Size = new System.Drawing.Size(276, 38);
             this.DTPSAT.TabIndex = 40;
             // 
             // cmbDriverName
             // 
+            this.cmbDriverName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDriverName.FormattingEnabled = true;
-            this.cmbDriverName.Location = new System.Drawing.Point(238, 227);
-            this.cmbDriverName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbDriverName.Location = new System.Drawing.Point(476, 440);
+            this.cmbDriverName.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.cmbDriverName.Name = "cmbDriverName";
-            this.cmbDriverName.Size = new System.Drawing.Size(140, 24);
+            this.cmbDriverName.Size = new System.Drawing.Size(276, 39);
             this.cmbDriverName.TabIndex = 38;
             // 
             // lblDriverName
@@ -124,10 +127,10 @@
             this.lblDriverName.BackColor = System.Drawing.Color.Transparent;
             this.lblDriverName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDriverName.ForeColor = System.Drawing.Color.White;
-            this.lblDriverName.Location = new System.Drawing.Point(54, 230);
-            this.lblDriverName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDriverName.Location = new System.Drawing.Point(108, 446);
+            this.lblDriverName.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblDriverName.Name = "lblDriverName";
-            this.lblDriverName.Size = new System.Drawing.Size(115, 20);
+            this.lblDriverName.Size = new System.Drawing.Size(212, 38);
             this.lblDriverName.TabIndex = 50;
             this.lblDriverName.Text = "Driver Name";
             // 
@@ -135,10 +138,10 @@
             // 
             this.DTPSDT.CustomFormat = "";
             this.DTPSDT.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.DTPSDT.Location = new System.Drawing.Point(238, 332);
-            this.DTPSDT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DTPSDT.Location = new System.Drawing.Point(476, 643);
+            this.DTPSDT.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.DTPSDT.Name = "DTPSDT";
-            this.DTPSDT.Size = new System.Drawing.Size(140, 22);
+            this.DTPSDT.Size = new System.Drawing.Size(276, 38);
             this.DTPSDT.TabIndex = 39;
             // 
             // lblArrivalTime
@@ -147,10 +150,10 @@
             this.lblArrivalTime.BackColor = System.Drawing.Color.Transparent;
             this.lblArrivalTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblArrivalTime.ForeColor = System.Drawing.Color.White;
-            this.lblArrivalTime.Location = new System.Drawing.Point(54, 364);
-            this.lblArrivalTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblArrivalTime.Location = new System.Drawing.Point(108, 705);
+            this.lblArrivalTime.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblArrivalTime.Name = "lblArrivalTime";
-            this.lblArrivalTime.Size = new System.Drawing.Size(111, 20);
+            this.lblArrivalTime.Size = new System.Drawing.Size(203, 38);
             this.lblArrivalTime.TabIndex = 52;
             this.lblArrivalTime.Text = "Arrival Time";
             // 
@@ -160,20 +163,20 @@
             this.lblDepartureTime.BackColor = System.Drawing.Color.Transparent;
             this.lblDepartureTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDepartureTime.ForeColor = System.Drawing.Color.White;
-            this.lblDepartureTime.Location = new System.Drawing.Point(54, 331);
-            this.lblDepartureTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDepartureTime.Location = new System.Drawing.Point(108, 641);
+            this.lblDepartureTime.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblDepartureTime.Name = "lblDepartureTime";
-            this.lblDepartureTime.Size = new System.Drawing.Size(140, 20);
+            this.lblDepartureTime.Size = new System.Drawing.Size(257, 38);
             this.lblDepartureTime.TabIndex = 51;
             this.lblDepartureTime.Text = "Departure Time";
             // 
             // cmbShift
             // 
             this.cmbShift.FormattingEnabled = true;
-            this.cmbShift.Location = new System.Drawing.Point(238, 50);
-            this.cmbShift.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbShift.Location = new System.Drawing.Point(476, 97);
+            this.cmbShift.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.cmbShift.Name = "cmbShift";
-            this.cmbShift.Size = new System.Drawing.Size(140, 24);
+            this.cmbShift.Size = new System.Drawing.Size(276, 39);
             this.cmbShift.TabIndex = 32;
             // 
             // lblShift
@@ -182,20 +185,20 @@
             this.lblShift.BackColor = System.Drawing.Color.Transparent;
             this.lblShift.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblShift.ForeColor = System.Drawing.Color.White;
-            this.lblShift.Location = new System.Drawing.Point(54, 55);
-            this.lblShift.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblShift.Location = new System.Drawing.Point(108, 107);
+            this.lblShift.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblShift.Name = "lblShift";
-            this.lblShift.Size = new System.Drawing.Size(48, 20);
+            this.lblShift.Size = new System.Drawing.Size(87, 38);
             this.lblShift.TabIndex = 44;
             this.lblShift.Text = "Shift";
             // 
             // txtLostFuel
             // 
-            this.txtLostFuel.Location = new System.Drawing.Point(238, 400);
-            this.txtLostFuel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLostFuel.Location = new System.Drawing.Point(476, 775);
+            this.txtLostFuel.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.txtLostFuel.Name = "txtLostFuel";
             this.txtLostFuel.ReadOnly = true;
-            this.txtLostFuel.Size = new System.Drawing.Size(140, 22);
+            this.txtLostFuel.Size = new System.Drawing.Size(276, 38);
             this.txtLostFuel.TabIndex = 41;
             this.txtLostFuel.Text = "0.0";
             // 
@@ -205,19 +208,19 @@
             this.lblFuel.BackColor = System.Drawing.Color.Transparent;
             this.lblFuel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFuel.ForeColor = System.Drawing.Color.White;
-            this.lblFuel.Location = new System.Drawing.Point(54, 401);
-            this.lblFuel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFuel.Location = new System.Drawing.Point(108, 777);
+            this.lblFuel.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblFuel.Name = "lblFuel";
-            this.lblFuel.Size = new System.Drawing.Size(139, 20);
+            this.lblFuel.Size = new System.Drawing.Size(260, 38);
             this.lblFuel.TabIndex = 53;
             this.lblFuel.Text = "Fuel Consumed";
             // 
             // txtArrivalReading
             // 
-            this.txtArrivalReading.Location = new System.Drawing.Point(238, 193);
-            this.txtArrivalReading.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtArrivalReading.Location = new System.Drawing.Point(476, 374);
+            this.txtArrivalReading.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.txtArrivalReading.Name = "txtArrivalReading";
-            this.txtArrivalReading.Size = new System.Drawing.Size(140, 22);
+            this.txtArrivalReading.Size = new System.Drawing.Size(276, 38);
             this.txtArrivalReading.TabIndex = 37;
             this.txtArrivalReading.Text = "0.0";
             this.txtArrivalReading.TextChanged += new System.EventHandler(this.txtArrivalReading_TextChanged);
@@ -228,47 +231,48 @@
             this.lblArrivalReading.BackColor = System.Drawing.Color.Transparent;
             this.lblArrivalReading.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblArrivalReading.ForeColor = System.Drawing.Color.White;
-            this.lblArrivalReading.Location = new System.Drawing.Point(54, 194);
-            this.lblArrivalReading.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblArrivalReading.Location = new System.Drawing.Point(108, 376);
+            this.lblArrivalReading.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblArrivalReading.Name = "lblArrivalReading";
-            this.lblArrivalReading.Size = new System.Drawing.Size(138, 20);
+            this.lblArrivalReading.Size = new System.Drawing.Size(255, 38);
             this.lblArrivalReading.TabIndex = 49;
             this.lblArrivalReading.Text = "Arrival Reading";
             // 
             // cmbRounds
             // 
             this.cmbRounds.FormattingEnabled = true;
-            this.cmbRounds.Location = new System.Drawing.Point(238, 83);
-            this.cmbRounds.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbRounds.Location = new System.Drawing.Point(476, 161);
+            this.cmbRounds.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.cmbRounds.Name = "cmbRounds";
-            this.cmbRounds.Size = new System.Drawing.Size(140, 24);
+            this.cmbRounds.Size = new System.Drawing.Size(276, 39);
             this.cmbRounds.TabIndex = 33;
             // 
             // cmbBusNo
             // 
+            this.cmbBusNo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBusNo.FormattingEnabled = true;
-            this.cmbBusNo.Location = new System.Drawing.Point(238, 122);
-            this.cmbBusNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cmbBusNo.Location = new System.Drawing.Point(476, 236);
+            this.cmbBusNo.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.cmbBusNo.Name = "cmbBusNo";
-            this.cmbBusNo.Size = new System.Drawing.Size(140, 24);
+            this.cmbBusNo.Size = new System.Drawing.Size(276, 39);
             this.cmbBusNo.TabIndex = 34;
             // 
             // DTP1
             // 
             this.DTP1.CustomFormat = "dd/MM/yyyy";
             this.DTP1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DTP1.Location = new System.Drawing.Point(238, 435);
-            this.DTP1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DTP1.Location = new System.Drawing.Point(476, 843);
+            this.DTP1.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.DTP1.Name = "DTP1";
-            this.DTP1.Size = new System.Drawing.Size(140, 22);
+            this.DTP1.Size = new System.Drawing.Size(276, 38);
             this.DTP1.TabIndex = 42;
             // 
             // txtDepartureReading
             // 
-            this.txtDepartureReading.Location = new System.Drawing.Point(238, 160);
-            this.txtDepartureReading.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDepartureReading.Location = new System.Drawing.Point(476, 310);
+            this.txtDepartureReading.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.txtDepartureReading.Name = "txtDepartureReading";
-            this.txtDepartureReading.Size = new System.Drawing.Size(140, 22);
+            this.txtDepartureReading.Size = new System.Drawing.Size(276, 38);
             this.txtDepartureReading.TabIndex = 36;
             this.txtDepartureReading.Text = "0.0";
             this.txtDepartureReading.TextChanged += new System.EventHandler(this.txtDepartureReading_TextChanged);
@@ -279,10 +283,10 @@
             this.lblDeparutreReading.BackColor = System.Drawing.Color.Transparent;
             this.lblDeparutreReading.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDeparutreReading.ForeColor = System.Drawing.Color.White;
-            this.lblDeparutreReading.Location = new System.Drawing.Point(54, 161);
-            this.lblDeparutreReading.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDeparutreReading.Location = new System.Drawing.Point(108, 312);
+            this.lblDeparutreReading.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblDeparutreReading.Name = "lblDeparutreReading";
-            this.lblDeparutreReading.Size = new System.Drawing.Size(167, 20);
+            this.lblDeparutreReading.Size = new System.Drawing.Size(309, 38);
             this.lblDeparutreReading.TabIndex = 48;
             this.lblDeparutreReading.Text = "Departure Reading";
             // 
@@ -292,10 +296,10 @@
             this.lblDate.BackColor = System.Drawing.Color.Transparent;
             this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.ForeColor = System.Drawing.Color.White;
-            this.lblDate.Location = new System.Drawing.Point(54, 437);
-            this.lblDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDate.Location = new System.Drawing.Point(108, 847);
+            this.lblDate.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(99, 20);
+            this.lblDate.Size = new System.Drawing.Size(182, 38);
             this.lblDate.TabIndex = 54;
             this.lblDate.Text = "Entry Date";
             // 
@@ -305,10 +309,10 @@
             this.lblRound.BackColor = System.Drawing.Color.Transparent;
             this.lblRound.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRound.ForeColor = System.Drawing.Color.White;
-            this.lblRound.Location = new System.Drawing.Point(54, 85);
-            this.lblRound.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRound.Location = new System.Drawing.Point(108, 165);
+            this.lblRound.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblRound.Name = "lblRound";
-            this.lblRound.Size = new System.Drawing.Size(72, 20);
+            this.lblRound.Size = new System.Drawing.Size(136, 38);
             this.lblRound.TabIndex = 45;
             this.lblRound.Text = "Rounds";
             // 
@@ -318,10 +322,10 @@
             this.lblBusNo.BackColor = System.Drawing.Color.Transparent;
             this.lblBusNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBusNo.ForeColor = System.Drawing.Color.White;
-            this.lblBusNo.Location = new System.Drawing.Point(54, 124);
-            this.lblBusNo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblBusNo.Location = new System.Drawing.Point(108, 240);
+            this.lblBusNo.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lblBusNo.Name = "lblBusNo";
-            this.lblBusNo.Size = new System.Drawing.Size(76, 20);
+            this.lblBusNo.Size = new System.Drawing.Size(141, 38);
             this.lblBusNo.TabIndex = 46;
             this.lblBusNo.Text = "Bus No.";
             // 
@@ -330,17 +334,17 @@
             this.dgv1.AllowUserToAddRows = false;
             this.dgv1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dgv1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv1.Location = new System.Drawing.Point(418, 49);
-            this.dgv1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgv1.Location = new System.Drawing.Point(836, 95);
+            this.dgv1.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.dgv1.Name = "dgv1";
             this.dgv1.ReadOnly = true;
-            this.dgv1.Size = new System.Drawing.Size(500, 411);
+            this.dgv1.Size = new System.Drawing.Size(1263, 796);
             this.dgv1.TabIndex = 43;
             this.dgv1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv1_CellClick);
             // 
             // FrmDailyBusEntry
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.cmbTeacherName);
@@ -368,9 +372,9 @@
             this.Controls.Add(this.lblRound);
             this.Controls.Add(this.lblBusNo);
             this.Controls.Add(this.dgv1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
             this.Name = "FrmDailyBusEntry";
-            this.Size = new System.Drawing.Size(925, 553);
+            this.Size = new System.Drawing.Size(2158, 1071);
             this.Load += new System.EventHandler(this.FrmDailyBusEntry_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.FrmDailyBusEntry_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.dgv1)).EndInit();

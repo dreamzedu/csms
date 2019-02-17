@@ -16,6 +16,7 @@ namespace SMS.Account
         school1 c = new school1();
         Boolean add_edit = false;
         DataSet ds;
+        bool isClearingRows = false;
         public FrmJournalVoucher()
         {
             InitializeComponent(); Connection.SetUserControlTheme(this);
@@ -52,7 +53,9 @@ namespace SMS.Account
             c.cleartext(this);
             c.GetMdiParent(this).DisableAllEditMenuButtons();
             dtp.Focus();
+            isClearingRows = true;
             dtgbook.Rows.Clear();
+            isClearingRows = false;
             for (int i = 0; i <= 25; i++)
             {
 
@@ -172,19 +175,18 @@ namespace SMS.Account
         {
             add_edit = false;
             c.GetMdiParent(this).EnableAllEditMenuButtons();
+            isClearingRows = true;
             dtgbook.Rows.Clear();
+            isClearingRows = false;
+
             for (int i = 0; i <= 25; i++)
             {
                 dtgbook.Rows.Add();
             }
+
             DesignForm.fromDesign1(this);
         }
-
-        private void btnexit_Click(object sender, EventArgs e)
-        {
-            //this.Close();
-        }
-
+               
         private void dtp_KeyPress(object sender, KeyPressEventArgs e)
         {
             c.entertotab(e.KeyChar);
@@ -237,7 +239,10 @@ namespace SMS.Account
                     reader = com.ExecuteReader();
                     if (reader.HasRows)
                     {
+                        isClearingRows = true;
                         dtgbook.Rows.Clear();
+                        isClearingRows = false;
+
                         i = 0;
                         while (reader.Read())
                         {
@@ -294,37 +299,40 @@ namespace SMS.Account
         {
             try
             {
-                dtgbook.EndEdit();
-                int accode1 = Convert.ToInt16(valcmbbank.SelectedValue);
-                int accode2 = 0;
-                if (e.ColumnIndex == 0)
-                {
-                    accode2 = Convert.ToInt16(dtgbook.Rows[e.RowIndex].Cells[e.ColumnIndex].Value);
-                    if (accode1 == accode2)
-                    {
-                        MessageBox.Show("Debit/Credit Accounts are Same..");
-                        e.Cancel = true;
-                    }
-                }
-                decimal amt = 0;
-                if (e.ColumnIndex == 1)
+                if (!isClearingRows)
                 {
                     dtgbook.EndEdit();
-                    if (Convert.ToString(dtgbook.Rows[e.RowIndex].Cells[e.ColumnIndex].Value) == "")
+                    int accode1 = Convert.ToInt32(valcmbbank.SelectedValue);
+                    int accode2 = 0;
+                    if (e.ColumnIndex == 0)
                     {
-                    }
-                    else
-                    {
-                        for (int i = 0; i <= dtgbook.Rows.Count - 1; i++)
+                        accode2 = Convert.ToInt32(dtgbook.Rows[e.RowIndex].Cells[e.ColumnIndex].Value);
+                        if ((accode1 == accode2) && accode1 > 0)
                         {
-                            amt = amt + Convert.ToInt16(dtgbook.Rows[i].Cells[e.ColumnIndex].Value);
+                            MessageBox.Show("Debit/Credit Accounts are Same..");
+                            e.Cancel = true;
                         }
-                        txtvchamt.Text = Convert.ToString(amt);
-                        //if (e.RowIndex == dtgbook.Rows.Count - 1)
-                        //{
-                        //    dtgbook.Rows.Add();
-                        //}
-                        dtgbook.Refresh();
+                    }
+                    decimal amt = 0;
+                    if (e.ColumnIndex == 1)
+                    {
+                        dtgbook.EndEdit();
+                        if (Convert.ToString(dtgbook.Rows[e.RowIndex].Cells[e.ColumnIndex].Value) == "")
+                        {
+                        }
+                        else
+                        {
+                            for (int i = 0; i <= dtgbook.Rows.Count - 1; i++)
+                            {
+                                amt = amt + Convert.ToInt32(dtgbook.Rows[i].Cells[e.ColumnIndex].Value);
+                            }
+                            txtvchamt.Text = Convert.ToString(amt);
+                            //if (e.RowIndex == dtgbook.Rows.Count - 1)
+                            //{
+                            //    dtgbook.Rows.Add();
+                            //}
+                            dtgbook.Refresh();
+                        }
                     }
                 }
             }

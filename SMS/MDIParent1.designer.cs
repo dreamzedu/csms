@@ -257,7 +257,7 @@
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(0);
-            this.menuStrip.Size = new System.Drawing.Size(1420, 48);
+            this.menuStrip.Size = new System.Drawing.Size(1420, 44);
             this.menuStrip.TabIndex = 0;
             this.menuStrip.Tag = "Menu";
             this.menuStrip.Text = "User";
@@ -823,7 +823,7 @@
             this.hostelToolStripMenuItem.Name = "hostelToolStripMenuItem";
             this.hostelToolStripMenuItem.Size = new System.Drawing.Size(557, 46);
             this.hostelToolStripMenuItem.Tag = "Hostel";
-            this.hostelToolStripMenuItem.Text = "Hostel";
+            this.hostelToolStripMenuItem.Text = "Add/Edit Hostel";
             this.hostelToolStripMenuItem.Click += new System.EventHandler(this.hostelToolStripMenuItem_Click);
             // 
             // roomsToolStripMenuItem
@@ -831,7 +831,7 @@
             this.roomsToolStripMenuItem.Name = "roomsToolStripMenuItem";
             this.roomsToolStripMenuItem.Size = new System.Drawing.Size(557, 46);
             this.roomsToolStripMenuItem.Tag = "Rooms";
-            this.roomsToolStripMenuItem.Text = "Rooms";
+            this.roomsToolStripMenuItem.Text = "Add/Edit Rooms";
             this.roomsToolStripMenuItem.Click += new System.EventHandler(this.roomsToolStripMenuItem_Click);
             // 
             // accomodationAllotementToolStripMenuItem
@@ -847,7 +847,7 @@
             this.hostelRegularFeesToolStripMenuItem.Name = "hostelRegularFeesToolStripMenuItem";
             this.hostelRegularFeesToolStripMenuItem.Size = new System.Drawing.Size(557, 46);
             this.hostelRegularFeesToolStripMenuItem.Tag = "Hostel Regular Fees";
-            this.hostelRegularFeesToolStripMenuItem.Text = "Hostel Regular Fees";
+            this.hostelRegularFeesToolStripMenuItem.Text = "Hostel Fee Entry";
             this.hostelRegularFeesToolStripMenuItem.Click += new System.EventHandler(this.hostelRegularFeesToolStripMenuItem_Click);
             // 
             // roomVacantToolStripMenuItem
@@ -856,6 +856,7 @@
             this.roomVacantToolStripMenuItem.Size = new System.Drawing.Size(557, 46);
             this.roomVacantToolStripMenuItem.Tag = "Room Vacant";
             this.roomVacantToolStripMenuItem.Text = "Room Vacant";
+            this.roomVacantToolStripMenuItem.Visible = false;
             this.roomVacantToolStripMenuItem.Click += new System.EventHandler(this.roomVacantToolStripMenuItem_Click);
             // 
             // transportToolStripMenuItem
@@ -884,7 +885,7 @@
             this.BusDetailstoolStripMenuItem.Name = "BusDetailstoolStripMenuItem";
             this.BusDetailstoolStripMenuItem.Size = new System.Drawing.Size(401, 46);
             this.BusDetailstoolStripMenuItem.Tag = "BusDetails";
-            this.BusDetailstoolStripMenuItem.Text = "BusDetails";
+            this.BusDetailstoolStripMenuItem.Text = "Bus Details";
             this.BusDetailstoolStripMenuItem.Click += new System.EventHandler(this.BusDetailstoolStripMenuItem_Click);
             // 
             // dailyBusEntryToolStripMenuItem
@@ -900,7 +901,7 @@
             this.dieselDetailsToolStripMenuItem.Name = "dieselDetailsToolStripMenuItem";
             this.dieselDetailsToolStripMenuItem.Size = new System.Drawing.Size(401, 46);
             this.dieselDetailsToolStripMenuItem.Tag = "DieselDetails";
-            this.dieselDetailsToolStripMenuItem.Text = "DieselDetails";
+            this.dieselDetailsToolStripMenuItem.Text = "Diesel Details";
             this.dieselDetailsToolStripMenuItem.Click += new System.EventHandler(this.dieselDetailsToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
@@ -1690,7 +1691,7 @@
             this.toolStripSeparator7,
             this.btnLink});
             this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.toolStrip1.Location = new System.Drawing.Point(0, 48);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 44);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1420, 47);
             this.toolStrip1.TabIndex = 6;
@@ -1888,7 +1889,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.pnlNotification);
             this.splitContainer1.Panel2.Controls.Add(this.pnlNotificationsHeading);
-            this.splitContainer1.Size = new System.Drawing.Size(1408, 564);
+            this.splitContainer1.Size = new System.Drawing.Size(1408, 568);
             this.splitContainer1.SplitterDistance = 1061;
             this.splitContainer1.TabIndex = 8;
             // 
@@ -1924,7 +1925,7 @@
             this.pnlMainContainer.Controls.Add(this.pnlMain);
             this.pnlMainContainer.Location = new System.Drawing.Point(3, 41);
             this.pnlMainContainer.Name = "pnlMainContainer";
-            this.pnlMainContainer.Size = new System.Drawing.Size(1053, 518);
+            this.pnlMainContainer.Size = new System.Drawing.Size(1053, 522);
             this.pnlMainContainer.TabIndex = 0;
             // 
             // toolStrip2
@@ -2019,7 +2020,7 @@
             this.pnlMain.BackColor = System.Drawing.Color.White;
             this.pnlMain.Location = new System.Drawing.Point(-1, 29);
             this.pnlMain.Name = "pnlMain";
-            this.pnlMain.Size = new System.Drawing.Size(1052, 490);
+            this.pnlMain.Size = new System.Drawing.Size(1052, 494);
             this.pnlMain.TabIndex = 0;
             // 
             // pnlNotification
@@ -2030,7 +2031,7 @@
             this.pnlNotification.BackColor = System.Drawing.Color.White;
             this.pnlNotification.Location = new System.Drawing.Point(0, 41);
             this.pnlNotification.Name = "pnlNotification";
-            this.pnlNotification.Size = new System.Drawing.Size(341, 518);
+            this.pnlNotification.Size = new System.Drawing.Size(341, 522);
             this.pnlNotification.TabIndex = 1;
             // 
             // pnlNotificationsHeading
@@ -2059,9 +2060,9 @@
             this.pnlOuterContainer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlOuterContainer.Controls.Add(this.splitContainer1);
             this.pnlOuterContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlOuterContainer.Location = new System.Drawing.Point(0, 95);
+            this.pnlOuterContainer.Location = new System.Drawing.Point(0, 91);
             this.pnlOuterContainer.Name = "pnlOuterContainer";
-            this.pnlOuterContainer.Size = new System.Drawing.Size(1420, 576);
+            this.pnlOuterContainer.Size = new System.Drawing.Size(1420, 580);
             this.pnlOuterContainer.TabIndex = 9;
             // 
             // MDIParent1

@@ -31,13 +31,22 @@ namespace SMS.Account
 
         public override void btnsave_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "" && textBox2.Text == "")
+            if (string.IsNullOrEmpty(textBox1.Text) || string.IsNullOrEmpty(textBox2.Text) || valcmbaccountgroup.SelectedValue == null)
             {
 
-                MessageBox.Show("Null Value Not Allowed ");
+                MessageBox.Show("Please fill all the fields.");
             }
             else
             {
+                SqlCommand cmd = new SqlCommand("select dbo.GetCashAccountCode('C') as CACode", c.myconn);
+
+                object val = cmd.ExecuteScalar();
+                if (val == null || val == DBNull.Value)
+                {
+                    MessageBox.Show("Cannot find a cash account to debit the amount, please setup a cash account first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
                 //-----------
                 int cactype = 0;
                 SqlCommand command2 = new SqlCommand("select dbo.GetAccountCode('C') as CCode", c.myconn);
@@ -63,7 +72,7 @@ namespace SMS.Account
                     actype = Convert.ToInt16(reader1["actype"]);
                     if (actype == cactype)
                     {
-                        MessageBox.Show("Cannot Select Cash Account..");
+                        MessageBox.Show("Cannot Select Cash Account.");
                         reader1.Close();
                         goto mline;
                     }

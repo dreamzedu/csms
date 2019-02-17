@@ -53,112 +53,113 @@ namespace SMS.Account
 
         public override void btnsave_Click(object sender, EventArgs e)
         {
-            if (valcmbbank.Text == "" && valcmbaccountgroup.Text == "" && textBox1.Text == "" && textBox2.Text == "")
+            if (valcmbaccountgroup.SelectedValue == null || valcmbbank.SelectedValue == null || string.IsNullOrEmpty(valcmbaccountgroup.SelectedValue.ToString()) || string.IsNullOrEmpty(valcmbbank.SelectedValue.ToString()))
             {
-
-                MessageBox.Show("Null Value Not Allowed ");
+                MessageBox.Show("Please select accounts. If you cannot see the accounts then you probably need to setup the account first.");
+                return;
             }
-            else
-            {//SqlCommand command1 = new SqlCommand("select actype from tbl_account where accode='" + valcmbbank.SelectedValue + "'", c.myconn);
-                //SqlDataReader reader1 = command1.ExecuteReader();
-                //int i = 0;
-                //if (reader1.HasRows)
-                //{
-                //    MessageBox.Show("Cannot Select Cash Account..");
-                //    reader1.Close();
-                //    goto mline;
-                //}
-                int bank1;
-                int bank2;
-                bank1 = Convert.ToInt16(valcmbaccountgroup.SelectedValue);
-                bank2 = Convert.ToInt16(valcmbbank.SelectedValue);
-                if (bank1 == bank2)
-                {
-                    MessageBox.Show("Both Accounts are same...");
-                    goto mline;
-                }
-                txtvchtype.Text = "BP";
-                txtsession.Text = Convert.ToString(school.CurrentSessionCode);
-                if (add_edit == true)
-                {
-                    c.returnconn(c.myconn);
-                    SqlCommand command = new SqlCommand("select max(vchno) from tbl_voucher where sessioncode=" + txtsession.Text + " and  vchtype='" + txtvchtype.Text + "'", c.myconn);
-                    command.CommandTimeout = 120;
-                    Int32 mstudentno;
-                    mstudentno = 1000001;
-                    if (command.ExecuteScalar() != System.DBNull.Value)
-                    {
-                        mstudentno = Convert.ToInt32(command.ExecuteScalar()) + 1;
-                    }
-                    txtvoucherno.Text = mstudentno.ToString();
-                    c.insertdata("tbl_voucher", c.myconn, this);
-                    SqlTransaction trn;
-                    trn = c.myconn.BeginTransaction();
-                    string mysql;
-                    int i = 0;
-                    mysql = "insert into tbl_voucherdet (sessioncode,vchtype,vchno,accode,vchamt,vchdate,amttype) values ('" + txtsession.Text + "','" + txtvchtype.Text + "'," + txtvoucherno.Text + "," + valcmbbank.SelectedValue + "," + textBox1.Text + ",'" + dtp.Value.Date + "','Cr')";
-                    c.connectsql(mysql, c.myconn, trn);
-                    mysql = "insert into tbl_voucherdet (sessioncode,vchtype,vchno,accode,vchamt,vchdate,amttype) values ('" + txtsession.Text + "','" + txtvchtype.Text + "'," + txtvoucherno.Text + "," + valcmbaccountgroup.SelectedValue + "," + textBox1.Text + ",'" + dtp.Value.Date + "','Dr')";
-                    c.connectsql(mysql, c.myconn, trn);
-                    if (dtgbook.Rows.Count > 0)
-                    {
-                        while (i <= dtgbook.Rows.Count - 1)
-                        {
-                            double mval = Convert.ToDouble(dtgbook.Rows[i].Cells[2].Value);
-                            if (mval > 0)
-                            {
-                                mysql = "insert into tbl_subledger (sessioncode,vchtype,vchno,accode,subledgercode,subledgamt,vchdate,amttype,narration) values ('" + txtsession.Text + "','" + txtvchtype.Text + "'," + txtvoucherno.Text + "," + valcmbaccountgroup.SelectedValue + "," + dtgbook.Rows[i].Cells[0].Value + "," + mval + ",'" + dtp.Value.Date + "','Dr','" + dtgbook.Rows[i].Cells[3].Value + "')";
-                                c.connectsql(mysql, c.myconn, trn);
-                            }
-                            i++;
-                        }
-                    }
-                    trn.Commit();
-                    DesignForm.fromDesign1(this);
-                }
-                if (add_edit == false)
-                {
-                    c.returnconn(c.myconn);
-                    SqlTransaction trn;
-                    trn = c.myconn.BeginTransaction();
-                    //*--delete prvious voucher-------------
-                    c.connectsql("delete from tbl_voucher where sessioncode=" + txtsession.Text + " and vchtype='BP'  and vchno=" + txtvoucherno.Text, c.myconn, trn);
-                    trn.Commit();
-                    c.insertdata("tbl_voucher", c.myconn, this);
-                    trn = c.myconn.BeginTransaction();
-                    //*--delete prvious voucher-------------
-                    c.connectsql("delete from tbl_voucherdet where sessioncode=" + txtsession.Text + " and vchtype='BP' and amttype='Cr' and vchno=" + txtvoucherno.Text, c.myconn, trn);
-                    c.connectsql("delete from tbl_voucherdet where sessioncode=" + txtsession.Text + " and vchtype='BP' and amttype='Dr' and vchno=" + txtvoucherno.Text, c.myconn, trn);
-                    c.connectsql("delete from tbl_subledger where sessioncode=" + txtsession.Text + " and vchtype='BP' and amttype='Dr' and vchno=" + txtvoucherno.Text, c.myconn, trn);
-                    //*------------------
-                    string mysql;
-                    int i = 0;
-                    mysql = "insert into tbl_voucherdet (sessioncode,vchtype,vchno,accode,vchamt,vchdate,amttype) values ('" + txtsession.Text + "','" + txtvchtype.Text + "'," + txtvoucherno.Text + "," + valcmbbank.SelectedValue + "," + textBox1.Text + ",'" + dtp.Value.Date + "','Cr')";
-                    c.connectsql(mysql, c.myconn, trn);
-                    mysql = "insert into tbl_voucherdet (sessioncode,vchtype,vchno,accode,vchamt,vchdate,amttype) values ('" + txtsession.Text + "','" + txtvchtype.Text + "'," + txtvoucherno.Text + "," + valcmbaccountgroup.SelectedValue + "," + textBox1.Text + ",'" + dtp.Value.Date + "','Dr')";
-                    c.connectsql(mysql, c.myconn, trn);
-                    if (dtgbook.Rows.Count > 0)
-                    {
-                        while (i <= dtgbook.Rows.Count - 1)
-                        {
-                            double mval = Convert.ToDouble(dtgbook.Rows[i].Cells[2].Value);
-                            if (mval > 0)
-                            {
-                                mysql = "insert into tbl_subledger (sessioncode,vchtype,vchno,accode,subledgercode,subledgamt,vchdate,amttype,narration) values ('" + txtsession.Text + "','" + txtvchtype.Text + "'," + txtvoucherno.Text + "," + valcmbaccountgroup.SelectedValue + "," + dtgbook.Rows[i].Cells[0].Value + "," + mval + ",'" + dtp.Value.Date + "','Dr','" + dtgbook.Rows[i].Cells[3].Value + "')";
-                                c.connectsql(mysql, c.myconn, trn);
-                            }
-                            i++;
-                        }
-                    }
-                    trn.Commit();
-                    DesignForm.fromDesign1(this);
-                }
-                MessageBox.Show("Record Saved...", "School");
-            mline:
-                c.GetMdiParent(this).EnableAllEditMenuButtons();
-                
 
+            if (string.IsNullOrEmpty(textBox1.Text))
+            {
+                MessageBox.Show("Please enter amount.");
+                return;
             }
+            if (string.IsNullOrEmpty(textBox2.Text))
+            {
+                MessageBox.Show("Please enter voucher narration.");
+                return;
+            }
+
+
+            int bank1;
+            int bank2;
+            bank1 = Convert.ToInt16(valcmbaccountgroup.SelectedValue);
+            bank2 = Convert.ToInt16(valcmbbank.SelectedValue);
+            if (bank1 == bank2)
+            {
+                MessageBox.Show("Both Accounts should not be same.");
+                goto mline;
+            }
+            txtvchtype.Text = "BP";
+            txtsession.Text = Convert.ToString(school.CurrentSessionCode);
+            if (add_edit == true)
+            {
+                c.returnconn(c.myconn);
+                SqlCommand command = new SqlCommand("select max(vchno) from tbl_voucher where sessioncode=" + txtsession.Text + " and  vchtype='" + txtvchtype.Text + "'", c.myconn);
+                command.CommandTimeout = 120;
+                Int32 mstudentno;
+                mstudentno = 1000001;
+                if (command.ExecuteScalar() != System.DBNull.Value)
+                {
+                    mstudentno = Convert.ToInt32(command.ExecuteScalar()) + 1;
+                }
+                txtvoucherno.Text = mstudentno.ToString();
+                c.insertdata("tbl_voucher", c.myconn, this);
+                SqlTransaction trn;
+                trn = c.myconn.BeginTransaction();
+                string mysql;
+                int i = 0;
+                mysql = "insert into tbl_voucherdet (sessioncode,vchtype,vchno,accode,vchamt,vchdate,amttype) values ('" + txtsession.Text + "','" + txtvchtype.Text + "'," + txtvoucherno.Text + "," + valcmbbank.SelectedValue + "," + textBox1.Text + ",'" + dtp.Value.Date + "','Cr')";
+                c.connectsql(mysql, c.myconn, trn);
+                mysql = "insert into tbl_voucherdet (sessioncode,vchtype,vchno,accode,vchamt,vchdate,amttype) values ('" + txtsession.Text + "','" + txtvchtype.Text + "'," + txtvoucherno.Text + "," + valcmbaccountgroup.SelectedValue + "," + textBox1.Text + ",'" + dtp.Value.Date + "','Dr')";
+                c.connectsql(mysql, c.myconn, trn);
+                if (dtgbook.Rows.Count > 0)
+                {
+                    while (i <= dtgbook.Rows.Count - 1)
+                    {
+                        double mval = Convert.ToDouble(dtgbook.Rows[i].Cells[2].Value);
+                        if (mval > 0)
+                        {
+                            mysql = "insert into tbl_subledger (sessioncode,vchtype,vchno,accode,subledgercode,subledgamt,vchdate,amttype,narration) values ('" + txtsession.Text + "','" + txtvchtype.Text + "'," + txtvoucherno.Text + "," + valcmbaccountgroup.SelectedValue + "," + dtgbook.Rows[i].Cells[0].Value + "," + mval + ",'" + dtp.Value.Date + "','Dr','" + dtgbook.Rows[i].Cells[3].Value + "')";
+                            c.connectsql(mysql, c.myconn, trn);
+                        }
+                        i++;
+                    }
+                }
+                trn.Commit();
+                DesignForm.fromDesign1(this);
+            }
+            if (add_edit == false)
+            {
+                c.returnconn(c.myconn);
+                SqlTransaction trn;
+                trn = c.myconn.BeginTransaction();
+                //*--delete prvious voucher-------------
+                c.connectsql("delete from tbl_voucher where sessioncode=" + txtsession.Text + " and vchtype='BP'  and vchno=" + txtvoucherno.Text, c.myconn, trn);
+                trn.Commit();
+                c.insertdata("tbl_voucher", c.myconn, this);
+                trn = c.myconn.BeginTransaction();
+                //*--delete prvious voucher-------------
+                c.connectsql("delete from tbl_voucherdet where sessioncode=" + txtsession.Text + " and vchtype='BP' and amttype='Cr' and vchno=" + txtvoucherno.Text, c.myconn, trn);
+                c.connectsql("delete from tbl_voucherdet where sessioncode=" + txtsession.Text + " and vchtype='BP' and amttype='Dr' and vchno=" + txtvoucherno.Text, c.myconn, trn);
+                c.connectsql("delete from tbl_subledger where sessioncode=" + txtsession.Text + " and vchtype='BP' and amttype='Dr' and vchno=" + txtvoucherno.Text, c.myconn, trn);
+                //*------------------
+                string mysql;
+                int i = 0;
+                mysql = "insert into tbl_voucherdet (sessioncode,vchtype,vchno,accode,vchamt,vchdate,amttype) values ('" + txtsession.Text + "','" + txtvchtype.Text + "'," + txtvoucherno.Text + "," + valcmbbank.SelectedValue + "," + textBox1.Text + ",'" + dtp.Value.Date + "','Cr')";
+                c.connectsql(mysql, c.myconn, trn);
+                mysql = "insert into tbl_voucherdet (sessioncode,vchtype,vchno,accode,vchamt,vchdate,amttype) values ('" + txtsession.Text + "','" + txtvchtype.Text + "'," + txtvoucherno.Text + "," + valcmbaccountgroup.SelectedValue + "," + textBox1.Text + ",'" + dtp.Value.Date + "','Dr')";
+                c.connectsql(mysql, c.myconn, trn);
+                if (dtgbook.Rows.Count > 0)
+                {
+                    while (i <= dtgbook.Rows.Count - 1)
+                    {
+                        double mval = Convert.ToDouble(dtgbook.Rows[i].Cells[2].Value);
+                        if (mval > 0)
+                        {
+                            mysql = "insert into tbl_subledger (sessioncode,vchtype,vchno,accode,subledgercode,subledgamt,vchdate,amttype,narration) values ('" + txtsession.Text + "','" + txtvchtype.Text + "'," + txtvoucherno.Text + "," + valcmbaccountgroup.SelectedValue + "," + dtgbook.Rows[i].Cells[0].Value + "," + mval + ",'" + dtp.Value.Date + "','Dr','" + dtgbook.Rows[i].Cells[3].Value + "')";
+                            c.connectsql(mysql, c.myconn, trn);
+                        }
+                        i++;
+                    }
+                }
+                trn.Commit();
+                DesignForm.fromDesign1(this);
+            }
+            MessageBox.Show("Record saved successfully.", "School");
+        mline:
+            c.GetMdiParent(this).EnableAllEditMenuButtons();
+
         }
 
         private void dtp_KeyPress(object sender, KeyPressEventArgs e)

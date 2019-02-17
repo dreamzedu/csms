@@ -53,10 +53,29 @@ namespace SMS.Account
 
         public override void btnsave_Click(object sender, EventArgs e)
         {
+            if (valcmbaccountgroup.SelectedValue == null || valcmbbank.SelectedValue == null || string.IsNullOrEmpty(valcmbaccountgroup.SelectedValue.ToString()) || string.IsNullOrEmpty(valcmbbank.SelectedValue.ToString()))
+            {
+                MessageBox.Show("Please select accounts. If you cannot see the accounts then you probably need to setup the account first.");
+                return;
+            }
+
+            if(string.IsNullOrEmpty(textBox1.Text))
+            {
+                MessageBox.Show("Please enter amount.");
+                return;
+            }
+            if (string.IsNullOrEmpty(textBox2.Text))
+            {
+                MessageBox.Show("Please enter voucher narration.");
+                return;
+            }
+
             int bank1;
             int bank2;
             bank1 = Convert.ToInt16(valcmbaccountgroup.SelectedValue);
             bank2 = Convert.ToInt16(valcmbbank.SelectedValue);
+
+            
             if (bank1 == bank2)
             {
                 MessageBox.Show("Both Accounts are same...");
