@@ -38,7 +38,7 @@
     <MinimumRequiredVersion>4.0.0.0</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>6</ApplicationRevision>
     <ApplicationVersion>4.0.5.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -108,10 +108,10 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>46A5741BFABCE17C9E23986CE617B170D1B6BD1E</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>7B7790008CA670603865741DDC2B423FADECFB55</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>SMS-x32_1_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>SMS-x32_2_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -3162,6 +3162,7 @@
       <SubType>Designer</SubType>
     </Content>
     <None Include="SMS-x32_1_TemporaryKey.pfx" />
+    <None Include="SMS-x32_2_TemporaryKey.pfx" />
     <None Include="SMS-x32_TemporaryKey.pfx" />
     <None Include="SMS_TemporaryKey.pfx" />
   </ItemGroup>
